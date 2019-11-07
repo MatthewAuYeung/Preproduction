@@ -88,7 +88,7 @@ BoxCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2855431676503659842}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
@@ -106,8 +106,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Player: {fileID: 0}
-  CameraOne: {fileID: 0}
-  CameraTwo: {fileID: 0}
+  MainCamera: {fileID: 0}
+  XPos1: 0
+  YPos1: 0
+  ZPos1: 0
+  XRotate1: 0
+  YRotate1: 0
+  ZRotate1: 0
+  XPos2: 0
+  YPos2: 0
+  ZPos2: 0
+  XRotate2: 0
+  YRotate2: 0
+  ZRotate2: 0
 --- !u!114 &2855431676503659852
 MonoBehaviour:
   m_ObjectHideFlags: 0
