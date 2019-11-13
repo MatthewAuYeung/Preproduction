@@ -1,1055 +1,269 @@
-<<<<<<< HEAD
-D:\AllenGit\Preproduction\PreproductionProject\Temp\bin\Debug\Assembly-CSharp-firstpass.dll
-D:\AllenGit\Preproduction\PreproductionProject\Temp\bin\Debug\Assembly-CSharp-firstpass.pdb
-D:\AllenGit\Preproduction\PreproductionProject\Temp\bin\Debug\Microsoft.Win32.Primitives.dll
-D:\AllenGit\Preproduction\PreproductionProject\Temp\bin\Debug\mscorlib.dll
-D:\AllenGit\Preproduction\PreproductionProject\Temp\bin\Debug\netstandard.dll
-D:\AllenGit\Preproduction\PreproductionProject\Temp\bin\Debug\nunit.framework.dll
-D:\AllenGit\Preproduction\PreproductionProject\Temp\bin\Debug\System.AppContext.dll
-D:\AllenGit\Preproduction\PreproductionProject\Temp\bin\Debug\System.Collections.Concurrent.dll
-D:\AllenGit\Preproduction\PreproductionProject\Temp\bin\Debug\System.Collections.dll
-D:\AllenGit\Preproduction\PreproductionProject\Temp\bin\Debug\System.Collections.NonGeneric.dll
-D:\AllenGit\Preproduction\PreproductionProject\Temp\bin\Debug\System.Collections.Specialized.dll
-D:\AllenGit\Preproduction\PreproductionProject\Temp\bin\Debug\System.ComponentModel.Composition.dll
-D:\AllenGit\Preproduction\PreproductionProject\Temp\bin\Debug\System.ComponentModel.dll
-D:\AllenGit\Preproduction\PreproductionProject\Temp\bin\Debug\System.ComponentModel.EventBasedAsync.dll
-D:\AllenGit\Preproduction\PreproductionProject\Temp\bin\Debug\System.ComponentModel.Primitives.dll
-D:\AllenGit\Preproduction\PreproductionProject\Temp\bin\Debug\System.ComponentModel.TypeConverter.dll
-D:\AllenGit\Preproduction\PreproductionProject\Temp\bin\Debug\System.Console.dll
-D:\AllenGit\Preproduction\PreproductionProject\Temp\bin\Debug\System.Core.dll
-D:\AllenGit\Preproduction\PreproductionProject\Temp\bin\Debug\System.Data.Common.dll
-D:\AllenGit\Preproduction\PreproductionProject\Temp\bin\Debug\System.Data.dll
-D:\AllenGit\Preproduction\PreproductionProject\Temp\bin\Debug\System.Diagnostics.Contracts.dll
-D:\AllenGit\Preproduction\PreproductionProject\Temp\bin\Debug\System.Diagnostics.Debug.dll
-D:\AllenGit\Preproduction\PreproductionProject\Temp\bin\Debug\System.Diagnostics.FileVersionInfo.dll
-D:\AllenGit\Preproduction\PreproductionProject\Temp\bin\Debug\System.Diagnostics.Process.dll
-D:\AllenGit\Preproduction\PreproductionProject\Temp\bin\Debug\System.Diagnostics.StackTrace.dll
-D:\AllenGit\Preproduction\PreproductionProject\Temp\bin\Debug\System.Diagnostics.TextWriterTraceListener.dll
-D:\AllenGit\Preproduction\PreproductionProject\Temp\bin\Debug\System.Diagnostics.Tools.dll
-D:\AllenGit\Preproduction\PreproductionProject\Temp\bin\Debug\System.Diagnostics.TraceSource.dll
-D:\AllenGit\Preproduction\PreproductionProject\Temp\bin\Debug\System.Diagnostics.Tracing.dll
-D:\AllenGit\Preproduction\PreproductionProject\Temp\bin\Debug\System.dll
-D:\AllenGit\Preproduction\PreproductionProject\Temp\bin\Debug\System.Drawing.dll
-D:\AllenGit\Preproduction\PreproductionProject\Temp\bin\Debug\System.Drawing.Primitives.dll
-D:\AllenGit\Preproduction\PreproductionProject\Temp\bin\Debug\System.Dynamic.Runtime.dll
-D:\AllenGit\Preproduction\PreproductionProject\Temp\bin\Debug\System.Globalization.Calendars.dll
-D:\AllenGit\Preproduction\PreproductionProject\Temp\bin\Debug\System.Globalization.dll
-D:\AllenGit\Preproduction\PreproductionProject\Temp\bin\Debug\System.Globalization.Extensions.dll
-D:\AllenGit\Preproduction\PreproductionProject\Temp\bin\Debug\System.IO.Compression.dll
-D:\AllenGit\Preproduction\PreproductionProject\Temp\bin\Debug\System.IO.Compression.FileSystem.dll
-D:\AllenGit\Preproduction\PreproductionProject\Temp\bin\Debug\System.IO.Compression.ZipFile.dll
-D:\AllenGit\Preproduction\PreproductionProject\Temp\bin\Debug\System.IO.dll
-D:\AllenGit\Preproduction\PreproductionProject\Temp\bin\Debug\System.IO.FileSystem.dll
-D:\AllenGit\Preproduction\PreproductionProject\Temp\bin\Debug\System.IO.FileSystem.DriveInfo.dll
-D:\AllenGit\Preproduction\PreproductionProject\Temp\bin\Debug\System.IO.FileSystem.Primitives.dll
-D:\AllenGit\Preproduction\PreproductionProject\Temp\bin\Debug\System.IO.FileSystem.Watcher.dll
-D:\AllenGit\Preproduction\PreproductionProject\Temp\bin\Debug\System.IO.IsolatedStorage.dll
-D:\AllenGit\Preproduction\PreproductionProject\Temp\bin\Debug\System.IO.MemoryMappedFiles.dll
-D:\AllenGit\Preproduction\PreproductionProject\Temp\bin\Debug\System.IO.Pipes.dll
-D:\AllenGit\Preproduction\PreproductionProject\Temp\bin\Debug\System.IO.UnmanagedMemoryStream.dll
-D:\AllenGit\Preproduction\PreproductionProject\Temp\bin\Debug\System.Linq.dll
-D:\AllenGit\Preproduction\PreproductionProject\Temp\bin\Debug\System.Linq.Expressions.dll
-D:\AllenGit\Preproduction\PreproductionProject\Temp\bin\Debug\System.Linq.Parallel.dll
-D:\AllenGit\Preproduction\PreproductionProject\Temp\bin\Debug\System.Linq.Queryable.dll
-D:\AllenGit\Preproduction\PreproductionProject\Temp\bin\Debug\System.Net.dll
-D:\AllenGit\Preproduction\PreproductionProject\Temp\bin\Debug\System.Net.Http.dll
-D:\AllenGit\Preproduction\PreproductionProject\Temp\bin\Debug\System.Net.NameResolution.dll
-D:\AllenGit\Preproduction\PreproductionProject\Temp\bin\Debug\System.Net.NetworkInformation.dll
-D:\AllenGit\Preproduction\PreproductionProject\Temp\bin\Debug\System.Net.Ping.dll
-D:\AllenGit\Preproduction\PreproductionProject\Temp\bin\Debug\System.Net.Primitives.dll
-D:\AllenGit\Preproduction\PreproductionProject\Temp\bin\Debug\System.Net.Requests.dll
-D:\AllenGit\Preproduction\PreproductionProject\Temp\bin\Debug\System.Net.Security.dll
-D:\AllenGit\Preproduction\PreproductionProject\Temp\bin\Debug\System.Net.Sockets.dll
-D:\AllenGit\Preproduction\PreproductionProject\Temp\bin\Debug\System.Net.WebHeaderCollection.dll
-D:\AllenGit\Preproduction\PreproductionProject\Temp\bin\Debug\System.Net.WebSockets.Client.dll
-D:\AllenGit\Preproduction\PreproductionProject\Temp\bin\Debug\System.Net.WebSockets.dll
-D:\AllenGit\Preproduction\PreproductionProject\Temp\bin\Debug\System.Numerics.dll
-D:\AllenGit\Preproduction\PreproductionProject\Temp\bin\Debug\System.Numerics.Vectors.dll
-D:\AllenGit\Preproduction\PreproductionProject\Temp\bin\Debug\System.ObjectModel.dll
-D:\AllenGit\Preproduction\PreproductionProject\Temp\bin\Debug\System.Reflection.dll
-D:\AllenGit\Preproduction\PreproductionProject\Temp\bin\Debug\System.Reflection.Extensions.dll
-D:\AllenGit\Preproduction\PreproductionProject\Temp\bin\Debug\System.Reflection.Primitives.dll
-D:\AllenGit\Preproduction\PreproductionProject\Temp\bin\Debug\System.Resources.Reader.dll
-D:\AllenGit\Preproduction\PreproductionProject\Temp\bin\Debug\System.Resources.ResourceManager.dll
-D:\AllenGit\Preproduction\PreproductionProject\Temp\bin\Debug\System.Resources.Writer.dll
-D:\AllenGit\Preproduction\PreproductionProject\Temp\bin\Debug\System.Runtime.CompilerServices.VisualC.dll
-D:\AllenGit\Preproduction\PreproductionProject\Temp\bin\Debug\System.Runtime.dll
-D:\AllenGit\Preproduction\PreproductionProject\Temp\bin\Debug\System.Runtime.Extensions.dll
-D:\AllenGit\Preproduction\PreproductionProject\Temp\bin\Debug\System.Runtime.Handles.dll
-D:\AllenGit\Preproduction\PreproductionProject\Temp\bin\Debug\System.Runtime.InteropServices.dll
-D:\AllenGit\Preproduction\PreproductionProject\Temp\bin\Debug\System.Runtime.InteropServices.RuntimeInformation.dll
-D:\AllenGit\Preproduction\PreproductionProject\Temp\bin\Debug\System.Runtime.InteropServices.WindowsRuntime.dll
-D:\AllenGit\Preproduction\PreproductionProject\Temp\bin\Debug\System.Runtime.Numerics.dll
-D:\AllenGit\Preproduction\PreproductionProject\Temp\bin\Debug\System.Runtime.Serialization.dll
-D:\AllenGit\Preproduction\PreproductionProject\Temp\bin\Debug\System.Runtime.Serialization.Formatters.dll
-D:\AllenGit\Preproduction\PreproductionProject\Temp\bin\Debug\System.Runtime.Serialization.Json.dll
-D:\AllenGit\Preproduction\PreproductionProject\Temp\bin\Debug\System.Runtime.Serialization.Primitives.dll
-D:\AllenGit\Preproduction\PreproductionProject\Temp\bin\Debug\System.Runtime.Serialization.Xml.dll
-D:\AllenGit\Preproduction\PreproductionProject\Temp\bin\Debug\System.Security.Claims.dll
-D:\AllenGit\Preproduction\PreproductionProject\Temp\bin\Debug\System.Security.Cryptography.Algorithms.dll
-D:\AllenGit\Preproduction\PreproductionProject\Temp\bin\Debug\System.Security.Cryptography.Csp.dll
-D:\AllenGit\Preproduction\PreproductionProject\Temp\bin\Debug\System.Security.Cryptography.Encoding.dll
-D:\AllenGit\Preproduction\PreproductionProject\Temp\bin\Debug\System.Security.Cryptography.Primitives.dll
-D:\AllenGit\Preproduction\PreproductionProject\Temp\bin\Debug\System.Security.Cryptography.X509Certificates.dll
-D:\AllenGit\Preproduction\PreproductionProject\Temp\bin\Debug\System.Security.Principal.dll
-D:\AllenGit\Preproduction\PreproductionProject\Temp\bin\Debug\System.Security.SecureString.dll
-D:\AllenGit\Preproduction\PreproductionProject\Temp\bin\Debug\System.ServiceModel.Web.dll
-D:\AllenGit\Preproduction\PreproductionProject\Temp\bin\Debug\System.Text.Encoding.dll
-D:\AllenGit\Preproduction\PreproductionProject\Temp\bin\Debug\System.Text.Encoding.Extensions.dll
-D:\AllenGit\Preproduction\PreproductionProject\Temp\bin\Debug\System.Text.RegularExpressions.dll
-D:\AllenGit\Preproduction\PreproductionProject\Temp\bin\Debug\System.Threading.dll
-D:\AllenGit\Preproduction\PreproductionProject\Temp\bin\Debug\System.Threading.Overlapped.dll
-D:\AllenGit\Preproduction\PreproductionProject\Temp\bin\Debug\System.Threading.Tasks.dll
-D:\AllenGit\Preproduction\PreproductionProject\Temp\bin\Debug\System.Threading.Tasks.Parallel.dll
-D:\AllenGit\Preproduction\PreproductionProject\Temp\bin\Debug\System.Threading.Thread.dll
-D:\AllenGit\Preproduction\PreproductionProject\Temp\bin\Debug\System.Threading.ThreadPool.dll
-D:\AllenGit\Preproduction\PreproductionProject\Temp\bin\Debug\System.Threading.Timer.dll
-D:\AllenGit\Preproduction\PreproductionProject\Temp\bin\Debug\System.Transactions.dll
-D:\AllenGit\Preproduction\PreproductionProject\Temp\bin\Debug\System.ValueTuple.dll
-D:\AllenGit\Preproduction\PreproductionProject\Temp\bin\Debug\System.Web.dll
-D:\AllenGit\Preproduction\PreproductionProject\Temp\bin\Debug\System.Windows.dll
-D:\AllenGit\Preproduction\PreproductionProject\Temp\bin\Debug\System.Xml.dll
-D:\AllenGit\Preproduction\PreproductionProject\Temp\bin\Debug\System.Xml.Linq.dll
-D:\AllenGit\Preproduction\PreproductionProject\Temp\bin\Debug\System.Xml.ReaderWriter.dll
-D:\AllenGit\Preproduction\PreproductionProject\Temp\bin\Debug\System.Xml.Serialization.dll
-D:\AllenGit\Preproduction\PreproductionProject\Temp\bin\Debug\System.Xml.XDocument.dll
-D:\AllenGit\Preproduction\PreproductionProject\Temp\bin\Debug\System.Xml.XmlDocument.dll
-D:\AllenGit\Preproduction\PreproductionProject\Temp\bin\Debug\System.Xml.XmlSerializer.dll
-D:\AllenGit\Preproduction\PreproductionProject\Temp\bin\Debug\System.Xml.XPath.dll
-D:\AllenGit\Preproduction\PreproductionProject\Temp\bin\Debug\System.Xml.XPath.XDocument.dll
-D:\AllenGit\Preproduction\PreproductionProject\Temp\bin\Debug\Unity.Analytics.DataPrivacy.dll
-D:\AllenGit\Preproduction\PreproductionProject\Temp\bin\Debug\Unity.Analytics.Editor.dll
-D:\AllenGit\Preproduction\PreproductionProject\Temp\bin\Debug\Unity.Analytics.StandardEvents.dll
-D:\AllenGit\Preproduction\PreproductionProject\Temp\bin\Debug\Unity.Analytics.Tracker.dll
-D:\AllenGit\Preproduction\PreproductionProject\Temp\bin\Debug\Unity.CollabProxy.Editor.dll
-D:\AllenGit\Preproduction\PreproductionProject\Temp\bin\Debug\Unity.Locator.dll
-D:\AllenGit\Preproduction\PreproductionProject\Temp\bin\Debug\Unity.TextMeshPro.dll
-D:\AllenGit\Preproduction\PreproductionProject\Temp\bin\Debug\Unity.TextMeshPro.Editor.dll
-D:\AllenGit\Preproduction\PreproductionProject\Temp\bin\Debug\Unity.Timeline.dll
-D:\AllenGit\Preproduction\PreproductionProject\Temp\bin\Debug\Unity.Timeline.Editor.dll
-D:\AllenGit\Preproduction\PreproductionProject\Temp\bin\Debug\UnityEditor.dll
-D:\AllenGit\Preproduction\PreproductionProject\Temp\bin\Debug\UnityEngine.AccessibilityModule.dll
-D:\AllenGit\Preproduction\PreproductionProject\Temp\bin\Debug\UnityEngine.AIModule.dll
-D:\AllenGit\Preproduction\PreproductionProject\Temp\bin\Debug\UnityEngine.AnimationModule.dll
-D:\AllenGit\Preproduction\PreproductionProject\Temp\bin\Debug\UnityEngine.ARModule.dll
-D:\AllenGit\Preproduction\PreproductionProject\Temp\bin\Debug\UnityEngine.AssetBundleModule.dll
-D:\AllenGit\Preproduction\PreproductionProject\Temp\bin\Debug\UnityEngine.AudioModule.dll
-D:\AllenGit\Preproduction\PreproductionProject\Temp\bin\Debug\UnityEngine.ClothModule.dll
-D:\AllenGit\Preproduction\PreproductionProject\Temp\bin\Debug\UnityEngine.ClusterInputModule.dll
-D:\AllenGit\Preproduction\PreproductionProject\Temp\bin\Debug\UnityEngine.ClusterRendererModule.dll
-D:\AllenGit\Preproduction\PreproductionProject\Temp\bin\Debug\UnityEngine.CoreModule.dll
-D:\AllenGit\Preproduction\PreproductionProject\Temp\bin\Debug\UnityEngine.CrashReportingModule.dll
-D:\AllenGit\Preproduction\PreproductionProject\Temp\bin\Debug\UnityEngine.DirectorModule.dll
-D:\AllenGit\Preproduction\PreproductionProject\Temp\bin\Debug\UnityEngine.dll
-D:\AllenGit\Preproduction\PreproductionProject\Temp\bin\Debug\UnityEngine.FileSystemHttpModule.dll
-D:\AllenGit\Preproduction\PreproductionProject\Temp\bin\Debug\UnityEngine.GameCenterModule.dll
-D:\AllenGit\Preproduction\PreproductionProject\Temp\bin\Debug\UnityEngine.GridModule.dll
-D:\AllenGit\Preproduction\PreproductionProject\Temp\bin\Debug\UnityEngine.HotReloadModule.dll
-D:\AllenGit\Preproduction\PreproductionProject\Temp\bin\Debug\UnityEngine.ImageConversionModule.dll
-D:\AllenGit\Preproduction\PreproductionProject\Temp\bin\Debug\UnityEngine.IMGUIModule.dll
-D:\AllenGit\Preproduction\PreproductionProject\Temp\bin\Debug\UnityEngine.InputModule.dll
-D:\AllenGit\Preproduction\PreproductionProject\Temp\bin\Debug\UnityEngine.JSONSerializeModule.dll
-D:\AllenGit\Preproduction\PreproductionProject\Temp\bin\Debug\UnityEngine.LocalizationModule.dll
-D:\AllenGit\Preproduction\PreproductionProject\Temp\bin\Debug\UnityEngine.ParticleSystemModule.dll
-D:\AllenGit\Preproduction\PreproductionProject\Temp\bin\Debug\UnityEngine.PerformanceReportingModule.dll
-D:\AllenGit\Preproduction\PreproductionProject\Temp\bin\Debug\UnityEngine.Physics2DModule.dll
-D:\AllenGit\Preproduction\PreproductionProject\Temp\bin\Debug\UnityEngine.PhysicsModule.dll
-D:\AllenGit\Preproduction\PreproductionProject\Temp\bin\Debug\UnityEngine.ProfilerModule.dll
-D:\AllenGit\Preproduction\PreproductionProject\Temp\bin\Debug\UnityEngine.ScreenCaptureModule.dll
-D:\AllenGit\Preproduction\PreproductionProject\Temp\bin\Debug\UnityEngine.SharedInternalsModule.dll
-D:\AllenGit\Preproduction\PreproductionProject\Temp\bin\Debug\UnityEngine.SpriteMaskModule.dll
-D:\AllenGit\Preproduction\PreproductionProject\Temp\bin\Debug\UnityEngine.SpriteShapeModule.dll
-D:\AllenGit\Preproduction\PreproductionProject\Temp\bin\Debug\UnityEngine.StreamingModule.dll
-D:\AllenGit\Preproduction\PreproductionProject\Temp\bin\Debug\UnityEngine.StyleSheetsModule.dll
-D:\AllenGit\Preproduction\PreproductionProject\Temp\bin\Debug\UnityEngine.SubstanceModule.dll
-D:\AllenGit\Preproduction\PreproductionProject\Temp\bin\Debug\UnityEngine.TerrainModule.dll
-D:\AllenGit\Preproduction\PreproductionProject\Temp\bin\Debug\UnityEngine.TerrainPhysicsModule.dll
-D:\AllenGit\Preproduction\PreproductionProject\Temp\bin\Debug\UnityEngine.TestRunner.dll
-D:\AllenGit\Preproduction\PreproductionProject\Temp\bin\Debug\UnityEngine.TextCoreModule.dll
-D:\AllenGit\Preproduction\PreproductionProject\Temp\bin\Debug\UnityEngine.TextRenderingModule.dll
-D:\AllenGit\Preproduction\PreproductionProject\Temp\bin\Debug\UnityEngine.TilemapModule.dll
-D:\AllenGit\Preproduction\PreproductionProject\Temp\bin\Debug\UnityEngine.TLSModule.dll
-D:\AllenGit\Preproduction\PreproductionProject\Temp\bin\Debug\UnityEngine.UI.dll
-D:\AllenGit\Preproduction\PreproductionProject\Temp\bin\Debug\UnityEngine.UIElementsModule.dll
-D:\AllenGit\Preproduction\PreproductionProject\Temp\bin\Debug\UnityEngine.UIModule.dll
-D:\AllenGit\Preproduction\PreproductionProject\Temp\bin\Debug\UnityEngine.UmbraModule.dll
-D:\AllenGit\Preproduction\PreproductionProject\Temp\bin\Debug\UnityEngine.UNETModule.dll
-D:\AllenGit\Preproduction\PreproductionProject\Temp\bin\Debug\UnityEngine.UnityAnalyticsModule.dll
-D:\AllenGit\Preproduction\PreproductionProject\Temp\bin\Debug\UnityEngine.UnityConnectModule.dll
-D:\AllenGit\Preproduction\PreproductionProject\Temp\bin\Debug\UnityEngine.UnityTestProtocolModule.dll
-D:\AllenGit\Preproduction\PreproductionProject\Temp\bin\Debug\UnityEngine.UnityWebRequestAssetBundleModule.dll
-D:\AllenGit\Preproduction\PreproductionProject\Temp\bin\Debug\UnityEngine.UnityWebRequestAudioModule.dll
-D:\AllenGit\Preproduction\PreproductionProject\Temp\bin\Debug\UnityEngine.UnityWebRequestModule.dll
-D:\AllenGit\Preproduction\PreproductionProject\Temp\bin\Debug\UnityEngine.UnityWebRequestTextureModule.dll
-D:\AllenGit\Preproduction\PreproductionProject\Temp\bin\Debug\UnityEngine.UnityWebRequestWWWModule.dll
-D:\AllenGit\Preproduction\PreproductionProject\Temp\bin\Debug\UnityEngine.VehiclesModule.dll
-D:\AllenGit\Preproduction\PreproductionProject\Temp\bin\Debug\UnityEngine.VFXModule.dll
-D:\AllenGit\Preproduction\PreproductionProject\Temp\bin\Debug\UnityEngine.VideoModule.dll
-D:\AllenGit\Preproduction\PreproductionProject\Temp\bin\Debug\UnityEngine.VRModule.dll
-D:\AllenGit\Preproduction\PreproductionProject\Temp\bin\Debug\UnityEngine.WindModule.dll
-D:\AllenGit\Preproduction\PreproductionProject\Temp\bin\Debug\UnityEngine.XRModule.dll
-D:\AllenGit\Preproduction\PreproductionProject\Temp\bin\Debug\Unity.Cecil.dll
-D:\AllenGit\Preproduction\PreproductionProject\Temp\bin\Debug\Unity.SerializationLogic.dll
-D:\AllenGit\Preproduction\PreproductionProject\Temp\bin\Debug\Unity.DataContract.dll
-D:\AllenGit\Preproduction\PreproductionProject\Temp\bin\Debug\ExCSS.Unity.dll
-D:\AllenGit\Preproduction\PreproductionProject\Temp\bin\Debug\Unity.Legacy.NRefactory.dll
-D:\AllenGit\Preproduction\PreproductionProject\Temp\bin\Debug\Unity.IvyParser.dll
-D:\AllenGit\Preproduction\PreproductionProject\Temp\bin\Debug\Unity.CecilTools.dll
-D:\AllenGit\Preproduction\PreproductionProject\Temp\bin\Debug\UnityEngine.xml
-D:\AllenGit\Preproduction\PreproductionProject\Temp\bin\Debug\UnityEditor.xml
-D:\AllenGit\Preproduction\PreproductionProject\Temp\bin\Debug\UnityEngine.AIModule.xml
-D:\AllenGit\Preproduction\PreproductionProject\Temp\bin\Debug\UnityEngine.ARModule.xml
-D:\AllenGit\Preproduction\PreproductionProject\Temp\bin\Debug\UnityEngine.AccessibilityModule.xml
-D:\AllenGit\Preproduction\PreproductionProject\Temp\bin\Debug\UnityEngine.AnimationModule.xml
-D:\AllenGit\Preproduction\PreproductionProject\Temp\bin\Debug\UnityEngine.AssetBundleModule.xml
-D:\AllenGit\Preproduction\PreproductionProject\Temp\bin\Debug\UnityEngine.AudioModule.xml
-D:\AllenGit\Preproduction\PreproductionProject\Temp\bin\Debug\UnityEngine.ClothModule.xml
-D:\AllenGit\Preproduction\PreproductionProject\Temp\bin\Debug\UnityEngine.ClusterInputModule.xml
-D:\AllenGit\Preproduction\PreproductionProject\Temp\bin\Debug\UnityEngine.ClusterRendererModule.xml
-D:\AllenGit\Preproduction\PreproductionProject\Temp\bin\Debug\UnityEngine.CoreModule.xml
-D:\AllenGit\Preproduction\PreproductionProject\Temp\bin\Debug\UnityEngine.CrashReportingModule.xml
-D:\AllenGit\Preproduction\PreproductionProject\Temp\bin\Debug\UnityEngine.DirectorModule.xml
-D:\AllenGit\Preproduction\PreproductionProject\Temp\bin\Debug\UnityEngine.FileSystemHttpModule.xml
-D:\AllenGit\Preproduction\PreproductionProject\Temp\bin\Debug\UnityEngine.GameCenterModule.xml
-D:\AllenGit\Preproduction\PreproductionProject\Temp\bin\Debug\UnityEngine.GridModule.xml
-D:\AllenGit\Preproduction\PreproductionProject\Temp\bin\Debug\UnityEngine.HotReloadModule.xml
-D:\AllenGit\Preproduction\PreproductionProject\Temp\bin\Debug\UnityEngine.IMGUIModule.xml
-D:\AllenGit\Preproduction\PreproductionProject\Temp\bin\Debug\UnityEngine.ImageConversionModule.xml
-D:\AllenGit\Preproduction\PreproductionProject\Temp\bin\Debug\UnityEngine.InputModule.xml
-D:\AllenGit\Preproduction\PreproductionProject\Temp\bin\Debug\UnityEngine.JSONSerializeModule.xml
-D:\AllenGit\Preproduction\PreproductionProject\Temp\bin\Debug\UnityEngine.LocalizationModule.xml
-D:\AllenGit\Preproduction\PreproductionProject\Temp\bin\Debug\UnityEngine.ParticleSystemModule.xml
-D:\AllenGit\Preproduction\PreproductionProject\Temp\bin\Debug\UnityEngine.PerformanceReportingModule.xml
-D:\AllenGit\Preproduction\PreproductionProject\Temp\bin\Debug\UnityEngine.PhysicsModule.xml
-D:\AllenGit\Preproduction\PreproductionProject\Temp\bin\Debug\UnityEngine.Physics2DModule.xml
-D:\AllenGit\Preproduction\PreproductionProject\Temp\bin\Debug\UnityEngine.ProfilerModule.xml
-D:\AllenGit\Preproduction\PreproductionProject\Temp\bin\Debug\UnityEngine.ScreenCaptureModule.xml
-D:\AllenGit\Preproduction\PreproductionProject\Temp\bin\Debug\UnityEngine.SharedInternalsModule.xml
-D:\AllenGit\Preproduction\PreproductionProject\Temp\bin\Debug\UnityEngine.SpriteMaskModule.xml
-D:\AllenGit\Preproduction\PreproductionProject\Temp\bin\Debug\UnityEngine.SpriteShapeModule.xml
-D:\AllenGit\Preproduction\PreproductionProject\Temp\bin\Debug\UnityEngine.StreamingModule.xml
-D:\AllenGit\Preproduction\PreproductionProject\Temp\bin\Debug\UnityEngine.StyleSheetsModule.xml
-D:\AllenGit\Preproduction\PreproductionProject\Temp\bin\Debug\UnityEngine.SubstanceModule.xml
-D:\AllenGit\Preproduction\PreproductionProject\Temp\bin\Debug\UnityEngine.TLSModule.xml
-D:\AllenGit\Preproduction\PreproductionProject\Temp\bin\Debug\UnityEngine.TerrainModule.xml
-D:\AllenGit\Preproduction\PreproductionProject\Temp\bin\Debug\UnityEngine.TerrainPhysicsModule.xml
-D:\AllenGit\Preproduction\PreproductionProject\Temp\bin\Debug\UnityEngine.TextCoreModule.xml
-D:\AllenGit\Preproduction\PreproductionProject\Temp\bin\Debug\UnityEngine.TextRenderingModule.xml
-D:\AllenGit\Preproduction\PreproductionProject\Temp\bin\Debug\UnityEngine.TilemapModule.xml
-D:\AllenGit\Preproduction\PreproductionProject\Temp\bin\Debug\UnityEngine.UIModule.xml
-D:\AllenGit\Preproduction\PreproductionProject\Temp\bin\Debug\UnityEngine.UIElementsModule.xml
-D:\AllenGit\Preproduction\PreproductionProject\Temp\bin\Debug\UnityEngine.UNETModule.xml
-D:\AllenGit\Preproduction\PreproductionProject\Temp\bin\Debug\UnityEngine.UmbraModule.xml
-D:\AllenGit\Preproduction\PreproductionProject\Temp\bin\Debug\UnityEngine.UnityAnalyticsModule.xml
-D:\AllenGit\Preproduction\PreproductionProject\Temp\bin\Debug\UnityEngine.UnityConnectModule.xml
-D:\AllenGit\Preproduction\PreproductionProject\Temp\bin\Debug\UnityEngine.UnityTestProtocolModule.xml
-D:\AllenGit\Preproduction\PreproductionProject\Temp\bin\Debug\UnityEngine.UnityWebRequestModule.xml
-D:\AllenGit\Preproduction\PreproductionProject\Temp\bin\Debug\UnityEngine.UnityWebRequestAssetBundleModule.xml
-D:\AllenGit\Preproduction\PreproductionProject\Temp\bin\Debug\UnityEngine.UnityWebRequestAudioModule.xml
-D:\AllenGit\Preproduction\PreproductionProject\Temp\bin\Debug\UnityEngine.UnityWebRequestTextureModule.xml
-D:\AllenGit\Preproduction\PreproductionProject\Temp\bin\Debug\UnityEngine.UnityWebRequestWWWModule.xml
-D:\AllenGit\Preproduction\PreproductionProject\Temp\bin\Debug\UnityEngine.VFXModule.xml
-D:\AllenGit\Preproduction\PreproductionProject\Temp\bin\Debug\UnityEngine.VRModule.xml
-D:\AllenGit\Preproduction\PreproductionProject\Temp\bin\Debug\UnityEngine.VehiclesModule.xml
-D:\AllenGit\Preproduction\PreproductionProject\Temp\bin\Debug\UnityEngine.VideoModule.xml
-D:\AllenGit\Preproduction\PreproductionProject\Temp\bin\Debug\UnityEngine.WindModule.xml
-D:\AllenGit\Preproduction\PreproductionProject\Temp\bin\Debug\UnityEngine.XRModule.xml
-D:\AllenGit\Preproduction\PreproductionProject\Temp\bin\Debug\UnityEngine.UI.xml
-D:\AllenGit\Preproduction\PreproductionProject\Temp\bin\Debug\UnityEngine.TestRunner.xml
-D:\AllenGit\Preproduction\PreproductionProject\Temp\bin\Debug\nunit.framework.xml
-D:\AllenGit\Preproduction\PreproductionProject\obj\Debug\Assembly-CSharp-firstpass.csprojAssemblyReference.cache
-D:\AllenGit\Preproduction\PreproductionProject\obj\Debug\Assembly-CSharp-firstpass.csproj.CoreCompileInputs.cache
-D:\AllenGit\Preproduction\PreproductionProject\obj\Debug\Assembly-CSharp-firstpass.csproj.CopyComplete
-D:\AllenGit\Preproduction\PreproductionProject\obj\Debug\Assembly-CSharp-firstpass.dll
-D:\AllenGit\Preproduction\PreproductionProject\obj\Debug\Assembly-CSharp-firstpass.pdb
-C:\Users\430575\Desktop\AllenGit\Preproduction\PreproductionProject\Temp\bin\Debug\Assembly-CSharp-firstpass.dll
-C:\Users\430575\Desktop\AllenGit\Preproduction\PreproductionProject\Temp\bin\Debug\Assembly-CSharp-firstpass.pdb
-C:\Users\430575\Desktop\AllenGit\Preproduction\PreproductionProject\Temp\bin\Debug\Microsoft.Win32.Primitives.dll
-C:\Users\430575\Desktop\AllenGit\Preproduction\PreproductionProject\Temp\bin\Debug\mscorlib.dll
-C:\Users\430575\Desktop\AllenGit\Preproduction\PreproductionProject\Temp\bin\Debug\netstandard.dll
-C:\Users\430575\Desktop\AllenGit\Preproduction\PreproductionProject\Temp\bin\Debug\nunit.framework.dll
-C:\Users\430575\Desktop\AllenGit\Preproduction\PreproductionProject\Temp\bin\Debug\System.AppContext.dll
-C:\Users\430575\Desktop\AllenGit\Preproduction\PreproductionProject\Temp\bin\Debug\System.Collections.Concurrent.dll
-C:\Users\430575\Desktop\AllenGit\Preproduction\PreproductionProject\Temp\bin\Debug\System.Collections.dll
-C:\Users\430575\Desktop\AllenGit\Preproduction\PreproductionProject\Temp\bin\Debug\System.Collections.NonGeneric.dll
-C:\Users\430575\Desktop\AllenGit\Preproduction\PreproductionProject\Temp\bin\Debug\System.Collections.Specialized.dll
-C:\Users\430575\Desktop\AllenGit\Preproduction\PreproductionProject\Temp\bin\Debug\System.ComponentModel.Composition.dll
-C:\Users\430575\Desktop\AllenGit\Preproduction\PreproductionProject\Temp\bin\Debug\System.ComponentModel.dll
-C:\Users\430575\Desktop\AllenGit\Preproduction\PreproductionProject\Temp\bin\Debug\System.ComponentModel.EventBasedAsync.dll
-C:\Users\430575\Desktop\AllenGit\Preproduction\PreproductionProject\Temp\bin\Debug\System.ComponentModel.Primitives.dll
-C:\Users\430575\Desktop\AllenGit\Preproduction\PreproductionProject\Temp\bin\Debug\System.ComponentModel.TypeConverter.dll
-C:\Users\430575\Desktop\AllenGit\Preproduction\PreproductionProject\Temp\bin\Debug\System.Console.dll
-C:\Users\430575\Desktop\AllenGit\Preproduction\PreproductionProject\Temp\bin\Debug\System.Core.dll
-C:\Users\430575\Desktop\AllenGit\Preproduction\PreproductionProject\Temp\bin\Debug\System.Data.Common.dll
-C:\Users\430575\Desktop\AllenGit\Preproduction\PreproductionProject\Temp\bin\Debug\System.Data.dll
-C:\Users\430575\Desktop\AllenGit\Preproduction\PreproductionProject\Temp\bin\Debug\System.Diagnostics.Contracts.dll
-C:\Users\430575\Desktop\AllenGit\Preproduction\PreproductionProject\Temp\bin\Debug\System.Diagnostics.Debug.dll
-C:\Users\430575\Desktop\AllenGit\Preproduction\PreproductionProject\Temp\bin\Debug\System.Diagnostics.FileVersionInfo.dll
-C:\Users\430575\Desktop\AllenGit\Preproduction\PreproductionProject\Temp\bin\Debug\System.Diagnostics.Process.dll
-C:\Users\430575\Desktop\AllenGit\Preproduction\PreproductionProject\Temp\bin\Debug\System.Diagnostics.StackTrace.dll
-C:\Users\430575\Desktop\AllenGit\Preproduction\PreproductionProject\Temp\bin\Debug\System.Diagnostics.TextWriterTraceListener.dll
-C:\Users\430575\Desktop\AllenGit\Preproduction\PreproductionProject\Temp\bin\Debug\System.Diagnostics.Tools.dll
-C:\Users\430575\Desktop\AllenGit\Preproduction\PreproductionProject\Temp\bin\Debug\System.Diagnostics.TraceSource.dll
-C:\Users\430575\Desktop\AllenGit\Preproduction\PreproductionProject\Temp\bin\Debug\System.Diagnostics.Tracing.dll
-C:\Users\430575\Desktop\AllenGit\Preproduction\PreproductionProject\Temp\bin\Debug\System.dll
-C:\Users\430575\Desktop\AllenGit\Preproduction\PreproductionProject\Temp\bin\Debug\System.Drawing.dll
-C:\Users\430575\Desktop\AllenGit\Preproduction\PreproductionProject\Temp\bin\Debug\System.Drawing.Primitives.dll
-C:\Users\430575\Desktop\AllenGit\Preproduction\PreproductionProject\Temp\bin\Debug\System.Dynamic.Runtime.dll
-C:\Users\430575\Desktop\AllenGit\Preproduction\PreproductionProject\Temp\bin\Debug\System.Globalization.Calendars.dll
-C:\Users\430575\Desktop\AllenGit\Preproduction\PreproductionProject\Temp\bin\Debug\System.Globalization.dll
-C:\Users\430575\Desktop\AllenGit\Preproduction\PreproductionProject\Temp\bin\Debug\System.Globalization.Extensions.dll
-C:\Users\430575\Desktop\AllenGit\Preproduction\PreproductionProject\Temp\bin\Debug\System.IO.Compression.dll
-C:\Users\430575\Desktop\AllenGit\Preproduction\PreproductionProject\Temp\bin\Debug\System.IO.Compression.FileSystem.dll
-C:\Users\430575\Desktop\AllenGit\Preproduction\PreproductionProject\Temp\bin\Debug\System.IO.Compression.ZipFile.dll
-C:\Users\430575\Desktop\AllenGit\Preproduction\PreproductionProject\Temp\bin\Debug\System.IO.dll
-C:\Users\430575\Desktop\AllenGit\Preproduction\PreproductionProject\Temp\bin\Debug\System.IO.FileSystem.dll
-C:\Users\430575\Desktop\AllenGit\Preproduction\PreproductionProject\Temp\bin\Debug\System.IO.FileSystem.DriveInfo.dll
-C:\Users\430575\Desktop\AllenGit\Preproduction\PreproductionProject\Temp\bin\Debug\System.IO.FileSystem.Primitives.dll
-C:\Users\430575\Desktop\AllenGit\Preproduction\PreproductionProject\Temp\bin\Debug\System.IO.FileSystem.Watcher.dll
-C:\Users\430575\Desktop\AllenGit\Preproduction\PreproductionProject\Temp\bin\Debug\System.IO.IsolatedStorage.dll
-C:\Users\430575\Desktop\AllenGit\Preproduction\PreproductionProject\Temp\bin\Debug\System.IO.MemoryMappedFiles.dll
-C:\Users\430575\Desktop\AllenGit\Preproduction\PreproductionProject\Temp\bin\Debug\System.IO.Pipes.dll
-C:\Users\430575\Desktop\AllenGit\Preproduction\PreproductionProject\Temp\bin\Debug\System.IO.UnmanagedMemoryStream.dll
-C:\Users\430575\Desktop\AllenGit\Preproduction\PreproductionProject\Temp\bin\Debug\System.Linq.dll
-C:\Users\430575\Desktop\AllenGit\Preproduction\PreproductionProject\Temp\bin\Debug\System.Linq.Expressions.dll
-C:\Users\430575\Desktop\AllenGit\Preproduction\PreproductionProject\Temp\bin\Debug\System.Linq.Parallel.dll
-C:\Users\430575\Desktop\AllenGit\Preproduction\PreproductionProject\Temp\bin\Debug\System.Linq.Queryable.dll
-C:\Users\430575\Desktop\AllenGit\Preproduction\PreproductionProject\Temp\bin\Debug\System.Net.dll
-C:\Users\430575\Desktop\AllenGit\Preproduction\PreproductionProject\Temp\bin\Debug\System.Net.Http.dll
-C:\Users\430575\Desktop\AllenGit\Preproduction\PreproductionProject\Temp\bin\Debug\System.Net.NameResolution.dll
-C:\Users\430575\Desktop\AllenGit\Preproduction\PreproductionProject\Temp\bin\Debug\System.Net.NetworkInformation.dll
-C:\Users\430575\Desktop\AllenGit\Preproduction\PreproductionProject\Temp\bin\Debug\System.Net.Ping.dll
-C:\Users\430575\Desktop\AllenGit\Preproduction\PreproductionProject\Temp\bin\Debug\System.Net.Primitives.dll
-C:\Users\430575\Desktop\AllenGit\Preproduction\PreproductionProject\Temp\bin\Debug\System.Net.Requests.dll
-C:\Users\430575\Desktop\AllenGit\Preproduction\PreproductionProject\Temp\bin\Debug\System.Net.Security.dll
-C:\Users\430575\Desktop\AllenGit\Preproduction\PreproductionProject\Temp\bin\Debug\System.Net.Sockets.dll
-C:\Users\430575\Desktop\AllenGit\Preproduction\PreproductionProject\Temp\bin\Debug\System.Net.WebHeaderCollection.dll
-C:\Users\430575\Desktop\AllenGit\Preproduction\PreproductionProject\Temp\bin\Debug\System.Net.WebSockets.Client.dll
-C:\Users\430575\Desktop\AllenGit\Preproduction\PreproductionProject\Temp\bin\Debug\System.Net.WebSockets.dll
-C:\Users\430575\Desktop\AllenGit\Preproduction\PreproductionProject\Temp\bin\Debug\System.Numerics.dll
-C:\Users\430575\Desktop\AllenGit\Preproduction\PreproductionProject\Temp\bin\Debug\System.Numerics.Vectors.dll
-C:\Users\430575\Desktop\AllenGit\Preproduction\PreproductionProject\Temp\bin\Debug\System.ObjectModel.dll
-C:\Users\430575\Desktop\AllenGit\Preproduction\PreproductionProject\Temp\bin\Debug\System.Reflection.dll
-C:\Users\430575\Desktop\AllenGit\Preproduction\PreproductionProject\Temp\bin\Debug\System.Reflection.Extensions.dll
-C:\Users\430575\Desktop\AllenGit\Preproduction\PreproductionProject\Temp\bin\Debug\System.Reflection.Primitives.dll
-C:\Users\430575\Desktop\AllenGit\Preproduction\PreproductionProject\Temp\bin\Debug\System.Resources.Reader.dll
-C:\Users\430575\Desktop\AllenGit\Preproduction\PreproductionProject\Temp\bin\Debug\System.Resources.ResourceManager.dll
-C:\Users\430575\Desktop\AllenGit\Preproduction\PreproductionProject\Temp\bin\Debug\System.Resources.Writer.dll
-C:\Users\430575\Desktop\AllenGit\Preproduction\PreproductionProject\Temp\bin\Debug\System.Runtime.CompilerServices.VisualC.dll
-C:\Users\430575\Desktop\AllenGit\Preproduction\PreproductionProject\Temp\bin\Debug\System.Runtime.dll
-C:\Users\430575\Desktop\AllenGit\Preproduction\PreproductionProject\Temp\bin\Debug\System.Runtime.Extensions.dll
-C:\Users\430575\Desktop\AllenGit\Preproduction\PreproductionProject\Temp\bin\Debug\System.Runtime.Handles.dll
-C:\Users\430575\Desktop\AllenGit\Preproduction\PreproductionProject\Temp\bin\Debug\System.Runtime.InteropServices.dll
-C:\Users\430575\Desktop\AllenGit\Preproduction\PreproductionProject\Temp\bin\Debug\System.Runtime.InteropServices.RuntimeInformation.dll
-C:\Users\430575\Desktop\AllenGit\Preproduction\PreproductionProject\Temp\bin\Debug\System.Runtime.InteropServices.WindowsRuntime.dll
-C:\Users\430575\Desktop\AllenGit\Preproduction\PreproductionProject\Temp\bin\Debug\System.Runtime.Numerics.dll
-C:\Users\430575\Desktop\AllenGit\Preproduction\PreproductionProject\Temp\bin\Debug\System.Runtime.Serialization.dll
-C:\Users\430575\Desktop\AllenGit\Preproduction\PreproductionProject\Temp\bin\Debug\System.Runtime.Serialization.Formatters.dll
-C:\Users\430575\Desktop\AllenGit\Preproduction\PreproductionProject\Temp\bin\Debug\System.Runtime.Serialization.Json.dll
-C:\Users\430575\Desktop\AllenGit\Preproduction\PreproductionProject\Temp\bin\Debug\System.Runtime.Serialization.Primitives.dll
-C:\Users\430575\Desktop\AllenGit\Preproduction\PreproductionProject\Temp\bin\Debug\System.Runtime.Serialization.Xml.dll
-C:\Users\430575\Desktop\AllenGit\Preproduction\PreproductionProject\Temp\bin\Debug\System.Security.Claims.dll
-C:\Users\430575\Desktop\AllenGit\Preproduction\PreproductionProject\Temp\bin\Debug\System.Security.Cryptography.Algorithms.dll
-C:\Users\430575\Desktop\AllenGit\Preproduction\PreproductionProject\Temp\bin\Debug\System.Security.Cryptography.Csp.dll
-C:\Users\430575\Desktop\AllenGit\Preproduction\PreproductionProject\Temp\bin\Debug\System.Security.Cryptography.Encoding.dll
-C:\Users\430575\Desktop\AllenGit\Preproduction\PreproductionProject\Temp\bin\Debug\System.Security.Cryptography.Primitives.dll
-C:\Users\430575\Desktop\AllenGit\Preproduction\PreproductionProject\Temp\bin\Debug\System.Security.Cryptography.X509Certificates.dll
-C:\Users\430575\Desktop\AllenGit\Preproduction\PreproductionProject\Temp\bin\Debug\System.Security.Principal.dll
-C:\Users\430575\Desktop\AllenGit\Preproduction\PreproductionProject\Temp\bin\Debug\System.Security.SecureString.dll
-C:\Users\430575\Desktop\AllenGit\Preproduction\PreproductionProject\Temp\bin\Debug\System.ServiceModel.Web.dll
-C:\Users\430575\Desktop\AllenGit\Preproduction\PreproductionProject\Temp\bin\Debug\System.Text.Encoding.dll
-C:\Users\430575\Desktop\AllenGit\Preproduction\PreproductionProject\Temp\bin\Debug\System.Text.Encoding.Extensions.dll
-C:\Users\430575\Desktop\AllenGit\Preproduction\PreproductionProject\Temp\bin\Debug\System.Text.RegularExpressions.dll
-C:\Users\430575\Desktop\AllenGit\Preproduction\PreproductionProject\Temp\bin\Debug\System.Threading.dll
-C:\Users\430575\Desktop\AllenGit\Preproduction\PreproductionProject\Temp\bin\Debug\System.Threading.Overlapped.dll
-C:\Users\430575\Desktop\AllenGit\Preproduction\PreproductionProject\Temp\bin\Debug\System.Threading.Tasks.dll
-C:\Users\430575\Desktop\AllenGit\Preproduction\PreproductionProject\Temp\bin\Debug\System.Threading.Tasks.Parallel.dll
-C:\Users\430575\Desktop\AllenGit\Preproduction\PreproductionProject\Temp\bin\Debug\System.Threading.Thread.dll
-C:\Users\430575\Desktop\AllenGit\Preproduction\PreproductionProject\Temp\bin\Debug\System.Threading.ThreadPool.dll
-C:\Users\430575\Desktop\AllenGit\Preproduction\PreproductionProject\Temp\bin\Debug\System.Threading.Timer.dll
-C:\Users\430575\Desktop\AllenGit\Preproduction\PreproductionProject\Temp\bin\Debug\System.Transactions.dll
-C:\Users\430575\Desktop\AllenGit\Preproduction\PreproductionProject\Temp\bin\Debug\System.ValueTuple.dll
-C:\Users\430575\Desktop\AllenGit\Preproduction\PreproductionProject\Temp\bin\Debug\System.Web.dll
-C:\Users\430575\Desktop\AllenGit\Preproduction\PreproductionProject\Temp\bin\Debug\System.Windows.dll
-C:\Users\430575\Desktop\AllenGit\Preproduction\PreproductionProject\Temp\bin\Debug\System.Xml.dll
-C:\Users\430575\Desktop\AllenGit\Preproduction\PreproductionProject\Temp\bin\Debug\System.Xml.Linq.dll
-C:\Users\430575\Desktop\AllenGit\Preproduction\PreproductionProject\Temp\bin\Debug\System.Xml.ReaderWriter.dll
-C:\Users\430575\Desktop\AllenGit\Preproduction\PreproductionProject\Temp\bin\Debug\System.Xml.Serialization.dll
-C:\Users\430575\Desktop\AllenGit\Preproduction\PreproductionProject\Temp\bin\Debug\System.Xml.XDocument.dll
-C:\Users\430575\Desktop\AllenGit\Preproduction\PreproductionProject\Temp\bin\Debug\System.Xml.XmlDocument.dll
-C:\Users\430575\Desktop\AllenGit\Preproduction\PreproductionProject\Temp\bin\Debug\System.Xml.XmlSerializer.dll
-C:\Users\430575\Desktop\AllenGit\Preproduction\PreproductionProject\Temp\bin\Debug\System.Xml.XPath.dll
-C:\Users\430575\Desktop\AllenGit\Preproduction\PreproductionProject\Temp\bin\Debug\System.Xml.XPath.XDocument.dll
-C:\Users\430575\Desktop\AllenGit\Preproduction\PreproductionProject\Temp\bin\Debug\Unity.Analytics.DataPrivacy.dll
-C:\Users\430575\Desktop\AllenGit\Preproduction\PreproductionProject\Temp\bin\Debug\Unity.Analytics.Editor.dll
-C:\Users\430575\Desktop\AllenGit\Preproduction\PreproductionProject\Temp\bin\Debug\Unity.Analytics.StandardEvents.dll
-C:\Users\430575\Desktop\AllenGit\Preproduction\PreproductionProject\Temp\bin\Debug\Unity.Analytics.Tracker.dll
-C:\Users\430575\Desktop\AllenGit\Preproduction\PreproductionProject\Temp\bin\Debug\Unity.CollabProxy.Editor.dll
-C:\Users\430575\Desktop\AllenGit\Preproduction\PreproductionProject\Temp\bin\Debug\Unity.Locator.dll
-C:\Users\430575\Desktop\AllenGit\Preproduction\PreproductionProject\Temp\bin\Debug\Unity.TextMeshPro.dll
-C:\Users\430575\Desktop\AllenGit\Preproduction\PreproductionProject\Temp\bin\Debug\Unity.TextMeshPro.Editor.dll
-C:\Users\430575\Desktop\AllenGit\Preproduction\PreproductionProject\Temp\bin\Debug\Unity.Timeline.dll
-C:\Users\430575\Desktop\AllenGit\Preproduction\PreproductionProject\Temp\bin\Debug\Unity.Timeline.Editor.dll
-C:\Users\430575\Desktop\AllenGit\Preproduction\PreproductionProject\Temp\bin\Debug\UnityEditor.dll
-C:\Users\430575\Desktop\AllenGit\Preproduction\PreproductionProject\Temp\bin\Debug\UnityEngine.AccessibilityModule.dll
-C:\Users\430575\Desktop\AllenGit\Preproduction\PreproductionProject\Temp\bin\Debug\UnityEngine.AIModule.dll
-C:\Users\430575\Desktop\AllenGit\Preproduction\PreproductionProject\Temp\bin\Debug\UnityEngine.AnimationModule.dll
-C:\Users\430575\Desktop\AllenGit\Preproduction\PreproductionProject\Temp\bin\Debug\UnityEngine.ARModule.dll
-C:\Users\430575\Desktop\AllenGit\Preproduction\PreproductionProject\Temp\bin\Debug\UnityEngine.AssetBundleModule.dll
-C:\Users\430575\Desktop\AllenGit\Preproduction\PreproductionProject\Temp\bin\Debug\UnityEngine.AudioModule.dll
-C:\Users\430575\Desktop\AllenGit\Preproduction\PreproductionProject\Temp\bin\Debug\UnityEngine.ClothModule.dll
-C:\Users\430575\Desktop\AllenGit\Preproduction\PreproductionProject\Temp\bin\Debug\UnityEngine.ClusterInputModule.dll
-C:\Users\430575\Desktop\AllenGit\Preproduction\PreproductionProject\Temp\bin\Debug\UnityEngine.ClusterRendererModule.dll
-C:\Users\430575\Desktop\AllenGit\Preproduction\PreproductionProject\Temp\bin\Debug\UnityEngine.CoreModule.dll
-C:\Users\430575\Desktop\AllenGit\Preproduction\PreproductionProject\Temp\bin\Debug\UnityEngine.CrashReportingModule.dll
-C:\Users\430575\Desktop\AllenGit\Preproduction\PreproductionProject\Temp\bin\Debug\UnityEngine.DirectorModule.dll
-C:\Users\430575\Desktop\AllenGit\Preproduction\PreproductionProject\Temp\bin\Debug\UnityEngine.dll
-C:\Users\430575\Desktop\AllenGit\Preproduction\PreproductionProject\Temp\bin\Debug\UnityEngine.FileSystemHttpModule.dll
-C:\Users\430575\Desktop\AllenGit\Preproduction\PreproductionProject\Temp\bin\Debug\UnityEngine.GameCenterModule.dll
-C:\Users\430575\Desktop\AllenGit\Preproduction\PreproductionProject\Temp\bin\Debug\UnityEngine.GridModule.dll
-C:\Users\430575\Desktop\AllenGit\Preproduction\PreproductionProject\Temp\bin\Debug\UnityEngine.HotReloadModule.dll
-C:\Users\430575\Desktop\AllenGit\Preproduction\PreproductionProject\Temp\bin\Debug\UnityEngine.ImageConversionModule.dll
-C:\Users\430575\Desktop\AllenGit\Preproduction\PreproductionProject\Temp\bin\Debug\UnityEngine.IMGUIModule.dll
-C:\Users\430575\Desktop\AllenGit\Preproduction\PreproductionProject\Temp\bin\Debug\UnityEngine.InputModule.dll
-C:\Users\430575\Desktop\AllenGit\Preproduction\PreproductionProject\Temp\bin\Debug\UnityEngine.JSONSerializeModule.dll
-C:\Users\430575\Desktop\AllenGit\Preproduction\PreproductionProject\Temp\bin\Debug\UnityEngine.LocalizationModule.dll
-C:\Users\430575\Desktop\AllenGit\Preproduction\PreproductionProject\Temp\bin\Debug\UnityEngine.ParticleSystemModule.dll
-C:\Users\430575\Desktop\AllenGit\Preproduction\PreproductionProject\Temp\bin\Debug\UnityEngine.PerformanceReportingModule.dll
-C:\Users\430575\Desktop\AllenGit\Preproduction\PreproductionProject\Temp\bin\Debug\UnityEngine.Physics2DModule.dll
-C:\Users\430575\Desktop\AllenGit\Preproduction\PreproductionProject\Temp\bin\Debug\UnityEngine.PhysicsModule.dll
-C:\Users\430575\Desktop\AllenGit\Preproduction\PreproductionProject\Temp\bin\Debug\UnityEngine.ProfilerModule.dll
-C:\Users\430575\Desktop\AllenGit\Preproduction\PreproductionProject\Temp\bin\Debug\UnityEngine.ScreenCaptureModule.dll
-C:\Users\430575\Desktop\AllenGit\Preproduction\PreproductionProject\Temp\bin\Debug\UnityEngine.SharedInternalsModule.dll
-C:\Users\430575\Desktop\AllenGit\Preproduction\PreproductionProject\Temp\bin\Debug\UnityEngine.SpriteMaskModule.dll
-C:\Users\430575\Desktop\AllenGit\Preproduction\PreproductionProject\Temp\bin\Debug\UnityEngine.SpriteShapeModule.dll
-C:\Users\430575\Desktop\AllenGit\Preproduction\PreproductionProject\Temp\bin\Debug\UnityEngine.StreamingModule.dll
-C:\Users\430575\Desktop\AllenGit\Preproduction\PreproductionProject\Temp\bin\Debug\UnityEngine.StyleSheetsModule.dll
-C:\Users\430575\Desktop\AllenGit\Preproduction\PreproductionProject\Temp\bin\Debug\UnityEngine.SubstanceModule.dll
-C:\Users\430575\Desktop\AllenGit\Preproduction\PreproductionProject\Temp\bin\Debug\UnityEngine.TerrainModule.dll
-C:\Users\430575\Desktop\AllenGit\Preproduction\PreproductionProject\Temp\bin\Debug\UnityEngine.TerrainPhysicsModule.dll
-C:\Users\430575\Desktop\AllenGit\Preproduction\PreproductionProject\Temp\bin\Debug\UnityEngine.TestRunner.dll
-C:\Users\430575\Desktop\AllenGit\Preproduction\PreproductionProject\Temp\bin\Debug\UnityEngine.TextCoreModule.dll
-C:\Users\430575\Desktop\AllenGit\Preproduction\PreproductionProject\Temp\bin\Debug\UnityEngine.TextRenderingModule.dll
-C:\Users\430575\Desktop\AllenGit\Preproduction\PreproductionProject\Temp\bin\Debug\UnityEngine.TilemapModule.dll
-C:\Users\430575\Desktop\AllenGit\Preproduction\PreproductionProject\Temp\bin\Debug\UnityEngine.TLSModule.dll
-C:\Users\430575\Desktop\AllenGit\Preproduction\PreproductionProject\Temp\bin\Debug\UnityEngine.UI.dll
-C:\Users\430575\Desktop\AllenGit\Preproduction\PreproductionProject\Temp\bin\Debug\UnityEngine.UIElementsModule.dll
-C:\Users\430575\Desktop\AllenGit\Preproduction\PreproductionProject\Temp\bin\Debug\UnityEngine.UIModule.dll
-C:\Users\430575\Desktop\AllenGit\Preproduction\PreproductionProject\Temp\bin\Debug\UnityEngine.UmbraModule.dll
-C:\Users\430575\Desktop\AllenGit\Preproduction\PreproductionProject\Temp\bin\Debug\UnityEngine.UNETModule.dll
-C:\Users\430575\Desktop\AllenGit\Preproduction\PreproductionProject\Temp\bin\Debug\UnityEngine.UnityAnalyticsModule.dll
-C:\Users\430575\Desktop\AllenGit\Preproduction\PreproductionProject\Temp\bin\Debug\UnityEngine.UnityConnectModule.dll
-C:\Users\430575\Desktop\AllenGit\Preproduction\PreproductionProject\Temp\bin\Debug\UnityEngine.UnityTestProtocolModule.dll
-C:\Users\430575\Desktop\AllenGit\Preproduction\PreproductionProject\Temp\bin\Debug\UnityEngine.UnityWebRequestAssetBundleModule.dll
-C:\Users\430575\Desktop\AllenGit\Preproduction\PreproductionProject\Temp\bin\Debug\UnityEngine.UnityWebRequestAudioModule.dll
-C:\Users\430575\Desktop\AllenGit\Preproduction\PreproductionProject\Temp\bin\Debug\UnityEngine.UnityWebRequestModule.dll
-C:\Users\430575\Desktop\AllenGit\Preproduction\PreproductionProject\Temp\bin\Debug\UnityEngine.UnityWebRequestTextureModule.dll
-C:\Users\430575\Desktop\AllenGit\Preproduction\PreproductionProject\Temp\bin\Debug\UnityEngine.UnityWebRequestWWWModule.dll
-C:\Users\430575\Desktop\AllenGit\Preproduction\PreproductionProject\Temp\bin\Debug\UnityEngine.VehiclesModule.dll
-C:\Users\430575\Desktop\AllenGit\Preproduction\PreproductionProject\Temp\bin\Debug\UnityEngine.VFXModule.dll
-C:\Users\430575\Desktop\AllenGit\Preproduction\PreproductionProject\Temp\bin\Debug\UnityEngine.VideoModule.dll
-C:\Users\430575\Desktop\AllenGit\Preproduction\PreproductionProject\Temp\bin\Debug\UnityEngine.VRModule.dll
-C:\Users\430575\Desktop\AllenGit\Preproduction\PreproductionProject\Temp\bin\Debug\UnityEngine.WindModule.dll
-C:\Users\430575\Desktop\AllenGit\Preproduction\PreproductionProject\Temp\bin\Debug\UnityEngine.XRModule.dll
-C:\Users\430575\Desktop\AllenGit\Preproduction\PreproductionProject\Temp\bin\Debug\Unity.Cecil.dll
-C:\Users\430575\Desktop\AllenGit\Preproduction\PreproductionProject\Temp\bin\Debug\Unity.SerializationLogic.dll
-C:\Users\430575\Desktop\AllenGit\Preproduction\PreproductionProject\Temp\bin\Debug\Unity.DataContract.dll
-C:\Users\430575\Desktop\AllenGit\Preproduction\PreproductionProject\Temp\bin\Debug\ExCSS.Unity.dll
-C:\Users\430575\Desktop\AllenGit\Preproduction\PreproductionProject\Temp\bin\Debug\Unity.Legacy.NRefactory.dll
-C:\Users\430575\Desktop\AllenGit\Preproduction\PreproductionProject\Temp\bin\Debug\Unity.IvyParser.dll
-C:\Users\430575\Desktop\AllenGit\Preproduction\PreproductionProject\Temp\bin\Debug\Unity.CecilTools.dll
-C:\Users\430575\Desktop\AllenGit\Preproduction\PreproductionProject\Temp\bin\Debug\UnityEngine.xml
-C:\Users\430575\Desktop\AllenGit\Preproduction\PreproductionProject\Temp\bin\Debug\UnityEditor.xml
-C:\Users\430575\Desktop\AllenGit\Preproduction\PreproductionProject\Temp\bin\Debug\UnityEngine.AIModule.xml
-C:\Users\430575\Desktop\AllenGit\Preproduction\PreproductionProject\Temp\bin\Debug\UnityEngine.ARModule.xml
-C:\Users\430575\Desktop\AllenGit\Preproduction\PreproductionProject\Temp\bin\Debug\UnityEngine.AccessibilityModule.xml
-C:\Users\430575\Desktop\AllenGit\Preproduction\PreproductionProject\Temp\bin\Debug\UnityEngine.AnimationModule.xml
-C:\Users\430575\Desktop\AllenGit\Preproduction\PreproductionProject\Temp\bin\Debug\UnityEngine.AssetBundleModule.xml
-C:\Users\430575\Desktop\AllenGit\Preproduction\PreproductionProject\Temp\bin\Debug\UnityEngine.AudioModule.xml
-C:\Users\430575\Desktop\AllenGit\Preproduction\PreproductionProject\Temp\bin\Debug\UnityEngine.ClothModule.xml
-C:\Users\430575\Desktop\AllenGit\Preproduction\PreproductionProject\Temp\bin\Debug\UnityEngine.ClusterInputModule.xml
-C:\Users\430575\Desktop\AllenGit\Preproduction\PreproductionProject\Temp\bin\Debug\UnityEngine.ClusterRendererModule.xml
-C:\Users\430575\Desktop\AllenGit\Preproduction\PreproductionProject\Temp\bin\Debug\UnityEngine.CoreModule.xml
-C:\Users\430575\Desktop\AllenGit\Preproduction\PreproductionProject\Temp\bin\Debug\UnityEngine.CrashReportingModule.xml
-C:\Users\430575\Desktop\AllenGit\Preproduction\PreproductionProject\Temp\bin\Debug\UnityEngine.DirectorModule.xml
-C:\Users\430575\Desktop\AllenGit\Preproduction\PreproductionProject\Temp\bin\Debug\UnityEngine.FileSystemHttpModule.xml
-C:\Users\430575\Desktop\AllenGit\Preproduction\PreproductionProject\Temp\bin\Debug\UnityEngine.GameCenterModule.xml
-C:\Users\430575\Desktop\AllenGit\Preproduction\PreproductionProject\Temp\bin\Debug\UnityEngine.GridModule.xml
-C:\Users\430575\Desktop\AllenGit\Preproduction\PreproductionProject\Temp\bin\Debug\UnityEngine.HotReloadModule.xml
-C:\Users\430575\Desktop\AllenGit\Preproduction\PreproductionProject\Temp\bin\Debug\UnityEngine.IMGUIModule.xml
-C:\Users\430575\Desktop\AllenGit\Preproduction\PreproductionProject\Temp\bin\Debug\UnityEngine.ImageConversionModule.xml
-C:\Users\430575\Desktop\AllenGit\Preproduction\PreproductionProject\Temp\bin\Debug\UnityEngine.InputModule.xml
-C:\Users\430575\Desktop\AllenGit\Preproduction\PreproductionProject\Temp\bin\Debug\UnityEngine.JSONSerializeModule.xml
-C:\Users\430575\Desktop\AllenGit\Preproduction\PreproductionProject\Temp\bin\Debug\UnityEngine.LocalizationModule.xml
-C:\Users\430575\Desktop\AllenGit\Preproduction\PreproductionProject\Temp\bin\Debug\UnityEngine.ParticleSystemModule.xml
-C:\Users\430575\Desktop\AllenGit\Preproduction\PreproductionProject\Temp\bin\Debug\UnityEngine.PerformanceReportingModule.xml
-C:\Users\430575\Desktop\AllenGit\Preproduction\PreproductionProject\Temp\bin\Debug\UnityEngine.PhysicsModule.xml
-C:\Users\430575\Desktop\AllenGit\Preproduction\PreproductionProject\Temp\bin\Debug\UnityEngine.Physics2DModule.xml
-C:\Users\430575\Desktop\AllenGit\Preproduction\PreproductionProject\Temp\bin\Debug\UnityEngine.ProfilerModule.xml
-C:\Users\430575\Desktop\AllenGit\Preproduction\PreproductionProject\Temp\bin\Debug\UnityEngine.ScreenCaptureModule.xml
-C:\Users\430575\Desktop\AllenGit\Preproduction\PreproductionProject\Temp\bin\Debug\UnityEngine.SharedInternalsModule.xml
-C:\Users\430575\Desktop\AllenGit\Preproduction\PreproductionProject\Temp\bin\Debug\UnityEngine.SpriteMaskModule.xml
-C:\Users\430575\Desktop\AllenGit\Preproduction\PreproductionProject\Temp\bin\Debug\UnityEngine.SpriteShapeModule.xml
-C:\Users\430575\Desktop\AllenGit\Preproduction\PreproductionProject\Temp\bin\Debug\UnityEngine.StreamingModule.xml
-C:\Users\430575\Desktop\AllenGit\Preproduction\PreproductionProject\Temp\bin\Debug\UnityEngine.StyleSheetsModule.xml
-C:\Users\430575\Desktop\AllenGit\Preproduction\PreproductionProject\Temp\bin\Debug\UnityEngine.SubstanceModule.xml
-C:\Users\430575\Desktop\AllenGit\Preproduction\PreproductionProject\Temp\bin\Debug\UnityEngine.TLSModule.xml
-C:\Users\430575\Desktop\AllenGit\Preproduction\PreproductionProject\Temp\bin\Debug\UnityEngine.TerrainModule.xml
-C:\Users\430575\Desktop\AllenGit\Preproduction\PreproductionProject\Temp\bin\Debug\UnityEngine.TerrainPhysicsModule.xml
-C:\Users\430575\Desktop\AllenGit\Preproduction\PreproductionProject\Temp\bin\Debug\UnityEngine.TextCoreModule.xml
-C:\Users\430575\Desktop\AllenGit\Preproduction\PreproductionProject\Temp\bin\Debug\UnityEngine.TextRenderingModule.xml
-C:\Users\430575\Desktop\AllenGit\Preproduction\PreproductionProject\Temp\bin\Debug\UnityEngine.TilemapModule.xml
-C:\Users\430575\Desktop\AllenGit\Preproduction\PreproductionProject\Temp\bin\Debug\UnityEngine.UIModule.xml
-C:\Users\430575\Desktop\AllenGit\Preproduction\PreproductionProject\Temp\bin\Debug\UnityEngine.UIElementsModule.xml
-C:\Users\430575\Desktop\AllenGit\Preproduction\PreproductionProject\Temp\bin\Debug\UnityEngine.UNETModule.xml
-C:\Users\430575\Desktop\AllenGit\Preproduction\PreproductionProject\Temp\bin\Debug\UnityEngine.UmbraModule.xml
-C:\Users\430575\Desktop\AllenGit\Preproduction\PreproductionProject\Temp\bin\Debug\UnityEngine.UnityAnalyticsModule.xml
-C:\Users\430575\Desktop\AllenGit\Preproduction\PreproductionProject\Temp\bin\Debug\UnityEngine.UnityConnectModule.xml
-C:\Users\430575\Desktop\AllenGit\Preproduction\PreproductionProject\Temp\bin\Debug\UnityEngine.UnityTestProtocolModule.xml
-C:\Users\430575\Desktop\AllenGit\Preproduction\PreproductionProject\Temp\bin\Debug\UnityEngine.UnityWebRequestModule.xml
-C:\Users\430575\Desktop\AllenGit\Preproduction\PreproductionProject\Temp\bin\Debug\UnityEngine.UnityWebRequestAssetBundleModule.xml
-C:\Users\430575\Desktop\AllenGit\Preproduction\PreproductionProject\Temp\bin\Debug\UnityEngine.UnityWebRequestAudioModule.xml
-C:\Users\430575\Desktop\AllenGit\Preproduction\PreproductionProject\Temp\bin\Debug\UnityEngine.UnityWebRequestTextureModule.xml
-C:\Users\430575\Desktop\AllenGit\Preproduction\PreproductionProject\Temp\bin\Debug\UnityEngine.UnityWebRequestWWWModule.xml
-C:\Users\430575\Desktop\AllenGit\Preproduction\PreproductionProject\Temp\bin\Debug\UnityEngine.VFXModule.xml
-C:\Users\430575\Desktop\AllenGit\Preproduction\PreproductionProject\Temp\bin\Debug\UnityEngine.VRModule.xml
-C:\Users\430575\Desktop\AllenGit\Preproduction\PreproductionProject\Temp\bin\Debug\UnityEngine.VehiclesModule.xml
-C:\Users\430575\Desktop\AllenGit\Preproduction\PreproductionProject\Temp\bin\Debug\UnityEngine.VideoModule.xml
-C:\Users\430575\Desktop\AllenGit\Preproduction\PreproductionProject\Temp\bin\Debug\UnityEngine.WindModule.xml
-C:\Users\430575\Desktop\AllenGit\Preproduction\PreproductionProject\Temp\bin\Debug\UnityEngine.XRModule.xml
-C:\Users\430575\Desktop\AllenGit\Preproduction\PreproductionProject\Temp\bin\Debug\UnityEngine.UI.xml
-C:\Users\430575\Desktop\AllenGit\Preproduction\PreproductionProject\Temp\bin\Debug\UnityEngine.TestRunner.xml
-C:\Users\430575\Desktop\AllenGit\Preproduction\PreproductionProject\Temp\bin\Debug\nunit.framework.xml
-C:\Users\430575\Desktop\AllenGit\Preproduction\PreproductionProject\obj\Debug\Assembly-CSharp-firstpass.csprojAssemblyReference.cache
-C:\Users\430575\Desktop\AllenGit\Preproduction\PreproductionProject\obj\Debug\Assembly-CSharp-firstpass.csproj.CoreCompileInputs.cache
-C:\Users\430575\Desktop\AllenGit\Preproduction\PreproductionProject\obj\Debug\Assembly-CSharp-firstpass.csproj.CopyComplete
-C:\Users\430575\Desktop\AllenGit\Preproduction\PreproductionProject\obj\Debug\Assembly-CSharp-firstpass.dll
-C:\Users\430575\Desktop\AllenGit\Preproduction\PreproductionProject\obj\Debug\Assembly-CSharp-firstpass.pdb
-=======
-D:\MatthewGitStuff\Preproduction\PreproductionProject\Temp\bin\Debug\Assembly-CSharp-firstpass.dll
-D:\MatthewGitStuff\Preproduction\PreproductionProject\Temp\bin\Debug\Assembly-CSharp-firstpass.pdb
-D:\MatthewGitStuff\Preproduction\PreproductionProject\Temp\bin\Debug\Microsoft.Win32.Primitives.dll
-D:\MatthewGitStuff\Preproduction\PreproductionProject\Temp\bin\Debug\mscorlib.dll
-D:\MatthewGitStuff\Preproduction\PreproductionProject\Temp\bin\Debug\netstandard.dll
-D:\MatthewGitStuff\Preproduction\PreproductionProject\Temp\bin\Debug\nunit.framework.dll
-D:\MatthewGitStuff\Preproduction\PreproductionProject\Temp\bin\Debug\System.AppContext.dll
-D:\MatthewGitStuff\Preproduction\PreproductionProject\Temp\bin\Debug\System.Collections.Concurrent.dll
-D:\MatthewGitStuff\Preproduction\PreproductionProject\Temp\bin\Debug\System.Collections.dll
-D:\MatthewGitStuff\Preproduction\PreproductionProject\Temp\bin\Debug\System.Collections.NonGeneric.dll
-D:\MatthewGitStuff\Preproduction\PreproductionProject\Temp\bin\Debug\System.Collections.Specialized.dll
-D:\MatthewGitStuff\Preproduction\PreproductionProject\Temp\bin\Debug\System.ComponentModel.Composition.dll
-D:\MatthewGitStuff\Preproduction\PreproductionProject\Temp\bin\Debug\System.ComponentModel.dll
-D:\MatthewGitStuff\Preproduction\PreproductionProject\Temp\bin\Debug\System.ComponentModel.EventBasedAsync.dll
-D:\MatthewGitStuff\Preproduction\PreproductionProject\Temp\bin\Debug\System.ComponentModel.Primitives.dll
-D:\MatthewGitStuff\Preproduction\PreproductionProject\Temp\bin\Debug\System.ComponentModel.TypeConverter.dll
-D:\MatthewGitStuff\Preproduction\PreproductionProject\Temp\bin\Debug\System.Console.dll
-D:\MatthewGitStuff\Preproduction\PreproductionProject\Temp\bin\Debug\System.Core.dll
-D:\MatthewGitStuff\Preproduction\PreproductionProject\Temp\bin\Debug\System.Data.Common.dll
-D:\MatthewGitStuff\Preproduction\PreproductionProject\Temp\bin\Debug\System.Data.dll
-D:\MatthewGitStuff\Preproduction\PreproductionProject\Temp\bin\Debug\System.Diagnostics.Contracts.dll
-D:\MatthewGitStuff\Preproduction\PreproductionProject\Temp\bin\Debug\System.Diagnostics.Debug.dll
-D:\MatthewGitStuff\Preproduction\PreproductionProject\Temp\bin\Debug\System.Diagnostics.FileVersionInfo.dll
-D:\MatthewGitStuff\Preproduction\PreproductionProject\Temp\bin\Debug\System.Diagnostics.Process.dll
-D:\MatthewGitStuff\Preproduction\PreproductionProject\Temp\bin\Debug\System.Diagnostics.StackTrace.dll
-D:\MatthewGitStuff\Preproduction\PreproductionProject\Temp\bin\Debug\System.Diagnostics.TextWriterTraceListener.dll
-D:\MatthewGitStuff\Preproduction\PreproductionProject\Temp\bin\Debug\System.Diagnostics.Tools.dll
-D:\MatthewGitStuff\Preproduction\PreproductionProject\Temp\bin\Debug\System.Diagnostics.TraceSource.dll
-D:\MatthewGitStuff\Preproduction\PreproductionProject\Temp\bin\Debug\System.Diagnostics.Tracing.dll
-D:\MatthewGitStuff\Preproduction\PreproductionProject\Temp\bin\Debug\System.dll
-D:\MatthewGitStuff\Preproduction\PreproductionProject\Temp\bin\Debug\System.Drawing.dll
-D:\MatthewGitStuff\Preproduction\PreproductionProject\Temp\bin\Debug\System.Drawing.Primitives.dll
-D:\MatthewGitStuff\Preproduction\PreproductionProject\Temp\bin\Debug\System.Dynamic.Runtime.dll
-D:\MatthewGitStuff\Preproduction\PreproductionProject\Temp\bin\Debug\System.Globalization.Calendars.dll
-D:\MatthewGitStuff\Preproduction\PreproductionProject\Temp\bin\Debug\System.Globalization.dll
-D:\MatthewGitStuff\Preproduction\PreproductionProject\Temp\bin\Debug\System.Globalization.Extensions.dll
-D:\MatthewGitStuff\Preproduction\PreproductionProject\Temp\bin\Debug\System.IO.Compression.dll
-D:\MatthewGitStuff\Preproduction\PreproductionProject\Temp\bin\Debug\System.IO.Compression.FileSystem.dll
-D:\MatthewGitStuff\Preproduction\PreproductionProject\Temp\bin\Debug\System.IO.Compression.ZipFile.dll
-D:\MatthewGitStuff\Preproduction\PreproductionProject\Temp\bin\Debug\System.IO.dll
-D:\MatthewGitStuff\Preproduction\PreproductionProject\Temp\bin\Debug\System.IO.FileSystem.dll
-D:\MatthewGitStuff\Preproduction\PreproductionProject\Temp\bin\Debug\System.IO.FileSystem.DriveInfo.dll
-D:\MatthewGitStuff\Preproduction\PreproductionProject\Temp\bin\Debug\System.IO.FileSystem.Primitives.dll
-D:\MatthewGitStuff\Preproduction\PreproductionProject\Temp\bin\Debug\System.IO.FileSystem.Watcher.dll
-D:\MatthewGitStuff\Preproduction\PreproductionProject\Temp\bin\Debug\System.IO.IsolatedStorage.dll
-D:\MatthewGitStuff\Preproduction\PreproductionProject\Temp\bin\Debug\System.IO.MemoryMappedFiles.dll
-D:\MatthewGitStuff\Preproduction\PreproductionProject\Temp\bin\Debug\System.IO.Pipes.dll
-D:\MatthewGitStuff\Preproduction\PreproductionProject\Temp\bin\Debug\System.IO.UnmanagedMemoryStream.dll
-D:\MatthewGitStuff\Preproduction\PreproductionProject\Temp\bin\Debug\System.Linq.dll
-D:\MatthewGitStuff\Preproduction\PreproductionProject\Temp\bin\Debug\System.Linq.Expressions.dll
-D:\MatthewGitStuff\Preproduction\PreproductionProject\Temp\bin\Debug\System.Linq.Parallel.dll
-D:\MatthewGitStuff\Preproduction\PreproductionProject\Temp\bin\Debug\System.Linq.Queryable.dll
-D:\MatthewGitStuff\Preproduction\PreproductionProject\Temp\bin\Debug\System.Net.dll
-D:\MatthewGitStuff\Preproduction\PreproductionProject\Temp\bin\Debug\System.Net.Http.dll
-D:\MatthewGitStuff\Preproduction\PreproductionProject\Temp\bin\Debug\System.Net.NameResolution.dll
-D:\MatthewGitStuff\Preproduction\PreproductionProject\Temp\bin\Debug\System.Net.NetworkInformation.dll
-D:\MatthewGitStuff\Preproduction\PreproductionProject\Temp\bin\Debug\System.Net.Ping.dll
-D:\MatthewGitStuff\Preproduction\PreproductionProject\Temp\bin\Debug\System.Net.Primitives.dll
-D:\MatthewGitStuff\Preproduction\PreproductionProject\Temp\bin\Debug\System.Net.Requests.dll
-D:\MatthewGitStuff\Preproduction\PreproductionProject\Temp\bin\Debug\System.Net.Security.dll
-D:\MatthewGitStuff\Preproduction\PreproductionProject\Temp\bin\Debug\System.Net.Sockets.dll
-D:\MatthewGitStuff\Preproduction\PreproductionProject\Temp\bin\Debug\System.Net.WebHeaderCollection.dll
-D:\MatthewGitStuff\Preproduction\PreproductionProject\Temp\bin\Debug\System.Net.WebSockets.Client.dll
-D:\MatthewGitStuff\Preproduction\PreproductionProject\Temp\bin\Debug\System.Net.WebSockets.dll
-D:\MatthewGitStuff\Preproduction\PreproductionProject\Temp\bin\Debug\System.Numerics.dll
-D:\MatthewGitStuff\Preproduction\PreproductionProject\Temp\bin\Debug\System.Numerics.Vectors.dll
-D:\MatthewGitStuff\Preproduction\PreproductionProject\Temp\bin\Debug\System.ObjectModel.dll
-D:\MatthewGitStuff\Preproduction\PreproductionProject\Temp\bin\Debug\System.Reflection.dll
-D:\MatthewGitStuff\Preproduction\PreproductionProject\Temp\bin\Debug\System.Reflection.Extensions.dll
-D:\MatthewGitStuff\Preproduction\PreproductionProject\Temp\bin\Debug\System.Reflection.Primitives.dll
-D:\MatthewGitStuff\Preproduction\PreproductionProject\Temp\bin\Debug\System.Resources.Reader.dll
-D:\MatthewGitStuff\Preproduction\PreproductionProject\Temp\bin\Debug\System.Resources.ResourceManager.dll
-D:\MatthewGitStuff\Preproduction\PreproductionProject\Temp\bin\Debug\System.Resources.Writer.dll
-D:\MatthewGitStuff\Preproduction\PreproductionProject\Temp\bin\Debug\System.Runtime.CompilerServices.VisualC.dll
-D:\MatthewGitStuff\Preproduction\PreproductionProject\Temp\bin\Debug\System.Runtime.dll
-D:\MatthewGitStuff\Preproduction\PreproductionProject\Temp\bin\Debug\System.Runtime.Extensions.dll
-D:\MatthewGitStuff\Preproduction\PreproductionProject\Temp\bin\Debug\System.Runtime.Handles.dll
-D:\MatthewGitStuff\Preproduction\PreproductionProject\Temp\bin\Debug\System.Runtime.InteropServices.dll
-D:\MatthewGitStuff\Preproduction\PreproductionProject\Temp\bin\Debug\System.Runtime.InteropServices.RuntimeInformation.dll
-D:\MatthewGitStuff\Preproduction\PreproductionProject\Temp\bin\Debug\System.Runtime.InteropServices.WindowsRuntime.dll
-D:\MatthewGitStuff\Preproduction\PreproductionProject\Temp\bin\Debug\System.Runtime.Numerics.dll
-D:\MatthewGitStuff\Preproduction\PreproductionProject\Temp\bin\Debug\System.Runtime.Serialization.dll
-D:\MatthewGitStuff\Preproduction\PreproductionProject\Temp\bin\Debug\System.Runtime.Serialization.Formatters.dll
-D:\MatthewGitStuff\Preproduction\PreproductionProject\Temp\bin\Debug\System.Runtime.Serialization.Json.dll
-D:\MatthewGitStuff\Preproduction\PreproductionProject\Temp\bin\Debug\System.Runtime.Serialization.Primitives.dll
-D:\MatthewGitStuff\Preproduction\PreproductionProject\Temp\bin\Debug\System.Runtime.Serialization.Xml.dll
-D:\MatthewGitStuff\Preproduction\PreproductionProject\Temp\bin\Debug\System.Security.Claims.dll
-D:\MatthewGitStuff\Preproduction\PreproductionProject\Temp\bin\Debug\System.Security.Cryptography.Algorithms.dll
-D:\MatthewGitStuff\Preproduction\PreproductionProject\Temp\bin\Debug\System.Security.Cryptography.Csp.dll
-D:\MatthewGitStuff\Preproduction\PreproductionProject\Temp\bin\Debug\System.Security.Cryptography.Encoding.dll
-D:\MatthewGitStuff\Preproduction\PreproductionProject\Temp\bin\Debug\System.Security.Cryptography.Primitives.dll
-D:\MatthewGitStuff\Preproduction\PreproductionProject\Temp\bin\Debug\System.Security.Cryptography.X509Certificates.dll
-D:\MatthewGitStuff\Preproduction\PreproductionProject\Temp\bin\Debug\System.Security.Principal.dll
-D:\MatthewGitStuff\Preproduction\PreproductionProject\Temp\bin\Debug\System.Security.SecureString.dll
-D:\MatthewGitStuff\Preproduction\PreproductionProject\Temp\bin\Debug\System.ServiceModel.Web.dll
-D:\MatthewGitStuff\Preproduction\PreproductionProject\Temp\bin\Debug\System.Text.Encoding.dll
-D:\MatthewGitStuff\Preproduction\PreproductionProject\Temp\bin\Debug\System.Text.Encoding.Extensions.dll
-D:\MatthewGitStuff\Preproduction\PreproductionProject\Temp\bin\Debug\System.Text.RegularExpressions.dll
-D:\MatthewGitStuff\Preproduction\PreproductionProject\Temp\bin\Debug\System.Threading.dll
-D:\MatthewGitStuff\Preproduction\PreproductionProject\Temp\bin\Debug\System.Threading.Overlapped.dll
-D:\MatthewGitStuff\Preproduction\PreproductionProject\Temp\bin\Debug\System.Threading.Tasks.dll
-D:\MatthewGitStuff\Preproduction\PreproductionProject\Temp\bin\Debug\System.Threading.Tasks.Parallel.dll
-D:\MatthewGitStuff\Preproduction\PreproductionProject\Temp\bin\Debug\System.Threading.Thread.dll
-D:\MatthewGitStuff\Preproduction\PreproductionProject\Temp\bin\Debug\System.Threading.ThreadPool.dll
-D:\MatthewGitStuff\Preproduction\PreproductionProject\Temp\bin\Debug\System.Threading.Timer.dll
-D:\MatthewGitStuff\Preproduction\PreproductionProject\Temp\bin\Debug\System.Transactions.dll
-D:\MatthewGitStuff\Preproduction\PreproductionProject\Temp\bin\Debug\System.ValueTuple.dll
-D:\MatthewGitStuff\Preproduction\PreproductionProject\Temp\bin\Debug\System.Web.dll
-D:\MatthewGitStuff\Preproduction\PreproductionProject\Temp\bin\Debug\System.Windows.dll
-D:\MatthewGitStuff\Preproduction\PreproductionProject\Temp\bin\Debug\System.Xml.dll
-D:\MatthewGitStuff\Preproduction\PreproductionProject\Temp\bin\Debug\System.Xml.Linq.dll
-D:\MatthewGitStuff\Preproduction\PreproductionProject\Temp\bin\Debug\System.Xml.ReaderWriter.dll
-D:\MatthewGitStuff\Preproduction\PreproductionProject\Temp\bin\Debug\System.Xml.Serialization.dll
-D:\MatthewGitStuff\Preproduction\PreproductionProject\Temp\bin\Debug\System.Xml.XDocument.dll
-D:\MatthewGitStuff\Preproduction\PreproductionProject\Temp\bin\Debug\System.Xml.XmlDocument.dll
-D:\MatthewGitStuff\Preproduction\PreproductionProject\Temp\bin\Debug\System.Xml.XmlSerializer.dll
-D:\MatthewGitStuff\Preproduction\PreproductionProject\Temp\bin\Debug\System.Xml.XPath.dll
-D:\MatthewGitStuff\Preproduction\PreproductionProject\Temp\bin\Debug\System.Xml.XPath.XDocument.dll
-D:\MatthewGitStuff\Preproduction\PreproductionProject\Temp\bin\Debug\Unity.Analytics.DataPrivacy.dll
-D:\MatthewGitStuff\Preproduction\PreproductionProject\Temp\bin\Debug\Unity.Analytics.Editor.dll
-D:\MatthewGitStuff\Preproduction\PreproductionProject\Temp\bin\Debug\Unity.Analytics.StandardEvents.dll
-D:\MatthewGitStuff\Preproduction\PreproductionProject\Temp\bin\Debug\Unity.Analytics.Tracker.dll
-D:\MatthewGitStuff\Preproduction\PreproductionProject\Temp\bin\Debug\Unity.CollabProxy.Editor.dll
-D:\MatthewGitStuff\Preproduction\PreproductionProject\Temp\bin\Debug\Unity.Locator.dll
-D:\MatthewGitStuff\Preproduction\PreproductionProject\Temp\bin\Debug\Unity.TextMeshPro.dll
-D:\MatthewGitStuff\Preproduction\PreproductionProject\Temp\bin\Debug\Unity.TextMeshPro.Editor.dll
-D:\MatthewGitStuff\Preproduction\PreproductionProject\Temp\bin\Debug\Unity.Timeline.dll
-D:\MatthewGitStuff\Preproduction\PreproductionProject\Temp\bin\Debug\Unity.Timeline.Editor.dll
-D:\MatthewGitStuff\Preproduction\PreproductionProject\Temp\bin\Debug\UnityEditor.dll
-D:\MatthewGitStuff\Preproduction\PreproductionProject\Temp\bin\Debug\UnityEngine.AccessibilityModule.dll
-D:\MatthewGitStuff\Preproduction\PreproductionProject\Temp\bin\Debug\UnityEngine.AIModule.dll
-D:\MatthewGitStuff\Preproduction\PreproductionProject\Temp\bin\Debug\UnityEngine.AnimationModule.dll
-D:\MatthewGitStuff\Preproduction\PreproductionProject\Temp\bin\Debug\UnityEngine.ARModule.dll
-D:\MatthewGitStuff\Preproduction\PreproductionProject\Temp\bin\Debug\UnityEngine.AssetBundleModule.dll
-D:\MatthewGitStuff\Preproduction\PreproductionProject\Temp\bin\Debug\UnityEngine.AudioModule.dll
-D:\MatthewGitStuff\Preproduction\PreproductionProject\Temp\bin\Debug\UnityEngine.ClothModule.dll
-D:\MatthewGitStuff\Preproduction\PreproductionProject\Temp\bin\Debug\UnityEngine.ClusterInputModule.dll
-D:\MatthewGitStuff\Preproduction\PreproductionProject\Temp\bin\Debug\UnityEngine.ClusterRendererModule.dll
-D:\MatthewGitStuff\Preproduction\PreproductionProject\Temp\bin\Debug\UnityEngine.CoreModule.dll
-D:\MatthewGitStuff\Preproduction\PreproductionProject\Temp\bin\Debug\UnityEngine.CrashReportingModule.dll
-D:\MatthewGitStuff\Preproduction\PreproductionProject\Temp\bin\Debug\UnityEngine.DirectorModule.dll
-D:\MatthewGitStuff\Preproduction\PreproductionProject\Temp\bin\Debug\UnityEngine.dll
-D:\MatthewGitStuff\Preproduction\PreproductionProject\Temp\bin\Debug\UnityEngine.FileSystemHttpModule.dll
-D:\MatthewGitStuff\Preproduction\PreproductionProject\Temp\bin\Debug\UnityEngine.GameCenterModule.dll
-D:\MatthewGitStuff\Preproduction\PreproductionProject\Temp\bin\Debug\UnityEngine.GridModule.dll
-D:\MatthewGitStuff\Preproduction\PreproductionProject\Temp\bin\Debug\UnityEngine.HotReloadModule.dll
-D:\MatthewGitStuff\Preproduction\PreproductionProject\Temp\bin\Debug\UnityEngine.ImageConversionModule.dll
-D:\MatthewGitStuff\Preproduction\PreproductionProject\Temp\bin\Debug\UnityEngine.IMGUIModule.dll
-D:\MatthewGitStuff\Preproduction\PreproductionProject\Temp\bin\Debug\UnityEngine.InputModule.dll
-D:\MatthewGitStuff\Preproduction\PreproductionProject\Temp\bin\Debug\UnityEngine.JSONSerializeModule.dll
-D:\MatthewGitStuff\Preproduction\PreproductionProject\Temp\bin\Debug\UnityEngine.LocalizationModule.dll
-D:\MatthewGitStuff\Preproduction\PreproductionProject\Temp\bin\Debug\UnityEngine.ParticleSystemModule.dll
-D:\MatthewGitStuff\Preproduction\PreproductionProject\Temp\bin\Debug\UnityEngine.PerformanceReportingModule.dll
-D:\MatthewGitStuff\Preproduction\PreproductionProject\Temp\bin\Debug\UnityEngine.Physics2DModule.dll
-D:\MatthewGitStuff\Preproduction\PreproductionProject\Temp\bin\Debug\UnityEngine.PhysicsModule.dll
-D:\MatthewGitStuff\Preproduction\PreproductionProject\Temp\bin\Debug\UnityEngine.ProfilerModule.dll
-D:\MatthewGitStuff\Preproduction\PreproductionProject\Temp\bin\Debug\UnityEngine.ScreenCaptureModule.dll
-D:\MatthewGitStuff\Preproduction\PreproductionProject\Temp\bin\Debug\UnityEngine.SharedInternalsModule.dll
-D:\MatthewGitStuff\Preproduction\PreproductionProject\Temp\bin\Debug\UnityEngine.SpriteMaskModule.dll
-D:\MatthewGitStuff\Preproduction\PreproductionProject\Temp\bin\Debug\UnityEngine.SpriteShapeModule.dll
-D:\MatthewGitStuff\Preproduction\PreproductionProject\Temp\bin\Debug\UnityEngine.StreamingModule.dll
-D:\MatthewGitStuff\Preproduction\PreproductionProject\Temp\bin\Debug\UnityEngine.StyleSheetsModule.dll
-D:\MatthewGitStuff\Preproduction\PreproductionProject\Temp\bin\Debug\UnityEngine.SubstanceModule.dll
-D:\MatthewGitStuff\Preproduction\PreproductionProject\Temp\bin\Debug\UnityEngine.TerrainModule.dll
-D:\MatthewGitStuff\Preproduction\PreproductionProject\Temp\bin\Debug\UnityEngine.TerrainPhysicsModule.dll
-D:\MatthewGitStuff\Preproduction\PreproductionProject\Temp\bin\Debug\UnityEngine.TestRunner.dll
-D:\MatthewGitStuff\Preproduction\PreproductionProject\Temp\bin\Debug\UnityEngine.TextCoreModule.dll
-D:\MatthewGitStuff\Preproduction\PreproductionProject\Temp\bin\Debug\UnityEngine.TextRenderingModule.dll
-D:\MatthewGitStuff\Preproduction\PreproductionProject\Temp\bin\Debug\UnityEngine.TilemapModule.dll
-D:\MatthewGitStuff\Preproduction\PreproductionProject\Temp\bin\Debug\UnityEngine.TLSModule.dll
-D:\MatthewGitStuff\Preproduction\PreproductionProject\Temp\bin\Debug\UnityEngine.UI.dll
-D:\MatthewGitStuff\Preproduction\PreproductionProject\Temp\bin\Debug\UnityEngine.UIElementsModule.dll
-D:\MatthewGitStuff\Preproduction\PreproductionProject\Temp\bin\Debug\UnityEngine.UIModule.dll
-D:\MatthewGitStuff\Preproduction\PreproductionProject\Temp\bin\Debug\UnityEngine.UmbraModule.dll
-D:\MatthewGitStuff\Preproduction\PreproductionProject\Temp\bin\Debug\UnityEngine.UNETModule.dll
-D:\MatthewGitStuff\Preproduction\PreproductionProject\Temp\bin\Debug\UnityEngine.UnityAnalyticsModule.dll
-D:\MatthewGitStuff\Preproduction\PreproductionProject\Temp\bin\Debug\UnityEngine.UnityConnectModule.dll
-D:\MatthewGitStuff\Preproduction\PreproductionProject\Temp\bin\Debug\UnityEngine.UnityTestProtocolModule.dll
-D:\MatthewGitStuff\Preproduction\PreproductionProject\Temp\bin\Debug\UnityEngine.UnityWebRequestAssetBundleModule.dll
-D:\MatthewGitStuff\Preproduction\PreproductionProject\Temp\bin\Debug\UnityEngine.UnityWebRequestAudioModule.dll
-D:\MatthewGitStuff\Preproduction\PreproductionProject\Temp\bin\Debug\UnityEngine.UnityWebRequestModule.dll
-D:\MatthewGitStuff\Preproduction\PreproductionProject\Temp\bin\Debug\UnityEngine.UnityWebRequestTextureModule.dll
-D:\MatthewGitStuff\Preproduction\PreproductionProject\Temp\bin\Debug\UnityEngine.UnityWebRequestWWWModule.dll
-D:\MatthewGitStuff\Preproduction\PreproductionProject\Temp\bin\Debug\UnityEngine.VehiclesModule.dll
-D:\MatthewGitStuff\Preproduction\PreproductionProject\Temp\bin\Debug\UnityEngine.VFXModule.dll
-D:\MatthewGitStuff\Preproduction\PreproductionProject\Temp\bin\Debug\UnityEngine.VideoModule.dll
-D:\MatthewGitStuff\Preproduction\PreproductionProject\Temp\bin\Debug\UnityEngine.VRModule.dll
-D:\MatthewGitStuff\Preproduction\PreproductionProject\Temp\bin\Debug\UnityEngine.WindModule.dll
-D:\MatthewGitStuff\Preproduction\PreproductionProject\Temp\bin\Debug\UnityEngine.XRModule.dll
-D:\MatthewGitStuff\Preproduction\PreproductionProject\Temp\bin\Debug\Unity.Cecil.dll
-D:\MatthewGitStuff\Preproduction\PreproductionProject\Temp\bin\Debug\Unity.SerializationLogic.dll
-D:\MatthewGitStuff\Preproduction\PreproductionProject\Temp\bin\Debug\Unity.DataContract.dll
-D:\MatthewGitStuff\Preproduction\PreproductionProject\Temp\bin\Debug\ExCSS.Unity.dll
-D:\MatthewGitStuff\Preproduction\PreproductionProject\Temp\bin\Debug\Unity.Legacy.NRefactory.dll
-D:\MatthewGitStuff\Preproduction\PreproductionProject\Temp\bin\Debug\Unity.IvyParser.dll
-D:\MatthewGitStuff\Preproduction\PreproductionProject\Temp\bin\Debug\Unity.CecilTools.dll
-D:\MatthewGitStuff\Preproduction\PreproductionProject\Temp\bin\Debug\UnityEngine.xml
-D:\MatthewGitStuff\Preproduction\PreproductionProject\Temp\bin\Debug\UnityEditor.xml
-D:\MatthewGitStuff\Preproduction\PreproductionProject\Temp\bin\Debug\UnityEngine.AIModule.xml
-D:\MatthewGitStuff\Preproduction\PreproductionProject\Temp\bin\Debug\UnityEngine.ARModule.xml
-D:\MatthewGitStuff\Preproduction\PreproductionProject\Temp\bin\Debug\UnityEngine.AccessibilityModule.xml
-D:\MatthewGitStuff\Preproduction\PreproductionProject\Temp\bin\Debug\UnityEngine.AnimationModule.xml
-D:\MatthewGitStuff\Preproduction\PreproductionProject\Temp\bin\Debug\UnityEngine.AssetBundleModule.xml
-D:\MatthewGitStuff\Preproduction\PreproductionProject\Temp\bin\Debug\UnityEngine.AudioModule.xml
-D:\MatthewGitStuff\Preproduction\PreproductionProject\Temp\bin\Debug\UnityEngine.ClothModule.xml
-D:\MatthewGitStuff\Preproduction\PreproductionProject\Temp\bin\Debug\UnityEngine.ClusterInputModule.xml
-D:\MatthewGitStuff\Preproduction\PreproductionProject\Temp\bin\Debug\UnityEngine.ClusterRendererModule.xml
-D:\MatthewGitStuff\Preproduction\PreproductionProject\Temp\bin\Debug\UnityEngine.CoreModule.xml
-D:\MatthewGitStuff\Preproduction\PreproductionProject\Temp\bin\Debug\UnityEngine.CrashReportingModule.xml
-D:\MatthewGitStuff\Preproduction\PreproductionProject\Temp\bin\Debug\UnityEngine.DirectorModule.xml
-D:\MatthewGitStuff\Preproduction\PreproductionProject\Temp\bin\Debug\UnityEngine.FileSystemHttpModule.xml
-D:\MatthewGitStuff\Preproduction\PreproductionProject\Temp\bin\Debug\UnityEngine.GameCenterModule.xml
-D:\MatthewGitStuff\Preproduction\PreproductionProject\Temp\bin\Debug\UnityEngine.GridModule.xml
-D:\MatthewGitStuff\Preproduction\PreproductionProject\Temp\bin\Debug\UnityEngine.HotReloadModule.xml
-D:\MatthewGitStuff\Preproduction\PreproductionProject\Temp\bin\Debug\UnityEngine.IMGUIModule.xml
-D:\MatthewGitStuff\Preproduction\PreproductionProject\Temp\bin\Debug\UnityEngine.ImageConversionModule.xml
-D:\MatthewGitStuff\Preproduction\PreproductionProject\Temp\bin\Debug\UnityEngine.InputModule.xml
-D:\MatthewGitStuff\Preproduction\PreproductionProject\Temp\bin\Debug\UnityEngine.JSONSerializeModule.xml
-D:\MatthewGitStuff\Preproduction\PreproductionProject\Temp\bin\Debug\UnityEngine.LocalizationModule.xml
-D:\MatthewGitStuff\Preproduction\PreproductionProject\Temp\bin\Debug\UnityEngine.ParticleSystemModule.xml
-D:\MatthewGitStuff\Preproduction\PreproductionProject\Temp\bin\Debug\UnityEngine.PerformanceReportingModule.xml
-D:\MatthewGitStuff\Preproduction\PreproductionProject\Temp\bin\Debug\UnityEngine.PhysicsModule.xml
-D:\MatthewGitStuff\Preproduction\PreproductionProject\Temp\bin\Debug\UnityEngine.Physics2DModule.xml
-D:\MatthewGitStuff\Preproduction\PreproductionProject\Temp\bin\Debug\UnityEngine.ProfilerModule.xml
-D:\MatthewGitStuff\Preproduction\PreproductionProject\Temp\bin\Debug\UnityEngine.ScreenCaptureModule.xml
-D:\MatthewGitStuff\Preproduction\PreproductionProject\Temp\bin\Debug\UnityEngine.SharedInternalsModule.xml
-D:\MatthewGitStuff\Preproduction\PreproductionProject\Temp\bin\Debug\UnityEngine.SpriteMaskModule.xml
-D:\MatthewGitStuff\Preproduction\PreproductionProject\Temp\bin\Debug\UnityEngine.SpriteShapeModule.xml
-D:\MatthewGitStuff\Preproduction\PreproductionProject\Temp\bin\Debug\UnityEngine.StreamingModule.xml
-D:\MatthewGitStuff\Preproduction\PreproductionProject\Temp\bin\Debug\UnityEngine.StyleSheetsModule.xml
-D:\MatthewGitStuff\Preproduction\PreproductionProject\Temp\bin\Debug\UnityEngine.SubstanceModule.xml
-D:\MatthewGitStuff\Preproduction\PreproductionProject\Temp\bin\Debug\UnityEngine.TLSModule.xml
-D:\MatthewGitStuff\Preproduction\PreproductionProject\Temp\bin\Debug\UnityEngine.TerrainModule.xml
-D:\MatthewGitStuff\Preproduction\PreproductionProject\Temp\bin\Debug\UnityEngine.TerrainPhysicsModule.xml
-D:\MatthewGitStuff\Preproduction\PreproductionProject\Temp\bin\Debug\UnityEngine.TextCoreModule.xml
-D:\MatthewGitStuff\Preproduction\PreproductionProject\Temp\bin\Debug\UnityEngine.TextRenderingModule.xml
-D:\MatthewGitStuff\Preproduction\PreproductionProject\Temp\bin\Debug\UnityEngine.TilemapModule.xml
-D:\MatthewGitStuff\Preproduction\PreproductionProject\Temp\bin\Debug\UnityEngine.UIModule.xml
-D:\MatthewGitStuff\Preproduction\PreproductionProject\Temp\bin\Debug\UnityEngine.UIElementsModule.xml
-D:\MatthewGitStuff\Preproduction\PreproductionProject\Temp\bin\Debug\UnityEngine.UNETModule.xml
-D:\MatthewGitStuff\Preproduction\PreproductionProject\Temp\bin\Debug\UnityEngine.UmbraModule.xml
-D:\MatthewGitStuff\Preproduction\PreproductionProject\Temp\bin\Debug\UnityEngine.UnityAnalyticsModule.xml
-D:\MatthewGitStuff\Preproduction\PreproductionProject\Temp\bin\Debug\UnityEngine.UnityConnectModule.xml
-D:\MatthewGitStuff\Preproduction\PreproductionProject\Temp\bin\Debug\UnityEngine.UnityTestProtocolModule.xml
-D:\MatthewGitStuff\Preproduction\PreproductionProject\Temp\bin\Debug\UnityEngine.UnityWebRequestModule.xml
-D:\MatthewGitStuff\Preproduction\PreproductionProject\Temp\bin\Debug\UnityEngine.UnityWebRequestAssetBundleModule.xml
-D:\MatthewGitStuff\Preproduction\PreproductionProject\Temp\bin\Debug\UnityEngine.UnityWebRequestAudioModule.xml
-D:\MatthewGitStuff\Preproduction\PreproductionProject\Temp\bin\Debug\UnityEngine.UnityWebRequestTextureModule.xml
-D:\MatthewGitStuff\Preproduction\PreproductionProject\Temp\bin\Debug\UnityEngine.UnityWebRequestWWWModule.xml
-D:\MatthewGitStuff\Preproduction\PreproductionProject\Temp\bin\Debug\UnityEngine.VFXModule.xml
-D:\MatthewGitStuff\Preproduction\PreproductionProject\Temp\bin\Debug\UnityEngine.VRModule.xml
-D:\MatthewGitStuff\Preproduction\PreproductionProject\Temp\bin\Debug\UnityEngine.VehiclesModule.xml
-D:\MatthewGitStuff\Preproduction\PreproductionProject\Temp\bin\Debug\UnityEngine.VideoModule.xml
-D:\MatthewGitStuff\Preproduction\PreproductionProject\Temp\bin\Debug\UnityEngine.WindModule.xml
-D:\MatthewGitStuff\Preproduction\PreproductionProject\Temp\bin\Debug\UnityEngine.XRModule.xml
-D:\MatthewGitStuff\Preproduction\PreproductionProject\Temp\bin\Debug\UnityEngine.UI.xml
-D:\MatthewGitStuff\Preproduction\PreproductionProject\Temp\bin\Debug\UnityEngine.TestRunner.xml
-D:\MatthewGitStuff\Preproduction\PreproductionProject\Temp\bin\Debug\nunit.framework.xml
-D:\MatthewGitStuff\Preproduction\PreproductionProject\obj\Debug\Assembly-CSharp-firstpass.csprojAssemblyReference.cache
-D:\MatthewGitStuff\Preproduction\PreproductionProject\obj\Debug\Assembly-CSharp-firstpass.csproj.CoreCompileInputs.cache
-D:\MatthewGitStuff\Preproduction\PreproductionProject\obj\Debug\Assembly-CSharp-firstpass.csproj.CopyComplete
-D:\MatthewGitStuff\Preproduction\PreproductionProject\obj\Debug\Assembly-CSharp-firstpass.dll
-D:\MatthewGitStuff\Preproduction\PreproductionProject\obj\Debug\Assembly-CSharp-firstpass.pdb
-C:\Users\1810192\Desktop\New folder\Preproduction\PreproductionProject\Temp\bin\Debug\Assembly-CSharp-firstpass.dll
-C:\Users\1810192\Desktop\New folder\Preproduction\PreproductionProject\Temp\bin\Debug\Assembly-CSharp-firstpass.pdb
-C:\Users\1810192\Desktop\New folder\Preproduction\PreproductionProject\Temp\bin\Debug\Microsoft.Win32.Primitives.dll
-C:\Users\1810192\Desktop\New folder\Preproduction\PreproductionProject\Temp\bin\Debug\mscorlib.dll
-C:\Users\1810192\Desktop\New folder\Preproduction\PreproductionProject\Temp\bin\Debug\netstandard.dll
-C:\Users\1810192\Desktop\New folder\Preproduction\PreproductionProject\Temp\bin\Debug\nunit.framework.dll
-C:\Users\1810192\Desktop\New folder\Preproduction\PreproductionProject\Temp\bin\Debug\System.AppContext.dll
-C:\Users\1810192\Desktop\New folder\Preproduction\PreproductionProject\Temp\bin\Debug\System.Collections.Concurrent.dll
-C:\Users\1810192\Desktop\New folder\Preproduction\PreproductionProject\Temp\bin\Debug\System.Collections.dll
-C:\Users\1810192\Desktop\New folder\Preproduction\PreproductionProject\Temp\bin\Debug\System.Collections.NonGeneric.dll
-C:\Users\1810192\Desktop\New folder\Preproduction\PreproductionProject\Temp\bin\Debug\System.Collections.Specialized.dll
-C:\Users\1810192\Desktop\New folder\Preproduction\PreproductionProject\Temp\bin\Debug\System.ComponentModel.Composition.dll
-C:\Users\1810192\Desktop\New folder\Preproduction\PreproductionProject\Temp\bin\Debug\System.ComponentModel.dll
-C:\Users\1810192\Desktop\New folder\Preproduction\PreproductionProject\Temp\bin\Debug\System.ComponentModel.EventBasedAsync.dll
-C:\Users\1810192\Desktop\New folder\Preproduction\PreproductionProject\Temp\bin\Debug\System.ComponentModel.Primitives.dll
-C:\Users\1810192\Desktop\New folder\Preproduction\PreproductionProject\Temp\bin\Debug\System.ComponentModel.TypeConverter.dll
-C:\Users\1810192\Desktop\New folder\Preproduction\PreproductionProject\Temp\bin\Debug\System.Console.dll
-C:\Users\1810192\Desktop\New folder\Preproduction\PreproductionProject\Temp\bin\Debug\System.Core.dll
-C:\Users\1810192\Desktop\New folder\Preproduction\PreproductionProject\Temp\bin\Debug\System.Data.Common.dll
-C:\Users\1810192\Desktop\New folder\Preproduction\PreproductionProject\Temp\bin\Debug\System.Data.dll
-C:\Users\1810192\Desktop\New folder\Preproduction\PreproductionProject\Temp\bin\Debug\System.Diagnostics.Contracts.dll
-C:\Users\1810192\Desktop\New folder\Preproduction\PreproductionProject\Temp\bin\Debug\System.Diagnostics.Debug.dll
-C:\Users\1810192\Desktop\New folder\Preproduction\PreproductionProject\Temp\bin\Debug\System.Diagnostics.FileVersionInfo.dll
-C:\Users\1810192\Desktop\New folder\Preproduction\PreproductionProject\Temp\bin\Debug\System.Diagnostics.Process.dll
-C:\Users\1810192\Desktop\New folder\Preproduction\PreproductionProject\Temp\bin\Debug\System.Diagnostics.StackTrace.dll
-C:\Users\1810192\Desktop\New folder\Preproduction\PreproductionProject\Temp\bin\Debug\System.Diagnostics.TextWriterTraceListener.dll
-C:\Users\1810192\Desktop\New folder\Preproduction\PreproductionProject\Temp\bin\Debug\System.Diagnostics.Tools.dll
-C:\Users\1810192\Desktop\New folder\Preproduction\PreproductionProject\Temp\bin\Debug\System.Diagnostics.TraceSource.dll
-C:\Users\1810192\Desktop\New folder\Preproduction\PreproductionProject\Temp\bin\Debug\System.Diagnostics.Tracing.dll
-C:\Users\1810192\Desktop\New folder\Preproduction\PreproductionProject\Temp\bin\Debug\System.dll
-C:\Users\1810192\Desktop\New folder\Preproduction\PreproductionProject\Temp\bin\Debug\System.Drawing.dll
-C:\Users\1810192\Desktop\New folder\Preproduction\PreproductionProject\Temp\bin\Debug\System.Drawing.Primitives.dll
-C:\Users\1810192\Desktop\New folder\Preproduction\PreproductionProject\Temp\bin\Debug\System.Dynamic.Runtime.dll
-C:\Users\1810192\Desktop\New folder\Preproduction\PreproductionProject\Temp\bin\Debug\System.Globalization.Calendars.dll
-C:\Users\1810192\Desktop\New folder\Preproduction\PreproductionProject\Temp\bin\Debug\System.Globalization.dll
-C:\Users\1810192\Desktop\New folder\Preproduction\PreproductionProject\Temp\bin\Debug\System.Globalization.Extensions.dll
-C:\Users\1810192\Desktop\New folder\Preproduction\PreproductionProject\Temp\bin\Debug\System.IO.Compression.dll
-C:\Users\1810192\Desktop\New folder\Preproduction\PreproductionProject\Temp\bin\Debug\System.IO.Compression.FileSystem.dll
-C:\Users\1810192\Desktop\New folder\Preproduction\PreproductionProject\Temp\bin\Debug\System.IO.Compression.ZipFile.dll
-C:\Users\1810192\Desktop\New folder\Preproduction\PreproductionProject\Temp\bin\Debug\System.IO.dll
-C:\Users\1810192\Desktop\New folder\Preproduction\PreproductionProject\Temp\bin\Debug\System.IO.FileSystem.dll
-C:\Users\1810192\Desktop\New folder\Preproduction\PreproductionProject\Temp\bin\Debug\System.IO.FileSystem.DriveInfo.dll
-C:\Users\1810192\Desktop\New folder\Preproduction\PreproductionProject\Temp\bin\Debug\System.IO.FileSystem.Primitives.dll
-C:\Users\1810192\Desktop\New folder\Preproduction\PreproductionProject\Temp\bin\Debug\System.IO.FileSystem.Watcher.dll
-C:\Users\1810192\Desktop\New folder\Preproduction\PreproductionProject\Temp\bin\Debug\System.IO.IsolatedStorage.dll
-C:\Users\1810192\Desktop\New folder\Preproduction\PreproductionProject\Temp\bin\Debug\System.IO.MemoryMappedFiles.dll
-C:\Users\1810192\Desktop\New folder\Preproduction\PreproductionProject\Temp\bin\Debug\System.IO.Pipes.dll
-C:\Users\1810192\Desktop\New folder\Preproduction\PreproductionProject\Temp\bin\Debug\System.IO.UnmanagedMemoryStream.dll
-C:\Users\1810192\Desktop\New folder\Preproduction\PreproductionProject\Temp\bin\Debug\System.Linq.dll
-C:\Users\1810192\Desktop\New folder\Preproduction\PreproductionProject\Temp\bin\Debug\System.Linq.Expressions.dll
-C:\Users\1810192\Desktop\New folder\Preproduction\PreproductionProject\Temp\bin\Debug\System.Linq.Parallel.dll
-C:\Users\1810192\Desktop\New folder\Preproduction\PreproductionProject\Temp\bin\Debug\System.Linq.Queryable.dll
-C:\Users\1810192\Desktop\New folder\Preproduction\PreproductionProject\Temp\bin\Debug\System.Net.dll
-C:\Users\1810192\Desktop\New folder\Preproduction\PreproductionProject\Temp\bin\Debug\System.Net.Http.dll
-C:\Users\1810192\Desktop\New folder\Preproduction\PreproductionProject\Temp\bin\Debug\System.Net.NameResolution.dll
-C:\Users\1810192\Desktop\New folder\Preproduction\PreproductionProject\Temp\bin\Debug\System.Net.NetworkInformation.dll
-C:\Users\1810192\Desktop\New folder\Preproduction\PreproductionProject\Temp\bin\Debug\System.Net.Ping.dll
-C:\Users\1810192\Desktop\New folder\Preproduction\PreproductionProject\Temp\bin\Debug\System.Net.Primitives.dll
-C:\Users\1810192\Desktop\New folder\Preproduction\PreproductionProject\Temp\bin\Debug\System.Net.Requests.dll
-C:\Users\1810192\Desktop\New folder\Preproduction\PreproductionProject\Temp\bin\Debug\System.Net.Security.dll
-C:\Users\1810192\Desktop\New folder\Preproduction\PreproductionProject\Temp\bin\Debug\System.Net.Sockets.dll
-C:\Users\1810192\Desktop\New folder\Preproduction\PreproductionProject\Temp\bin\Debug\System.Net.WebHeaderCollection.dll
-C:\Users\1810192\Desktop\New folder\Preproduction\PreproductionProject\Temp\bin\Debug\System.Net.WebSockets.Client.dll
-C:\Users\1810192\Desktop\New folder\Preproduction\PreproductionProject\Temp\bin\Debug\System.Net.WebSockets.dll
-C:\Users\1810192\Desktop\New folder\Preproduction\PreproductionProject\Temp\bin\Debug\System.Numerics.dll
-C:\Users\1810192\Desktop\New folder\Preproduction\PreproductionProject\Temp\bin\Debug\System.Numerics.Vectors.dll
-C:\Users\1810192\Desktop\New folder\Preproduction\PreproductionProject\Temp\bin\Debug\System.ObjectModel.dll
-C:\Users\1810192\Desktop\New folder\Preproduction\PreproductionProject\Temp\bin\Debug\System.Reflection.dll
-C:\Users\1810192\Desktop\New folder\Preproduction\PreproductionProject\Temp\bin\Debug\System.Reflection.Extensions.dll
-C:\Users\1810192\Desktop\New folder\Preproduction\PreproductionProject\Temp\bin\Debug\System.Reflection.Primitives.dll
-C:\Users\1810192\Desktop\New folder\Preproduction\PreproductionProject\Temp\bin\Debug\System.Resources.Reader.dll
-C:\Users\1810192\Desktop\New folder\Preproduction\PreproductionProject\Temp\bin\Debug\System.Resources.ResourceManager.dll
-C:\Users\1810192\Desktop\New folder\Preproduction\PreproductionProject\Temp\bin\Debug\System.Resources.Writer.dll
-C:\Users\1810192\Desktop\New folder\Preproduction\PreproductionProject\Temp\bin\Debug\System.Runtime.CompilerServices.VisualC.dll
-C:\Users\1810192\Desktop\New folder\Preproduction\PreproductionProject\Temp\bin\Debug\System.Runtime.dll
-C:\Users\1810192\Desktop\New folder\Preproduction\PreproductionProject\Temp\bin\Debug\System.Runtime.Extensions.dll
-C:\Users\1810192\Desktop\New folder\Preproduction\PreproductionProject\Temp\bin\Debug\System.Runtime.Handles.dll
-C:\Users\1810192\Desktop\New folder\Preproduction\PreproductionProject\Temp\bin\Debug\System.Runtime.InteropServices.dll
-C:\Users\1810192\Desktop\New folder\Preproduction\PreproductionProject\Temp\bin\Debug\System.Runtime.InteropServices.RuntimeInformation.dll
-C:\Users\1810192\Desktop\New folder\Preproduction\PreproductionProject\Temp\bin\Debug\System.Runtime.InteropServices.WindowsRuntime.dll
-C:\Users\1810192\Desktop\New folder\Preproduction\PreproductionProject\Temp\bin\Debug\System.Runtime.Numerics.dll
-C:\Users\1810192\Desktop\New folder\Preproduction\PreproductionProject\Temp\bin\Debug\System.Runtime.Serialization.dll
-C:\Users\1810192\Desktop\New folder\Preproduction\PreproductionProject\Temp\bin\Debug\System.Runtime.Serialization.Formatters.dll
-C:\Users\1810192\Desktop\New folder\Preproduction\PreproductionProject\Temp\bin\Debug\System.Runtime.Serialization.Json.dll
-C:\Users\1810192\Desktop\New folder\Preproduction\PreproductionProject\Temp\bin\Debug\System.Runtime.Serialization.Primitives.dll
-C:\Users\1810192\Desktop\New folder\Preproduction\PreproductionProject\Temp\bin\Debug\System.Runtime.Serialization.Xml.dll
-C:\Users\1810192\Desktop\New folder\Preproduction\PreproductionProject\Temp\bin\Debug\System.Security.Claims.dll
-C:\Users\1810192\Desktop\New folder\Preproduction\PreproductionProject\Temp\bin\Debug\System.Security.Cryptography.Algorithms.dll
-C:\Users\1810192\Desktop\New folder\Preproduction\PreproductionProject\Temp\bin\Debug\System.Security.Cryptography.Csp.dll
-C:\Users\1810192\Desktop\New folder\Preproduction\PreproductionProject\Temp\bin\Debug\System.Security.Cryptography.Encoding.dll
-C:\Users\1810192\Desktop\New folder\Preproduction\PreproductionProject\Temp\bin\Debug\System.Security.Cryptography.Primitives.dll
-C:\Users\1810192\Desktop\New folder\Preproduction\PreproductionProject\Temp\bin\Debug\System.Security.Cryptography.X509Certificates.dll
-C:\Users\1810192\Desktop\New folder\Preproduction\PreproductionProject\Temp\bin\Debug\System.Security.Principal.dll
-C:\Users\1810192\Desktop\New folder\Preproduction\PreproductionProject\Temp\bin\Debug\System.Security.SecureString.dll
-C:\Users\1810192\Desktop\New folder\Preproduction\PreproductionProject\Temp\bin\Debug\System.ServiceModel.Web.dll
-C:\Users\1810192\Desktop\New folder\Preproduction\PreproductionProject\Temp\bin\Debug\System.Text.Encoding.dll
-C:\Users\1810192\Desktop\New folder\Preproduction\PreproductionProject\Temp\bin\Debug\System.Text.Encoding.Extensions.dll
-C:\Users\1810192\Desktop\New folder\Preproduction\PreproductionProject\Temp\bin\Debug\System.Text.RegularExpressions.dll
-C:\Users\1810192\Desktop\New folder\Preproduction\PreproductionProject\Temp\bin\Debug\System.Threading.dll
-C:\Users\1810192\Desktop\New folder\Preproduction\PreproductionProject\Temp\bin\Debug\System.Threading.Overlapped.dll
-C:\Users\1810192\Desktop\New folder\Preproduction\PreproductionProject\Temp\bin\Debug\System.Threading.Tasks.dll
-C:\Users\1810192\Desktop\New folder\Preproduction\PreproductionProject\Temp\bin\Debug\System.Threading.Tasks.Parallel.dll
-C:\Users\1810192\Desktop\New folder\Preproduction\PreproductionProject\Temp\bin\Debug\System.Threading.Thread.dll
-C:\Users\1810192\Desktop\New folder\Preproduction\PreproductionProject\Temp\bin\Debug\System.Threading.ThreadPool.dll
-C:\Users\1810192\Desktop\New folder\Preproduction\PreproductionProject\Temp\bin\Debug\System.Threading.Timer.dll
-C:\Users\1810192\Desktop\New folder\Preproduction\PreproductionProject\Temp\bin\Debug\System.Transactions.dll
-C:\Users\1810192\Desktop\New folder\Preproduction\PreproductionProject\Temp\bin\Debug\System.ValueTuple.dll
-C:\Users\1810192\Desktop\New folder\Preproduction\PreproductionProject\Temp\bin\Debug\System.Web.dll
-C:\Users\1810192\Desktop\New folder\Preproduction\PreproductionProject\Temp\bin\Debug\System.Windows.dll
-C:\Users\1810192\Desktop\New folder\Preproduction\PreproductionProject\Temp\bin\Debug\System.Xml.dll
-C:\Users\1810192\Desktop\New folder\Preproduction\PreproductionProject\Temp\bin\Debug\System.Xml.Linq.dll
-C:\Users\1810192\Desktop\New folder\Preproduction\PreproductionProject\Temp\bin\Debug\System.Xml.ReaderWriter.dll
-C:\Users\1810192\Desktop\New folder\Preproduction\PreproductionProject\Temp\bin\Debug\System.Xml.Serialization.dll
-C:\Users\1810192\Desktop\New folder\Preproduction\PreproductionProject\Temp\bin\Debug\System.Xml.XDocument.dll
-C:\Users\1810192\Desktop\New folder\Preproduction\PreproductionProject\Temp\bin\Debug\System.Xml.XmlDocument.dll
-C:\Users\1810192\Desktop\New folder\Preproduction\PreproductionProject\Temp\bin\Debug\System.Xml.XmlSerializer.dll
-C:\Users\1810192\Desktop\New folder\Preproduction\PreproductionProject\Temp\bin\Debug\System.Xml.XPath.dll
-C:\Users\1810192\Desktop\New folder\Preproduction\PreproductionProject\Temp\bin\Debug\System.Xml.XPath.XDocument.dll
-C:\Users\1810192\Desktop\New folder\Preproduction\PreproductionProject\Temp\bin\Debug\Unity.Analytics.DataPrivacy.dll
-C:\Users\1810192\Desktop\New folder\Preproduction\PreproductionProject\Temp\bin\Debug\Unity.Analytics.Editor.dll
-C:\Users\1810192\Desktop\New folder\Preproduction\PreproductionProject\Temp\bin\Debug\Unity.Analytics.StandardEvents.dll
-C:\Users\1810192\Desktop\New folder\Preproduction\PreproductionProject\Temp\bin\Debug\Unity.Analytics.Tracker.dll
-C:\Users\1810192\Desktop\New folder\Preproduction\PreproductionProject\Temp\bin\Debug\Unity.CollabProxy.Editor.dll
-C:\Users\1810192\Desktop\New folder\Preproduction\PreproductionProject\Temp\bin\Debug\Unity.Locator.dll
-C:\Users\1810192\Desktop\New folder\Preproduction\PreproductionProject\Temp\bin\Debug\Unity.TextMeshPro.dll
-C:\Users\1810192\Desktop\New folder\Preproduction\PreproductionProject\Temp\bin\Debug\Unity.TextMeshPro.Editor.dll
-C:\Users\1810192\Desktop\New folder\Preproduction\PreproductionProject\Temp\bin\Debug\Unity.Timeline.dll
-C:\Users\1810192\Desktop\New folder\Preproduction\PreproductionProject\Temp\bin\Debug\Unity.Timeline.Editor.dll
-C:\Users\1810192\Desktop\New folder\Preproduction\PreproductionProject\Temp\bin\Debug\UnityEditor.dll
-C:\Users\1810192\Desktop\New folder\Preproduction\PreproductionProject\Temp\bin\Debug\UnityEngine.AccessibilityModule.dll
-C:\Users\1810192\Desktop\New folder\Preproduction\PreproductionProject\Temp\bin\Debug\UnityEngine.AIModule.dll
-C:\Users\1810192\Desktop\New folder\Preproduction\PreproductionProject\Temp\bin\Debug\UnityEngine.AnimationModule.dll
-C:\Users\1810192\Desktop\New folder\Preproduction\PreproductionProject\Temp\bin\Debug\UnityEngine.ARModule.dll
-C:\Users\1810192\Desktop\New folder\Preproduction\PreproductionProject\Temp\bin\Debug\UnityEngine.AssetBundleModule.dll
-C:\Users\1810192\Desktop\New folder\Preproduction\PreproductionProject\Temp\bin\Debug\UnityEngine.AudioModule.dll
-C:\Users\1810192\Desktop\New folder\Preproduction\PreproductionProject\Temp\bin\Debug\UnityEngine.ClothModule.dll
-C:\Users\1810192\Desktop\New folder\Preproduction\PreproductionProject\Temp\bin\Debug\UnityEngine.ClusterInputModule.dll
-C:\Users\1810192\Desktop\New folder\Preproduction\PreproductionProject\Temp\bin\Debug\UnityEngine.ClusterRendererModule.dll
-C:\Users\1810192\Desktop\New folder\Preproduction\PreproductionProject\Temp\bin\Debug\UnityEngine.CoreModule.dll
-C:\Users\1810192\Desktop\New folder\Preproduction\PreproductionProject\Temp\bin\Debug\UnityEngine.CrashReportingModule.dll
-C:\Users\1810192\Desktop\New folder\Preproduction\PreproductionProject\Temp\bin\Debug\UnityEngine.DirectorModule.dll
-C:\Users\1810192\Desktop\New folder\Preproduction\PreproductionProject\Temp\bin\Debug\UnityEngine.dll
-C:\Users\1810192\Desktop\New folder\Preproduction\PreproductionProject\Temp\bin\Debug\UnityEngine.FileSystemHttpModule.dll
-C:\Users\1810192\Desktop\New folder\Preproduction\PreproductionProject\Temp\bin\Debug\UnityEngine.GameCenterModule.dll
-C:\Users\1810192\Desktop\New folder\Preproduction\PreproductionProject\Temp\bin\Debug\UnityEngine.GridModule.dll
-C:\Users\1810192\Desktop\New folder\Preproduction\PreproductionProject\Temp\bin\Debug\UnityEngine.HotReloadModule.dll
-C:\Users\1810192\Desktop\New folder\Preproduction\PreproductionProject\Temp\bin\Debug\UnityEngine.ImageConversionModule.dll
-C:\Users\1810192\Desktop\New folder\Preproduction\PreproductionProject\Temp\bin\Debug\UnityEngine.IMGUIModule.dll
-C:\Users\1810192\Desktop\New folder\Preproduction\PreproductionProject\Temp\bin\Debug\UnityEngine.InputModule.dll
-C:\Users\1810192\Desktop\New folder\Preproduction\PreproductionProject\Temp\bin\Debug\UnityEngine.JSONSerializeModule.dll
-C:\Users\1810192\Desktop\New folder\Preproduction\PreproductionProject\Temp\bin\Debug\UnityEngine.LocalizationModule.dll
-C:\Users\1810192\Desktop\New folder\Preproduction\PreproductionProject\Temp\bin\Debug\UnityEngine.ParticleSystemModule.dll
-C:\Users\1810192\Desktop\New folder\Preproduction\PreproductionProject\Temp\bin\Debug\UnityEngine.PerformanceReportingModule.dll
-C:\Users\1810192\Desktop\New folder\Preproduction\PreproductionProject\Temp\bin\Debug\UnityEngine.Physics2DModule.dll
-C:\Users\1810192\Desktop\New folder\Preproduction\PreproductionProject\Temp\bin\Debug\UnityEngine.PhysicsModule.dll
-C:\Users\1810192\Desktop\New folder\Preproduction\PreproductionProject\Temp\bin\Debug\UnityEngine.ProfilerModule.dll
-C:\Users\1810192\Desktop\New folder\Preproduction\PreproductionProject\Temp\bin\Debug\UnityEngine.ScreenCaptureModule.dll
-C:\Users\1810192\Desktop\New folder\Preproduction\PreproductionProject\Temp\bin\Debug\UnityEngine.SharedInternalsModule.dll
-C:\Users\1810192\Desktop\New folder\Preproduction\PreproductionProject\Temp\bin\Debug\UnityEngine.SpriteMaskModule.dll
-C:\Users\1810192\Desktop\New folder\Preproduction\PreproductionProject\Temp\bin\Debug\UnityEngine.SpriteShapeModule.dll
-C:\Users\1810192\Desktop\New folder\Preproduction\PreproductionProject\Temp\bin\Debug\UnityEngine.StreamingModule.dll
-C:\Users\1810192\Desktop\New folder\Preproduction\PreproductionProject\Temp\bin\Debug\UnityEngine.StyleSheetsModule.dll
-C:\Users\1810192\Desktop\New folder\Preproduction\PreproductionProject\Temp\bin\Debug\UnityEngine.SubstanceModule.dll
-C:\Users\1810192\Desktop\New folder\Preproduction\PreproductionProject\Temp\bin\Debug\UnityEngine.TerrainModule.dll
-C:\Users\1810192\Desktop\New folder\Preproduction\PreproductionProject\Temp\bin\Debug\UnityEngine.TerrainPhysicsModule.dll
-C:\Users\1810192\Desktop\New folder\Preproduction\PreproductionProject\Temp\bin\Debug\UnityEngine.TestRunner.dll
-C:\Users\1810192\Desktop\New folder\Preproduction\PreproductionProject\Temp\bin\Debug\UnityEngine.TextCoreModule.dll
-C:\Users\1810192\Desktop\New folder\Preproduction\PreproductionProject\Temp\bin\Debug\UnityEngine.TextRenderingModule.dll
-C:\Users\1810192\Desktop\New folder\Preproduction\PreproductionProject\Temp\bin\Debug\UnityEngine.TilemapModule.dll
-C:\Users\1810192\Desktop\New folder\Preproduction\PreproductionProject\Temp\bin\Debug\UnityEngine.TLSModule.dll
-C:\Users\1810192\Desktop\New folder\Preproduction\PreproductionProject\Temp\bin\Debug\UnityEngine.UI.dll
-C:\Users\1810192\Desktop\New folder\Preproduction\PreproductionProject\Temp\bin\Debug\UnityEngine.UIElementsModule.dll
-C:\Users\1810192\Desktop\New folder\Preproduction\PreproductionProject\Temp\bin\Debug\UnityEngine.UIModule.dll
-C:\Users\1810192\Desktop\New folder\Preproduction\PreproductionProject\Temp\bin\Debug\UnityEngine.UmbraModule.dll
-C:\Users\1810192\Desktop\New folder\Preproduction\PreproductionProject\Temp\bin\Debug\UnityEngine.UNETModule.dll
-C:\Users\1810192\Desktop\New folder\Preproduction\PreproductionProject\Temp\bin\Debug\UnityEngine.UnityAnalyticsModule.dll
-C:\Users\1810192\Desktop\New folder\Preproduction\PreproductionProject\Temp\bin\Debug\UnityEngine.UnityConnectModule.dll
-C:\Users\1810192\Desktop\New folder\Preproduction\PreproductionProject\Temp\bin\Debug\UnityEngine.UnityTestProtocolModule.dll
-C:\Users\1810192\Desktop\New folder\Preproduction\PreproductionProject\Temp\bin\Debug\UnityEngine.UnityWebRequestAssetBundleModule.dll
-C:\Users\1810192\Desktop\New folder\Preproduction\PreproductionProject\Temp\bin\Debug\UnityEngine.UnityWebRequestAudioModule.dll
-C:\Users\1810192\Desktop\New folder\Preproduction\PreproductionProject\Temp\bin\Debug\UnityEngine.UnityWebRequestModule.dll
-C:\Users\1810192\Desktop\New folder\Preproduction\PreproductionProject\Temp\bin\Debug\UnityEngine.UnityWebRequestTextureModule.dll
-C:\Users\1810192\Desktop\New folder\Preproduction\PreproductionProject\Temp\bin\Debug\UnityEngine.UnityWebRequestWWWModule.dll
-C:\Users\1810192\Desktop\New folder\Preproduction\PreproductionProject\Temp\bin\Debug\UnityEngine.VehiclesModule.dll
-C:\Users\1810192\Desktop\New folder\Preproduction\PreproductionProject\Temp\bin\Debug\UnityEngine.VFXModule.dll
-C:\Users\1810192\Desktop\New folder\Preproduction\PreproductionProject\Temp\bin\Debug\UnityEngine.VideoModule.dll
-C:\Users\1810192\Desktop\New folder\Preproduction\PreproductionProject\Temp\bin\Debug\UnityEngine.VRModule.dll
-C:\Users\1810192\Desktop\New folder\Preproduction\PreproductionProject\Temp\bin\Debug\UnityEngine.WindModule.dll
-C:\Users\1810192\Desktop\New folder\Preproduction\PreproductionProject\Temp\bin\Debug\UnityEngine.XRModule.dll
-C:\Users\1810192\Desktop\New folder\Preproduction\PreproductionProject\Temp\bin\Debug\Unity.Cecil.dll
-C:\Users\1810192\Desktop\New folder\Preproduction\PreproductionProject\Temp\bin\Debug\Unity.SerializationLogic.dll
-C:\Users\1810192\Desktop\New folder\Preproduction\PreproductionProject\Temp\bin\Debug\Unity.DataContract.dll
-C:\Users\1810192\Desktop\New folder\Preproduction\PreproductionProject\Temp\bin\Debug\ExCSS.Unity.dll
-C:\Users\1810192\Desktop\New folder\Preproduction\PreproductionProject\Temp\bin\Debug\Unity.Legacy.NRefactory.dll
-C:\Users\1810192\Desktop\New folder\Preproduction\PreproductionProject\Temp\bin\Debug\Unity.IvyParser.dll
-C:\Users\1810192\Desktop\New folder\Preproduction\PreproductionProject\Temp\bin\Debug\Unity.CecilTools.dll
-C:\Users\1810192\Desktop\New folder\Preproduction\PreproductionProject\Temp\bin\Debug\UnityEngine.xml
-C:\Users\1810192\Desktop\New folder\Preproduction\PreproductionProject\Temp\bin\Debug\UnityEditor.xml
-C:\Users\1810192\Desktop\New folder\Preproduction\PreproductionProject\Temp\bin\Debug\UnityEngine.AIModule.xml
-C:\Users\1810192\Desktop\New folder\Preproduction\PreproductionProject\Temp\bin\Debug\UnityEngine.ARModule.xml
-C:\Users\1810192\Desktop\New folder\Preproduction\PreproductionProject\Temp\bin\Debug\UnityEngine.AccessibilityModule.xml
-C:\Users\1810192\Desktop\New folder\Preproduction\PreproductionProject\Temp\bin\Debug\UnityEngine.AnimationModule.xml
-C:\Users\1810192\Desktop\New folder\Preproduction\PreproductionProject\Temp\bin\Debug\UnityEngine.AssetBundleModule.xml
-C:\Users\1810192\Desktop\New folder\Preproduction\PreproductionProject\Temp\bin\Debug\UnityEngine.AudioModule.xml
-C:\Users\1810192\Desktop\New folder\Preproduction\PreproductionProject\Temp\bin\Debug\UnityEngine.ClothModule.xml
-C:\Users\1810192\Desktop\New folder\Preproduction\PreproductionProject\Temp\bin\Debug\UnityEngine.ClusterInputModule.xml
-C:\Users\1810192\Desktop\New folder\Preproduction\PreproductionProject\Temp\bin\Debug\UnityEngine.ClusterRendererModule.xml
-C:\Users\1810192\Desktop\New folder\Preproduction\PreproductionProject\Temp\bin\Debug\UnityEngine.CoreModule.xml
-C:\Users\1810192\Desktop\New folder\Preproduction\PreproductionProject\Temp\bin\Debug\UnityEngine.CrashReportingModule.xml
-C:\Users\1810192\Desktop\New folder\Preproduction\PreproductionProject\Temp\bin\Debug\UnityEngine.DirectorModule.xml
-C:\Users\1810192\Desktop\New folder\Preproduction\PreproductionProject\Temp\bin\Debug\UnityEngine.FileSystemHttpModule.xml
-C:\Users\1810192\Desktop\New folder\Preproduction\PreproductionProject\Temp\bin\Debug\UnityEngine.GameCenterModule.xml
-C:\Users\1810192\Desktop\New folder\Preproduction\PreproductionProject\Temp\bin\Debug\UnityEngine.GridModule.xml
-C:\Users\1810192\Desktop\New folder\Preproduction\PreproductionProject\Temp\bin\Debug\UnityEngine.HotReloadModule.xml
-C:\Users\1810192\Desktop\New folder\Preproduction\PreproductionProject\Temp\bin\Debug\UnityEngine.IMGUIModule.xml
-C:\Users\1810192\Desktop\New folder\Preproduction\PreproductionProject\Temp\bin\Debug\UnityEngine.ImageConversionModule.xml
-C:\Users\1810192\Desktop\New folder\Preproduction\PreproductionProject\Temp\bin\Debug\UnityEngine.InputModule.xml
-C:\Users\1810192\Desktop\New folder\Preproduction\PreproductionProject\Temp\bin\Debug\UnityEngine.JSONSerializeModule.xml
-C:\Users\1810192\Desktop\New folder\Preproduction\PreproductionProject\Temp\bin\Debug\UnityEngine.LocalizationModule.xml
-C:\Users\1810192\Desktop\New folder\Preproduction\PreproductionProject\Temp\bin\Debug\UnityEngine.ParticleSystemModule.xml
-C:\Users\1810192\Desktop\New folder\Preproduction\PreproductionProject\Temp\bin\Debug\UnityEngine.PerformanceReportingModule.xml
-C:\Users\1810192\Desktop\New folder\Preproduction\PreproductionProject\Temp\bin\Debug\UnityEngine.PhysicsModule.xml
-C:\Users\1810192\Desktop\New folder\Preproduction\PreproductionProject\Temp\bin\Debug\UnityEngine.Physics2DModule.xml
-C:\Users\1810192\Desktop\New folder\Preproduction\PreproductionProject\Temp\bin\Debug\UnityEngine.ProfilerModule.xml
-C:\Users\1810192\Desktop\New folder\Preproduction\PreproductionProject\Temp\bin\Debug\UnityEngine.ScreenCaptureModule.xml
-C:\Users\1810192\Desktop\New folder\Preproduction\PreproductionProject\Temp\bin\Debug\UnityEngine.SharedInternalsModule.xml
-C:\Users\1810192\Desktop\New folder\Preproduction\PreproductionProject\Temp\bin\Debug\UnityEngine.SpriteMaskModule.xml
-C:\Users\1810192\Desktop\New folder\Preproduction\PreproductionProject\Temp\bin\Debug\UnityEngine.SpriteShapeModule.xml
-C:\Users\1810192\Desktop\New folder\Preproduction\PreproductionProject\Temp\bin\Debug\UnityEngine.StreamingModule.xml
-C:\Users\1810192\Desktop\New folder\Preproduction\PreproductionProject\Temp\bin\Debug\UnityEngine.StyleSheetsModule.xml
-C:\Users\1810192\Desktop\New folder\Preproduction\PreproductionProject\Temp\bin\Debug\UnityEngine.SubstanceModule.xml
-C:\Users\1810192\Desktop\New folder\Preproduction\PreproductionProject\Temp\bin\Debug\UnityEngine.TLSModule.xml
-C:\Users\1810192\Desktop\New folder\Preproduction\PreproductionProject\Temp\bin\Debug\UnityEngine.TerrainModule.xml
-C:\Users\1810192\Desktop\New folder\Preproduction\PreproductionProject\Temp\bin\Debug\UnityEngine.TerrainPhysicsModule.xml
-C:\Users\1810192\Desktop\New folder\Preproduction\PreproductionProject\Temp\bin\Debug\UnityEngine.TextCoreModule.xml
-C:\Users\1810192\Desktop\New folder\Preproduction\PreproductionProject\Temp\bin\Debug\UnityEngine.TextRenderingModule.xml
-C:\Users\1810192\Desktop\New folder\Preproduction\PreproductionProject\Temp\bin\Debug\UnityEngine.TilemapModule.xml
-C:\Users\1810192\Desktop\New folder\Preproduction\PreproductionProject\Temp\bin\Debug\UnityEngine.UIModule.xml
-C:\Users\1810192\Desktop\New folder\Preproduction\PreproductionProject\Temp\bin\Debug\UnityEngine.UIElementsModule.xml
-C:\Users\1810192\Desktop\New folder\Preproduction\PreproductionProject\Temp\bin\Debug\UnityEngine.UNETModule.xml
-C:\Users\1810192\Desktop\New folder\Preproduction\PreproductionProject\Temp\bin\Debug\UnityEngine.UmbraModule.xml
-C:\Users\1810192\Desktop\New folder\Preproduction\PreproductionProject\Temp\bin\Debug\UnityEngine.UnityAnalyticsModule.xml
-C:\Users\1810192\Desktop\New folder\Preproduction\PreproductionProject\Temp\bin\Debug\UnityEngine.UnityConnectModule.xml
-C:\Users\1810192\Desktop\New folder\Preproduction\PreproductionProject\Temp\bin\Debug\UnityEngine.UnityTestProtocolModule.xml
-C:\Users\1810192\Desktop\New folder\Preproduction\PreproductionProject\Temp\bin\Debug\UnityEngine.UnityWebRequestModule.xml
-C:\Users\1810192\Desktop\New folder\Preproduction\PreproductionProject\Temp\bin\Debug\UnityEngine.UnityWebRequestAssetBundleModule.xml
-C:\Users\1810192\Desktop\New folder\Preproduction\PreproductionProject\Temp\bin\Debug\UnityEngine.UnityWebRequestAudioModule.xml
-C:\Users\1810192\Desktop\New folder\Preproduction\PreproductionProject\Temp\bin\Debug\UnityEngine.UnityWebRequestTextureModule.xml
-C:\Users\1810192\Desktop\New folder\Preproduction\PreproductionProject\Temp\bin\Debug\UnityEngine.UnityWebRequestWWWModule.xml
-C:\Users\1810192\Desktop\New folder\Preproduction\PreproductionProject\Temp\bin\Debug\UnityEngine.VFXModule.xml
-C:\Users\1810192\Desktop\New folder\Preproduction\PreproductionProject\Temp\bin\Debug\UnityEngine.VRModule.xml
-C:\Users\1810192\Desktop\New folder\Preproduction\PreproductionProject\Temp\bin\Debug\UnityEngine.VehiclesModule.xml
-C:\Users\1810192\Desktop\New folder\Preproduction\PreproductionProject\Temp\bin\Debug\UnityEngine.VideoModule.xml
-C:\Users\1810192\Desktop\New folder\Preproduction\PreproductionProject\Temp\bin\Debug\UnityEngine.WindModule.xml
-C:\Users\1810192\Desktop\New folder\Preproduction\PreproductionProject\Temp\bin\Debug\UnityEngine.XRModule.xml
-C:\Users\1810192\Desktop\New folder\Preproduction\PreproductionProject\Temp\bin\Debug\UnityEngine.UI.xml
-C:\Users\1810192\Desktop\New folder\Preproduction\PreproductionProject\Temp\bin\Debug\UnityEngine.TestRunner.xml
-C:\Users\1810192\Desktop\New folder\Preproduction\PreproductionProject\Temp\bin\Debug\nunit.framework.xml
-C:\Users\1810192\Desktop\New folder\Preproduction\PreproductionProject\obj\Debug\Assembly-CSharp-firstpass.csprojAssemblyReference.cache
-C:\Users\1810192\Desktop\New folder\Preproduction\PreproductionProject\obj\Debug\Assembly-CSharp-firstpass.csproj.CoreCompileInputs.cache
-C:\Users\1810192\Desktop\New folder\Preproduction\PreproductionProject\obj\Debug\Assembly-CSharp-firstpass.csproj.CopyComplete
-C:\Users\1810192\Desktop\New folder\Preproduction\PreproductionProject\obj\Debug\Assembly-CSharp-firstpass.dll
-C:\Users\1810192\Desktop\New folder\Preproduction\PreproductionProject\obj\Debug\Assembly-CSharp-firstpass.pdb
->>>>>>> master
+D:\MatthewStuff\git\Preproduction\PreproductionProject\Temp\bin\Debug\Assembly-CSharp-firstpass.dll
+D:\MatthewStuff\git\Preproduction\PreproductionProject\Temp\bin\Debug\Assembly-CSharp-firstpass.pdb
+D:\MatthewStuff\git\Preproduction\PreproductionProject\Temp\bin\Debug\Microsoft.Win32.Primitives.dll
+D:\MatthewStuff\git\Preproduction\PreproductionProject\Temp\bin\Debug\mscorlib.dll
+D:\MatthewStuff\git\Preproduction\PreproductionProject\Temp\bin\Debug\netstandard.dll
+D:\MatthewStuff\git\Preproduction\PreproductionProject\Temp\bin\Debug\nunit.framework.dll
+D:\MatthewStuff\git\Preproduction\PreproductionProject\Temp\bin\Debug\System.AppContext.dll
+D:\MatthewStuff\git\Preproduction\PreproductionProject\Temp\bin\Debug\System.Collections.Concurrent.dll
+D:\MatthewStuff\git\Preproduction\PreproductionProject\Temp\bin\Debug\System.Collections.dll
+D:\MatthewStuff\git\Preproduction\PreproductionProject\Temp\bin\Debug\System.Collections.NonGeneric.dll
+D:\MatthewStuff\git\Preproduction\PreproductionProject\Temp\bin\Debug\System.Collections.Specialized.dll
+D:\MatthewStuff\git\Preproduction\PreproductionProject\Temp\bin\Debug\System.ComponentModel.Composition.dll
+D:\MatthewStuff\git\Preproduction\PreproductionProject\Temp\bin\Debug\System.ComponentModel.dll
+D:\MatthewStuff\git\Preproduction\PreproductionProject\Temp\bin\Debug\System.ComponentModel.EventBasedAsync.dll
+D:\MatthewStuff\git\Preproduction\PreproductionProject\Temp\bin\Debug\System.ComponentModel.Primitives.dll
+D:\MatthewStuff\git\Preproduction\PreproductionProject\Temp\bin\Debug\System.ComponentModel.TypeConverter.dll
+D:\MatthewStuff\git\Preproduction\PreproductionProject\Temp\bin\Debug\System.Console.dll
+D:\MatthewStuff\git\Preproduction\PreproductionProject\Temp\bin\Debug\System.Core.dll
+D:\MatthewStuff\git\Preproduction\PreproductionProject\Temp\bin\Debug\System.Data.Common.dll
+D:\MatthewStuff\git\Preproduction\PreproductionProject\Temp\bin\Debug\System.Data.dll
+D:\MatthewStuff\git\Preproduction\PreproductionProject\Temp\bin\Debug\System.Diagnostics.Contracts.dll
+D:\MatthewStuff\git\Preproduction\PreproductionProject\Temp\bin\Debug\System.Diagnostics.Debug.dll
+D:\MatthewStuff\git\Preproduction\PreproductionProject\Temp\bin\Debug\System.Diagnostics.FileVersionInfo.dll
+D:\MatthewStuff\git\Preproduction\PreproductionProject\Temp\bin\Debug\System.Diagnostics.Process.dll
+D:\MatthewStuff\git\Preproduction\PreproductionProject\Temp\bin\Debug\System.Diagnostics.StackTrace.dll
+D:\MatthewStuff\git\Preproduction\PreproductionProject\Temp\bin\Debug\System.Diagnostics.TextWriterTraceListener.dll
+D:\MatthewStuff\git\Preproduction\PreproductionProject\Temp\bin\Debug\System.Diagnostics.Tools.dll
+D:\MatthewStuff\git\Preproduction\PreproductionProject\Temp\bin\Debug\System.Diagnostics.TraceSource.dll
+D:\MatthewStuff\git\Preproduction\PreproductionProject\Temp\bin\Debug\System.Diagnostics.Tracing.dll
+D:\MatthewStuff\git\Preproduction\PreproductionProject\Temp\bin\Debug\System.dll
+D:\MatthewStuff\git\Preproduction\PreproductionProject\Temp\bin\Debug\System.Drawing.dll
+D:\MatthewStuff\git\Preproduction\PreproductionProject\Temp\bin\Debug\System.Drawing.Primitives.dll
+D:\MatthewStuff\git\Preproduction\PreproductionProject\Temp\bin\Debug\System.Dynamic.Runtime.dll
+D:\MatthewStuff\git\Preproduction\PreproductionProject\Temp\bin\Debug\System.Globalization.Calendars.dll
+D:\MatthewStuff\git\Preproduction\PreproductionProject\Temp\bin\Debug\System.Globalization.dll
+D:\MatthewStuff\git\Preproduction\PreproductionProject\Temp\bin\Debug\System.Globalization.Extensions.dll
+D:\MatthewStuff\git\Preproduction\PreproductionProject\Temp\bin\Debug\System.IO.Compression.dll
+D:\MatthewStuff\git\Preproduction\PreproductionProject\Temp\bin\Debug\System.IO.Compression.FileSystem.dll
+D:\MatthewStuff\git\Preproduction\PreproductionProject\Temp\bin\Debug\System.IO.Compression.ZipFile.dll
+D:\MatthewStuff\git\Preproduction\PreproductionProject\Temp\bin\Debug\System.IO.dll
+D:\MatthewStuff\git\Preproduction\PreproductionProject\Temp\bin\Debug\System.IO.FileSystem.dll
+D:\MatthewStuff\git\Preproduction\PreproductionProject\Temp\bin\Debug\System.IO.FileSystem.DriveInfo.dll
+D:\MatthewStuff\git\Preproduction\PreproductionProject\Temp\bin\Debug\System.IO.FileSystem.Primitives.dll
+D:\MatthewStuff\git\Preproduction\PreproductionProject\Temp\bin\Debug\System.IO.FileSystem.Watcher.dll
+D:\MatthewStuff\git\Preproduction\PreproductionProject\Temp\bin\Debug\System.IO.IsolatedStorage.dll
+D:\MatthewStuff\git\Preproduction\PreproductionProject\Temp\bin\Debug\System.IO.MemoryMappedFiles.dll
+D:\MatthewStuff\git\Preproduction\PreproductionProject\Temp\bin\Debug\System.IO.Pipes.dll
+D:\MatthewStuff\git\Preproduction\PreproductionProject\Temp\bin\Debug\System.IO.UnmanagedMemoryStream.dll
+D:\MatthewStuff\git\Preproduction\PreproductionProject\Temp\bin\Debug\System.Linq.dll
+D:\MatthewStuff\git\Preproduction\PreproductionProject\Temp\bin\Debug\System.Linq.Expressions.dll
+D:\MatthewStuff\git\Preproduction\PreproductionProject\Temp\bin\Debug\System.Linq.Parallel.dll
+D:\MatthewStuff\git\Preproduction\PreproductionProject\Temp\bin\Debug\System.Linq.Queryable.dll
+D:\MatthewStuff\git\Preproduction\PreproductionProject\Temp\bin\Debug\System.Net.dll
+D:\MatthewStuff\git\Preproduction\PreproductionProject\Temp\bin\Debug\System.Net.Http.dll
+D:\MatthewStuff\git\Preproduction\PreproductionProject\Temp\bin\Debug\System.Net.NameResolution.dll
+D:\MatthewStuff\git\Preproduction\PreproductionProject\Temp\bin\Debug\System.Net.NetworkInformation.dll
+D:\MatthewStuff\git\Preproduction\PreproductionProject\Temp\bin\Debug\System.Net.Ping.dll
+D:\MatthewStuff\git\Preproduction\PreproductionProject\Temp\bin\Debug\System.Net.Primitives.dll
+D:\MatthewStuff\git\Preproduction\PreproductionProject\Temp\bin\Debug\System.Net.Requests.dll
+D:\MatthewStuff\git\Preproduction\PreproductionProject\Temp\bin\Debug\System.Net.Security.dll
+D:\MatthewStuff\git\Preproduction\PreproductionProject\Temp\bin\Debug\System.Net.Sockets.dll
+D:\MatthewStuff\git\Preproduction\PreproductionProject\Temp\bin\Debug\System.Net.WebHeaderCollection.dll
+D:\MatthewStuff\git\Preproduction\PreproductionProject\Temp\bin\Debug\System.Net.WebSockets.Client.dll
+D:\MatthewStuff\git\Preproduction\PreproductionProject\Temp\bin\Debug\System.Net.WebSockets.dll
+D:\MatthewStuff\git\Preproduction\PreproductionProject\Temp\bin\Debug\System.Numerics.dll
+D:\MatthewStuff\git\Preproduction\PreproductionProject\Temp\bin\Debug\System.Numerics.Vectors.dll
+D:\MatthewStuff\git\Preproduction\PreproductionProject\Temp\bin\Debug\System.ObjectModel.dll
+D:\MatthewStuff\git\Preproduction\PreproductionProject\Temp\bin\Debug\System.Reflection.dll
+D:\MatthewStuff\git\Preproduction\PreproductionProject\Temp\bin\Debug\System.Reflection.Extensions.dll
+D:\MatthewStuff\git\Preproduction\PreproductionProject\Temp\bin\Debug\System.Reflection.Primitives.dll
+D:\MatthewStuff\git\Preproduction\PreproductionProject\Temp\bin\Debug\System.Resources.Reader.dll
+D:\MatthewStuff\git\Preproduction\PreproductionProject\Temp\bin\Debug\System.Resources.ResourceManager.dll
+D:\MatthewStuff\git\Preproduction\PreproductionProject\Temp\bin\Debug\System.Resources.Writer.dll
+D:\MatthewStuff\git\Preproduction\PreproductionProject\Temp\bin\Debug\System.Runtime.CompilerServices.VisualC.dll
+D:\MatthewStuff\git\Preproduction\PreproductionProject\Temp\bin\Debug\System.Runtime.dll
+D:\MatthewStuff\git\Preproduction\PreproductionProject\Temp\bin\Debug\System.Runtime.Extensions.dll
+D:\MatthewStuff\git\Preproduction\PreproductionProject\Temp\bin\Debug\System.Runtime.Handles.dll
+D:\MatthewStuff\git\Preproduction\PreproductionProject\Temp\bin\Debug\System.Runtime.InteropServices.dll
+D:\MatthewStuff\git\Preproduction\PreproductionProject\Temp\bin\Debug\System.Runtime.InteropServices.RuntimeInformation.dll
+D:\MatthewStuff\git\Preproduction\PreproductionProject\Temp\bin\Debug\System.Runtime.InteropServices.WindowsRuntime.dll
+D:\MatthewStuff\git\Preproduction\PreproductionProject\Temp\bin\Debug\System.Runtime.Numerics.dll
+D:\MatthewStuff\git\Preproduction\PreproductionProject\Temp\bin\Debug\System.Runtime.Serialization.dll
+D:\MatthewStuff\git\Preproduction\PreproductionProject\Temp\bin\Debug\System.Runtime.Serialization.Formatters.dll
+D:\MatthewStuff\git\Preproduction\PreproductionProject\Temp\bin\Debug\System.Runtime.Serialization.Json.dll
+D:\MatthewStuff\git\Preproduction\PreproductionProject\Temp\bin\Debug\System.Runtime.Serialization.Primitives.dll
+D:\MatthewStuff\git\Preproduction\PreproductionProject\Temp\bin\Debug\System.Runtime.Serialization.Xml.dll
+D:\MatthewStuff\git\Preproduction\PreproductionProject\Temp\bin\Debug\System.Security.Claims.dll
+D:\MatthewStuff\git\Preproduction\PreproductionProject\Temp\bin\Debug\System.Security.Cryptography.Algorithms.dll
+D:\MatthewStuff\git\Preproduction\PreproductionProject\Temp\bin\Debug\System.Security.Cryptography.Csp.dll
+D:\MatthewStuff\git\Preproduction\PreproductionProject\Temp\bin\Debug\System.Security.Cryptography.Encoding.dll
+D:\MatthewStuff\git\Preproduction\PreproductionProject\Temp\bin\Debug\System.Security.Cryptography.Primitives.dll
+D:\MatthewStuff\git\Preproduction\PreproductionProject\Temp\bin\Debug\System.Security.Cryptography.X509Certificates.dll
+D:\MatthewStuff\git\Preproduction\PreproductionProject\Temp\bin\Debug\System.Security.Principal.dll
+D:\MatthewStuff\git\Preproduction\PreproductionProject\Temp\bin\Debug\System.Security.SecureString.dll
+D:\MatthewStuff\git\Preproduction\PreproductionProject\Temp\bin\Debug\System.ServiceModel.Web.dll
+D:\MatthewStuff\git\Preproduction\PreproductionProject\Temp\bin\Debug\System.Text.Encoding.dll
+D:\MatthewStuff\git\Preproduction\PreproductionProject\Temp\bin\Debug\System.Text.Encoding.Extensions.dll
+D:\MatthewStuff\git\Preproduction\PreproductionProject\Temp\bin\Debug\System.Text.RegularExpressions.dll
+D:\MatthewStuff\git\Preproduction\PreproductionProject\Temp\bin\Debug\System.Threading.dll
+D:\MatthewStuff\git\Preproduction\PreproductionProject\Temp\bin\Debug\System.Threading.Overlapped.dll
+D:\MatthewStuff\git\Preproduction\PreproductionProject\Temp\bin\Debug\System.Threading.Tasks.dll
+D:\MatthewStuff\git\Preproduction\PreproductionProject\Temp\bin\Debug\System.Threading.Tasks.Parallel.dll
+D:\MatthewStuff\git\Preproduction\PreproductionProject\Temp\bin\Debug\System.Threading.Thread.dll
+D:\MatthewStuff\git\Preproduction\PreproductionProject\Temp\bin\Debug\System.Threading.ThreadPool.dll
+D:\MatthewStuff\git\Preproduction\PreproductionProject\Temp\bin\Debug\System.Threading.Timer.dll
+D:\MatthewStuff\git\Preproduction\PreproductionProject\Temp\bin\Debug\System.Transactions.dll
+D:\MatthewStuff\git\Preproduction\PreproductionProject\Temp\bin\Debug\System.ValueTuple.dll
+D:\MatthewStuff\git\Preproduction\PreproductionProject\Temp\bin\Debug\System.Web.dll
+D:\MatthewStuff\git\Preproduction\PreproductionProject\Temp\bin\Debug\System.Windows.dll
+D:\MatthewStuff\git\Preproduction\PreproductionProject\Temp\bin\Debug\System.Xml.dll
+D:\MatthewStuff\git\Preproduction\PreproductionProject\Temp\bin\Debug\System.Xml.Linq.dll
+D:\MatthewStuff\git\Preproduction\PreproductionProject\Temp\bin\Debug\System.Xml.ReaderWriter.dll
+D:\MatthewStuff\git\Preproduction\PreproductionProject\Temp\bin\Debug\System.Xml.Serialization.dll
+D:\MatthewStuff\git\Preproduction\PreproductionProject\Temp\bin\Debug\System.Xml.XDocument.dll
+D:\MatthewStuff\git\Preproduction\PreproductionProject\Temp\bin\Debug\System.Xml.XmlDocument.dll
+D:\MatthewStuff\git\Preproduction\PreproductionProject\Temp\bin\Debug\System.Xml.XmlSerializer.dll
+D:\MatthewStuff\git\Preproduction\PreproductionProject\Temp\bin\Debug\System.Xml.XPath.dll
+D:\MatthewStuff\git\Preproduction\PreproductionProject\Temp\bin\Debug\System.Xml.XPath.XDocument.dll
+D:\MatthewStuff\git\Preproduction\PreproductionProject\Temp\bin\Debug\Unity.Analytics.DataPrivacy.dll
+D:\MatthewStuff\git\Preproduction\PreproductionProject\Temp\bin\Debug\Unity.Analytics.Editor.dll
+D:\MatthewStuff\git\Preproduction\PreproductionProject\Temp\bin\Debug\Unity.Analytics.StandardEvents.dll
+D:\MatthewStuff\git\Preproduction\PreproductionProject\Temp\bin\Debug\Unity.Analytics.Tracker.dll
+D:\MatthewStuff\git\Preproduction\PreproductionProject\Temp\bin\Debug\Unity.CollabProxy.Editor.dll
+D:\MatthewStuff\git\Preproduction\PreproductionProject\Temp\bin\Debug\Unity.Locator.dll
+D:\MatthewStuff\git\Preproduction\PreproductionProject\Temp\bin\Debug\Unity.TextMeshPro.dll
+D:\MatthewStuff\git\Preproduction\PreproductionProject\Temp\bin\Debug\Unity.TextMeshPro.Editor.dll
+D:\MatthewStuff\git\Preproduction\PreproductionProject\Temp\bin\Debug\Unity.Timeline.dll
+D:\MatthewStuff\git\Preproduction\PreproductionProject\Temp\bin\Debug\Unity.Timeline.Editor.dll
+D:\MatthewStuff\git\Preproduction\PreproductionProject\Temp\bin\Debug\UnityEditor.dll
+D:\MatthewStuff\git\Preproduction\PreproductionProject\Temp\bin\Debug\UnityEngine.AccessibilityModule.dll
+D:\MatthewStuff\git\Preproduction\PreproductionProject\Temp\bin\Debug\UnityEngine.AIModule.dll
+D:\MatthewStuff\git\Preproduction\PreproductionProject\Temp\bin\Debug\UnityEngine.AnimationModule.dll
+D:\MatthewStuff\git\Preproduction\PreproductionProject\Temp\bin\Debug\UnityEngine.ARModule.dll
+D:\MatthewStuff\git\Preproduction\PreproductionProject\Temp\bin\Debug\UnityEngine.AssetBundleModule.dll
+D:\MatthewStuff\git\Preproduction\PreproductionProject\Temp\bin\Debug\UnityEngine.AudioModule.dll
+D:\MatthewStuff\git\Preproduction\PreproductionProject\Temp\bin\Debug\UnityEngine.ClothModule.dll
+D:\MatthewStuff\git\Preproduction\PreproductionProject\Temp\bin\Debug\UnityEngine.ClusterInputModule.dll
+D:\MatthewStuff\git\Preproduction\PreproductionProject\Temp\bin\Debug\UnityEngine.ClusterRendererModule.dll
+D:\MatthewStuff\git\Preproduction\PreproductionProject\Temp\bin\Debug\UnityEngine.CoreModule.dll
+D:\MatthewStuff\git\Preproduction\PreproductionProject\Temp\bin\Debug\UnityEngine.CrashReportingModule.dll
+D:\MatthewStuff\git\Preproduction\PreproductionProject\Temp\bin\Debug\UnityEngine.DirectorModule.dll
+D:\MatthewStuff\git\Preproduction\PreproductionProject\Temp\bin\Debug\UnityEngine.dll
+D:\MatthewStuff\git\Preproduction\PreproductionProject\Temp\bin\Debug\UnityEngine.FileSystemHttpModule.dll
+D:\MatthewStuff\git\Preproduction\PreproductionProject\Temp\bin\Debug\UnityEngine.GameCenterModule.dll
+D:\MatthewStuff\git\Preproduction\PreproductionProject\Temp\bin\Debug\UnityEngine.GridModule.dll
+D:\MatthewStuff\git\Preproduction\PreproductionProject\Temp\bin\Debug\UnityEngine.HotReloadModule.dll
+D:\MatthewStuff\git\Preproduction\PreproductionProject\Temp\bin\Debug\UnityEngine.ImageConversionModule.dll
+D:\MatthewStuff\git\Preproduction\PreproductionProject\Temp\bin\Debug\UnityEngine.IMGUIModule.dll
+D:\MatthewStuff\git\Preproduction\PreproductionProject\Temp\bin\Debug\UnityEngine.InputModule.dll
+D:\MatthewStuff\git\Preproduction\PreproductionProject\Temp\bin\Debug\UnityEngine.JSONSerializeModule.dll
+D:\MatthewStuff\git\Preproduction\PreproductionProject\Temp\bin\Debug\UnityEngine.LocalizationModule.dll
+D:\MatthewStuff\git\Preproduction\PreproductionProject\Temp\bin\Debug\UnityEngine.ParticleSystemModule.dll
+D:\MatthewStuff\git\Preproduction\PreproductionProject\Temp\bin\Debug\UnityEngine.PerformanceReportingModule.dll
+D:\MatthewStuff\git\Preproduction\PreproductionProject\Temp\bin\Debug\UnityEngine.Physics2DModule.dll
+D:\MatthewStuff\git\Preproduction\PreproductionProject\Temp\bin\Debug\UnityEngine.PhysicsModule.dll
+D:\MatthewStuff\git\Preproduction\PreproductionProject\Temp\bin\Debug\UnityEngine.ProfilerModule.dll
+D:\MatthewStuff\git\Preproduction\PreproductionProject\Temp\bin\Debug\UnityEngine.ScreenCaptureModule.dll
+D:\MatthewStuff\git\Preproduction\PreproductionProject\Temp\bin\Debug\UnityEngine.SharedInternalsModule.dll
+D:\MatthewStuff\git\Preproduction\PreproductionProject\Temp\bin\Debug\UnityEngine.SpriteMaskModule.dll
+D:\MatthewStuff\git\Preproduction\PreproductionProject\Temp\bin\Debug\UnityEngine.SpriteShapeModule.dll
+D:\MatthewStuff\git\Preproduction\PreproductionProject\Temp\bin\Debug\UnityEngine.StreamingModule.dll
+D:\MatthewStuff\git\Preproduction\PreproductionProject\Temp\bin\Debug\UnityEngine.StyleSheetsModule.dll
+D:\MatthewStuff\git\Preproduction\PreproductionProject\Temp\bin\Debug\UnityEngine.SubstanceModule.dll
+D:\MatthewStuff\git\Preproduction\PreproductionProject\Temp\bin\Debug\UnityEngine.TerrainModule.dll
+D:\MatthewStuff\git\Preproduction\PreproductionProject\Temp\bin\Debug\UnityEngine.TerrainPhysicsModule.dll
+D:\MatthewStuff\git\Preproduction\PreproductionProject\Temp\bin\Debug\UnityEngine.TestRunner.dll
+D:\MatthewStuff\git\Preproduction\PreproductionProject\Temp\bin\Debug\UnityEngine.TextCoreModule.dll
+D:\MatthewStuff\git\Preproduction\PreproductionProject\Temp\bin\Debug\UnityEngine.TextRenderingModule.dll
+D:\MatthewStuff\git\Preproduction\PreproductionProject\Temp\bin\Debug\UnityEngine.TilemapModule.dll
+D:\MatthewStuff\git\Preproduction\PreproductionProject\Temp\bin\Debug\UnityEngine.TLSModule.dll
+D:\MatthewStuff\git\Preproduction\PreproductionProject\Temp\bin\Debug\UnityEngine.UI.dll
+D:\MatthewStuff\git\Preproduction\PreproductionProject\Temp\bin\Debug\UnityEngine.UIElementsModule.dll
+D:\MatthewStuff\git\Preproduction\PreproductionProject\Temp\bin\Debug\UnityEngine.UIModule.dll
+D:\MatthewStuff\git\Preproduction\PreproductionProject\Temp\bin\Debug\UnityEngine.UmbraModule.dll
+D:\MatthewStuff\git\Preproduction\PreproductionProject\Temp\bin\Debug\UnityEngine.UNETModule.dll
+D:\MatthewStuff\git\Preproduction\PreproductionProject\Temp\bin\Debug\UnityEngine.UnityAnalyticsModule.dll
+D:\MatthewStuff\git\Preproduction\PreproductionProject\Temp\bin\Debug\UnityEngine.UnityConnectModule.dll
+D:\MatthewStuff\git\Preproduction\PreproductionProject\Temp\bin\Debug\UnityEngine.UnityTestProtocolModule.dll
+D:\MatthewStuff\git\Preproduction\PreproductionProject\Temp\bin\Debug\UnityEngine.UnityWebRequestAssetBundleModule.dll
+D:\MatthewStuff\git\Preproduction\PreproductionProject\Temp\bin\Debug\UnityEngine.UnityWebRequestAudioModule.dll
+D:\MatthewStuff\git\Preproduction\PreproductionProject\Temp\bin\Debug\UnityEngine.UnityWebRequestModule.dll
+D:\MatthewStuff\git\Preproduction\PreproductionProject\Temp\bin\Debug\UnityEngine.UnityWebRequestTextureModule.dll
+D:\MatthewStuff\git\Preproduction\PreproductionProject\Temp\bin\Debug\UnityEngine.UnityWebRequestWWWModule.dll
+D:\MatthewStuff\git\Preproduction\PreproductionProject\Temp\bin\Debug\UnityEngine.VehiclesModule.dll
+D:\MatthewStuff\git\Preproduction\PreproductionProject\Temp\bin\Debug\UnityEngine.VFXModule.dll
+D:\MatthewStuff\git\Preproduction\PreproductionProject\Temp\bin\Debug\UnityEngine.VideoModule.dll
+D:\MatthewStuff\git\Preproduction\PreproductionProject\Temp\bin\Debug\UnityEngine.VRModule.dll
+D:\MatthewStuff\git\Preproduction\PreproductionProject\Temp\bin\Debug\UnityEngine.WindModule.dll
+D:\MatthewStuff\git\Preproduction\PreproductionProject\Temp\bin\Debug\UnityEngine.XRModule.dll
+D:\MatthewStuff\git\Preproduction\PreproductionProject\Temp\bin\Debug\Unity.Cecil.dll
+D:\MatthewStuff\git\Preproduction\PreproductionProject\Temp\bin\Debug\Unity.SerializationLogic.dll
+D:\MatthewStuff\git\Preproduction\PreproductionProject\Temp\bin\Debug\Unity.DataContract.dll
+D:\MatthewStuff\git\Preproduction\PreproductionProject\Temp\bin\Debug\ExCSS.Unity.dll
+D:\MatthewStuff\git\Preproduction\PreproductionProject\Temp\bin\Debug\Unity.Legacy.NRefactory.dll
+D:\MatthewStuff\git\Preproduction\PreproductionProject\Temp\bin\Debug\Unity.IvyParser.dll
+D:\MatthewStuff\git\Preproduction\PreproductionProject\Temp\bin\Debug\Unity.CecilTools.dll
+D:\MatthewStuff\git\Preproduction\PreproductionProject\Temp\bin\Debug\UnityEngine.xml
+D:\MatthewStuff\git\Preproduction\PreproductionProject\Temp\bin\Debug\UnityEditor.xml
+D:\MatthewStuff\git\Preproduction\PreproductionProject\Temp\bin\Debug\Unity.Timeline.Editor.pdb
+D:\MatthewStuff\git\Preproduction\PreproductionProject\Temp\bin\Debug\Unity.TextMeshPro.Editor.pdb
+D:\MatthewStuff\git\Preproduction\PreproductionProject\Temp\bin\Debug\Unity.Timeline.pdb
+D:\MatthewStuff\git\Preproduction\PreproductionProject\Temp\bin\Debug\Unity.CollabProxy.Editor.pdb
+D:\MatthewStuff\git\Preproduction\PreproductionProject\Temp\bin\Debug\Unity.TextMeshPro.pdb
+D:\MatthewStuff\git\Preproduction\PreproductionProject\Temp\bin\Debug\Unity.Analytics.DataPrivacy.pdb
+D:\MatthewStuff\git\Preproduction\PreproductionProject\Temp\bin\Debug\UnityEngine.AIModule.xml
+D:\MatthewStuff\git\Preproduction\PreproductionProject\Temp\bin\Debug\UnityEngine.ARModule.xml
+D:\MatthewStuff\git\Preproduction\PreproductionProject\Temp\bin\Debug\UnityEngine.AccessibilityModule.xml
+D:\MatthewStuff\git\Preproduction\PreproductionProject\Temp\bin\Debug\UnityEngine.AnimationModule.xml
+D:\MatthewStuff\git\Preproduction\PreproductionProject\Temp\bin\Debug\UnityEngine.AssetBundleModule.xml
+D:\MatthewStuff\git\Preproduction\PreproductionProject\Temp\bin\Debug\UnityEngine.AudioModule.xml
+D:\MatthewStuff\git\Preproduction\PreproductionProject\Temp\bin\Debug\UnityEngine.ClothModule.xml
+D:\MatthewStuff\git\Preproduction\PreproductionProject\Temp\bin\Debug\UnityEngine.ClusterInputModule.xml
+D:\MatthewStuff\git\Preproduction\PreproductionProject\Temp\bin\Debug\UnityEngine.ClusterRendererModule.xml
+D:\MatthewStuff\git\Preproduction\PreproductionProject\Temp\bin\Debug\UnityEngine.CoreModule.xml
+D:\MatthewStuff\git\Preproduction\PreproductionProject\Temp\bin\Debug\UnityEngine.CrashReportingModule.xml
+D:\MatthewStuff\git\Preproduction\PreproductionProject\Temp\bin\Debug\UnityEngine.DirectorModule.xml
+D:\MatthewStuff\git\Preproduction\PreproductionProject\Temp\bin\Debug\UnityEngine.FileSystemHttpModule.xml
+D:\MatthewStuff\git\Preproduction\PreproductionProject\Temp\bin\Debug\UnityEngine.GameCenterModule.xml
+D:\MatthewStuff\git\Preproduction\PreproductionProject\Temp\bin\Debug\UnityEngine.GridModule.xml
+D:\MatthewStuff\git\Preproduction\PreproductionProject\Temp\bin\Debug\UnityEngine.HotReloadModule.xml
+D:\MatthewStuff\git\Preproduction\PreproductionProject\Temp\bin\Debug\UnityEngine.IMGUIModule.xml
+D:\MatthewStuff\git\Preproduction\PreproductionProject\Temp\bin\Debug\UnityEngine.ImageConversionModule.xml
+D:\MatthewStuff\git\Preproduction\PreproductionProject\Temp\bin\Debug\UnityEngine.InputModule.xml
+D:\MatthewStuff\git\Preproduction\PreproductionProject\Temp\bin\Debug\UnityEngine.JSONSerializeModule.xml
+D:\MatthewStuff\git\Preproduction\PreproductionProject\Temp\bin\Debug\UnityEngine.LocalizationModule.xml
+D:\MatthewStuff\git\Preproduction\PreproductionProject\Temp\bin\Debug\UnityEngine.ParticleSystemModule.xml
+D:\MatthewStuff\git\Preproduction\PreproductionProject\Temp\bin\Debug\UnityEngine.PerformanceReportingModule.xml
+D:\MatthewStuff\git\Preproduction\PreproductionProject\Temp\bin\Debug\UnityEngine.PhysicsModule.xml
+D:\MatthewStuff\git\Preproduction\PreproductionProject\Temp\bin\Debug\UnityEngine.Physics2DModule.xml
+D:\MatthewStuff\git\Preproduction\PreproductionProject\Temp\bin\Debug\UnityEngine.ProfilerModule.xml
+D:\MatthewStuff\git\Preproduction\PreproductionProject\Temp\bin\Debug\UnityEngine.ScreenCaptureModule.xml
+D:\MatthewStuff\git\Preproduction\PreproductionProject\Temp\bin\Debug\UnityEngine.SharedInternalsModule.xml
+D:\MatthewStuff\git\Preproduction\PreproductionProject\Temp\bin\Debug\UnityEngine.SpriteMaskModule.xml
+D:\MatthewStuff\git\Preproduction\PreproductionProject\Temp\bin\Debug\UnityEngine.SpriteShapeModule.xml
+D:\MatthewStuff\git\Preproduction\PreproductionProject\Temp\bin\Debug\UnityEngine.StreamingModule.xml
+D:\MatthewStuff\git\Preproduction\PreproductionProject\Temp\bin\Debug\UnityEngine.StyleSheetsModule.xml
+D:\MatthewStuff\git\Preproduction\PreproductionProject\Temp\bin\Debug\UnityEngine.SubstanceModule.xml
+D:\MatthewStuff\git\Preproduction\PreproductionProject\Temp\bin\Debug\UnityEngine.TLSModule.xml
+D:\MatthewStuff\git\Preproduction\PreproductionProject\Temp\bin\Debug\UnityEngine.TerrainModule.xml
+D:\MatthewStuff\git\Preproduction\PreproductionProject\Temp\bin\Debug\UnityEngine.TerrainPhysicsModule.xml
+D:\MatthewStuff\git\Preproduction\PreproductionProject\Temp\bin\Debug\UnityEngine.TextCoreModule.xml
+D:\MatthewStuff\git\Preproduction\PreproductionProject\Temp\bin\Debug\UnityEngine.TextRenderingModule.xml
+D:\MatthewStuff\git\Preproduction\PreproductionProject\Temp\bin\Debug\UnityEngine.TilemapModule.xml
+D:\MatthewStuff\git\Preproduction\PreproductionProject\Temp\bin\Debug\UnityEngine.UIModule.xml
+D:\MatthewStuff\git\Preproduction\PreproductionProject\Temp\bin\Debug\UnityEngine.UIElementsModule.xml
+D:\MatthewStuff\git\Preproduction\PreproductionProject\Temp\bin\Debug\UnityEngine.UNETModule.xml
+D:\MatthewStuff\git\Preproduction\PreproductionProject\Temp\bin\Debug\UnityEngine.UmbraModule.xml
+D:\MatthewStuff\git\Preproduction\PreproductionProject\Temp\bin\Debug\UnityEngine.UnityAnalyticsModule.xml
+D:\MatthewStuff\git\Preproduction\PreproductionProject\Temp\bin\Debug\UnityEngine.UnityConnectModule.xml
+D:\MatthewStuff\git\Preproduction\PreproductionProject\Temp\bin\Debug\UnityEngine.UnityTestProtocolModule.xml
+D:\MatthewStuff\git\Preproduction\PreproductionProject\Temp\bin\Debug\UnityEngine.UnityWebRequestModule.xml
+D:\MatthewStuff\git\Preproduction\PreproductionProject\Temp\bin\Debug\UnityEngine.UnityWebRequestAssetBundleModule.xml
+D:\MatthewStuff\git\Preproduction\PreproductionProject\Temp\bin\Debug\UnityEngine.UnityWebRequestAudioModule.xml
+D:\MatthewStuff\git\Preproduction\PreproductionProject\Temp\bin\Debug\UnityEngine.UnityWebRequestTextureModule.xml
+D:\MatthewStuff\git\Preproduction\PreproductionProject\Temp\bin\Debug\UnityEngine.UnityWebRequestWWWModule.xml
+D:\MatthewStuff\git\Preproduction\PreproductionProject\Temp\bin\Debug\UnityEngine.VFXModule.xml
+D:\MatthewStuff\git\Preproduction\PreproductionProject\Temp\bin\Debug\UnityEngine.VRModule.xml
+D:\MatthewStuff\git\Preproduction\PreproductionProject\Temp\bin\Debug\UnityEngine.VehiclesModule.xml
+D:\MatthewStuff\git\Preproduction\PreproductionProject\Temp\bin\Debug\UnityEngine.VideoModule.xml
+D:\MatthewStuff\git\Preproduction\PreproductionProject\Temp\bin\Debug\UnityEngine.WindModule.xml
+D:\MatthewStuff\git\Preproduction\PreproductionProject\Temp\bin\Debug\UnityEngine.XRModule.xml
+D:\MatthewStuff\git\Preproduction\PreproductionProject\Temp\bin\Debug\UnityEngine.UI.xml
+D:\MatthewStuff\git\Preproduction\PreproductionProject\Temp\bin\Debug\UnityEngine.TestRunner.xml
+D:\MatthewStuff\git\Preproduction\PreproductionProject\Temp\bin\Debug\nunit.framework.xml
+D:\MatthewStuff\git\Preproduction\PreproductionProject\obj\Debug\Assembly-CSharp-firstpass.csprojAssemblyReference.cache
+D:\MatthewStuff\git\Preproduction\PreproductionProject\obj\Debug\Assembly-CSharp-firstpass.csproj.CoreCompileInputs.cache
+D:\MatthewStuff\git\Preproduction\PreproductionProject\obj\Debug\Assembly-CSharp-firstpass.csproj.CopyComplete
+D:\MatthewStuff\git\Preproduction\PreproductionProject\obj\Debug\Assembly-CSharp-firstpass.dll
+D:\MatthewStuff\git\Preproduction\PreproductionProject\obj\Debug\Assembly-CSharp-firstpass.pdb

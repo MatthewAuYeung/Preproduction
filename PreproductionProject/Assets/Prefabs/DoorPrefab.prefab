@@ -27,7 +27,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1123728483628122045}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 2.98}
+  m_LocalPosition: {x: 0, y: 0, z: 1.092}
   m_LocalScale: {x: 1, y: 3.4809, z: 0.41981}
   m_Children: []
   m_Father: {fileID: 1123728484273693119}
@@ -118,7 +118,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1123728484183494726}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0.72}
+  m_LocalPosition: {x: 0, y: 0, z: -1.136}
   m_LocalScale: {x: 1, y: 3.4809, z: 0.41981}
   m_Children: []
   m_Father: {fileID: 1123728484273693119}
@@ -210,7 +210,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1123728484244509930}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: -0.15, z: 1.855}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0.59474325, y: 3.127352, z: 1.7958623}
   m_Children: []
   m_Father: {fileID: 1123728484904674857}
@@ -346,7 +346,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1123728484376411898}
   m_LocalRotation: {x: 0.7071068, y: -0, z: -0, w: 0.7071068}
-  m_LocalPosition: {x: 0, y: 1.59, z: 1.85}
+  m_LocalPosition: {x: -0, y: 1.575, z: -0.019}
   m_LocalScale: {x: 1, y: 2.6523795, z: 0.33131003}
   m_Children: []
   m_Father: {fileID: 1123728484273693119}
@@ -419,6 +419,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1123728484904674857}
+  - component: {fileID: 5360426035847042199}
   m_Layer: 0
   m_Name: DoorPrefab
   m_TagString: Untagged
@@ -442,3 +443,17 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
+--- !u!114 &5360426035847042199
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1123728484904674856}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dfb2f119a13deee4690994b4021f9e65, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Range: 5
+  Keys: []
