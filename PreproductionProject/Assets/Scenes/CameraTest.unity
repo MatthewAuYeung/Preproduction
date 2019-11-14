@@ -449,6 +449,36 @@ PrefabInstance:
       propertyPath: MainCamera
       value: 
       objectReference: {fileID: 517233602}
+    - target: {fileID: 2855431676503659841, guid: aac781fe51cffd0449306dfb0b5e8eea,
+        type: 3}
+      propertyPath: YPos1
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2855431676503659841, guid: aac781fe51cffd0449306dfb0b5e8eea,
+        type: 3}
+      propertyPath: ZPos1
+      value: -10
+      objectReference: {fileID: 0}
+    - target: {fileID: 2855431676503659841, guid: aac781fe51cffd0449306dfb0b5e8eea,
+        type: 3}
+      propertyPath: XPos2
+      value: -7.97
+      objectReference: {fileID: 0}
+    - target: {fileID: 2855431676503659841, guid: aac781fe51cffd0449306dfb0b5e8eea,
+        type: 3}
+      propertyPath: YPos2
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2855431676503659841, guid: aac781fe51cffd0449306dfb0b5e8eea,
+        type: 3}
+      propertyPath: ZPos2
+      value: 8.41
+      objectReference: {fileID: 0}
+    - target: {fileID: 2855431676503659841, guid: aac781fe51cffd0449306dfb0b5e8eea,
+        type: 3}
+      propertyPath: YRotate2
+      value: 90
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: aac781fe51cffd0449306dfb0b5e8eea, type: 3}
 --- !u!1001 &1617162512

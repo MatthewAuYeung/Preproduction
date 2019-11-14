@@ -37,13 +37,16 @@ public class CameraSwitchScript : MonoBehaviour
 
     private void Awake()
     {
-        CamOnePos = new Vector3(0.0f, 1.0f, -10.0f);
-        CamOneRotate = new Vector3(0.0f, 0.0f, 0.0f);
-
-        CamTwoPos = new Vector3(-7.97f, 1.0f, 8.41f);
-        CamTwoRotate = new Vector3(0.0f, 90.0f, 0.0f);
-
         _cameraCount = 1;
+    }
+
+    private void Start()
+    {
+        CamOnePos = new Vector3(XPos1, YPos1, ZPos1);
+        CamOneRotate = new Vector3(XRotate1, YRotate1, ZRotate1);
+
+        CamTwoPos = new Vector3(XPos2, YPos2, ZPos2);
+        CamTwoRotate = new Vector3(XRotate2, YRotate2, ZRotate2);
     }
 
     private void OnTriggerEnter(Collider other)
