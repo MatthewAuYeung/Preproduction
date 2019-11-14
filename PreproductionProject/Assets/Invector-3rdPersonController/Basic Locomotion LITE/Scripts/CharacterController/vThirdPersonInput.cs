@@ -167,7 +167,7 @@ namespace Invector.CharacterController
         {
             if (cc.isStrafing && !cc.lockMovement && !cc.lockMovement)
             {                
-                cc.RotateWithAnotherTransform(cameraTransform);                
+                //cc.RotateWithAnotherTransform(cameraTransform);                
             }
         }
 
