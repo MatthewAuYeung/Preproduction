@@ -15,38 +15,19 @@ public class PlayerScript : MonoBehaviour
     private float moveHorizontal;
     private float moveVertical;
     private Vector3 lookdir;
+
+    private GunScript _gun;
     private void Awake()
     {
         //_camera = FindObjectOfType<Camera>();
         rb = GetComponent<Rigidbody>();
+        _gun = GetComponentInChildren<GunScript>();
     }
 
     private void Update()
     {
-        moveHorizontal = Input.GetAxis("Horizontal");
-        moveVertical = Input.GetAxis("Vertical");
-        if (Input.GetKey(KeyCode.LeftShift))
-        {
-            movement = new Vector3(moveHorizontal * speed, 0.0f, moveVertical * speed) * speedmultiplier;
-            //movement = new Vector3(0.0f , 0.0f, moveVertical * speed) * speedmultiplier;
-        }
-        else
-            movement = new Vector3(moveHorizontal * speed, 0.0f, moveVertical * speed);
-        //movement = new Vector3(0.0f, 0.0f, moveVertical * speed
-
-        #region Crap
-        //Ray cameraRay = _camera.ScreenPointToRay(Input.mousePosition);
-        //Plane groundPlane = new Plane(Vector3.up, Vector3.zero);
-        //float rayLength;
-
-        //if (groundPlane.Raycast(cameraRay, out rayLength))
-        //{
-        //    Vector3 pointToLook = cameraRay.GetPoint(rayLength);
-
-        //    pointToLook.y = transform.position.y;
-        //    transform.LookAt(pointToLook);
-        //}
-        #endregion
+        Movement();
+        Fire();
     }
 
     private void FixedUpdate()
@@ -61,5 +42,25 @@ public class PlayerScript : MonoBehaviour
             rb.rotation = Quaternion.Euler(0, rotation.y, 0);
         }
         rb.velocity = movement;
+    }
+
+    private void Movement()
+    {
+        moveHorizontal = Input.GetAxis("Horizontal");
+        moveVertical = Input.GetAxis("Vertical");
+        if (Input.GetKey(KeyCode.LeftShift))
+        {
+            movement = new Vector3(moveHorizontal * speed, 0.0f, moveVertical * speed) * speedmultiplier;
+        }
+        else
+            movement = new Vector3(moveHorizontal * speed, 0.0f, moveVertical * speed);
+    }
+
+    private void Fire()
+    {
+        if(Input.GetButtonDown("Fire1"))
+        {
+            _gun.Shoot();
+        }
     }
 }
