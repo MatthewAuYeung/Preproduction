@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class PlayerScript : MonoBehaviour
 {
+    public TpsCameraScript tpsCam;
     public float turnSpeed = 10.0f;
     [SerializeField]
     private float speed = 5.0f;
@@ -16,30 +17,36 @@ public class PlayerScript : MonoBehaviour
     private float moveVertical;
     private Vector3 lookdir;
 
-    private GunScript _gun;
+    private HandScript _hand;
+    private bool aiming;
     private void Awake()
     {
         //_camera = FindObjectOfType<Camera>();
         rb = GetComponent<Rigidbody>();
-        _gun = GetComponentInChildren<GunScript>();
+        _hand = GetComponentInChildren<HandScript>();
+        aiming = false;
     }
 
     private void Update()
     {
+        CheckAiming();
         Movement();
         Fire();
     }
 
     private void FixedUpdate()
     {
-        float heading = Mathf.Atan2(moveHorizontal, moveVertical) * Mathf.Rad2Deg;
-
-        if (moveHorizontal != 0 || moveVertical != 0)
+        if(!aiming)
         {
-            lookdir = new Vector3(0.0f, heading, 0.0f);
-            Quaternion lookRotation = Quaternion.Euler(0, heading, 0);
-            Vector3 rotation = Quaternion.Lerp(gameObject.transform.rotation, lookRotation, Time.deltaTime * turnSpeed).eulerAngles;
-            rb.rotation = Quaternion.Euler(0, rotation.y, 0);
+            float heading = Mathf.Atan2(moveHorizontal, moveVertical) * Mathf.Rad2Deg;
+
+            if (moveHorizontal != 0 || moveVertical != 0)
+            {
+                lookdir = new Vector3(0.0f, heading, 0.0f);
+                Quaternion lookRotation = Quaternion.Euler(0, heading, 0);
+                Vector3 rotation = Quaternion.Lerp(gameObject.transform.rotation, lookRotation, Time.deltaTime * turnSpeed).eulerAngles;
+                rb.rotation = Quaternion.Euler(0, rotation.y, 0);
+            }
         }
         rb.velocity = movement;
     }
@@ -52,15 +59,33 @@ public class PlayerScript : MonoBehaviour
         {
             movement = new Vector3(moveHorizontal * speed, 0.0f, moveVertical * speed) * speedmultiplier;
         }
+        else if(aiming)
+            movement = new Vector3(moveHorizontal * speed, 0.0f, moveVertical * speed) * 0.5f;
         else
             movement = new Vector3(moveHorizontal * speed, 0.0f, moveVertical * speed);
+    }
+
+    private void CheckAiming()
+    {
+        if(Input.GetMouseButtonDown(1))
+        {
+            if (aiming)
+            {
+                aiming = false;
+            }
+            else
+            {
+                aiming = true;
+            }
+            tpsCam.ChangeActive(aiming);
+        }
     }
 
     private void Fire()
     {
         if(Input.GetButtonDown("Fire1"))
         {
-            _gun.Shoot();
+            _hand.Action();
         }
     }
 }
