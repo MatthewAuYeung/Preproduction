@@ -245,6 +245,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2eaa20997ebd4fd44b7f66b2290837b1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  tpsCam: {fileID: 0}
   turnSpeed: 10
   speed: 5
 --- !u!1 &6317336516069604574
