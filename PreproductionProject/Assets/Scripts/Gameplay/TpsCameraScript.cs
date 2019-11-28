@@ -11,6 +11,9 @@ public class TpsCameraScript : MonoBehaviour
 
     private AudioListener _listener;
     private AudioListener mainListener;
+
+    private float distance;
+    Vector3 playerPrevPos;
     private void Awake()
     {
         _player = GameObject.FindGameObjectWithTag("PlayerTag");
@@ -24,11 +27,15 @@ public class TpsCameraScript : MonoBehaviour
         _listener.enabled = false;
 
         offset = transform.position - _player.transform.position;
+        distance = offset.magnitude;
+        playerPrevPos = _player.transform.position;
     }
 
     private void LateUpdate()
     {
-        transform.position = _player.transform.position + offset;
+        transform.position = _player.transform.position - _player.transform.forward * distance;
+        transform.Translate(Vector3.right *offset.x, Space.Self);
+        transform.Translate(Vector3.up * offset.y, Space.Self);
     }
 
     public void ChangeActive(bool aiming)
@@ -37,6 +44,8 @@ public class TpsCameraScript : MonoBehaviour
         {
             gameObject.SetActive(true);
             _listener.enabled = true;
+
+            SetCamera();
 
             MainCamera.SetActive(false);
             mainListener.enabled = false;
@@ -49,5 +58,10 @@ public class TpsCameraScript : MonoBehaviour
             MainCamera.SetActive(true);
             mainListener.enabled = true;
         }
+    }
+
+    private void SetCamera()
+    {
+        transform.rotation = _player.transform.rotation;
     }
 }
