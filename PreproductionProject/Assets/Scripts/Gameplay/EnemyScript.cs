@@ -11,6 +11,9 @@ public class EnemyScript : MonoBehaviour
     public float range;
     public float attackRange;
 
+    [SerializeField]
+    private float _fov = 60.0f;
+
     private Transform _target;
     private NavMeshAgent _agent;
     private EnemyManager _manager;
@@ -31,18 +34,32 @@ public class EnemyScript : MonoBehaviour
 
         if (Vector3.Distance(_agent.transform.position, _target.transform.position) < range)
         {
-            _agent.isStopped = false;
-            _agent.SetDestination(_target.position);
-            if (Vector3.Distance(_agent.transform.position, _target.transform.position) < attackRange)
+            if (InView(_target))
             {
-                _agent.isStopped = true;
-                _agent.transform.LookAt(_target.position);
+                _agent.isStopped = false;
+                _agent.SetDestination(_target.position);
+                if (Vector3.Distance(_agent.transform.position, _target.transform.position) < attackRange)
+                {
+                    _agent.isStopped = true;
+                    _agent.transform.LookAt(_target.position);
+                }
             }
         }
         else
         {
             _agent.isStopped = true;
         }
+    }
+
+    private bool InView(Transform target)
+    {
+        Vector3 targetDir = _target.position - transform.position;
+
+        float angle = Vector3.Angle(transform.forward, targetDir);
+
+        if (angle <= _fov)
+            return true;
+        return false;
     }
 
     void OnDrawGizmosSelected()
