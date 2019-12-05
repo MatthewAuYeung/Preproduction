@@ -9,6 +9,7 @@ public class PlayerScript : MonoBehaviour
     [SerializeField]
     private float speed = 5.0f;
 
+
     private float speedmultiplier = 1.5f;
     //private Camera _camera;
     private Vector3 movement;
@@ -30,6 +31,7 @@ public class PlayerScript : MonoBehaviour
     private void Update()
     {
         CheckAiming();
+        Aim();
         Movement();
         Fire();
     }
@@ -79,6 +81,48 @@ public class PlayerScript : MonoBehaviour
             }
             tpsCam.ChangeActive(aiming);
         }
+    }
+
+    void Aim()
+    {
+        if (Input.GetKey(KeyCode.Escape))
+            Screen.lockCursor = false;
+        else
+            Screen.lockCursor = true;
+
+        //if (Input.GetMouseButton(0))
+        //{
+        //    //_player.Attack();
+        //}
+
+        //if (Input.GetMouseButtonDown(1))
+        //{
+        //    if (_hand != null)
+        //    {
+        //        //_camera.transform.SetParent(_hand.transform);
+        //        //_camera.transform.localRotation = _hand.transform.Find("Aimmer").transform.localRotation;
+        //        //_camera.transform.localPosition = _hand.transform.Find("Aimmer").transform.localPosition - new Vector3(0.0f, 3.0f, 0.0f);
+        //        aiming = true;
+
+        //    }
+        //}
+
+        //if (Input.GetMouseButtonUp(1))
+        //{
+        //    //_camera.transform.SetParent(gameObject.transform);
+        //   // _camera.transform.localRotation = new Quaternion();
+        //    //_camera.transform.localPosition = new Vector3(0.0f, 1.0f, -5.0f);
+        //    aiming = false;
+        //}
+
+        if (aiming)
+        {
+
+            _hand.transform.Rotate(new Vector3(-Input.GetAxis("Mouse Y") * Time.deltaTime * 100.0f,0.0f,0.0f));
+            transform.Rotate(new Vector3(0.0f,Input.GetAxis("Mouse X") * Time.deltaTime * 300.0f,0.0f));
+            //Debug.Log(Input.GetAxis("Mouse Y"));
+        }
+
     }
 
     private void Fire()
