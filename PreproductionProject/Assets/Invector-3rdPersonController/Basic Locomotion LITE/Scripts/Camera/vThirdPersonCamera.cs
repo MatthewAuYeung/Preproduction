@@ -104,7 +104,6 @@ public class vThirdPersonCamera : MonoBehaviour
 
     void FixedUpdate()
     {
-        target = null;
         if (target == null || targetLookAt == null) return;
 
         CameraMovement();
