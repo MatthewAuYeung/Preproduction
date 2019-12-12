@@ -1137,7 +1137,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6226596333869513262}
   m_Layer: 0
-  m_Name: Player 1
+  m_Name: NewPlayer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1379,8 +1379,8 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 1
   lockCamera: 0
-  rightOffset: 0
-  defaultDistance: 2.5
+  rightOffset: 0.4
+  defaultDistance: 1.2
   height: 1.4
   smoothFollow: 10
   xMouseSensitivity: 3
@@ -2685,9 +2685,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   horizontalInput: Horizontal
   verticallInput: Vertical
-  jumpInput: 32
-  strafeInput: 9
-  sprintInput: 304
+  jumpInput: 0
+  strafeInput: 0
+  sprintInput: 0
   rotateCameraXInput: Mouse X
   rotateCameraYInput: Mouse Y
   customCameraState: 
@@ -2997,6 +2997,21 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7667486898509665816, guid: 82bcd9642c8fa3f46aeec8c0da48aaad,
+        type: 3}
+      propertyPath: jumpInput
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7667486898509665816, guid: 82bcd9642c8fa3f46aeec8c0da48aaad,
+        type: 3}
+      propertyPath: strafeInput
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7667486898509665816, guid: 82bcd9642c8fa3f46aeec8c0da48aaad,
+        type: 3}
+      propertyPath: sprintInput
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 82bcd9642c8fa3f46aeec8c0da48aaad, type: 3}
 --- !u!1001 &5089543658541007699
@@ -3065,6 +3080,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1209463468934866902, guid: 755de61c5225d594eb15dc8b36ba1a44,
+        type: 3}
+      propertyPath: rightOffset
+      value: 0.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 1209463468934866902, guid: 755de61c5225d594eb15dc8b36ba1a44,
+        type: 3}
+      propertyPath: defaultDistance
+      value: 1.2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 755de61c5225d594eb15dc8b36ba1a44, type: 3}
