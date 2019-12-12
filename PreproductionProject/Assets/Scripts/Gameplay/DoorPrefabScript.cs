@@ -30,7 +30,7 @@ public class DoorPrefabScript : MonoBehaviour
 
         if(_distanceToPlayer <= Range)
         {
-            if (Input.GetKey(KeyCode.Space))
+            if (Input.GetKey(KeyCode.E))
             {
                 if (Keys.Count == 0)
                 {
