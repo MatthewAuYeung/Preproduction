@@ -5,10 +5,11 @@ using UnityEngine;
 public class ShowUI : MonoBehaviour
 {
     public float Range;
+    public GameObject uiObject;
 
     private GameObject _player;
     private float _distanceToPlayer;
-    public GameObject uiObject;
+    public vThirdPersonCamera TPSCamera;
 
     private void Awake()
     {
@@ -21,19 +22,12 @@ public class ShowUI : MonoBehaviour
 
     private void Update()
     {
-        bool b = false;
         _distanceToPlayer = Vector3.Distance(transform.position, _player.transform.position);
-        if (_distanceToPlayer <= Range)
+        if (_distanceToPlayer <= Range && Input.GetKey(KeyCode.O))
         {
-            b = true;
-        }
-        if(b)
-        {
-            if (Input.GetKey(KeyCode.O))
-            {
-                uiObject.SetActive(true);
-                ShowMouseCursor();
-            }
+            TPSCamera.lockCamera = true;
+            uiObject.SetActive(true);
+            ShowMouseCursor();
         }
     }
 
