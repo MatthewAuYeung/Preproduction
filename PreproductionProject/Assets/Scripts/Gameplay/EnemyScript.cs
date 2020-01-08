@@ -4,16 +4,8 @@ using UnityEngine;
 using UnityEngine.AI;
 
 [RequireComponent(typeof(NavMeshAgent))]
-public class EnemyScript : MonoBehaviour
+public class EnemyScript : BaseEnemyScript
 {
-    public float health;
-
-    public float range;
-    public float attackRange;
-
-    [SerializeField]
-    private float _fov = 60.0f;
-
     private Transform _target;
     private NavMeshAgent _agent;
     private EnemyManager _manager;
@@ -32,17 +24,22 @@ public class EnemyScript : MonoBehaviour
             return;
         }
 
-        if (Vector3.Distance(_agent.transform.position, _target.transform.position) < range)
+        var disBetweenPlayer = Vector3.Distance(_agent.transform.position, _target.transform.position);
+        if (disBetweenPlayer < searchRange)
         {
             if (InView(_target))
             {
                 _agent.isStopped = false;
                 _agent.SetDestination(_target.position);
-                if (Vector3.Distance(_agent.transform.position, _target.transform.position) < attackRange)
+                if (disBetweenPlayer < attackRange)
                 {
                     _agent.isStopped = true;
                     _agent.transform.LookAt(_target.position);
                 }
+            }
+            else
+            {
+                _agent.isStopped = true;
             }
         }
         else
@@ -57,18 +54,18 @@ public class EnemyScript : MonoBehaviour
 
         float angle = Vector3.Angle(transform.forward, targetDir);
 
-        if (angle <= _fov)
-            return true;
+        if (angle <= fov)
+        {
+            RaycastHit hit;
+            if (Physics.Raycast(transform.forward + transform.up, targetDir.normalized, out hit, searchRange))
+            {
+                if(hit.collider.gameObject.CompareTag("PlayerTag"))
+                {
+                   
+                    return true;
+                }
+            }
+        }
         return false;
-    }
-
-    void OnDrawGizmosSelected()
-    {
-        // Display the explosion radius when selected
-        Gizmos.color = Color.red;
-        Gizmos.DrawWireSphere(transform.position, range);
-
-        Gizmos.color = Color.green;
-        Gizmos.DrawWireSphere(transform.position, attackRange);
     }
 }
