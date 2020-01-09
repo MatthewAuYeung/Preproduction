@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Services
   - PlayerTag
+  - EnemyTag
   layers:
   - Default
   - TransparentFX
