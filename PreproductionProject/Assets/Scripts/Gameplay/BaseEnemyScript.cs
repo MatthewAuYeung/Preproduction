@@ -9,6 +9,9 @@ public abstract class BaseEnemyScript : MonoBehaviour
     protected float health;
 
     [SerializeField]
+    protected float maxhealth;
+
+    [SerializeField]
     protected float searchRange;
 
     [SerializeField]

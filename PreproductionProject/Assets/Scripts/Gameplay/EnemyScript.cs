@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
+using UnityEngine.UI;
 
 [RequireComponent(typeof(NavMeshAgent))]
 public class EnemyScript : BaseEnemyScript
@@ -9,6 +10,7 @@ public class EnemyScript : BaseEnemyScript
     private Transform _target;
     private NavMeshAgent _agent;
     private EnemyManager _manager;
+    public Image healthBar;
 
     private void Awake()
     {
@@ -51,6 +53,9 @@ public class EnemyScript : BaseEnemyScript
         {
             _agent.isStopped = true;
         }
+        healthBar.fillAmount = health / maxhealth;
+
+
     }
 
     private bool InView(Transform target)
