@@ -24,6 +24,11 @@ public class EnemyScript : BaseEnemyScript
             return;
         }
 
+        if(health <= 0.0f)
+        {
+            Destroy(gameObject);
+        }
+
         var disBetweenPlayer = Vector3.Distance(_agent.transform.position, _target.transform.position);
         if (disBetweenPlayer < searchRange)
         {
@@ -57,11 +62,10 @@ public class EnemyScript : BaseEnemyScript
         if (angle <= fov)
         {
             RaycastHit hit;
-            if (Physics.Raycast(transform.forward + transform.up, targetDir.normalized, out hit, searchRange))
+            if (Physics.Raycast(transform.position + transform.up,targetDir.normalized, out hit, searchRange))
             {
                 if(hit.collider.gameObject.CompareTag("PlayerTag"))
                 {
-                   
                     return true;
                 }
             }
