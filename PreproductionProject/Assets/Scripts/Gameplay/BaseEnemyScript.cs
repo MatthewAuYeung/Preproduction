@@ -18,7 +18,15 @@ public abstract class BaseEnemyScript : MonoBehaviour
     protected float attackRange;
 
     [SerializeField]
+    protected float damage;
+
+    [SerializeField]
+    protected float attackDelay;
+
+    [SerializeField]
     protected float fov = 60.0f;
+
+    protected float currentTime;
 
 
     void OnDrawGizmosSelected()

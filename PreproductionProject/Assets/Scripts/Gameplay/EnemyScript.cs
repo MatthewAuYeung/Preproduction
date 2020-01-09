@@ -10,6 +10,9 @@ public class EnemyScript : BaseEnemyScript
     private Transform _target;
     private NavMeshAgent _agent;
     private EnemyManager _manager;
+    private SphereCollider _attackTrigger;
+    private ParticleSystem _particleSystem;
+
     public Image healthBar;
 
     private void Awake()
@@ -17,6 +20,15 @@ public class EnemyScript : BaseEnemyScript
         _agent = GetComponent<NavMeshAgent>();
         _manager = GetComponentInParent<EnemyManager>();
         _target = _manager.target;
+        _attackTrigger = GetComponent<SphereCollider>();
+        _particleSystem = GetComponentInChildren<ParticleSystem>();
+
+    }
+
+    private void Start()
+    {
+        _attackTrigger.radius = attackRange;
+        _particleSystem.Pause();
     }
 
     private void Update()
@@ -41,7 +53,8 @@ public class EnemyScript : BaseEnemyScript
                 if (disBetweenPlayer < attackRange)
                 {
                     _agent.isStopped = true;
-                    _agent.transform.LookAt(_target.position);
+                    Vector3 newLookPos = new Vector3(_target.position.x,transform.position.y, _target.position.z);
+                    _agent.transform.LookAt(newLookPos);
                 }
             }
             else
@@ -76,5 +89,19 @@ public class EnemyScript : BaseEnemyScript
             }
         }
         return false;
+    }
+
+    private void OnTriggerStay(Collider other)
+    {
+        if(!other.gameObject.CompareTag("PlayerTag"))
+        {
+            return;
+        }
+        if (currentTime < Time.time && InView(other.gameObject.transform))
+        {
+            _particleSystem.Play();
+            currentTime = Time.time + attackDelay;
+            other.gameObject.GetComponentInParent<NewPlayerScript>().TakeDamage(damage);
+        }
     }
 }

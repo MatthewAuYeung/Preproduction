@@ -21,4 +21,9 @@ public class NewPlayerScript : MonoBehaviour
     {
         healthBar.UpdateBar(health, maxHealth);
     }
+
+    public void TakeDamage(float damage)
+    {
+        health -= damage;
+    }
 }
