@@ -9,7 +9,7 @@ public class NewPlayerScript : MonoBehaviour
     [SerializeField]
     private float health;
     [SerializeField]
-    private float maxHealth;
+    private float maxHealth; 
     // Start is called before the first frame update
     void Start()
     {
