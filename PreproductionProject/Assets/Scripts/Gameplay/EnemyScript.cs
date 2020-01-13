@@ -29,6 +29,8 @@ public class EnemyScript : BaseEnemyScript
     {
         _attackTrigger.radius = attackRange;
         _particleSystem.Pause();
+
+
     }
 
     private void Update()
