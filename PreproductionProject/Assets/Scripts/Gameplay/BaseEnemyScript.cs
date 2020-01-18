@@ -18,8 +18,21 @@ public abstract class BaseEnemyScript : MonoBehaviour
     protected float attackRange;
 
     [SerializeField]
+    protected float damage;
+
+    [SerializeField]
+    protected float attackDelay;
+
+    [SerializeField]
     protected float fov = 60.0f;
 
+    protected float currentTime;
+
+    private float half_fov;
+    private Quaternion leftRayRotation;
+    private Quaternion rightRayRotation;
+    private Vector3 leftDir;
+    private Vector3 rightDir;
 
     void OnDrawGizmosSelected()
     {
@@ -29,5 +42,20 @@ public abstract class BaseEnemyScript : MonoBehaviour
 
         Gizmos.color = Color.green;
         Gizmos.DrawWireSphere(transform.position, attackRange);
+
+        half_fov = fov * 0.5f;
+        leftRayRotation = Quaternion.AngleAxis(-half_fov, Vector3.up);
+        rightRayRotation = Quaternion.AngleAxis(half_fov, Vector3.up);
+
+        leftDir = leftRayRotation * transform.forward;
+        rightDir = rightRayRotation * transform.forward;
+
+        Gizmos.color = Color.blue;
+        Gizmos.DrawRay(transform.position, leftDir * searchRange);
+        Gizmos.color = Color.blue;
+        Gizmos.DrawRay(transform.position, rightDir * searchRange);
+        //Gizmos.color = Color.blue;
+        //Vector3 direction = transform.TransformDirection(Vector3.forward) * 5;
+        //Gizmos.DrawRay(transform.position, direction);
     }
 }
