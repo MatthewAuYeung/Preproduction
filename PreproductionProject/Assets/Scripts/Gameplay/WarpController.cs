@@ -23,7 +23,9 @@ public class WarpController : MonoBehaviour
     private void FreeWarp()
     {
         ShowBody(false);
-        transform.DOMove(transform.position + transform.forward.normalized * warpRange, warpDuration).OnComplete(()=>EndWarp());
+        Vector3 warpDir = Camera.main.transform.forward;
+        warpDir.y = 0.0f;
+        transform.DOMove(transform.position + warpDir.normalized * warpRange, warpDuration).OnComplete(()=>EndWarp());
     }
 
     private void EndWarp()
