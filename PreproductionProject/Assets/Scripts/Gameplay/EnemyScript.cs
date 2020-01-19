@@ -27,10 +27,9 @@ public class EnemyScript : BaseEnemyScript
 
     private void Start()
     {
+        _agent.speed = speed;
         _attackTrigger.radius = attackRange;
         _particleSystem.Pause();
-
-
     }
 
     private void Update()
