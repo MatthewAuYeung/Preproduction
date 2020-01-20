@@ -72,6 +72,7 @@ public class EnemyScript : BaseEnemyScript
 
     }
 
+
     private bool InView(Transform target)
     {
         Vector3 targetDir = _target.position - transform.position;
