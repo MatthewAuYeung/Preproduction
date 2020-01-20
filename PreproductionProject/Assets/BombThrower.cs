@@ -7,6 +7,7 @@ public class BombThrower : MonoBehaviour
     public GameObject bomb;
     public Transform bombSpawnTranform;
     public float throwPower = 100f;
+    public Animator animator;
     // Start is called before the first frame update
     void Start()
     {
@@ -18,6 +19,7 @@ public class BombThrower : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.B))
         {
+            animator.SetTrigger("Throw");
             GameObject newBomb = Instantiate(bomb, bombSpawnTranform.position, Quaternion.identity);
             Vector3 throwForce = bombSpawnTranform.forward * throwPower;
             newBomb.GetComponent<Rigidbody>().AddForce(throwForce);
