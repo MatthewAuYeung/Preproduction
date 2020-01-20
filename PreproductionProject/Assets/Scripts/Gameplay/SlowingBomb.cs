@@ -14,6 +14,18 @@ public class SlowingBomb : MonoBehaviour
         }
     }
 
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.CompareTag("Floor"))
+        {
+            Rigidbody rb = GetComponent<Rigidbody>();
+            rb.isKinematic = true;
+            //rb.useGravity = false;
+            //rb.velocity = Vector3.zero;
+            //rb.angularVelocity = Vector3.zero;
+        }
+    }
+
     private void OnTriggerExit(Collider other)
     {
         if (other.gameObject.CompareTag("EnemyTag"))
