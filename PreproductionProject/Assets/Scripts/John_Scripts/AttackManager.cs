@@ -4,32 +4,15 @@ using UnityEngine;
 
 public class AttackManager : MonoBehaviour
 {
-    public Camera cam;
-    public WeaponManager myWeapon;
-    Animator animator;
+    public float attackDmg;
 
-    // Start is called before the first frame update
-    void Start()
+
+    private void OnTriggerEnter(Collider other)
     {
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-    }
-
-    private void DoAttack()
-    {
-        Ray ray = cam.ScreenPointToRay(Input.mousePosition);
-        RaycastHit hit;
-
-        if(Physics.Raycast(ray, out hit, myWeapon.attackDmg))
+        if (other.gameObject.CompareTag("EnemyTag"))
         {
-            if(hit.collider.tag == "Enemy")
-            {
-                BaseEnemyScript health = hit.collider.GetComponent<BaseEnemyScript>();
-                //health.TakeDmg(myWeapon.attackDmg);
-            }
+            BaseEnemyScript enemy = other.GetComponent<BaseEnemyScript>();
+            enemy.TakeDamage(attackDmg);
         }
     }
 }

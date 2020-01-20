@@ -5,10 +5,12 @@ using UnityEngine;
 public class CombatAnimation : MonoBehaviour
 {
     Animator anim;
+    [SerializeField]
+    Collider attackCollider;
 
     void Start()
     {
-        
+        attackCollider.gameObject.SetActive(false);
         anim = GetComponent<Animator>();
     }
 
@@ -38,6 +40,16 @@ public class CombatAnimation : MonoBehaviour
         yield return new WaitForSeconds(1);
         anim.SetInteger("AttackCondition", 0);
         anim.SetBool("attacking", false);
+    }
+
+    void AttackStart()
+    {
+        attackCollider.gameObject.SetActive(true);
+    }
+
+    void AttackStop()
+    {
+        attackCollider.gameObject.SetActive(false);
     }
 }
 
