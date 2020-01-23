@@ -14,7 +14,20 @@ public class WarpController : MonoBehaviour
 
     private void Update()
     {
-        if(Input.GetKeyDown(KeyCode.T))
+        if (Input.GetKeyDown(KeyCode.Q))
+        {
+            Vector3 warpDir = Camera.main.transform.forward;
+            RaycastHit hit;
+            if (Physics.Raycast(transform.position + transform.up, warpDir.normalized, out hit, warpRange))
+            {
+                if (hit.collider.gameObject.CompareTag("NotWarpable"))
+                {
+                    Debug.Log(hit.transform.name); ;
+                }
+            }
+        }
+
+        if (Input.GetKeyDown(KeyCode.T))
         {
             FreeWarp();
         }
@@ -22,10 +35,20 @@ public class WarpController : MonoBehaviour
 
     private void FreeWarp()
     {
-        ShowBody(false);
         Vector3 warpDir = Camera.main.transform.forward;
         warpDir.y = 0.0f;
-        transform.DOMove(transform.position + warpDir.normalized * warpRange, warpDuration).OnComplete(()=>EndWarp());
+        RaycastHit hit;
+        if (Physics.Raycast(transform.position + transform.up, warpDir.normalized, out hit, warpRange))
+        {
+            var hitObj = hit.collider.gameObject;
+            if (hitObj.CompareTag("NotWarpable"))
+            {
+                //hitObj.transform.position
+                transform.DOMove(hitObj.transform.position, warpDuration).OnComplete(() => EndWarp());
+            }
+        }
+        ShowBody(false);
+        transform.DOMove(transform.position + warpDir.normalized * warpRange, warpDuration).OnComplete(() => EndWarp());
     }
 
     private void EndWarp()
