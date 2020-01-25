@@ -38,8 +38,6 @@ public class WarpController : MonoBehaviour
                 Vector2 ObjPos = new Vector2(hitObj.transform.position.x, hitObj.transform.position.z);
                 Vector2 OffsetVec = PlayerPos - ObjPos;
                 Vector2 OffsetDir = OffsetVec.normalized;
-                //Vector2 OffsetDir = vector3.normalized;
-                float offset = hitObj.transform.localScale.z;
                 Vector3 newWarpPos = hitObj.transform.position;
                 newWarpPos.x += OffsetDir.x * warpOffset;
                 newWarpPos.z += OffsetDir.y * warpOffset;
