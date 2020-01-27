@@ -8,6 +8,7 @@ TagManager:
   - PlayerTag
   - EnemyTag
   - Floor
+  - NotWarpable
   layers:
   - Default
   - TransparentFX
