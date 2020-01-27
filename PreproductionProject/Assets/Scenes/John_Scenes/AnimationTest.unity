@@ -130,7 +130,6 @@ GameObject:
   m_Component:
   - component: {fileID: 26918801}
   - component: {fileID: 26918804}
-  - component: {fileID: 26918803}
   - component: {fileID: 26918802}
   m_Layer: 0
   m_Name: Collider
@@ -166,18 +165,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   attackDmg: 30
---- !u!114 &26918803
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 26918800}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 90793bba2f17a3a44a66db44a63c3ad0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!65 &26918804
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -288,6 +275,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 90793bba2f17a3a44a66db44a63c3ad0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  weaponColldier: {fileID: 0}
 --- !u!1 &416187815 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 6226596335058991086, guid: 26a1e40a5ecc2a1459d868188acbc39f,
@@ -313,6 +301,31 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   attackCollider: {fileID: 26918804}
+--- !u!114 &416187818
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 416187815}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 12b796f0e8a7fdb49a7112917a1323a7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &416187826
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 416187815}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 90793bba2f17a3a44a66db44a63c3ad0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  weaponColldier: {fileID: 26918804}
 --- !u!1 &445574088
 GameObject:
   m_ObjectHideFlags: 0

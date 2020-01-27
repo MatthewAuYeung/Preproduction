@@ -675,19 +675,17 @@ ModelImporter:
       bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
       curves: []
       events:
-      - time: 0.50218344
-        functionName: ComboCheck
+      - time: 0.28753996
+        functionName: AttackStart
         data: 
-        objectReferenceParameter: {fileID: 11500000, guid: 12b796f0e8a7fdb49a7112917a1323a7,
-          type: 3}
+        objectReferenceParameter: {instanceID: 0}
         floatParameter: 0
         intParameter: 0
         messageOptions: 0
-      - time: 0.50218344
-        functionName: NewEvent
+      - time: 0.36741215
+        functionName: AttackStop
         data: 
-        objectReferenceParameter: {fileID: 11500000, guid: 12b796f0e8a7fdb49a7112917a1323a7,
-          type: 3}
+        objectReferenceParameter: {instanceID: 0}
         floatParameter: 0
         intParameter: 0
         messageOptions: 0
