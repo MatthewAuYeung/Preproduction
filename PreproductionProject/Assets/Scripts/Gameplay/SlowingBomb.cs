@@ -5,6 +5,7 @@ using UnityEngine.AI;
 
 public class SlowingBomb : MonoBehaviour
 {
+public float BombTimer = 2;
     void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.CompareTag("EnemyTag"))
@@ -23,6 +24,7 @@ public class SlowingBomb : MonoBehaviour
             //rb.useGravity = false;
             //rb.velocity = Vector3.zero;
             //rb.angularVelocity = Vector3.zero;
+            Destroy(gameObject, BombTimer);
         }
     }
 
