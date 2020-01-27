@@ -2850,13 +2850,13 @@ GameObject:
   m_Component:
   - component: {fileID: 6226596333264784430}
   - component: {fileID: 1615343467}
+  - component: {fileID: 416187817}
   - component: {fileID: 6226596335058991072}
   - component: {fileID: 6226596335058991075}
   - component: {fileID: 6226596335058991074}
   - component: {fileID: 6226596335058991085}
   - component: {fileID: 6226596335058991084}
   - component: {fileID: 6226596335058991087}
-  - component: {fileID: 416187817}
   m_Layer: 0
   m_Name: NewPlayerModel
   m_TagString: PlayerTag
@@ -2893,7 +2893,21 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   warpRange: 10
   warpDuration: 0.5
+  warpOffset: 0.5
   ybot: {fileID: 6226596333624763828}
+--- !u!114 &416187817
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6226596335058991086}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 23176b5c768a9f74abec85b508774c49, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  attackCollider: {fileID: 26918804}
 --- !u!114 &6226596335058991072
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3042,19 +3056,6 @@ CapsuleCollider:
   m_Height: 1.8
   m_Direction: 1
   m_Center: {x: 0, y: 0.9, z: 0}
---- !u!114 &416187817
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6226596335058991086}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 23176b5c768a9f74abec85b508774c49, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  attackCollider: {fileID: 26918804}
 --- !u!1 &6226596335167636599
 GameObject:
   m_ObjectHideFlags: 0
