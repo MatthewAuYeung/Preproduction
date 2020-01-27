@@ -13,13 +13,13 @@ public class TargetScript : MonoBehaviour
 
     private void OnBecameVisible()
     {
-        //if (!lockon.screenTargets.Contains(transform))
-        //    lockon.screenTargets.Add(transform);
+        if (!lockon.targets.Contains(transform))
+            lockon.targets.Add(transform);
     }
 
     private void OnBecameInvisible()
     {
-        //if (lockon.screenTargets.Contains(transform))
-        //    lockon.screenTargets.Remove(transform);
+        if (lockon.targets.Contains(transform))
+            lockon.targets.Remove(transform);
     }
 }

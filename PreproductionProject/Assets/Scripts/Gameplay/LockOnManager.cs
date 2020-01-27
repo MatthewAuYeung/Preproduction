@@ -9,9 +9,13 @@ public class LockOnManager : MonoBehaviour
     public Image aim;
     public Image lockon;
     public Vector2 ui_offset;
-    public Transform target;
     Camera cam;
     public List<Transform> targets;
+
+    [SerializeField]
+    private float range = 10.0f;
+
+    private Vector3 closestEnemyPos;
 
     void Start()
     {
@@ -20,7 +24,11 @@ public class LockOnManager : MonoBehaviour
 
     void Update()
     {
-        Vector3 screenPos = cam.WorldToScreenPoint(target.position);
+        if (targets.Count == 0)
+            return;
+        closestEnemyPos = targets[targetIndex()].position;
+
+        Vector3 screenPos = cam.WorldToScreenPoint(targets[targetIndex()].position);
         aim.transform.position = screenPos;
 
         if(Input.GetMouseButtonDown(1))
