@@ -23,7 +23,12 @@ namespace Invector.CharacterController
             }
 
             // fre movement get the input 0 to 1
+            bool isAtking = ComboController.isAttacking;
+            if(!isAtking)
+            {
+
             animator.SetFloat("InputVertical", speed, 0.1f, Time.deltaTime);
+            }
         }
 
         public void OnAnimatorMove()

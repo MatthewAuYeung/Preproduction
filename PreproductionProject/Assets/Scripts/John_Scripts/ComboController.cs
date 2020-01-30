@@ -6,6 +6,7 @@ public class ComboController : MonoBehaviour
 {
     Animator animator;
     Rigidbody rigidBody;
+    public static bool isAttacking;
 
     int attackIndex = 0;                 // Determines which animation will play
     bool canClick;                  // Locks ability to click during animation event
@@ -31,6 +32,7 @@ public class ComboController : MonoBehaviour
 
     void Attack()
     {
+        isAttacking = true;
         string attackTrigger = "Attack" + (attackIndex+1).ToString();
 
         animator.SetTrigger(attackTrigger);
