@@ -108,7 +108,7 @@ GameObject:
   - component: {fileID: 8341284848985065250}
   - component: {fileID: 1555268841536895482}
   m_Layer: 2
-  m_Name: Enemy
+  m_Name: FastAfBoi
   m_TagString: EnemyTag
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -156,7 +156,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 321e62a00251cd34783ef04029bfc861, type: 2}
+  - {fileID: 2100000, guid: 8ee3af3266ab6b54099084b6dc00ec42, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -242,12 +242,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health: 100
   maxhealth: 100
-  searchRange: 15
+  searchRange: 18
   attackRange: 2
-  damage: 10
-  attackDelay: 1.5
+  damage: 5
+  attackDelay: 1
   fov: 360
-  speed: 3.5
+  speed: 6.5
   healthBar: {fileID: 370972254627582947}
 --- !u!135 &1555268841536895482
 SphereCollider:
