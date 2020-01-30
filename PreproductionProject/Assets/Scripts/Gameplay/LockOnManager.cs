@@ -28,17 +28,32 @@ public class LockOnManager : MonoBehaviour
             return;
         closestEnemyPos = targets[targetIndex()].position;
 
-        Vector3 screenPos = cam.WorldToScreenPoint(targets[targetIndex()].position);
-        aim.transform.position = screenPos;
+        float dist = Vector3.Distance(transform.position, closestEnemyPos);
 
-        if(Input.GetMouseButtonDown(1))
+        if(dist <= range)
         {
-            LockInterface(true);
+            AimInterface(true);
+            Vector3 screenPos = cam.WorldToScreenPoint(targets[targetIndex()].position);
+            aim.transform.position = screenPos;
+
+            if (Input.GetMouseButtonDown(1))
+            {
+                LockInterface(true);
+            }
+            if (Input.GetMouseButtonUp(1))
+            {
+                LockInterface(false);
+            }
         }
-        if (Input.GetMouseButtonUp(1))
-        {
-            LockInterface(false);
-        }
+        else
+            AimInterface(false);
+    }
+
+    void AimInterface(bool state)
+    {
+        Color shown = state ? Color.white : Color.clear;
+
+        aim.color = shown;
     }
 
     void LockInterface(bool state)
