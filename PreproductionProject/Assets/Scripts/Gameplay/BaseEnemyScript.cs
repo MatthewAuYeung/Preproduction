@@ -35,6 +35,7 @@ public abstract class BaseEnemyScript : MonoBehaviour
     private Vector3 leftDir;
     private Vector3 rightDir;
 
+
     public void TakeDamage(float damage)
     {
         health -= damage;
