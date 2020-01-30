@@ -16,6 +16,7 @@ public class LockOnManager : MonoBehaviour
     private float range = 10.0f;
 
     private Vector3 closestEnemyPos;
+    private bool islockon = false;
 
     void Start()
     {
@@ -38,15 +39,20 @@ public class LockOnManager : MonoBehaviour
 
             if (Input.GetMouseButtonDown(1))
             {
+                islockon = true;
                 LockInterface(true);
             }
             if (Input.GetMouseButtonUp(1))
             {
+                islockon = false;
                 LockInterface(false);
             }
         }
         else
+        {
+            islockon = false;
             AimInterface(false);
+        }
     }
 
     void AimInterface(bool state)
@@ -85,6 +91,15 @@ public class LockOnManager : MonoBehaviour
         }
 
         return index;
+    }
 
+    public Vector3 GetClosestEnemy()
+    {
+        return closestEnemyPos;
+    }
+
+    public bool GetIsLockOn()
+    {
+        return islockon;
     }
 }
