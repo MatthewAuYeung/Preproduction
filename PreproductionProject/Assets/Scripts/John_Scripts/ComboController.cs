@@ -1,12 +1,15 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System;
 
 public class ComboController : MonoBehaviour
 {
+    public Action OnAttackStart, OnAttackStop;
+
     Animator animator;
     Rigidbody rigidBody;
-    public static bool isAttacking;
+    bool isAttacking;
 
     int attackIndex = 0;                 // Determines which animation will play
     bool canClick;                  // Locks ability to click during animation event
@@ -41,5 +44,14 @@ public class ComboController : MonoBehaviour
             attackIndex++;
         else
             attackIndex = 0;
+
+        OnAttackStart?.Invoke();
+    }
+
+    void StopAttack()
+    {
+        isAttacking = false;
+
+        OnAttackStop?.Invoke();
     }
 }
