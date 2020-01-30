@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 64267573689418294}
   m_Layer: 0
   m_Name: Gen_Ramp_01_snaps002
-  m_TagString: Untagged
+  m_TagString: NotWarpable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
