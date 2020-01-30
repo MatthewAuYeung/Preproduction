@@ -18,9 +18,9 @@ namespace Invector.CharacterController
         {
             canMove = false;
 
-            print("set values to 0");
-            animator.SetFloat("InputVertical", 0f, 0.1f, Time.deltaTime);
-            animator.SetFloat("InputHorizontal", 0f, 0.1f, Time.deltaTime);
+            //print("set values to 0");
+            animator.SetFloat("InputVertical", 0f);// 0.1f, Time.deltaTime);
+            animator.SetFloat("InputHorizontal", 0f);//, 0.1f, Time.deltaTime);
             animator.SetBool("attacking", true);
         }
 
@@ -42,9 +42,9 @@ namespace Invector.CharacterController
                 animator.SetFloat("VerticalVelocity", verticalVelocity);
 
             // fre movement get the input 0 to 1
-            if(canMove)
+            if (canMove)
             {
-                animator.SetFloat("InputVertical", speed, 0.1f, Time.deltaTime);
+                animator.SetFloat("InputVertical", speed);//, 0.1f, Time.deltaTime);
 
                 if (isStrafing)
                 {

@@ -31,6 +31,15 @@ public class ComboController : MonoBehaviour
         {
             Attack();
         }
+        if (animator.GetCurrentAnimatorStateInfo(1).IsName("NotAttacking"))
+        {
+            StopAttack();
+        }
+        else
+        {
+            animator.SetFloat("InputVertical", 0f);//, 0.1f, Time.deltaTime);
+            animator.SetFloat("InputHorizontal", 0f);//, 0.1f, Time.deltaTime);
+        }
     }
 
     void Attack()
