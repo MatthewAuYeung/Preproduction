@@ -18,7 +18,7 @@ namespace Invector.CharacterController
         {
             canMove = false;
 
-            //print("set values to 0");
+            Debug.Log("set values to 0");
             animator.SetFloat("InputVertical", 0f);// 0.1f, Time.deltaTime);
             animator.SetFloat("InputHorizontal", 0f);//, 0.1f, Time.deltaTime);
             animator.SetBool("attacking", true);
