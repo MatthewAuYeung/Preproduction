@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 64133933054888352}
   m_Layer: 0
   m_Name: Deck_WallWindow_01_snaps002
-  m_TagString: Untagged
+  m_TagString: NotWarpable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

@@ -26,6 +26,7 @@ public abstract class BaseEnemyScript : MonoBehaviour
     [SerializeField]
     protected float fov = 60.0f;
 
+    public float speed = 3.5f;
     protected float currentTime;
 
     private float half_fov;
