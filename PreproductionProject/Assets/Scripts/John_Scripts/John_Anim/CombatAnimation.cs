@@ -24,7 +24,7 @@ public class CombatAnimation : MonoBehaviour
       
             if (Input.GetMouseButtonDown(0))
             {
-                anim.SetTrigger("Attack");
+                //anim.SetTrigger("Attack");
             }
     }
 

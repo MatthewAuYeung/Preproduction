@@ -38,6 +38,7 @@ public abstract class BaseEnemyScript : MonoBehaviour
     public void TakeDamage(float damage)
     {
         health -= damage;
+        Debug.Log(health.ToString());
     }
 
     void OnDrawGizmosSelected()

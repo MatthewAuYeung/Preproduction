@@ -5,6 +5,31 @@ namespace Invector.CharacterController
 {
     public abstract class vThirdPersonAnimator : vThirdPersonMotor
     {
+        bool canMove = true;
+
+        private void Awake()
+        {
+            ComboController comboController = FindObjectOfType<ComboController>();
+            comboController.OnAttackStart += AttackStart;
+            comboController.OnAttackStop += AttackStop;
+        }
+
+        void AttackStart()
+        {
+            canMove = false;
+
+            //print("set values to 0");
+            animator.SetFloat("InputVertical", 0f);// 0.1f, Time.deltaTime);
+            animator.SetFloat("InputHorizontal", 0f);//, 0.1f, Time.deltaTime);
+            animator.SetBool("attacking", true);
+        }
+
+        void AttackStop()
+        {
+            canMove = true;
+            animator.SetBool("attacking", false);
+        }
+
         public virtual void UpdateAnimator()
         {
             if (animator == null || !animator.enabled) return;
@@ -16,14 +41,17 @@ namespace Invector.CharacterController
             if (!isGrounded)
                 animator.SetFloat("VerticalVelocity", verticalVelocity);
 
-            if (isStrafing)
-            {
-                // strafe movement get the input 1 or -1
-                animator.SetFloat("InputHorizontal", direction, 0.1f, Time.deltaTime);
-            }
-
             // fre movement get the input 0 to 1
-            animator.SetFloat("InputVertical", speed, 0.1f, Time.deltaTime);
+            if (canMove)
+            {
+                animator.SetFloat("InputVertical", speed);//, 0.1f, Time.deltaTime);
+
+                if (isStrafing)
+                {
+                    // strafe movement get the input 1 or -1
+                    animator.SetFloat("InputHorizontal", direction, 0.1f, Time.deltaTime);
+                }
+            }
         }
 
         public void OnAnimatorMove()
