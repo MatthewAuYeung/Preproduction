@@ -3102,6 +3102,7 @@ MonoBehaviour:
   freeWalkSpeed: 0.5
   freeRunningSpeed: 1
   freeSprintSpeed: 1
+  freeWalkSpeed: 1
   strafeWalkSpeed: 2.5
   strafeRunningSpeed: 3
   strafeSprintSpeed: 4
