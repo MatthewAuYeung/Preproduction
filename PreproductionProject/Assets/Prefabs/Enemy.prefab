@@ -5021,11 +5021,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 5825453507846488637}
     m_Modifications:
-    - target: {fileID: 2205154780597391849, guid: ec0bf95e26038b64396fc67509a489cd,
-        type: 3}
-      propertyPath: m_Name
-      value: HealthBar
-      objectReference: {fileID: 0}
     - target: {fileID: 8448585220110722588, guid: ec0bf95e26038b64396fc67509a489cd,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -5130,6 +5125,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Pivot.y
       value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2205154780597391849, guid: ec0bf95e26038b64396fc67509a489cd,
+        type: 3}
+      propertyPath: m_Name
+      value: HealthBar
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ec0bf95e26038b64396fc67509a489cd, type: 3}
