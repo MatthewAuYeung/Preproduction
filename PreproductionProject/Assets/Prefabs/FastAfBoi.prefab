@@ -107,6 +107,7 @@ GameObject:
   - component: {fileID: 4674242320911516066}
   - component: {fileID: 8341284848985065250}
   - component: {fileID: 1555268841536895482}
+  - component: {fileID: 1864673159331751266}
   m_Layer: 2
   m_Name: FastAfBoi
   m_TagString: EnemyTag
@@ -262,6 +263,18 @@ SphereCollider:
   serializedVersion: 2
   m_Radius: 1
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &1864673159331751266
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5825453507846488633}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a64ee1237e8d07047a4c0ba9e183bbdf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &8380369742036888291
 GameObject:
   m_ObjectHideFlags: 0
@@ -5021,11 +5034,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 5825453507846488637}
     m_Modifications:
-    - target: {fileID: 2205154780597391849, guid: ec0bf95e26038b64396fc67509a489cd,
-        type: 3}
-      propertyPath: m_Name
-      value: HealthBar
-      objectReference: {fileID: 0}
     - target: {fileID: 8448585220110722588, guid: ec0bf95e26038b64396fc67509a489cd,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -5130,6 +5138,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Pivot.y
       value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2205154780597391849, guid: ec0bf95e26038b64396fc67509a489cd,
+        type: 3}
+      propertyPath: m_Name
+      value: HealthBar
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ec0bf95e26038b64396fc67509a489cd, type: 3}
