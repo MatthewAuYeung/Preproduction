@@ -6,7 +6,6 @@ using System;
 public class ComboController : MonoBehaviour
 {
     public Action OnAttackStart, OnAttackStop;
-
     Animator animator;
     Rigidbody rigidBody;
     bool isAttacking;
@@ -14,6 +13,8 @@ public class ComboController : MonoBehaviour
     int attackIndex = 0;                 // Determines which animation will play
     bool canClick;                  // Locks ability to click during animation event
     private const int totalAttacks = 3;
+
+    float delayAttack = 0.0f;
 
     void Start()
     {
@@ -27,8 +28,9 @@ public class ComboController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(Input.GetMouseButtonDown(0))
+        if(Input.GetMouseButtonDown(0) && delayAttack < Time.time)
         {
+            delayAttack = Time.time + 0.8f;
             Attack();
         }
         
