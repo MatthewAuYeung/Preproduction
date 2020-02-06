@@ -9,37 +9,50 @@ public class WarpController : MonoBehaviour
     private float warpAttackDmg = 1.0f;
 
     [SerializeField]
-    private float warpRange = 1.0f;
+    float warpRange = 1.0f;
     [SerializeField]
-    private float warpDuration = 1.0f;
-
+    float warpDuration = 1.0f;
     [SerializeField]
-    private float warpOffset = 0.5f;
+    float warpOffset = 0.5f;
+    [SerializeField]
+    float manaUsed;
 
     public GameObject ybot;
 
+    private NewPlayerScript player;
     private LockOnManager lockOnManager;
+
+    float currentTime;
+    float warpCooldown;
+    bool isWarping;
 
     private void Awake()
     {
+        player = FindObjectOfType<NewPlayerScript>();
+        warpCooldown = player.GetWarpCooldown();
         lockOnManager = FindObjectOfType<LockOnManager>();
     }
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.T))
-        {
-            FreeWarp();
-        }
 
-        if(lockOnManager.GetIsLockOn() && Input.GetKeyDown(KeyCode.F))
+        if(!isWarping && currentTime < Time.time)
         {
-            WarpAttack(lockOnManager.GetClosestEnemy());
+            if (Input.GetKeyDown(KeyCode.T))
+            {
+                FreeWarp();
+            }
+
+            if (lockOnManager.GetIsLockOn() && Input.GetKeyDown(KeyCode.F))
+            {
+                WarpAttack(lockOnManager.GetClosestEnemy());
+            }
         }
     }
 
     private void WarpToNewPos(Vector3 targetPos)
     {
+        // Calculate the new position for the warp
         Vector2 PlayerPos = new Vector2(transform.position.x, transform.position.z);
         Vector2 ObjPos = new Vector2(targetPos.x, targetPos.z);
         Vector2 OffsetVec = PlayerPos - ObjPos;
@@ -47,7 +60,7 @@ public class WarpController : MonoBehaviour
         Vector3 newWarpPos = targetPos;
         newWarpPos.x += OffsetDir.x * warpOffset;
         newWarpPos.z += OffsetDir.y * warpOffset;
-
+        // Keeps the y position as before
         newWarpPos.y = transform.position.y;
 
         transform.DOMove(newWarpPos, warpDuration).OnComplete(() => EndWarp());
@@ -55,10 +68,14 @@ public class WarpController : MonoBehaviour
 
     private void FreeWarp()
     {
+        isWarping = true;
         Vector3 warpDir = Camera.main.transform.forward;
         warpDir.y = 0.0f;
         RaycastHit hit;
         ShowBody(false);
+        player.UseMana(manaUsed);
+
+        // Raycast from the player model to check if there is a not warpable object inside the warp range
         if (Physics.Raycast(transform.position + transform.up, warpDir.normalized, out hit, warpRange))
         {
             var hitObj = hit.collider.gameObject;
@@ -74,12 +91,17 @@ public class WarpController : MonoBehaviour
     private void WarpAttack(Vector3 targetPos)
     {
         ShowBody(false);
+        player.UseMana(manaUsed);
+
         WarpToNewPos(targetPos);
     }
 
     private void EndWarp()
     {
         ShowBody(true);
+        // Set a cool down for warping
+        currentTime = Time.time + warpCooldown;
+        isWarping = false;
     }
 
     void ShowBody(bool state)

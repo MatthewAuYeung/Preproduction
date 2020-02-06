@@ -5,28 +5,59 @@ using UnityEngine;
 public class NewPlayerScript : MonoBehaviour
 {
     public SimpleHealthBar healthBar;
+    public SimpleHealthBar manaBar;
     public float AttckDamage;
     public int hitcount = 0;
     [SerializeField]
-    private float health;
+    float health;
     [SerializeField]
-    private float maxHealth;
+    float maxHealth;
+    [SerializeField]
+    float mana;
+    [SerializeField]
+    float maxMana;
+    [SerializeField]
+    float manaRegenDelay;
+    [SerializeField]
+    float warpCooldown;
 
-    
-    // Start is called before the first frame update
-    void Start()
+    private void Awake()
     {
-        
+        health = maxHealth;
+        mana = maxMana;
+        InvokeRepeating("Regenerate", 1.0f, manaRegenDelay);
     }
 
-    // Update is called once per frame
+    private void Start()
+    {
+    }
+
     void Update()
     {
         healthBar.UpdateBar(health, maxHealth);
+        manaBar.UpdateBar(mana, maxMana);
+    }
+
+    void Regenerate()
+    {
+        if(mana  < maxMana)
+        {
+            mana += 1.0f;
+        }
     }
 
     public void TakeDamage(float damage)
     {
         health -= damage;
+    }
+
+    public void UseMana(float amount)
+    {
+        mana -= amount;
+    }
+
+    public float GetWarpCooldown()
+    {
+        return warpCooldown;
     }
 }

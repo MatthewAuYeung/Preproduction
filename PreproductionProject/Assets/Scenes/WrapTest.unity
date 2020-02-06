@@ -370,6 +370,16 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5003976980978576150, guid: 26a1e40a5ecc2a1459d868188acbc39f,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6226596335058991074, guid: 26a1e40a5ecc2a1459d868188acbc39f,
+        type: 3}
+      propertyPath: useRootMotion
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 390487731, guid: 26a1e40a5ecc2a1459d868188acbc39f, type: 3}
       propertyPath: m_Color.a
       value: 1
@@ -384,15 +394,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 390487731, guid: 26a1e40a5ecc2a1459d868188acbc39f, type: 3}
       propertyPath: m_Color.b
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5003976980978576150, guid: 26a1e40a5ecc2a1459d868188acbc39f,
-        type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1615343467, guid: 26a1e40a5ecc2a1459d868188acbc39f, type: 3}
-      propertyPath: warpOffset
       value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
