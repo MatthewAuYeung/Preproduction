@@ -1627,10 +1627,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   healthBar: {fileID: 7204139449042237501}
+  manaBar: {fileID: 7204139449042277737}
   AttckDamage: 30
   hitcount: 0
   health: 100
   maxHealth: 100
+  mana: 100
+  maxMana: 100
+  manaRegenDelay: 1
+  warpCooldown: 3
 --- !u!114 &1904856015
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2999,7 +3004,8 @@ MonoBehaviour:
   warpAttackDmg: 1
   warpRange: 10
   warpDuration: 0.5
-  warpOffset: 0.5
+  warpOffset: 1
+  manaUsed: 10
   ybot: {fileID: 6226596333624763828}
 --- !u!114 &1038329704
 MonoBehaviour:
@@ -3093,9 +3099,9 @@ MonoBehaviour:
   jumpForward: 3
   jumpHeight: 4
   useRootMotion: 1
-  freeWalkSpeed: 2.5
-  freeRunningSpeed: 3
-  freeSprintSpeed: 4
+  freeWalkSpeed: 0.5
+  freeRunningSpeed: 1
+  freeSprintSpeed: 1
   strafeWalkSpeed: 2.5
   strafeRunningSpeed: 3
   strafeSprintSpeed: 4
@@ -3474,12 +3480,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 34017cf12560c804bb2f669f00c7af91, type: 3}
---- !u!224 &7204139449057477469 stripped
-RectTransform:
-  m_CorrespondingSourceObject: {fileID: 22486214, guid: 34017cf12560c804bb2f669f00c7af91,
-    type: 3}
-  m_PrefabInstance: {fileID: 7204139449035530139}
-  m_PrefabAsset: {fileID: 0}
 --- !u!114 &7204139449042237501 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 11429798, guid: 34017cf12560c804bb2f669f00c7af91,
@@ -3492,3 +3492,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1310e65397a274d44a776b51d6937f61, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &7204139449042277737 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 11471602, guid: 34017cf12560c804bb2f669f00c7af91,
+    type: 3}
+  m_PrefabInstance: {fileID: 7204139449035530139}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1310e65397a274d44a776b51d6937f61, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!224 &7204139449057477469 stripped
+RectTransform:
+  m_CorrespondingSourceObject: {fileID: 22486214, guid: 34017cf12560c804bb2f669f00c7af91,
+    type: 3}
+  m_PrefabInstance: {fileID: 7204139449035530139}
+  m_PrefabAsset: {fileID: 0}

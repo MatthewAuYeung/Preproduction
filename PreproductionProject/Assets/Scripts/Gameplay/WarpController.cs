@@ -22,8 +22,9 @@ public class WarpController : MonoBehaviour
     private NewPlayerScript player;
     private LockOnManager lockOnManager;
 
-    private float currentTime;
-    private float warpCooldown;
+    float currentTime;
+    float warpCooldown;
+    bool isWarping;
 
     private void Awake()
     {
@@ -35,7 +36,7 @@ public class WarpController : MonoBehaviour
     private void Update()
     {
 
-        if(currentTime < Time.time)
+        if(!isWarping && currentTime < Time.time)
         {
             if (Input.GetKeyDown(KeyCode.T))
             {
@@ -67,6 +68,7 @@ public class WarpController : MonoBehaviour
 
     private void FreeWarp()
     {
+        isWarping = true;
         Vector3 warpDir = Camera.main.transform.forward;
         warpDir.y = 0.0f;
         RaycastHit hit;
@@ -99,6 +101,7 @@ public class WarpController : MonoBehaviour
         ShowBody(true);
         // Set a cool down for warping
         currentTime = Time.time + warpCooldown;
+        isWarping = false;
     }
 
     void ShowBody(bool state)

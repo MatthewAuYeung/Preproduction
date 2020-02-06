@@ -11,20 +11,19 @@ namespace Invector.CharacterController
         {
             ComboController comboController = FindObjectOfType<ComboController>();
             comboController.OnAttackStart += AttackStart;
-            comboController.OnAttackStop += AttackStop;
+            comboController.OnAttackStop += AttackStop1;
         }
 
         void AttackStart()
         {
             canMove = false;
 
-            Debug.Log("set values to 0");
             animator.SetFloat("InputVertical", 0f);// 0.1f, Time.deltaTime);
             animator.SetFloat("InputHorizontal", 0f);//, 0.1f, Time.deltaTime);
             animator.SetBool("attacking", true);
         }
 
-        void AttackStop()
+        void AttackStop1()
         {
             canMove = true;
             animator.SetBool("attacking", false);

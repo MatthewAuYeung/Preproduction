@@ -9,13 +9,15 @@ public class NewPlayerScript : MonoBehaviour
     public float AttckDamage;
     public int hitcount = 0;
     [SerializeField]
-    private float health;
+    float health;
     [SerializeField]
-    private float maxHealth;
+    float maxHealth;
     [SerializeField]
-    private float mana;
+    float mana;
     [SerializeField]
-    private float maxMana;
+    float maxMana;
+    [SerializeField]
+    float manaRegenDelay;
     [SerializeField]
     float warpCooldown;
 
@@ -23,22 +25,27 @@ public class NewPlayerScript : MonoBehaviour
     {
         health = maxHealth;
         mana = maxMana;
+        InvokeRepeating("Regenerate", 1.0f, manaRegenDelay);
+    }
+
+    private void Start()
+    {
     }
 
     void Update()
     {
-        if(mana < maxMana)
-        {
-            mana += 1.0f;
-        }
         healthBar.UpdateBar(health, maxHealth);
         manaBar.UpdateBar(mana, maxMana);
     }
 
-    //IEnumerator RegenerateOverTime()
-    //{
+    void Regenerate()
+    {
+        if(mana  < maxMana)
+        {
+            mana += 1.0f;
+        }
+    }
 
-    //}
     public void TakeDamage(float damage)
     {
         health -= damage;
