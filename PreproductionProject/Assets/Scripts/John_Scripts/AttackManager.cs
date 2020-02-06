@@ -19,7 +19,7 @@ public class AttackManager : MonoBehaviour
         {
             BaseEnemyScript enemy = other.GetComponent<BaseEnemyScript>();
             enemy.TakeDamage(attackDmg);
-            playerScript.hitcount++;
+            playerScript.IncrementHitPoint();
         }
     }
 }

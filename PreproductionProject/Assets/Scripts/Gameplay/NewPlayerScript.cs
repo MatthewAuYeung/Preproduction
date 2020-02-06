@@ -6,8 +6,11 @@ public class NewPlayerScript : MonoBehaviour
 {
     public SimpleHealthBar healthBar;
     public SimpleHealthBar manaBar;
+    public GameObject winningCanvas;
     public float AttckDamage;
     public int hitcount = 0;
+    public float delay = 3.0f;
+    public float WinScreenLast = 3.0f;
     [SerializeField]
     float health;
     [SerializeField]
@@ -21,8 +24,14 @@ public class NewPlayerScript : MonoBehaviour
     [SerializeField]
     float warpCooldown;
 
+    private float timer;
+    private float WinScreenTimer; 
+    private EnemyManager enemyManager;
+    private bool ShowWinUI = false;
+
     private void Awake()
     {
+        enemyManager = FindObjectOfType<EnemyManager>();
         health = maxHealth;
         mana = maxMana;
         InvokeRepeating("Regenerate", 1.0f, manaRegenDelay);
@@ -36,6 +45,17 @@ public class NewPlayerScript : MonoBehaviour
     {
         healthBar.UpdateBar(health, maxHealth);
         manaBar.UpdateBar(mana, maxMana);
+        resetCounter();
+        resetWinScreenCounter();
+        if (enemyManager.CheckBattleDone())
+        {
+            if(!ShowWinUI)
+            {
+                WinScreenTimer = Time.time + WinScreenLast;
+                winningCanvas.SetActive(true);
+            }
+            ShowWinUI = true;            
+        }
     }
 
     void Regenerate()
@@ -60,4 +80,28 @@ public class NewPlayerScript : MonoBehaviour
     {
         return warpCooldown;
     }
+
+    public void IncrementHitPoint()
+    {
+        timer = Time.time + delay;
+        hitcount++;
+    }
+    private void resetCounter()
+    {
+        if (timer < Time.time)
+        {
+            hitcount = 0;
+            timer = Time.time + delay;
+        }
+
+    }
+    private void resetWinScreenCounter()
+    {
+        if (WinScreenTimer < Time.time)
+        {
+            winningCanvas.SetActive(false);
+        }
+
+    }
+
 }
