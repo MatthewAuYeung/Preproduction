@@ -41,8 +41,12 @@ public class EnemyScript : BaseEnemyScript
 
         if(health <= 0.0f)
         {
-            Destroy(gameObject);
+            _manager.enemies.Remove(this);
+            transform.gameObject.SetActive(false);
+            return;
+            //Destroy(gameObject);
         }
+
 
         var disBetweenPlayer = Vector3.Distance(_agent.transform.position, _target.transform.position);
         if (disBetweenPlayer < searchRange)

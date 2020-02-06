@@ -1628,8 +1628,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   healthBar: {fileID: 7204139449042237501}
   manaBar: {fileID: 7204139449042277737}
+  winningCanvas: {fileID: 0}
   AttckDamage: 30
   hitcount: 0
+  delay: 3
+  WinScreenLast: 3
   health: 100
   maxHealth: 100
   mana: 100
