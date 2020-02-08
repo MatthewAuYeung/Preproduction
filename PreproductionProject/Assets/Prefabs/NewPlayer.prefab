@@ -1628,7 +1628,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   healthBar: {fileID: 7204139449042237501}
   manaBar: {fileID: 7204139449042277737}
-  winningCanvas: {fileID: 0}
+  winningCanvas: {fileID: 3546665735376905334, guid: c8f743c0fa2b4f3408e969d637fffcde,
+    type: 3}
   AttckDamage: 30
   hitcount: 0
   delay: 3
@@ -3105,7 +3106,6 @@ MonoBehaviour:
   freeWalkSpeed: 0.5
   freeRunningSpeed: 1
   freeSprintSpeed: 1
-  freeWalkSpeed: 1
   strafeWalkSpeed: 2.5
   strafeRunningSpeed: 3
   strafeSprintSpeed: 4
