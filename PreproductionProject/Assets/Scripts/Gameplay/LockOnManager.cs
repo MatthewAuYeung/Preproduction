@@ -16,6 +16,7 @@ public class LockOnManager : MonoBehaviour
     private float range = 10.0f;
 
     private Vector3 closestEnemyPos;
+    private GameObject closestObj;
     private bool islockon = false;
 
     void Start()
@@ -27,7 +28,8 @@ public class LockOnManager : MonoBehaviour
     {
         if (targets.Count == 0)
             return;
-        closestEnemyPos = targets[targetIndex()].position;
+        closestObj = targets[targetIndex()].gameObject;
+        closestEnemyPos = closestObj.transform.position;
 
         float dist = Vector3.Distance(transform.position, closestEnemyPos);
 
