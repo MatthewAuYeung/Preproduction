@@ -14,15 +14,16 @@ public class EnemyScript : BaseEnemyScript
     private ParticleSystem _particleSystem;
 
     public Image healthBar;
+    float defaultSpeed;
 
     private void Awake()
     {
         _agent = GetComponent<NavMeshAgent>();
-        _manager = GetComponentInParent<EnemyManager>();
+        _manager = FindObjectOfType<EnemyManager>();
         _target = _manager.target;
         _attackTrigger = GetComponent<SphereCollider>();
         _particleSystem = GetComponentInChildren<ParticleSystem>();
-
+        defaultSpeed = _agent.speed;
     }
 
     private void Start()
@@ -30,6 +31,17 @@ public class EnemyScript : BaseEnemyScript
         _agent.speed = speed;
         _attackTrigger.radius = attackRange;
         _particleSystem.Pause();
+    }
+
+    public void SlowFromBomb(float speedModifier, float effectDuration = 1f)
+    {
+        _agent.speed *= speedModifier;
+        Invoke("ResetSpeed", effectDuration);
+    }
+
+    void ResetSpeed()
+    {
+        _agent.speed = defaultSpeed;
     }
 
     private void Update()
