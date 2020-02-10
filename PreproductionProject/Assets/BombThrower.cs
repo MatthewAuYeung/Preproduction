@@ -20,8 +20,10 @@ public class BombThrower : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.B))
         {
             animator.SetTrigger("Throw");
-            GameObject newBomb = Instantiate(bomb, bombSpawnTranform.position, Quaternion.identity);
-            Vector3 throwForce = bombSpawnTranform.forward * throwPower;
+            Vector3 throwDirection = Camera.main.transform.forward;
+            Vector3 spawnPosition = bombSpawnTranform.position + (throwDirection * 1f);
+            GameObject newBomb = Instantiate(bomb, spawnPosition, Quaternion.identity);
+            Vector3 throwForce = throwDirection * throwPower;
             newBomb.GetComponent<Rigidbody>().AddForce(throwForce);
         }
     }

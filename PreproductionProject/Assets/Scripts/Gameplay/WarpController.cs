@@ -61,7 +61,7 @@ public class WarpController : MonoBehaviour
         newWarpPos.x += OffsetDir.x * warpOffset;
         newWarpPos.z += OffsetDir.y * warpOffset;
         // Keeps the y position as before
-        newWarpPos.y = transform.position.y;
+        //newWarpPos.y = transform.position.y;
 
         transform.DOMove(newWarpPos, warpDuration).OnComplete(() => EndWarp());
     }
