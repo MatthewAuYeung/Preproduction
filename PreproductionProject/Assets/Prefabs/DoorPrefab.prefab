@@ -297,7 +297,7 @@ GameObject:
   - component: {fileID: 1123728484273693119}
   m_Layer: 0
   m_Name: DoorFrame
-  m_TagString: Untagged
+  m_TagString: NotWarpable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -493,6 +493,10 @@ PrefabInstance:
     - target: {fileID: 1514489277716338, guid: 24f3bfb6ffbd4e449a23c62225e14873, type: 3}
       propertyPath: m_Name
       value: Gen_Door_01_snaps002
+      objectReference: {fileID: 0}
+    - target: {fileID: 1514489277716338, guid: 24f3bfb6ffbd4e449a23c62225e14873, type: 3}
+      propertyPath: m_TagString
+      value: NotWarpable
       objectReference: {fileID: 0}
     - target: {fileID: 4151980975440356, guid: 24f3bfb6ffbd4e449a23c62225e14873, type: 3}
       propertyPath: m_LocalPosition.x
