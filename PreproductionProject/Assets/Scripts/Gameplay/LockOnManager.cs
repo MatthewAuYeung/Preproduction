@@ -54,6 +54,7 @@ public class LockOnManager : MonoBehaviour
         {
             islockon = false;
             AimInterface(false);
+            LockInterface(false);
         }
     }
 
