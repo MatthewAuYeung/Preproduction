@@ -35,17 +35,19 @@ public class WarpController : MonoBehaviour
 
     private void Update()
     {
+        if (!player.HasMana(manaUsed))
+            return;
 
         if(!isWarping && currentTime < Time.time)
         {
             if (Input.GetKeyDown(KeyCode.T))
             {
-                FreeWarp();
-            }
-
-            if (lockOnManager.GetIsLockOn() && Input.GetKeyDown(KeyCode.F))
-            {
-                WarpAttack(lockOnManager.GetClosestEnemy());
+                if (lockOnManager.GetIsLockOn())
+                {
+                    WarpAttack(lockOnManager.GetClosestEnemy());
+                }
+                else
+                    FreeWarp();
             }
         }
     }
