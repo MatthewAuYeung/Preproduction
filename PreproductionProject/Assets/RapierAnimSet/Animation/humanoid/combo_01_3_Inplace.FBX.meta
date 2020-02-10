@@ -654,7 +654,7 @@ ModelImporter:
       name: combo_01_3_Inplace
       takeName: Take 001
       internalID: 7400000
-      firstFrame: 0
+      firstFrame: 7
       lastFrame: 44
       wrapMode: 0
       orientationOffsetY: 0
