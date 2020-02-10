@@ -43,6 +43,9 @@ public class NewPlayerScript : MonoBehaviour
 
     void Update()
     {
+        if (health <= 0.0f)
+            DebugRestart.Restart();
+
         healthBar.UpdateBar(health, maxHealth);
         manaBar.UpdateBar(mana, maxMana);
         resetCounter();
@@ -101,7 +104,10 @@ public class NewPlayerScript : MonoBehaviour
         {
             winningCanvas.SetActive(false);
         }
-
     }
 
+    public bool HasMana(float amountUse)
+    {
+        return (mana >= amountUse);
+    }
 }
