@@ -57,6 +57,10 @@ public class WarpController : MonoBehaviour
                     FreeWarp();
             }
         }
+        //if(isWarping)
+        //{
+        //    animator.SetFloat("InputVertical", 2.0f);
+        //}
     }
 
     private void WarpToNewPos(Vector3 targetPos)
