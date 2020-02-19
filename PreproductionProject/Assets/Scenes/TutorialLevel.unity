@@ -895,6 +895,10 @@ PrefabInstance:
       propertyPath: hitEffect
       value: 
       objectReference: {fileID: 1354839091}
+    - target: {fileID: 1983201259, guid: 26a1e40a5ecc2a1459d868188acbc39f, type: 3}
+      propertyPath: AttckDamage
+      value: 40
+      objectReference: {fileID: 0}
     - target: {fileID: 6226596333264784430, guid: 26a1e40a5ecc2a1459d868188acbc39f,
         type: 3}
       propertyPath: m_LocalPosition.z
@@ -1176,6 +1180,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Color.b
       value: 0.3679245
+      objectReference: {fileID: 0}
+    - target: {fileID: 3574435347530858740, guid: 26a1e40a5ecc2a1459d868188acbc39f,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4764674821781306902, guid: 26a1e40a5ecc2a1459d868188acbc39f,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 4
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 7665454944378537331, guid: 26a1e40a5ecc2a1459d868188acbc39f, type: 3}
