@@ -7,18 +7,19 @@ public class EnemyManager : MonoBehaviour
     public Transform target;
     public List<EnemyScript> enemies;
     private bool IsAllEnemiesKilled = false;
+
     private void Awake()
     {
-        
+        enemies = new List<EnemyScript>(FindObjectsOfType<EnemyScript>());
     }
+
     private void Start()
     {
-        enemies = new List<EnemyScript>();
-        GetComponentsInChildren<EnemyScript>(false,enemies);
+
     }
+
     private void Update()
     {
-        Debug.Log(enemies.Count.ToString());
         if (enemies.Count == 0)
         {
             IsAllEnemiesKilled = true;

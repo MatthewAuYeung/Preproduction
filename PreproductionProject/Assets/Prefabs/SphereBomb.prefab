@@ -11,9 +11,9 @@ GameObject:
   - component: {fileID: 8647197775337808631}
   - component: {fileID: 8647197775337808630}
   - component: {fileID: 8647197775337808625}
-  - component: {fileID: 8647197775337808624}
   - component: {fileID: 8647197775337808627}
   - component: {fileID: 8647197775337808628}
+  - component: {fileID: 7987873949641067015}
   m_Layer: 2
   m_Name: SphereBomb
   m_TagString: Untagged
@@ -80,19 +80,6 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!135 &8647197775337808624
-SphereCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8647197775337808626}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 0.5
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &8647197775337808627
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -105,6 +92,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: edc3652bc33a705419b6758193fbf3cf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  explosion: {fileID: 204135940715393309, guid: 4720164b5427a234ab11f9927093356d,
+    type: 3}
 --- !u!54 &8647197775337808628
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -121,3 +110,16 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!135 &7987873949641067015
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8647197775337808626}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.5
+  m_Center: {x: 0, y: 0, z: 0}
