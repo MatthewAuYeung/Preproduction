@@ -23,6 +23,8 @@ public class NewPlayerScript : MonoBehaviour
     float manaRegenDelay;
     [SerializeField]
     float warpCooldown;
+    [SerializeField]
+    protected ParticleSystem hitEffect;
 
     private float timer;
     private float WinScreenTimer; 
@@ -59,8 +61,15 @@ public class NewPlayerScript : MonoBehaviour
             }
             ShowWinUI = true;            
         }
+        if (hitEffect.isPlaying)
+            StartCoroutine(StopHitEffect());
     }
 
+    IEnumerator StopHitEffect()
+    {
+        yield return new WaitForSeconds(0.5f);
+        hitEffect.Stop();
+    }
     void Regenerate()
     {
         if(mana  < maxMana)
@@ -72,6 +81,7 @@ public class NewPlayerScript : MonoBehaviour
     public void TakeDamage(float damage)
     {
         health -= damage;
+        hitEffect.Play();
     }
 
     public void UseMana(float amount)
