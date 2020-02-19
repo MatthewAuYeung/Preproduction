@@ -29,9 +29,8 @@ public class LockOnManager : MonoBehaviour
         if (targets.Count == 0)
             return;
         closestObj = targets[targetIndex()].gameObject;
-        closestEnemyPos = closestObj.transform.position;
 
-        float dist = Vector3.Distance(transform.position, closestEnemyPos);
+        float dist = Vector3.Distance(transform.position, closestObj.transform.position);
 
         if(dist <= range)
         {
@@ -96,9 +95,9 @@ public class LockOnManager : MonoBehaviour
         return index;
     }
 
-    public Vector3 GetClosestEnemy()
+    public GameObject GetClosestObject()
     {
-        return closestEnemyPos;
+        return closestObj;
     }
 
     public bool GetIsLockOn()
