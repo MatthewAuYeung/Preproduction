@@ -24,6 +24,8 @@ public class EnemyScript : BaseEnemyScript
         _attackTrigger = GetComponent<SphereCollider>();
         _particleSystem = GetComponentInChildren<ParticleSystem>();
         defaultSpeed = _agent.speed;
+        meshRenderer = GetComponent<MeshRenderer>();
+        originalMat = meshRenderer.material;
     }
 
     private void Start()
@@ -36,12 +38,14 @@ public class EnemyScript : BaseEnemyScript
     public void SlowFromBomb(float speedModifier, float effectDuration = 1f)
     {
         _agent.speed *= speedModifier;
+        meshRenderer.material = SlowBombEffectMat;
         Invoke("ResetSpeed", effectDuration);
     }
 
     void ResetSpeed()
     {
         _agent.speed = defaultSpeed;
+        meshRenderer.material = originalMat;
     }
 
     private void Update()

@@ -26,6 +26,12 @@ public abstract class BaseEnemyScript : MonoBehaviour
     [SerializeField]
     protected float fov = 60.0f;
 
+    [SerializeField]
+    protected Material SlowBombEffectMat;
+
+    protected Material originalMat;
+    protected MeshRenderer meshRenderer;
+
     public float speed = 3.5f;
     protected float currentTime;
 
@@ -34,6 +40,7 @@ public abstract class BaseEnemyScript : MonoBehaviour
     private Quaternion rightRayRotation;
     private Vector3 leftDir;
     private Vector3 rightDir;
+    
 
 
     public void TakeDamage(float damage)
