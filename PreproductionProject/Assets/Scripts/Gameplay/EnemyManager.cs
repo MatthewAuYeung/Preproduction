@@ -20,7 +20,6 @@ public class EnemyManager : MonoBehaviour
 
     private void Update()
     {
-        Debug.Log(enemies.Count.ToString());
         if (enemies.Count == 0)
         {
             IsAllEnemiesKilled = true;

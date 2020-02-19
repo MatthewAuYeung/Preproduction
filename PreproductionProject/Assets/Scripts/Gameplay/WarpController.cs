@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Rendering.PostProcessing;
 
 public class WarpController : MonoBehaviour
 {
@@ -17,11 +18,16 @@ public class WarpController : MonoBehaviour
     [SerializeField]
     float manaUsed;
 
+    [SerializeField]
+    ParticleSystem blueTrail;
+    [SerializeField]
+    ParticleSystem whiteTrail;
+
     public GameObject ybot;
 
     private NewPlayerScript player;
     private LockOnManager lockOnManager;
-
+    private Animator animator;
     float currentTime;
     float warpCooldown;
     bool isWarping;
@@ -30,7 +36,8 @@ public class WarpController : MonoBehaviour
     {
         player = FindObjectOfType<NewPlayerScript>();
         warpCooldown = player.GetWarpCooldown();
-        lockOnManager = FindObjectOfType<LockOnManager>();
+        lockOnManager = GetComponent<LockOnManager>();
+        animator = GetComponent<Animator>();
     }
 
     private void Update()
@@ -50,6 +57,10 @@ public class WarpController : MonoBehaviour
                     FreeWarp();
             }
         }
+        //if(isWarping)
+        //{
+        //    animator.SetFloat("InputVertical", 2.0f);
+        //}
     }
 
     private void WarpToNewPos(Vector3 targetPos)
@@ -63,9 +74,13 @@ public class WarpController : MonoBehaviour
         newWarpPos.x += OffsetDir.x * warpOffset;
         newWarpPos.z += OffsetDir.y * warpOffset;
         // Keeps the y position as before
-        //newWarpPos.y = transform.position.y;
-
+        if(!lockOnManager.GetIsLockOn())
+        {
+            newWarpPos.y = transform.position.y;
+        }
         transform.DOMove(newWarpPos, warpDuration).OnComplete(() => EndWarp());
+        PlayParticles();
+
     }
 
     private void FreeWarp()
@@ -76,7 +91,6 @@ public class WarpController : MonoBehaviour
         RaycastHit hit;
         ShowBody(false);
         player.UseMana(manaUsed);
-
         // Raycast from the player model to check if there is a not warpable object inside the warp range
         if (Physics.Raycast(transform.position + transform.up, warpDir.normalized, out hit, warpRange))
         {
@@ -88,19 +102,34 @@ public class WarpController : MonoBehaviour
             }
         }
         transform.DOMove(transform.position + warpDir.normalized * warpRange, warpDuration).OnComplete(() => EndWarp());
+        PlayParticles();
     }
 
     private void WarpAttack(Vector3 targetPos)
     {
         ShowBody(false);
         player.UseMana(manaUsed);
-
         WarpToNewPos(targetPos);
+    }
+
+    void PlayParticles()
+    {
+        blueTrail.Play();
+        whiteTrail.Play();
+    }
+
+    IEnumerator StopParticles()
+    {
+        yield return new WaitForSeconds(0.5f);
+        blueTrail.Stop();
+        whiteTrail.Stop();
     }
 
     private void EndWarp()
     {
         ShowBody(true);
+        StartCoroutine(StopParticles());
+
         // Set a cool down for warping
         currentTime = Time.time + warpCooldown;
         isWarping = false;
