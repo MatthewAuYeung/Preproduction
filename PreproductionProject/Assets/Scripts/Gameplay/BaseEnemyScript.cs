@@ -29,6 +29,12 @@ public abstract class BaseEnemyScript : MonoBehaviour
     [SerializeField]
     protected ParticleSystem hitEffect;
 
+    [SerializeField]
+    protected Material SlowBombEffectMat;
+
+    protected Material originalMat;
+    protected MeshRenderer meshRenderer;
+
     public float speed = 3.5f;
     protected float currentTime;
 
