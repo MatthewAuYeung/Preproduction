@@ -3072,6 +3072,7 @@ MonoBehaviour:
   warpDuration: 0.5
   warpOffset: 1
   manaUsed: 10
+  warpEnemyDuration: 0.25
   blueTrail: {fileID: 3574435347530858746}
   whiteTrail: {fileID: 4764674821781306896}
   ybot: {fileID: 6226596333624763828}
@@ -3647,27 +3648,17 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5331140456284532861, guid: 5b50394fadd85834fa69df337eac822d,
         type: 3}
+      propertyPath: simulationSpeed
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5331140456284532861, guid: 5b50394fadd85834fa69df337eac822d,
+        type: 3}
       propertyPath: useRigidbodyForVelocity
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5331140456284532861, guid: 5b50394fadd85834fa69df337eac822d,
         type: 3}
-      propertyPath: VelocityModule.enabled
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5331140456284532861, guid: 5b50394fadd85834fa69df337eac822d,
-        type: 3}
       propertyPath: VelocityModule.speedModifier.scalar
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 5331140456284532861, guid: 5b50394fadd85834fa69df337eac822d,
-        type: 3}
-      propertyPath: moveWithTransform
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5331140456284532861, guid: 5b50394fadd85834fa69df337eac822d,
-        type: 3}
-      propertyPath: simulationSpeed
       value: 0.5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
