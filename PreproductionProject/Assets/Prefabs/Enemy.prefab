@@ -242,12 +242,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3bba11f1c54cef24abf22d31d7305dbf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 200
-  maxhealth: 200
+  health: 150
+  maxhealth: 150
   searchRange: 15
   attackRange: 2
-  damage: 10
-  attackDelay: 1.5
+  damage: 7.5
+  attackDelay: 3
   fov: 360
   hitEffect: {fileID: 6303552336471097273}
   SlowBombEffectMat: {fileID: 2100000, guid: 29d77a8096962b64ea1dfe7620819cf6, type: 2}
