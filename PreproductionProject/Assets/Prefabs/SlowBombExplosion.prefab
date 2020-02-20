@@ -104,3 +104,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cf9eb11fbc003984ea7892d8bdbeadc3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  enemyAgentSlowSpeed: 0.5
+  effectDuration: 2.5
+  lifeSpan: 0.25

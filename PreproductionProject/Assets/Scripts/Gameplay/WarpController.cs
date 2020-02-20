@@ -64,23 +64,23 @@ public class WarpController : MonoBehaviour
             }
         }
 
-        if (Input.GetKeyDown(KeyCode.F))
-        {
-            if(isSelected)
-            {
-                WarpEnemy(selectedObj);
-                isSelected = false;
-            }
-            if (lockOnManager.GetIsLockOn() && !isSelected)
-            {
-                selectedObj = lockOnManager.GetClosestObject();
-                if(selectedObj.CompareTag("EnemyTag"))
-                {
-                    selectedObj.SetActive(false);
-                    isSelected = true;
-                }
-            }         
-        }
+        //if (Input.GetKeyDown(KeyCode.F))
+        //{
+        //    if(isSelected)
+        //    {
+        //        WarpEnemy(selectedObj);
+        //        isSelected = false;
+        //    }
+        //    if (lockOnManager.GetIsLockOn() && !isSelected)
+        //    {
+        //        selectedObj = lockOnManager.GetClosestObject();
+        //        if(selectedObj.CompareTag("EnemyTag"))
+        //        {
+        //            selectedObj.SetActive(false);
+        //            isSelected = true;
+        //        }
+        //    }         
+        //}
     }
 
     private void WarpToNewPos(Vector3 targetPos)
@@ -178,6 +178,11 @@ public class WarpController : MonoBehaviour
     void EndWarpEnemy(GameObject target)
     {
         target.SetActive(true);
+    }
+
+    public bool IsWarping()
+    {
+        return isWarping;
     }
 
     private void OnDrawGizmosSelected()
