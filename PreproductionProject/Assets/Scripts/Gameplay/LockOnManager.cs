@@ -35,7 +35,10 @@ public class LockOnManager : MonoBehaviour
     void Update()
     {
         if (targets.Count == 0)
+        {
+            islockon = false;
             return;
+        }
         if(!isSelected)
         {
             warplockon.color = Color.clear;
@@ -67,13 +70,13 @@ public class LockOnManager : MonoBehaviour
                 LockInterface(false);
             }
         }
-        else
-        {
-            islockon = false;
-            AimInterface(false);
-            LockInterface(false);
-            warplockon.color = Color.white;
-        }
+        //else
+        //{
+        //    islockon = false;
+        //    AimInterface(false);
+        //    LockInterface(false);
+        //    warplockon.color = Color.white;
+        //}
     }
 
     void AimInterface(bool state)
@@ -126,6 +129,9 @@ public class LockOnManager : MonoBehaviour
 
     public void SetIsSelected(bool state)
     {
-        isSelected = state;
+        isSelected = state; islockon = false;
+        AimInterface(false);
+        LockInterface(false);
+        warplockon.color = Color.white;
     }
 }

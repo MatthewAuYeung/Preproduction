@@ -186,9 +186,9 @@ public class WarpController : MonoBehaviour
             Vector3 newDiffernceVec = destination - transform.position;
             if(newDiffernceVec.magnitude > hit.distance)
             {
-                Vector3 newWarpPos = Vector3.Normalize(newDiffernceVec) * hit.distance;
-                Vector3 offset = newWarpPos.normalized * 0.5f;
-                //newWarpPos += offset;
+                Vector3 newWarpPos = Vector3.Normalize(newDiffernceVec)* hit.distance;
+                Vector3 offset = newWarpPos.normalized * 0.75f;
+                newWarpPos = transform.position+newWarpPos - offset;// hit.transform.position - offset ;
                 target.transform.DOMove(newWarpPos, warpDuration).OnComplete(() => EndWarpEnemy(target));
                 return;
             }
