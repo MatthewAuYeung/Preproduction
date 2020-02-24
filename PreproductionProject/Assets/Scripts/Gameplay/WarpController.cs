@@ -37,6 +37,7 @@ public class WarpController : MonoBehaviour
 
     private GameObject selectedObj;
     private bool isSelected;
+    private float magnitudeBWTEnemy;
 
     private void Awake()
     {
@@ -70,14 +71,18 @@ public class WarpController : MonoBehaviour
             {
                 WarpEnemy(selectedObj);
                 isSelected = false;
+                lockOnManager.SetIsSelected(isSelected);
             }
             if (lockOnManager.GetIsLockOn() && !isSelected)
             {
                 selectedObj = lockOnManager.GetClosestObject();
                 if(selectedObj.CompareTag("EnemyTag"))
                 {
+                    Vector3 temp = selectedObj.transform.position - transform.position;
+                    magnitudeBWTEnemy = temp.magnitude;
                     selectedObj.SetActive(false);
                     isSelected = true;
+                    lockOnManager.SetIsSelected(isSelected);
                 }
             }         
         }
@@ -100,7 +105,6 @@ public class WarpController : MonoBehaviour
         }
         transform.DOMove(newWarpPos, warpDuration).OnComplete(() => EndWarp());
         PlayParticles();
-
     }
 
     private void FreeWarp()
@@ -167,12 +171,29 @@ public class WarpController : MonoBehaviour
     void WarpEnemy(GameObject target)
     {
         Vector3 targetPos = target.transform.position;
-        Vector3 DiffernceVec = targetPos - transform.position;
         Vector3 warpDir = Camera.main.transform.forward;
-        warpDir.y = 0.0f;
         Vector3 newPos = transform.position;
-        newPos.y = targetPos.y;
-        target.transform.DOMove(newPos + warpDir.normalized * DiffernceVec.magnitude, warpDuration).OnComplete(() => EndWarpEnemy(target));
+        Vector3 tempPos = newPos + warpDir.normalized * magnitudeBWTEnemy;
+        if(targetPos.y > tempPos.y)
+        {
+            warpDir.y = 0.0f;
+            newPos.y = targetPos.y;
+        }
+        Vector3 destination = newPos + warpDir.normalized * magnitudeBWTEnemy;
+        RaycastHit hit;
+        if (Physics.Raycast(transform.position + transform.up, warpDir.normalized, out hit))
+        {
+            Vector3 newDiffernceVec = destination - transform.position;
+            if(newDiffernceVec.magnitude > hit.distance)
+            {
+                Vector3 newWarpPos = Vector3.Normalize(newDiffernceVec) * hit.distance;
+                Vector3 offset = newWarpPos.normalized * 0.5f;
+                //newWarpPos += offset;
+                target.transform.DOMove(newWarpPos, warpDuration).OnComplete(() => EndWarpEnemy(target));
+                return;
+            }
+        }
+            target.transform.DOMove(destination, warpDuration).OnComplete(() => EndWarpEnemy(target));
     }
 
     void EndWarpEnemy(GameObject target)

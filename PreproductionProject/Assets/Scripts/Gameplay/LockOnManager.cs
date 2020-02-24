@@ -6,8 +6,15 @@ using UnityEngine.UI;
 
 public class LockOnManager : MonoBehaviour
 {
-    public Image aim;
-    public Image lockon;
+    [SerializeField]
+    private Image aim;
+
+    [SerializeField]
+    private Image lockon;
+
+    [SerializeField]
+    private Image warplockon;
+
     public Vector2 ui_offset;
     Camera cam;
     public List<Transform> targets;
@@ -18,6 +25,7 @@ public class LockOnManager : MonoBehaviour
     private Vector3 closestEnemyPos;
     private GameObject closestObj;
     private bool islockon = false;
+    private bool isSelected = false;
 
     void Start()
     {
@@ -28,24 +36,34 @@ public class LockOnManager : MonoBehaviour
     {
         if (targets.Count == 0)
             return;
-        closestObj = targets[targetIndex()].gameObject;
-
-        float dist = Vector3.Distance(transform.position, closestObj.transform.position);
-
-        if(dist <= range)
+        if(!isSelected)
         {
-            AimInterface(true);
-            Vector3 screenPos = cam.WorldToScreenPoint(targets[targetIndex()].position);
-            aim.transform.position = screenPos;
+            warplockon.color = Color.clear;
+            closestObj = targets[targetIndex()].gameObject;
 
-            if (Input.GetMouseButtonDown(1))
+            float dist = Vector3.Distance(transform.position, closestObj.transform.position);
+
+            if (dist <= range)
             {
-                islockon = true;
-                LockInterface(true);
+                AimInterface(true);
+                Vector3 screenPos = cam.WorldToScreenPoint(targets[targetIndex()].position);
+                aim.transform.position = screenPos;
+
+                if (Input.GetMouseButtonDown(1))
+                {
+                    islockon = true;
+                    LockInterface(true);
+                }
+                if (Input.GetMouseButtonUp(1))
+                {
+                    islockon = false;
+                    LockInterface(false);
+                }
             }
-            if (Input.GetMouseButtonUp(1))
+            else
             {
                 islockon = false;
+                AimInterface(false);
                 LockInterface(false);
             }
         }
@@ -54,6 +72,7 @@ public class LockOnManager : MonoBehaviour
             islockon = false;
             AimInterface(false);
             LockInterface(false);
+            warplockon.color = Color.white;
         }
     }
 
@@ -103,5 +122,10 @@ public class LockOnManager : MonoBehaviour
     public bool GetIsLockOn()
     {
         return islockon;
+    }
+
+    public void SetIsSelected(bool state)
+    {
+        isSelected = state;
     }
 }
