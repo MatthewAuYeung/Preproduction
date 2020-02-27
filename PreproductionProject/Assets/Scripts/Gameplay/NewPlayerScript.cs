@@ -81,12 +81,27 @@ public class NewPlayerScript : MonoBehaviour
 
     public void HealthPickup(float heal)
     {
-        health += heal;
+        if (health > maxHealth - heal)
+        {
+            health = maxHealth;
+        }
+        else
+        {
+            health += heal;
+        }
     }
 
     public void ManaPickup(float manaRe)
     {
         mana += manaRe;
+        if (mana > maxMana - manaRe)
+        {
+            mana = maxMana;
+        }
+        else
+        {
+            mana += manaRe;
+        }
     }
 
     public float GetWarpCooldown()
