@@ -79,6 +79,16 @@ public class NewPlayerScript : MonoBehaviour
         mana -= amount;
     }
 
+    public void HealthPickup(float heal)
+    {
+        health += heal;
+    }
+
+    public void ManaPickup(float manaRe)
+    {
+        mana += manaRe;
+    }
+
     public float GetWarpCooldown()
     {
         return warpCooldown;
