@@ -27,6 +27,9 @@ public abstract class BaseEnemyScript : MonoBehaviour
     protected float fov = 60.0f;
 
     [SerializeField]
+    protected ParticleSystem hitEffect;
+
+    [SerializeField]
     protected Material SlowBombEffectMat;
 
     protected Material originalMat;
@@ -40,12 +43,12 @@ public abstract class BaseEnemyScript : MonoBehaviour
     private Quaternion rightRayRotation;
     private Vector3 leftDir;
     private Vector3 rightDir;
-    
 
 
     public void TakeDamage(float damage)
     {
         health -= damage;
+        hitEffect.Play();
         Debug.Log(health.ToString());
     }
 
