@@ -201,6 +201,10 @@ public class WarpController : MonoBehaviour
         target.SetActive(true);
     }
 
+    public bool IsWarping()
+    {
+        return isWarping;
+    }
     private void OnDrawGizmosSelected()
     {
         Gizmos.color = Color.red;
