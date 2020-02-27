@@ -3821,7 +3821,11 @@ PrefabInstance:
     - {fileID: 692168960066837224, guid: 34017cf12560c804bb2f669f00c7af91, type: 3}
     - {fileID: 9065472670043753047, guid: 34017cf12560c804bb2f669f00c7af91, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 34017cf12560c804bb2f669f00c7af91, type: 3}
+<<<<<<< HEAD
+--- !u!114 &7204139449042277737 stripped
+=======
 --- !u!114 &7204139449042237501 stripped
+>>>>>>> master
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 11429798, guid: 34017cf12560c804bb2f669f00c7af91,
     type: 3}
@@ -3839,7 +3843,11 @@ RectTransform:
     type: 3}
   m_PrefabInstance: {fileID: 7204139449035530139}
   m_PrefabAsset: {fileID: 0}
+<<<<<<< HEAD
+--- !u!114 &7204139449042237501 stripped
+=======
 --- !u!114 &7204139449042277737 stripped
+>>>>>>> master
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 11471602, guid: 34017cf12560c804bb2f669f00c7af91,
     type: 3}
