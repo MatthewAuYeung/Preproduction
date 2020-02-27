@@ -1,0 +1,24 @@
+fileFormatVersion: 2
+guid: 58914032ea6219d42ae40b4782bc2df0
+TrueTypeFontImporter:
+  externalObjects: {}
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontName: NOTHAN DEMO
+  fontNames:
+  - NOTHAN DEMO
+  fallbackFontReferences:
+  - {fileID: 12800000, guid: 04f7b4057bced3541ba4ccec26593a05, type: 3}
+  - {fileID: 12800000, guid: 074830bf741684d4bad4f74efb4db3ee, type: 3}
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  useLegacyBoundsCalculation: 0
+  shouldRoundAdvanceValue: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

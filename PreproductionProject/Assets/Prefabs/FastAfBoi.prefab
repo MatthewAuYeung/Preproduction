@@ -245,9 +245,11 @@ MonoBehaviour:
   maxhealth: 50
   searchRange: 18
   attackRange: 2
-  damage: 5
-  attackDelay: 1
+  damage: 4
+  attackDelay: 2
   fov: 360
+  hitEffect: {fileID: 0}
+  SlowBombEffectMat: {fileID: 2100000, guid: 29d77a8096962b64ea1dfe7620819cf6, type: 2}
   speed: 6.5
   healthBar: {fileID: 370972254627582947}
 --- !u!135 &1555268841536895482

@@ -1,0 +1,23 @@
+fileFormatVersion: 2
+guid: 482f14cf96072ce488e3fe365fcd36f4
+TrueTypeFontImporter:
+  externalObjects: {}
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontName: Eunomia
+  fontNames:
+  - Eunomia
+  fallbackFontReferences:
+  - {fileID: 12800000, guid: 0f7ff0efdd765aa40bed82aa9f65d515, type: 3}
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  useLegacyBoundsCalculation: 0
+  shouldRoundAdvanceValue: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

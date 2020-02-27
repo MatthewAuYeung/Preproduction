@@ -19,6 +19,9 @@ public class WarpController : MonoBehaviour
     float manaUsed;
 
     [SerializeField]
+    float warpEnemyDuration = 0.5f;
+
+    [SerializeField]
     ParticleSystem blueTrail;
     [SerializeField]
     ParticleSystem whiteTrail;
@@ -31,6 +34,9 @@ public class WarpController : MonoBehaviour
     float currentTime;
     float warpCooldown;
     bool isWarping;
+
+    private GameObject selectedObj;
+    private bool isSelected;
 
     private void Awake()
     {
@@ -51,15 +57,29 @@ public class WarpController : MonoBehaviour
             {
                 if (lockOnManager.GetIsLockOn())
                 {
-                    WarpAttack(lockOnManager.GetClosestEnemy());
+                    WarpAttack(lockOnManager.GetClosestObject());
                 }
                 else
                     FreeWarp();
             }
         }
-        //if(isWarping)
+
+        //if (Input.GetKeyDown(KeyCode.F))
         //{
-        //    animator.SetFloat("InputVertical", 2.0f);
+        //    if(isSelected)
+        //    {
+        //        WarpEnemy(selectedObj);
+        //        isSelected = false;
+        //    }
+        //    if (lockOnManager.GetIsLockOn() && !isSelected)
+        //    {
+        //        selectedObj = lockOnManager.GetClosestObject();
+        //        if(selectedObj.CompareTag("EnemyTag"))
+        //        {
+        //            selectedObj.SetActive(false);
+        //            isSelected = true;
+        //        }
+        //    }         
         //}
     }
 
@@ -101,15 +121,15 @@ public class WarpController : MonoBehaviour
                 return;
             }
         }
-        transform.DOMove(transform.position + warpDir.normalized * warpRange, warpDuration).OnComplete(() => EndWarp());
+        transform.DOMove(transform.position + warpDir.normalized * warpRange, warpEnemyDuration).OnComplete(() => EndWarp());
         PlayParticles();
     }
 
-    private void WarpAttack(Vector3 targetPos)
+    private void WarpAttack(GameObject target)
     {
         ShowBody(false);
         player.UseMana(manaUsed);
-        WarpToNewPos(targetPos);
+        WarpToNewPos(target.transform.position);
     }
 
     void PlayParticles()
@@ -142,6 +162,27 @@ public class WarpController : MonoBehaviour
         {
             smr.enabled = state;
         }
+    }
+
+    void WarpEnemy(GameObject target)
+    {
+        Vector3 targetPos = target.transform.position;
+        Vector3 DiffernceVec = targetPos - transform.position;
+        Vector3 warpDir = Camera.main.transform.forward;
+        warpDir.y = 0.0f;
+        Vector3 newPos = transform.position;
+        newPos.y = targetPos.y;
+        target.transform.DOMove(newPos + warpDir.normalized * DiffernceVec.magnitude, warpDuration).OnComplete(() => EndWarpEnemy(target));
+    }
+
+    void EndWarpEnemy(GameObject target)
+    {
+        target.SetActive(true);
+    }
+
+    public bool IsWarping()
+    {
+        return isWarping;
     }
 
     private void OnDrawGizmosSelected()

@@ -10,6 +10,7 @@ public class EnemyScript : BaseEnemyScript
     private Transform _target;
     private NavMeshAgent _agent;
     private EnemyManager _manager;
+    private WarpController _warpController;
     private SphereCollider _attackTrigger;
     private ParticleSystem _particleSystem;
 
@@ -21,9 +22,12 @@ public class EnemyScript : BaseEnemyScript
         _agent = GetComponent<NavMeshAgent>();
         _manager = FindObjectOfType<EnemyManager>();
         _target = _manager.target;
+        _warpController = FindObjectOfType<WarpController>();
         _attackTrigger = GetComponent<SphereCollider>();
         _particleSystem = GetComponentInChildren<ParticleSystem>();
         defaultSpeed = _agent.speed;
+        meshRenderer = GetComponent<MeshRenderer>();
+        originalMat = meshRenderer.material;
     }
 
     private void Start()
@@ -36,12 +40,14 @@ public class EnemyScript : BaseEnemyScript
     public void SlowFromBomb(float speedModifier, float effectDuration = 1f)
     {
         _agent.speed *= speedModifier;
+        meshRenderer.material = SlowBombEffectMat;
         Invoke("ResetSpeed", effectDuration);
     }
 
     void ResetSpeed()
     {
         _agent.speed = defaultSpeed;
+        meshRenderer.material = originalMat;
     }
 
     private void Update()
@@ -117,6 +123,10 @@ public class EnemyScript : BaseEnemyScript
         }
         if (currentTime < Time.time && InView(other.gameObject.transform))
         {
+            if(_warpController.IsWarping())
+            {
+                return;
+            }
             _particleSystem.Play();
             currentTime = Time.time + attackDelay;
             other.gameObject.GetComponentInParent<NewPlayerScript>().TakeDamage(damage);
