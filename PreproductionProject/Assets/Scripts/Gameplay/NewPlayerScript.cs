@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using DG.Tweening;
+
 
 public class NewPlayerScript : MonoBehaviour
 {
@@ -43,10 +45,6 @@ public class NewPlayerScript : MonoBehaviour
         health = maxHealth;
         mana = maxMana;
         InvokeRepeating("Regenerate", 1.0f, manaRegenDelay);
-        var tempcolor = bloodyscreen.color;
-        tempcolor.a = bloodyscreenalpha;
-        bloodyscreen.color = tempcolor;
-        bloodyscreen.enabled = false;
     }
 
     private void Start()
@@ -92,14 +90,14 @@ public class NewPlayerScript : MonoBehaviour
     {
         health -= damage;
         hitEffect.Play();
-        bloodyscreen.enabled = true;
+        bloodyscreen.DOFade(bloodyscreenalpha, 0.15f);
         StartCoroutine(DisableBloodyScreen());
     }
 
     IEnumerator DisableBloodyScreen()
     {
         yield return new WaitForSeconds(bloodyscreendelay);
-        bloodyscreen.enabled = false;
+        bloodyscreen.DOFade(0.0f, 0.15f);
     }
 
     public void UseMana(float amount)
