@@ -1,12 +1,16 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+using DG.Tweening;
+
 
 public class NewPlayerScript : MonoBehaviour
 {
     public SimpleHealthBar healthBar;
     public SimpleHealthBar manaBar;
     public GameObject winningCanvas;
+    public Image bloodyscreen;
     public float AttckDamage;
     public int hitcount = 0;
     public float delay = 3.0f;
@@ -25,6 +29,10 @@ public class NewPlayerScript : MonoBehaviour
     float warpCooldown;
     [SerializeField]
     protected ParticleSystem hitEffect;
+    [SerializeField]
+    private float bloodyscreendelay;
+    [SerializeField, Range(0.0f, 1.0f)]
+    private float bloodyscreenalpha;
 
     private float timer;
     private float WinScreenTimer; 
@@ -82,6 +90,14 @@ public class NewPlayerScript : MonoBehaviour
     {
         health -= damage;
         hitEffect.Play();
+        bloodyscreen.DOFade(bloodyscreenalpha, 0.15f);
+        StartCoroutine(DisableBloodyScreen());
+    }
+
+    IEnumerator DisableBloodyScreen()
+    {
+        yield return new WaitForSeconds(bloodyscreendelay);
+        bloodyscreen.DOFade(0.0f, 0.15f);
     }
 
     public void UseMana(float amount)
@@ -112,6 +128,15 @@ public class NewPlayerScript : MonoBehaviour
         {
             mana += manaRe;
         }
+
+    public float GetHealth()
+    {
+        return health;
+    }
+
+    public float GetMaxHealth()
+    {
+        return maxHealth;
     }
 
     public float GetWarpCooldown()

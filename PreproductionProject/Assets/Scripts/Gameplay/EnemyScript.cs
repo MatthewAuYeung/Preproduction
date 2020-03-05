@@ -13,12 +13,14 @@ public class EnemyScript : BaseEnemyScript
     private WarpController _warpController;
     private SphereCollider _attackTrigger;
     private ParticleSystem _particleSystem;
+    private Rigidbody _rb;
 
     public Image healthBar;
     float defaultSpeed;
 
     private void Awake()
     {
+        _rb = GetComponent<Rigidbody>();
         _agent = GetComponent<NavMeshAgent>();
         _manager = FindObjectOfType<EnemyManager>();
         _target = _manager.target;
@@ -131,5 +133,18 @@ public class EnemyScript : BaseEnemyScript
             currentTime = Time.time + attackDelay;
             other.gameObject.GetComponentInParent<NewPlayerScript>().TakeDamage(damage);
         }
+    }
+
+    public void KnockBack(float amount, Vector3 point)
+    {
+        _rb.isKinematic = false;
+        _rb.AddForceAtPosition((transform.position - point) * amount, point, ForceMode.Impulse);
+        StartCoroutine(EndKnockBack());
+    }
+
+    IEnumerator EndKnockBack()
+    {
+        yield return new WaitForSeconds(0.5f);
+        _rb.isKinematic = true;
     }
 }

@@ -9,9 +9,9 @@ namespace Invector.CharacterController
 
         private void Awake()
         {
-            ComboController comboController = FindObjectOfType<ComboController>();
-            comboController.OnAttackStart += AttackStart;
-            comboController.OnAttackStop += AttackStop1;
+            AttackManager attackManager = FindObjectOfType<AttackManager>();
+            attackManager.OnAttackStart += AttackStart;
+            attackManager.OnAttackStop += AttackStop1;
         }
 
         void AttackStart()
