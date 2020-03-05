@@ -252,7 +252,7 @@ MonoBehaviour:
   fov: 360
   hitEffect: {fileID: 6303552336471097273}
   SlowBombEffectMat: {fileID: 2100000, guid: 29d77a8096962b64ea1dfe7620819cf6, type: 2}
-  knockbackDuration: 0
+  knockbackDuration: 0.25
   speed: 3.5
   healthBar: {fileID: 370972254627582947}
   attackBar: {fileID: 2557278876974703415}
@@ -5250,21 +5250,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 5825453507846488637}
     m_Modifications:
-    - target: {fileID: 6063270804053980427, guid: ec0bf95e26038b64396fc67509a489cd,
-        type: 3}
-      propertyPath: m_Color.r
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6063270804053980427, guid: ec0bf95e26038b64396fc67509a489cd,
-        type: 3}
-      propertyPath: m_Color.g
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6063270804053980427, guid: ec0bf95e26038b64396fc67509a489cd,
-        type: 3}
-      propertyPath: m_Color.b
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 8448585220110722588, guid: ec0bf95e26038b64396fc67509a489cd,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -5374,6 +5359,21 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.y
       value: 0.00032383788
+      objectReference: {fileID: 0}
+    - target: {fileID: 6063270804053980427, guid: ec0bf95e26038b64396fc67509a489cd,
+        type: 3}
+      propertyPath: m_Color.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6063270804053980427, guid: ec0bf95e26038b64396fc67509a489cd,
+        type: 3}
+      propertyPath: m_Color.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6063270804053980427, guid: ec0bf95e26038b64396fc67509a489cd,
+        type: 3}
+      propertyPath: m_Color.b
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2205154780597391849, guid: ec0bf95e26038b64396fc67509a489cd,
         type: 3}

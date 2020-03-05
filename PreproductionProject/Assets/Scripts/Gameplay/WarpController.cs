@@ -88,7 +88,7 @@ public class WarpController : MonoBehaviour
         }
     }
 
-    private void WarpToNewPos(Vector3 targetPos)
+    private void WarpToNewPos(Vector3 targetPos, GameObject target = null)
     {
         // Calculate the new position for the warp
         Vector2 PlayerPos = new Vector2(transform.position.x, transform.position.z);
@@ -99,11 +99,17 @@ public class WarpController : MonoBehaviour
         newWarpPos.x += OffsetDir.x * warpOffset;
         newWarpPos.z += OffsetDir.y * warpOffset;
         // Keeps the y position as before
-        if(!lockOnManager.GetIsLockOn())
+        if (!lockOnManager.GetIsLockOn())
         {
             newWarpPos.y = transform.position.y;
         }
-        transform.DOMove(newWarpPos, warpDuration).OnComplete(() => EndWarp());
+        if(target != null)
+        {
+            transform.DOMove(newWarpPos, warpDuration).OnComplete(() => EndWarp(target));
+        }
+        else
+            transform.DOMove(newWarpPos, warpDuration).OnComplete(() => EndWarp());
+
         PlayParticles();
     }
 
@@ -133,6 +139,10 @@ public class WarpController : MonoBehaviour
     {
         ShowBody(false);
         player.UseMana(manaUsed);
+        if(target.CompareTag("EnemyTag"))
+        {
+            WarpToNewPos(target.transform.position, target);
+        }
         WarpToNewPos(target.transform.position);
     }
 
@@ -149,8 +159,19 @@ public class WarpController : MonoBehaviour
         whiteTrail.Stop();
     }
 
-    private void EndWarp()
+    private void EndWarp(GameObject target = null)
     {
+        if(target != null)
+        {
+            EnemyScript enemy = target.GetComponent<EnemyScript>();
+            enemy.TakeDamage(30.0f);
+            RaycastHit hit;
+            if (Physics.Raycast(transform.position, -transform.forward, out hit))
+            {
+                enemy.KnockBack(10.0f, hit.point);
+            }
+        }
+
         ShowBody(true);
         StartCoroutine(StopParticles());
 
