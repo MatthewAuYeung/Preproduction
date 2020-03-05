@@ -202,6 +202,11 @@ PrefabInstance:
       propertyPath: fov
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8341284848985065250, guid: 8314f24f78086f848a06455124c18d6d,
+        type: 3}
+      propertyPath: knockbackDuration
+      value: 0.25
+      objectReference: {fileID: 0}
     - target: {fileID: 5825453507814268741, guid: 8314f24f78086f848a06455124c18d6d,
         type: 3}
       propertyPath: m_Enabled

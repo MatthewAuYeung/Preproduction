@@ -13,9 +13,14 @@ public class EnemyScript : BaseEnemyScript
     private WarpController _warpController;
     private SphereCollider _attackTrigger;
     private ParticleSystem _particleSystem;
-    private Rigidbody _rb;
+    private float _waitTime;
 
-    public Image healthBar;
+    [SerializeField]
+    private Image healthBar;
+
+    [SerializeField]
+    private Image attackBar;
+
     float defaultSpeed;
 
     private void Awake()
@@ -30,6 +35,7 @@ public class EnemyScript : BaseEnemyScript
         defaultSpeed = _agent.speed;
         meshRenderer = GetComponent<MeshRenderer>();
         originalMat = meshRenderer.material;
+        _waitTime = attackDelay;
     }
 
     private void Start()
@@ -92,8 +98,7 @@ public class EnemyScript : BaseEnemyScript
             _agent.isStopped = true;
         }
         healthBar.fillAmount = health / maxhealth;
-
-
+        attackBar.fillAmount = _waitTime / attackDelay;
     }
 
 
@@ -123,6 +128,7 @@ public class EnemyScript : BaseEnemyScript
         {
             return;
         }
+
         if (currentTime < Time.time && InView(other.gameObject.transform))
         {
             if(_warpController.IsWarping())
@@ -130,21 +136,13 @@ public class EnemyScript : BaseEnemyScript
                 return;
             }
             _particleSystem.Play();
+            _waitTime = 0.0f;
             currentTime = Time.time + attackDelay;
             other.gameObject.GetComponentInParent<NewPlayerScript>().TakeDamage(damage);
         }
-    }
-
-    public void KnockBack(float amount, Vector3 point)
-    {
-        _rb.isKinematic = false;
-        _rb.AddForceAtPosition((transform.position - point) * amount, point, ForceMode.Impulse);
-        StartCoroutine(EndKnockBack());
-    }
-
-    IEnumerator EndKnockBack()
-    {
-        yield return new WaitForSeconds(0.5f);
-        _rb.isKinematic = true;
+        else
+        {
+            _waitTime += Time.deltaTime;
+        }
     }
 }
