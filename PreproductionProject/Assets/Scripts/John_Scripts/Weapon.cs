@@ -19,6 +19,7 @@ public class Weapon : MonoBehaviour
         {
             EnemyScript enemy = other.GetComponent<EnemyScript>();
             enemy.TakeDamage(attackDmg);
+            enemy.ChangeState(BaseEnemyScript.EnemyState.Damaged);
             RaycastHit hit;
             if(Physics.Raycast(transform.position + (transform.forward * 1f), - transform.forward, out hit))
             {
