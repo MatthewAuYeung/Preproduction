@@ -7,20 +7,19 @@ using UnityEngine.UI;
 [RequireComponent(typeof(NavMeshAgent))]
 public class EnemyScript : BaseEnemyScript
 {
+    public bool isStun = false;
     private Transform _target;
+    private NavMeshAgent _agent;
     private EnemyManager _manager;
     private WarpController _warpController;
     private SphereCollider _attackTrigger;
     private ParticleSystem _particleSystem;
-    private float _waitTime;
+    private Rigidbody _rb;
 
-    [SerializeField]
-    private Image healthBar;
-
-    [SerializeField]
-    private Image attackBar;
-
+    public Image healthBar;
+    float slowSpeed;
     float defaultSpeed;
+    float stunDuration;
 
     private void Awake()
     {
@@ -34,7 +33,6 @@ public class EnemyScript : BaseEnemyScript
         defaultSpeed = _agent.speed;
         meshRenderer = GetComponent<MeshRenderer>();
         originalMat = meshRenderer.material;
-        _waitTime = attackDelay;
     }
 
     private void Start()
@@ -44,11 +42,22 @@ public class EnemyScript : BaseEnemyScript
         _particleSystem.Pause();
     }
 
-    public void SlowFromBomb(float speedModifier, float effectDuration = 1f)
+    public void StunFromBomb(float speedModifier, float stuntEffectDuration = 5.0f)
     {
+        isStun = true;
+        stunDuration = Time.time + stuntEffectDuration;
+        slowSpeed = speedModifier;
+        meshRenderer.material = SlowBombEffectMat;
+        //StartCoroutine(SlowFromBomb(5.0f));
+    }
+
+    public void SlowFromBomb( float speedModifier, float slowEffectDuration = 5.0f)
+    {
+       // yield return new WaitForSeconds(2.0f);
+        isStun = false;
         _agent.speed *= speedModifier;
         meshRenderer.material = SlowBombEffectMat;
-        Invoke("ResetSpeed", effectDuration);
+        Invoke("ResetSpeed", slowEffectDuration);
     }
 
     void ResetSpeed()
@@ -59,7 +68,6 @@ public class EnemyScript : BaseEnemyScript
 
     private void Update()
     {
-        DebugActions();
         if (_target == null)
         {
             return;
@@ -72,6 +80,17 @@ public class EnemyScript : BaseEnemyScript
             return;
             //Destroy(gameObject);
         }
+
+        if (isStun)
+        {
+            _agent.isStopped = true;
+            if(stunDuration < Time.time)
+            {
+                SlowFromBomb(slowSpeed);
+            }
+            return;
+        }
+
 
         var disBetweenPlayer = Vector3.Distance(_agent.transform.position, _target.transform.position);
         if (disBetweenPlayer < searchRange)
@@ -97,7 +116,8 @@ public class EnemyScript : BaseEnemyScript
             _agent.isStopped = true;
         }
         healthBar.fillAmount = health / maxhealth;
-        attackBar.fillAmount = _waitTime / attackDelay;
+
+
     }
 
 
@@ -121,22 +141,12 @@ public class EnemyScript : BaseEnemyScript
         return false;
     }
 
-    public void DebugActions()
-    {
-        if (Input.GetKeyDown(KeyCode.Q))
-        {
-            _agent.isStopped = true;
-        }
-    }
-
-
     private void OnTriggerStay(Collider other)
     {
         if(!other.gameObject.CompareTag("PlayerTag"))
         {
             return;
         }
-
         if (currentTime < Time.time && InView(other.gameObject.transform))
         {
             if(_warpController.IsWarping())
@@ -144,13 +154,21 @@ public class EnemyScript : BaseEnemyScript
                 return;
             }
             _particleSystem.Play();
-            _waitTime = 0.0f;
             currentTime = Time.time + attackDelay;
             other.gameObject.GetComponentInParent<NewPlayerScript>().TakeDamage(damage);
         }
-        else
-        {
-            _waitTime += Time.deltaTime;
-        }
+    }
+
+    public void KnockBack(float amount, Vector3 point)
+    {
+        _rb.isKinematic = false;
+        _rb.AddForceAtPosition((transform.position - point) * amount, point, ForceMode.Impulse);
+        StartCoroutine(EndKnockBack());
+    }
+
+    IEnumerator EndKnockBack()
+    {
+        yield return new WaitForSeconds(0.5f);
+        _rb.isKinematic = true;
     }
 }

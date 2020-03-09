@@ -6,7 +6,8 @@ using UnityEngine.AI;
 public class BombExplosion : MonoBehaviour
 {
     public float enemyAgentSlowSpeed = 0.5f;
-    public float effectDuration = 1f;
+    public float slowEffectDuration = 5f;
+    public float stunEffectDuration = 2f;
     public float lifeSpan = 0.25f;
 
     // Start is called before the first frame update
@@ -25,8 +26,12 @@ public class BombExplosion : MonoBehaviour
     {
         if (other.gameObject.CompareTag("EnemyTag"))
         {
-            EnemyScript enemy = other.GetComponentInParent<EnemyScript>();
-            enemy.SlowFromBomb(enemyAgentSlowSpeed, effectDuration);
+            EnemyScript enemy = other.GetComponent<EnemyScript>();
+            stunEffectDuration = 3.0f;
+            enemy.StunFromBomb(enemyAgentSlowSpeed, stunEffectDuration);
+            //StartCoroutine(enemy.SlowFromBomb(stunEffectDuration, enemyAgentSlowSpeed, slowEffectDuration));
+
+            //enemy.SlowFromBomb(enemyAgentSlowSpeed, slowEffectDuration);
         }
     }
 
