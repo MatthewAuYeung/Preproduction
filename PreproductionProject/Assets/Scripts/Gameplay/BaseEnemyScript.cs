@@ -75,6 +75,9 @@ public abstract class BaseEnemyScript : MonoBehaviour
     public void KnockBack(float amount, Vector3 point)
     {
         _rb.isKinematic = false;
+        _agent.isStopped = true;
+        _agent.velocity = new Vector3(0.0f, 0.0f, 0.0f);
+        _rb.velocity = new Vector3(0.0f, 0.0f, 0.0f);
         _rb.AddForceAtPosition((transform.position - point) * amount, point, ForceMode.Impulse);
         StartCoroutine(EndKnockBack());
     }

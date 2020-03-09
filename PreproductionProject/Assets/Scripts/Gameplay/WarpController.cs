@@ -150,6 +150,7 @@ public class WarpController : MonoBehaviour
         player.UseMana(manaUsed);
         if(target.CompareTag("EnemyTag"))
         {
+            var enemy = target.GetComponent<EnemyScript>();
             if(isDebuging)
                 _rb.isKinematic = true;
             WarpToNewPos(target.transform.position, target);
@@ -186,6 +187,7 @@ public class WarpController : MonoBehaviour
         var rot = transform.eulerAngles;
         rot.x = 0.0f;
         transform.eulerAngles = rot;
+        _rb.velocity = new Vector3();
         if(isDebuging)
             _rb.isKinematic = false;
         ShowBody(true);
