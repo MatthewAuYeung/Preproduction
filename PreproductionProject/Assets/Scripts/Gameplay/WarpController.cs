@@ -22,6 +22,9 @@ public class WarpController : MonoBehaviour
     float warpEnemyDuration = 0.5f;
 
     [SerializeField]
+    bool isDebuging = true;
+
+    [SerializeField]
     ParticleSystem blueTrail;
     [SerializeField]
     ParticleSystem whiteTrail;
@@ -147,7 +150,8 @@ public class WarpController : MonoBehaviour
         player.UseMana(manaUsed);
         if(target.CompareTag("EnemyTag"))
         {
-            _rb.isKinematic = true;
+            if(isDebuging)
+                _rb.isKinematic = true;
             WarpToNewPos(target.transform.position, target);
         }
         WarpToNewPos(target.transform.position);
@@ -182,7 +186,8 @@ public class WarpController : MonoBehaviour
         var rot = transform.eulerAngles;
         rot.x = 0.0f;
         transform.eulerAngles = rot;
-        _rb.isKinematic = false;
+        if(isDebuging)
+            _rb.isKinematic = false;
         ShowBody(true);
         StartCoroutine(StopParticles());
 

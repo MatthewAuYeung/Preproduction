@@ -5,6 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class DebugRestart : MonoBehaviour
 {
+    public bool usingDebug;
     // Start is called before the first frame update
     void Start()
     {
@@ -14,8 +15,12 @@ public class DebugRestart : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.P)){
-            Restart();
+        if(usingDebug)
+        {
+            if (Input.GetKeyDown(KeyCode.P))
+            {
+                Restart();
+            }
         }
     }
 
