@@ -7,6 +7,7 @@ using UnityEngine.UI;
 [RequireComponent(typeof(NavMeshAgent))]
 public class EnemyScript : BaseEnemyScript
 {
+    public bool isStun = false;
     private Transform _target;
     private NavMeshAgent _agent;
     private EnemyManager _manager;
@@ -16,7 +17,9 @@ public class EnemyScript : BaseEnemyScript
     private Rigidbody _rb;
 
     public Image healthBar;
+    float slowSpeed;
     float defaultSpeed;
+    float stunDuration;
 
     private void Awake()
     {
@@ -39,11 +42,22 @@ public class EnemyScript : BaseEnemyScript
         _particleSystem.Pause();
     }
 
-    public void SlowFromBomb(float speedModifier, float effectDuration = 1f)
+    public void StunFromBomb(float speedModifier, float stuntEffectDuration = 5.0f)
     {
+        isStun = true;
+        stunDuration = Time.time + stuntEffectDuration;
+        slowSpeed = speedModifier;
+        meshRenderer.material = SlowBombEffectMat;
+        //StartCoroutine(SlowFromBomb(5.0f));
+    }
+
+    public void SlowFromBomb( float speedModifier, float slowEffectDuration = 5.0f)
+    {
+       // yield return new WaitForSeconds(2.0f);
+        isStun = false;
         _agent.speed *= speedModifier;
         meshRenderer.material = SlowBombEffectMat;
-        Invoke("ResetSpeed", effectDuration);
+        Invoke("ResetSpeed", slowEffectDuration);
     }
 
     void ResetSpeed()
@@ -65,6 +79,16 @@ public class EnemyScript : BaseEnemyScript
             transform.gameObject.SetActive(false);
             return;
             //Destroy(gameObject);
+        }
+
+        if (isStun)
+        {
+            _agent.isStopped = true;
+            if(stunDuration < Time.time)
+            {
+                SlowFromBomb(slowSpeed);
+            }
+            return;
         }
 
 
