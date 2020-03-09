@@ -105,6 +105,30 @@ public class NewPlayerScript : MonoBehaviour
         mana -= amount;
     }
 
+    public void HealthPickup(float heal)
+    {
+        if (health > maxHealth - heal)
+        {
+            health = maxHealth;
+        }
+        else
+        {
+            health += heal;
+        }
+    }
+
+    public void ManaPickup(float manaRe)
+    {
+        mana += manaRe;
+        if (mana > maxMana - manaRe)
+        {
+            mana = maxMana;
+        }
+        else
+        {
+            mana += manaRe;
+        }
+
     public float GetHealth()
     {
         return health;
