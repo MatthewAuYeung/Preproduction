@@ -151,6 +151,7 @@ public class WarpController : MonoBehaviour
         if(target.CompareTag("EnemyTag"))
         {
             var enemy = target.GetComponent<EnemyScript>();
+            enemy.beingWarpAttacked = true;
             if(isDebuging)
                 _rb.isKinematic = true;
             WarpToNewPos(target.transform.position, target);
@@ -181,6 +182,7 @@ public class WarpController : MonoBehaviour
             if (Physics.Raycast(transform.position, -transform.forward, out hit))
             {
                 enemy.KnockBack(10.0f, hit.point);
+                enemy.beingWarpAttacked = false;
             }
         }
 

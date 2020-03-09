@@ -21,6 +21,7 @@ public class EnemyScript : BaseEnemyScript
     float defaultSpeed;
     float stunDuration;
 
+    public bool beingWarpAttacked = false;
     private void Awake()
     {
         _rb = GetComponent<Rigidbody>();
@@ -91,6 +92,13 @@ public class EnemyScript : BaseEnemyScript
             return;
         }
 
+        if (beingWarpAttacked)
+        {
+            _agent.isStopped = true;
+            _rb.velocity = new Vector3();
+            _agent.velocity = new Vector3();
+            return;
+        }
 
         var disBetweenPlayer = Vector3.Distance(_agent.transform.position, _target.transform.position);
         if (disBetweenPlayer < searchRange)
