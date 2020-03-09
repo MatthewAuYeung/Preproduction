@@ -47,6 +47,9 @@ public abstract class BaseEnemyScript : MonoBehaviour
     private Vector3 leftDir;
     private Vector3 rightDir;
     protected Rigidbody _rb;
+    protected NavMeshAgent _agent;
+    protected CapsuleCollider _collider;
+    public bool beingWarpAttacked = false;
 
     protected EnemyState currentState;
 

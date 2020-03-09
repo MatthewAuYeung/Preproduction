@@ -38,6 +38,7 @@ public class WarpController : MonoBehaviour
     private GameObject selectedObj;
     private bool isSelected;
     private float magnitudeBWTEnemy;
+    private Rigidbody _rb;
 
     private void Awake()
     {
@@ -45,6 +46,7 @@ public class WarpController : MonoBehaviour
         warpCooldown = player.GetWarpCooldown();
         lockOnManager = GetComponent<LockOnManager>();
         animator = GetComponent<Animator>();
+        _rb = GetComponent<Rigidbody>();
     }
 
     private void Update()
@@ -105,6 +107,7 @@ public class WarpController : MonoBehaviour
         }
         if(target != null)
         {
+            //transform.DOLookAt(targetPos, 0.2f, AxisConstraint.None);
             transform.DOMove(newWarpPos, warpDuration).OnComplete(() => EndWarp(target));
         }
         else
@@ -121,6 +124,8 @@ public class WarpController : MonoBehaviour
         RaycastHit hit;
         ShowBody(false);
         player.UseMana(manaUsed);
+        transform.rotation = Quaternion.LookRotation(warpDir);
+
         // Raycast from the player model to check if there is a not warpable object inside the warp range
         if (Physics.Raycast(transform.position + transform.up, warpDir.normalized, out hit, warpRange))
         {
@@ -137,10 +142,12 @@ public class WarpController : MonoBehaviour
 
     private void WarpAttack(GameObject target)
     {
+        transform.rotation = Quaternion.LookRotation(target.transform.position - transform.position);
         ShowBody(false);
         player.UseMana(manaUsed);
         if(target.CompareTag("EnemyTag"))
         {
+            _rb.isKinematic = true;
             WarpToNewPos(target.transform.position, target);
         }
         WarpToNewPos(target.transform.position);
@@ -172,6 +179,10 @@ public class WarpController : MonoBehaviour
             }
         }
 
+        var rot = transform.eulerAngles;
+        rot.x = 0.0f;
+        transform.eulerAngles = rot;
+        _rb.isKinematic = false;
         ShowBody(true);
         StartCoroutine(StopParticles());
 

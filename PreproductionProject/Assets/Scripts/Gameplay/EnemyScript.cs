@@ -8,7 +8,6 @@ using UnityEngine.UI;
 public class EnemyScript : BaseEnemyScript
 {
     private Transform _target;
-    private NavMeshAgent _agent;
     private EnemyManager _manager;
     private WarpController _warpController;
     private SphereCollider _attackTrigger;
@@ -60,6 +59,7 @@ public class EnemyScript : BaseEnemyScript
 
     private void Update()
     {
+        DebugActions();
         if (_target == null)
         {
             return;
@@ -72,7 +72,6 @@ public class EnemyScript : BaseEnemyScript
             return;
             //Destroy(gameObject);
         }
-
 
         var disBetweenPlayer = Vector3.Distance(_agent.transform.position, _target.transform.position);
         if (disBetweenPlayer < searchRange)
@@ -121,6 +120,15 @@ public class EnemyScript : BaseEnemyScript
         }
         return false;
     }
+
+    public void DebugActions()
+    {
+        if (Input.GetKeyDown(KeyCode.Q))
+        {
+            _agent.isStopped = true;
+        }
+    }
+
 
     private void OnTriggerStay(Collider other)
     {
