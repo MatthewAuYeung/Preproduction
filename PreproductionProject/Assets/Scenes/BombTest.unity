@@ -350,12 +350,25 @@ PrefabInstance:
     - target: {fileID: 6226596333264784430, guid: 26a1e40a5ecc2a1459d868188acbc39f,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -1.62
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6226596333264784430, guid: 26a1e40a5ecc2a1459d868188acbc39f,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5003976980978576150, guid: 26a1e40a5ecc2a1459d868188acbc39f,
         type: 3}
       propertyPath: m_LocalPosition.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1904856015, guid: 26a1e40a5ecc2a1459d868188acbc39f, type: 3}
+      propertyPath: countDown
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1904856015, guid: 26a1e40a5ecc2a1459d868188acbc39f, type: 3}
+      propertyPath: throwPower
+      value: 1500
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 26a1e40a5ecc2a1459d868188acbc39f, type: 3}
@@ -685,6 +698,11 @@ PrefabInstance:
       propertyPath: SlowBombEffectMat
       value: 
       objectReference: {fileID: 2100000, guid: 29d77a8096962b64ea1dfe7620819cf6, type: 2}
+    - target: {fileID: 8341284848985065250, guid: 8314f24f78086f848a06455124c18d6d,
+        type: 3}
+      propertyPath: isStun
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8314f24f78086f848a06455124c18d6d, type: 3}
 --- !u!1 &1753023830

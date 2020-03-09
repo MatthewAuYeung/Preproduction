@@ -6,8 +6,11 @@ public class BombThrower : MonoBehaviour
 {
     public GameObject bomb;
     public Transform bombSpawnTranform;
-    public float throwPower = 100f;
+    public float throwPower = 1500f;
     public Animator animator;
+    public float downTime, upTime, pressTime = 0;
+    public float countDown = 1.0f;
+    public bool ready = false;
     [SerializeField]
     float manaUsed;
 
@@ -24,8 +27,20 @@ public class BombThrower : MonoBehaviour
         if (!_player.HasMana(manaUsed))
             return;
 
-        if (Input.GetKeyDown(KeyCode.B))
+        if (Input.GetKeyDown(KeyCode.B) && ready == false)
         {
+            downTime = Time.time;
+            pressTime = downTime + countDown;
+            ready = true;
+        }
+        if (Input.GetKeyUp(KeyCode.B))
+        {
+            ready = false;
+        }
+
+        if (Time.time >= pressTime && ready == true)
+        {
+            ready = false;
             _player.UseMana(manaUsed);
             animator.SetTrigger("Throw");
             Vector3 throwDirection = Camera.main.transform.forward;
@@ -34,5 +49,6 @@ public class BombThrower : MonoBehaviour
             Vector3 throwForce = throwDirection * throwPower;
             newBomb.GetComponent<Rigidbody>().AddForce(throwForce);
         }
+
     }
 }
