@@ -17,11 +17,12 @@ public class EnemyScript : BaseEnemyScript
     private Rigidbody _rb;
 
     public Image healthBar;
+    public Image attackBar;
     float slowSpeed;
     float defaultSpeed;
     float stunDuration;
+    float _waitTime;
 
-    public bool beingWarpAttacked = false;
     private void Awake()
     {
         _rb = GetComponent<Rigidbody>();
@@ -124,7 +125,7 @@ public class EnemyScript : BaseEnemyScript
             _agent.isStopped = true;
         }
         healthBar.fillAmount = health / maxhealth;
-
+        attackBar.fillAmount = _waitTime / attackDelay;
 
     }
 
@@ -162,8 +163,13 @@ public class EnemyScript : BaseEnemyScript
                 return;
             }
             _particleSystem.Play();
+            _waitTime = 0.0f;
             currentTime = Time.time + attackDelay;
             other.gameObject.GetComponentInParent<NewPlayerScript>().TakeDamage(damage);
+        }
+        else
+        {
+            _waitTime += Time.deltaTime;
         }
     }
 
