@@ -59,7 +59,7 @@ public class WarpController : MonoBehaviour
 
         if(!isWarping && currentTime < Time.time)
         {
-            if (Input.GetKeyDown(KeyCode.T))
+            if (Input.GetButtonDown("Warp"))
             {
                 if (lockOnManager.GetIsLockOn())
                 {
@@ -70,7 +70,7 @@ public class WarpController : MonoBehaviour
             }
         }
 
-        if (Input.GetKeyDown(KeyCode.F))
+        if (Input.GetButtonDown("WarpEnemy"))
         {
             if(isSelected)
             {

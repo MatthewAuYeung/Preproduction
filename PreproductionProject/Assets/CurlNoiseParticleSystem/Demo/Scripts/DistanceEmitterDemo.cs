@@ -17,7 +17,7 @@ namespace CurlNoiseParticleSystem.Demo
 
         private void Update()
         {
-            if (Input.GetKeyDown(KeyCode.T))
+            if (Input.GetButtonDown("Warp"))
             {
                 _emitter.Play();
             }
