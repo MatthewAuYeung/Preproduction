@@ -9,12 +9,10 @@ public class EnemyScript : BaseEnemyScript
 {
     public bool isStun = false;
     private Transform _target;
-    private NavMeshAgent _agent;
     private EnemyManager _manager;
     private WarpController _warpController;
     private SphereCollider _attackTrigger;
     private ParticleSystem _particleSystem;
-    private Rigidbody _rb;
 
     public Image healthBar;
     public Image attackBar;
