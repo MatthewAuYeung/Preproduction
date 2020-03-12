@@ -35,7 +35,7 @@ public class NewPlayerScript : MonoBehaviour
     private float bloodyscreenalpha;
 
     private float timer;
-    private float WinScreenTimer; 
+    private float WinScreenTimer;
     private EnemyManager enemyManager;
     private bool ShowWinUI = false;
 
@@ -62,12 +62,12 @@ public class NewPlayerScript : MonoBehaviour
         resetWinScreenCounter();
         if (enemyManager.CheckBattleDone())
         {
-            if(!ShowWinUI)
+            if (!ShowWinUI)
             {
                 WinScreenTimer = Time.time + WinScreenLast;
                 winningCanvas.SetActive(true);
             }
-            ShowWinUI = true;            
+            ShowWinUI = true;
         }
         if (hitEffect.isPlaying)
             StartCoroutine(StopHitEffect());
@@ -80,7 +80,7 @@ public class NewPlayerScript : MonoBehaviour
     }
     void Regenerate()
     {
-        if(mana  < maxMana)
+        if (mana < maxMana)
         {
             mana += 1.0f;
         }
@@ -105,6 +105,30 @@ public class NewPlayerScript : MonoBehaviour
         mana -= amount;
     }
 
+    public void HealthPickup(float heal)
+    {
+        if (health > maxHealth - heal)
+        {
+            health = maxHealth;
+        }
+        else
+        {
+            health += heal;
+        }
+    }
+
+    public void ManaPickup(float manaRe)
+    {
+        mana += manaRe;
+        if (mana > maxMana - manaRe)
+        {
+            mana = maxMana;
+        }
+        else
+        {
+            mana += manaRe;
+        }
+    }
     public float GetHealth()
     {
         return health;

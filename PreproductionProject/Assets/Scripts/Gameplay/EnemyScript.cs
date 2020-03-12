@@ -7,6 +7,7 @@ using UnityEngine.UI;
 [RequireComponent(typeof(NavMeshAgent))]
 public class EnemyScript : BaseEnemyScript
 {
+    public bool isStun = false;
     private Transform _target;
     private NavMeshAgent _agent;
     private EnemyManager _manager;
@@ -16,7 +17,11 @@ public class EnemyScript : BaseEnemyScript
     private Rigidbody _rb;
 
     public Image healthBar;
+    public Image attackBar;
+    float slowSpeed;
     float defaultSpeed;
+    float stunDuration;
+    float _waitTime;
 
     private void Awake()
     {
@@ -39,11 +44,22 @@ public class EnemyScript : BaseEnemyScript
         _particleSystem.Pause();
     }
 
-    public void SlowFromBomb(float speedModifier, float effectDuration = 1f)
+    public void StunFromBomb(float speedModifier, float stuntEffectDuration = 5.0f)
     {
+        isStun = true;
+        stunDuration = Time.time + stuntEffectDuration;
+        slowSpeed = speedModifier;
+        meshRenderer.material = SlowBombEffectMat;
+        //StartCoroutine(SlowFromBomb(5.0f));
+    }
+
+    public void SlowFromBomb( float speedModifier, float slowEffectDuration = 5.0f)
+    {
+       // yield return new WaitForSeconds(2.0f);
+        isStun = false;
         _agent.speed *= speedModifier;
         meshRenderer.material = SlowBombEffectMat;
-        Invoke("ResetSpeed", effectDuration);
+        Invoke("ResetSpeed", slowEffectDuration);
     }
 
     void ResetSpeed()
@@ -67,6 +83,23 @@ public class EnemyScript : BaseEnemyScript
             //Destroy(gameObject);
         }
 
+        if (isStun)
+        {
+            _agent.isStopped = true;
+            if(stunDuration < Time.time)
+            {
+                SlowFromBomb(slowSpeed);
+            }
+            return;
+        }
+
+        if (beingWarpAttacked)
+        {
+            _agent.isStopped = true;
+            _rb.velocity = new Vector3();
+            _agent.velocity = new Vector3();
+            return;
+        }
 
         var disBetweenPlayer = Vector3.Distance(_agent.transform.position, _target.transform.position);
         if (disBetweenPlayer < searchRange)
@@ -92,7 +125,7 @@ public class EnemyScript : BaseEnemyScript
             _agent.isStopped = true;
         }
         healthBar.fillAmount = health / maxhealth;
-
+        attackBar.fillAmount = _waitTime / attackDelay;
 
     }
 
@@ -130,8 +163,13 @@ public class EnemyScript : BaseEnemyScript
                 return;
             }
             _particleSystem.Play();
+            _waitTime = 0.0f;
             currentTime = Time.time + attackDelay;
             other.gameObject.GetComponentInParent<NewPlayerScript>().TakeDamage(damage);
+        }
+        else
+        {
+            _waitTime += Time.deltaTime;
         }
     }
 

@@ -32,6 +32,9 @@ public abstract class BaseEnemyScript : MonoBehaviour
     [SerializeField]
     protected Material SlowBombEffectMat;
 
+    [SerializeField, Range(0.0f, 1.0f)]
+    protected float knockbackDuration;
+
     protected Material originalMat;
     protected MeshRenderer meshRenderer;
 
@@ -43,13 +46,46 @@ public abstract class BaseEnemyScript : MonoBehaviour
     private Quaternion rightRayRotation;
     private Vector3 leftDir;
     private Vector3 rightDir;
+    protected Rigidbody _rb;
+    protected NavMeshAgent _agent;
+    protected CapsuleCollider _collider;
+    public bool beingWarpAttacked = false;
 
+    protected EnemyState currentState;
+
+    public enum EnemyState
+    {
+        Idle,
+        Move,
+        Attack,
+        Damaged
+    };
+
+    public void ChangeState(EnemyState state)
+    {
+        currentState = state;
+    }
 
     public void TakeDamage(float damage)
     {
         health -= damage;
         hitEffect.Play();
-        Debug.Log(health.ToString());
+    }
+
+    public void KnockBack(float amount, Vector3 point)
+    {
+        _rb.isKinematic = false;
+        _agent.isStopped = true;
+        _agent.velocity = new Vector3(0.0f, 0.0f, 0.0f);
+        _rb.velocity = new Vector3(0.0f, 0.0f, 0.0f);
+        _rb.AddForceAtPosition((transform.position - point) * amount, point, ForceMode.Impulse);
+        StartCoroutine(EndKnockBack());
+    }
+
+    IEnumerator EndKnockBack()
+    {
+        yield return new WaitForSeconds(knockbackDuration);
+        _rb.isKinematic = true;
     }
 
     void OnDrawGizmosSelected()

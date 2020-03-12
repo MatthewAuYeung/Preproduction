@@ -22,6 +22,9 @@ public class WarpController : MonoBehaviour
     float warpEnemyDuration = 0.5f;
 
     [SerializeField]
+    bool isDebuging = true;
+
+    [SerializeField]
     ParticleSystem blueTrail;
     [SerializeField]
     ParticleSystem whiteTrail;
@@ -38,6 +41,7 @@ public class WarpController : MonoBehaviour
     private GameObject selectedObj;
     private bool isSelected;
     private float magnitudeBWTEnemy;
+    private Rigidbody _rb;
 
     private void Awake()
     {
@@ -45,6 +49,7 @@ public class WarpController : MonoBehaviour
         warpCooldown = player.GetWarpCooldown();
         lockOnManager = GetComponent<LockOnManager>();
         animator = GetComponent<Animator>();
+        _rb = GetComponent<Rigidbody>();
     }
 
     private void Update()
@@ -88,7 +93,7 @@ public class WarpController : MonoBehaviour
         }
     }
 
-    private void WarpToNewPos(Vector3 targetPos)
+    private void WarpToNewPos(Vector3 targetPos, GameObject target = null)
     {
         // Calculate the new position for the warp
         Vector2 PlayerPos = new Vector2(transform.position.x, transform.position.z);
@@ -99,11 +104,18 @@ public class WarpController : MonoBehaviour
         newWarpPos.x += OffsetDir.x * warpOffset;
         newWarpPos.z += OffsetDir.y * warpOffset;
         // Keeps the y position as before
-        if(!lockOnManager.GetIsLockOn())
+        if (!lockOnManager.GetIsLockOn())
         {
             newWarpPos.y = transform.position.y;
         }
-        transform.DOMove(newWarpPos, warpDuration).OnComplete(() => EndWarp());
+        if(target != null)
+        {
+            //transform.DOLookAt(targetPos, 0.2f, AxisConstraint.None);
+            transform.DOMove(newWarpPos, warpDuration).OnComplete(() => EndWarp(target));
+        }
+        else
+            transform.DOMove(newWarpPos, warpDuration).OnComplete(() => EndWarp());
+
         PlayParticles();
     }
 
@@ -115,6 +127,8 @@ public class WarpController : MonoBehaviour
         RaycastHit hit;
         ShowBody(false);
         player.UseMana(manaUsed);
+        transform.rotation = Quaternion.LookRotation(warpDir);
+
         // Raycast from the player model to check if there is a not warpable object inside the warp range
         if (Physics.Raycast(transform.position + transform.up, warpDir.normalized, out hit, warpRange))
         {
@@ -131,8 +145,17 @@ public class WarpController : MonoBehaviour
 
     private void WarpAttack(GameObject target)
     {
+        transform.rotation = Quaternion.LookRotation(target.transform.position - transform.position);
         ShowBody(false);
         player.UseMana(manaUsed);
+        if(target.CompareTag("EnemyTag"))
+        {
+            var enemy = target.GetComponent<EnemyScript>();
+            enemy.beingWarpAttacked = true;
+            if(isDebuging)
+                _rb.isKinematic = true;
+            WarpToNewPos(target.transform.position, target);
+        }
         WarpToNewPos(target.transform.position);
     }
 
@@ -149,8 +172,26 @@ public class WarpController : MonoBehaviour
         whiteTrail.Stop();
     }
 
-    private void EndWarp()
+    private void EndWarp(GameObject target = null)
     {
+        if(target != null)
+        {
+            EnemyScript enemy = target.GetComponent<EnemyScript>();
+            enemy.TakeDamage(30.0f);
+            RaycastHit hit;
+            if (Physics.Raycast(transform.position, -transform.forward, out hit))
+            {
+                enemy.KnockBack(10.0f, hit.point);
+                enemy.beingWarpAttacked = false;
+            }
+        }
+
+        var rot = transform.eulerAngles;
+        rot.x = 0.0f;
+        transform.eulerAngles = rot;
+        _rb.velocity = new Vector3();
+        if(isDebuging)
+            _rb.isKinematic = false;
         ShowBody(true);
         StartCoroutine(StopParticles());
 
