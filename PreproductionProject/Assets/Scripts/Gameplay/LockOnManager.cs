@@ -52,12 +52,12 @@ public class LockOnManager : MonoBehaviour
                 Vector3 screenPos = cam.WorldToScreenPoint(targets[targetIndex()].position);
                 aim.transform.position = screenPos;
 
-                if (Input.GetMouseButtonDown(1))
+                if (Input.GetButtonDown("LockOn"))
                 {
                     islockon = true;
                     LockInterface(true);
                 }
-                if (Input.GetMouseButtonUp(1))
+                if (Input.GetButtonUp("LockOn"))
                 {
                     islockon = false;
                     LockInterface(false);

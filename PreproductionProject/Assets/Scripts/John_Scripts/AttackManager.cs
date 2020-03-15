@@ -34,7 +34,7 @@ public class AttackManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(Input.GetMouseButtonDown(0) && delayAttack < Time.time && Time.timeScale != 0)
+        if(Input.GetButtonDown("Fire1") && delayAttack < Time.time && Time.timeScale != 0)
         {
             delayAttack = Time.time + 0.8f;
 
