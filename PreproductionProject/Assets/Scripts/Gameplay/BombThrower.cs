@@ -1,6 +1,8 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
+using UnityEngine.UI;
 
 public class BombThrower : MonoBehaviour
 {
@@ -11,8 +13,10 @@ public class BombThrower : MonoBehaviour
     public float downTime, upTime, pressTime = 0;
     public float countDown = 1.0f;
     public bool ready = false;
+    public Image bombBar;
     [SerializeField]
     float manaUsed;
+    private float waitTime;
 
     private NewPlayerScript _player;
     // Start is called before the first frame update
@@ -48,7 +52,15 @@ public class BombThrower : MonoBehaviour
             GameObject newBomb = Instantiate(bomb, spawnPosition, Quaternion.identity);
             Vector3 throwForce = throwDirection * throwPower;
             newBomb.GetComponent<Rigidbody>().AddForce(throwForce);
+            //waitTime = 0.0f;
         }
-
+        if (ready)
+        {
+            bombBar.fillAmount = Time.time - downTime / countDown;
+        }
+        else
+        {
+            bombBar.fillAmount = 0;
+        }
     }
 }

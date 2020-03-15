@@ -50,7 +50,8 @@ public abstract class BaseEnemyScript : MonoBehaviour
     protected NavMeshAgent _agent;
     protected CapsuleCollider _collider;
     public bool beingWarpAttacked = false;
-
+    [SerializeField]
+    private Transform damagePopupTransform;
     protected EnemyState currentState;
 
     public enum EnemyState
@@ -70,6 +71,7 @@ public abstract class BaseEnemyScript : MonoBehaviour
     {
         health -= damage;
         hitEffect.Play();
+        DamagePopupManager.instance.DisplayDamagePopup(damage, damagePopupTransform);
     }
 
     public void KnockBack(float amount, Vector3 point)
