@@ -44,6 +44,7 @@ public class WarpController : MonoBehaviour
     private bool isSelected;
     private float magnitudeBWTEnemy;
     private Rigidbody _rb;
+    private Camera mainCamera;
 
     private void Awake()
     {
@@ -52,6 +53,7 @@ public class WarpController : MonoBehaviour
         lockOnManager = GetComponent<LockOnManager>();
         animator = GetComponent<Animator>();
         _rb = GetComponent<Rigidbody>();
+        mainCamera = Camera.main;
     }
 
     private void Update()
@@ -124,7 +126,7 @@ public class WarpController : MonoBehaviour
     private void FreeWarp()
     {
         isWarping = true;
-        Vector3 warpDir = Camera.main.transform.forward;
+        Vector3 warpDir = mainCamera.transform.forward;
         warpDir.y = 0.0f;
         RaycastHit hit;
         ShowBody(false);
@@ -214,10 +216,10 @@ public class WarpController : MonoBehaviour
     void WarpEnemy(GameObject target)
     {
         Vector3 targetPos = target.transform.position;
-        Vector3 warpDir = Camera.main.transform.forward;
+        Vector3 warpDir = mainCamera.transform.forward;
         RaycastHit hit;
         Vector3 newPos;
-        if (Physics.Raycast(Camera.main.transform.position, warpDir, out hit, warpEnemyRange))
+        if (Physics.Raycast(mainCamera.transform.position, warpDir, out hit, warpEnemyRange))
         {
             newPos = hit.point;
             if (hit.point.y < targetPos.y)
@@ -230,7 +232,7 @@ public class WarpController : MonoBehaviour
         }
         else
         {
-            newPos = Camera.main.transform.position + warpDir.normalized * warpEnemyRange;
+            newPos = mainCamera.transform.position + warpDir.normalized * warpEnemyRange;
             target.transform.DOMove(newPos, warpDuration).OnComplete(() => EndWarpEnemy(target));
             return;
         }
