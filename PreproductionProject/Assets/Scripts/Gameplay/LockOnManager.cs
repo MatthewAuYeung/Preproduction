@@ -26,10 +26,11 @@ public class LockOnManager : MonoBehaviour
     private GameObject closestObj;
     private bool islockon = false;
     private bool isSelected = false;
-
+    private Vector3 originalPos;
     void Start()
     {
         cam = Camera.main;
+        originalPos = aim.transform.position;
     }
 
     void Update()
@@ -134,6 +135,12 @@ public class LockOnManager : MonoBehaviour
         isSelected = state; islockon = false;
         AimInterface(false);
         LockInterface(false);
+        aim.transform.position = originalPos;
         warplockon.color = Color.white;
+    }
+
+    public Vector3 GetAimPosition()
+    {
+        return aim.transform.position;
     }
 }
