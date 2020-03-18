@@ -102,7 +102,9 @@ public class LockOnManager : MonoBehaviour
 
         for (int i = 0; i < targets.Count; i++)
         {
-            distances[i] = Vector2.Distance(Camera.main.WorldToScreenPoint(targets[i].position), new Vector2(Screen.width / 2, Screen.height / 2));
+            //distances[i] = Vector2.Distance(Camera.main.WorldToScreenPoint(targets[i].position), new Vector2(Screen.width / 2, Screen.height / 2));
+            //distances[i] = Vector2.Distance(Camera.main.WorldToScreenPoint(targets[i].position), new Vector2(transform.position.x, transform.position.z));
+            distances[i] = Vector3.Distance(targets[i].position, transform.position);
         }
 
         float minDistance = Mathf.Min(distances);
