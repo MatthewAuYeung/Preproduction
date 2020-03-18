@@ -110,8 +110,8 @@ InputManager:
     altNegativeButton: 
     altPositiveButton: 
     gravity: 0
-    dead: 0.1
-    sensitivity: 0.5
+    dead: 0.01
+    sensitivity: 0.1
     snap: 0
     invert: 0
     type: 2
@@ -126,10 +126,10 @@ InputManager:
     altNegativeButton: 
     altPositiveButton: 
     gravity: 0
-    dead: 0.1
+    dead: 0.01
     sensitivity: 0.2
     snap: 0
-    invert: 0
+    invert: 1
     type: 2
     axis: 5
     joyNum: 0
@@ -356,4 +356,36 @@ InputManager:
     invert: 0
     type: 2
     axis: 4
+    joyNum: 0
+  - serializedVersion: 3
+    m_Name: Bomb
+    descriptiveName: 
+    descriptiveNegativeName: 
+    negativeButton: 
+    positiveButton: b
+    altNegativeButton: 
+    altPositiveButton: joystick button 5
+    gravity: 1000
+    dead: 0.001
+    sensitivity: 1000
+    snap: 0
+    invert: 0
+    type: 0
+    axis: 0
+    joyNum: 0
+  - serializedVersion: 3
+    m_Name: Action
+    descriptiveName: 
+    descriptiveNegativeName: 
+    negativeButton: 
+    positiveButton: e
+    altNegativeButton: 
+    altPositiveButton: joystick button 11
+    gravity: 1000
+    dead: 0.001
+    sensitivity: 1000
+    snap: 0
+    invert: 0
+    type: 0
+    axis: 0
     joyNum: 0
