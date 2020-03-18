@@ -138,4 +138,9 @@ public class LockOnManager : MonoBehaviour
         aim.transform.position = originalPos;
         warplockon.color = Color.white;
     }
+
+    public Vector3 GetAimPosition()
+    {
+        return aim.transform.position;
+    }
 }
