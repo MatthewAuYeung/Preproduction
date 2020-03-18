@@ -1008,6 +1008,11 @@ PrefabInstance:
       propertyPath: useRootMotion
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6226596335058991074, guid: 26a1e40a5ecc2a1459d868188acbc39f,
+        type: 3}
+      propertyPath: freeSprintSpeed
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 6226596335058991084, guid: 26a1e40a5ecc2a1459d868188acbc39f,
         type: 3}
       propertyPath: m_CollisionDetection

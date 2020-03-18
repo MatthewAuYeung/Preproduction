@@ -87,6 +87,10 @@ namespace Invector.CharacterController
             }
         }
 
+        private bool CheckSprintInput(float axis)
+        {
+            return axis > 0.0f ? true : false;
+        }
         #region Basic Locomotion Inputs      
 
         protected virtual void MoveCharacter()
@@ -103,15 +107,15 @@ namespace Invector.CharacterController
 
         protected virtual void SprintInput()
         {
-            if (Input.GetKeyDown(sprintInput))
+            if (Input.GetKeyDown(sprintInput) || CheckSprintInput(Input.GetAxis("Sprint")))
                 cc.Sprint(true);
-            else if(Input.GetKeyUp(sprintInput))
+            else if(Input.GetKeyUp(sprintInput) || !CheckSprintInput(Input.GetAxis("Sprint")))
                 cc.Sprint(false);
         }
 
         protected virtual void JumpInput()
         {
-            if (Input.GetKeyDown(jumpInput))
+            if (Input.GetKeyDown(jumpInput) || Input.GetButtonDown("Jump"))
                 cc.Jump();
         }
 
