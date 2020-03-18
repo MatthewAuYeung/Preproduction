@@ -6,11 +6,11 @@ using System;
 public class AttackManager : MonoBehaviour
 {
     public Action OnAttackStart, OnAttackStop;
+    private Camera mainCmra;
 
     [SerializeField]
     Collider attackCollider;
     
-
     Animator animator;
     Rigidbody rigidBody;
     bool isAttacking;
@@ -21,29 +21,40 @@ public class AttackManager : MonoBehaviour
 
     float delayAttack = 0.0f;
 
+   
+
     void Start()
     {
+      
+
         animator = GetComponent<Animator>();
         rigidBody = GetComponent<Rigidbody>();
         attackCollider.gameObject.SetActive(false);
 
         attackIndex = 0;             // numbers of clicks
         canClick = true;
+        mainCmra = Camera.main;
+
     }
 
     // Update is called once per frame
     void Update()
     {
-        if(Input.GetButtonDown("Fire1") && delayAttack < Time.time && Time.timeScale != 0)
+        Vector3 atkDir = mainCmra.transform.forward;
+        atkDir.y = 0.0f;
+        transform.rotation = Quaternion.LookRotation(atkDir);
+
+        if (Input.GetButtonDown("Fire1") && delayAttack < Time.time && Time.timeScale != 0)
         {
             delayAttack = Time.time + 0.8f;
-
+           
             Attack();
         }      
     }
 
     void Attack()
     {
+       
         isAttacking = true;
         string attackTrigger = "Attack" + (attackIndex+1).ToString();
 
