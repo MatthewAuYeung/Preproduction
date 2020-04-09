@@ -29,6 +29,7 @@ public class DamagePopupManager : MonoBehaviour
 
     public void DisplayDamagePopup(float amount, Transform popupParent)
     {
+        Debug.Log("popup");
         GameObject damagePopup = Instantiate(damagePopupPrefab, popupParent.transform.position, Quaternion.identity, popupParent);
         damagePopup.GetComponent<DamagePopup>().SetUp(amount);
     }

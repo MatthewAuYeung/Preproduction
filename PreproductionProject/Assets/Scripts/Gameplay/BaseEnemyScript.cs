@@ -71,7 +71,7 @@ public abstract class BaseEnemyScript : MonoBehaviour
     {
         health -= damage;
         hitEffect.Play();
-       // DamagePopupManager.instance.DisplayDamagePopup(damage, damagePopupTransform);
+        DamagePopupManager.instance.DisplayDamagePopup(damage, damagePopupTransform);
     }
 
     public void KnockBack(float amount, Vector3 point)

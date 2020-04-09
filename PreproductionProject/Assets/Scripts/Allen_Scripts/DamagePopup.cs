@@ -17,7 +17,7 @@ public class DamagePopup : MonoBehaviour
     public void SetUp(float amount)
     {
         textMesh = GetComponent<TextMeshPro>();
-        playerTransform = GameObject.FindGameObjectWithTag("EnemyTag").transform;
+        //playerTransform = GameObject.FindGameObjectWithTag("EnemyTag").transform;
         playerTransform = Camera.main.transform;
 
         textColor = textMesh.color;
