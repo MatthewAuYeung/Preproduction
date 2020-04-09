@@ -31,6 +31,9 @@ public class WarpController : MonoBehaviour
     [SerializeField]
     ParticleSystem whiteTrail;
 
+    [SerializeField]
+    private Material glowMat;
+
     public GameObject ybot;
 
     private NewPlayerScript player;
@@ -41,6 +44,7 @@ public class WarpController : MonoBehaviour
     bool isWarping;
 
     private GameObject selectedObj;
+    private GameObject cloneObj;
     private bool isSelected;
     private float magnitudeBWTEnemy;
     private Rigidbody _rb;
@@ -78,6 +82,7 @@ public class WarpController : MonoBehaviour
         {
             if(isSelected)
             {
+                Destroy(cloneObj);
                 WarpEnemy(selectedObj);
                 isSelected = false;
                 lockOnManager.SetIsSelected(isSelected);
@@ -92,8 +97,42 @@ public class WarpController : MonoBehaviour
                     selectedObj.SetActive(false);
                     isSelected = true;
                     lockOnManager.SetIsSelected(isSelected);
+
+                    cloneObj = Instantiate(selectedObj);
+                    Destroy(cloneObj.GetComponent<EnemyScript>());
+                    Destroy(cloneObj.GetComponent<UnityEngine.AI.NavMeshAgent>());
+                    Destroy(cloneObj.GetComponentInChildren<ParticleSystem>());
+                    var meshRenderer = cloneObj.GetComponent<MeshRenderer>();
+                    meshRenderer.material = glowMat;
+                    foreach (Transform child in cloneObj.transform)
+                    {
+                        Destroy(child.gameObject);
+                    }
+                    cloneObj.SetActive(false);
                 }
             }         
+        }
+
+        if (isSelected)
+        {
+            Vector3 targetPos = cloneObj.transform.position;
+            Vector3 warpDir = mainCamera.transform.forward;
+            RaycastHit hit;
+            Vector3 newPos;
+            if (Physics.Raycast(mainCamera.transform.position, warpDir, out hit, warpEnemyRange))
+            {
+                newPos = hit.point;
+                newPos -= warpDir.normalized * 0.75f;
+            }
+            else
+            {
+                newPos = mainCamera.transform.position + warpDir.normalized * warpEnemyRange;
+            }
+            cloneObj.transform.position = newPos;
+            if (!cloneObj.activeSelf)
+            {
+                cloneObj.SetActive(true);
+            }
         }
     }
 
@@ -227,15 +266,12 @@ public class WarpController : MonoBehaviour
                 newPos.y = targetPos.y;
             }
             newPos -= warpDir.normalized * 0.75f;
-            target.transform.DOMove(newPos, warpDuration).OnComplete(() => EndWarpEnemy(target));
-            return;
         }
         else
         {
             newPos = mainCamera.transform.position + warpDir.normalized * warpEnemyRange;
-            target.transform.DOMove(newPos, warpDuration).OnComplete(() => EndWarpEnemy(target));
-            return;
         }
+        target.transform.DOMove(newPos, warpDuration).OnComplete(() => EndWarpEnemy(target));
     }
 
     void EndWarpEnemy(GameObject target)

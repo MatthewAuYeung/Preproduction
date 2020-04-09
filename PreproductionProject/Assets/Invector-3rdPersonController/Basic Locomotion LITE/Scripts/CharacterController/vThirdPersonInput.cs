@@ -17,7 +17,7 @@ namespace Invector.CharacterController
         public KeyCode sprintInput = KeyCode.LeftShift;
 
         [Header("Camera Settings")]
-        public string rotateCameraXInput ="Mouse X";
+        public string rotateCameraXInput = "Mouse X";
         public string rotateCameraYInput = "Mouse Y";
 
         protected vThirdPersonCamera tpCamera;                // acess camera info        

@@ -999,19 +999,20 @@ PrefabInstance:
       propertyPath: yMaxLimit
       value: 60
       objectReference: {fileID: 0}
-    - target: {fileID: 1615343467, guid: 26a1e40a5ecc2a1459d868188acbc39f, type: 3}
-      propertyPath: isDebuging
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 6226596335058991074, guid: 26a1e40a5ecc2a1459d868188acbc39f,
         type: 3}
       propertyPath: useRootMotion
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6226596335058991074, guid: 26a1e40a5ecc2a1459d868188acbc39f,
         type: 3}
       propertyPath: freeSprintSpeed
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6226596335058991074, guid: 26a1e40a5ecc2a1459d868188acbc39f,
+        type: 3}
+      propertyPath: jumpAirControl
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6226596335058991084, guid: 26a1e40a5ecc2a1459d868188acbc39f,
         type: 3}
@@ -1022,6 +1023,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Interpolate
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7204139449057477469, guid: 26a1e40a5ecc2a1459d868188acbc39f,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -20.699951
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 26a1e40a5ecc2a1459d868188acbc39f, type: 3}
