@@ -31,13 +31,13 @@ public class BombThrower : MonoBehaviour
         if (!_player.HasMana(manaUsed))
             return;
 
-        if (Input.GetKeyDown(KeyCode.B) && ready == false)
+        if (Input.GetButtonDown("Bomb") && ready == false)
         {
             downTime = Time.time;
             pressTime = downTime + countDown;
             ready = true;
         }
-        if (Input.GetKeyUp(KeyCode.B))
+        if (Input.GetButtonUp("Bomb"))
         {
             ready = false;
         }
@@ -49,6 +49,7 @@ public class BombThrower : MonoBehaviour
             animator.SetTrigger("Throw");
             Vector3 throwDirection = Camera.main.transform.forward;
             Vector3 spawnPosition = bombSpawnTranform.position + (throwDirection * 1f);
+            //Vector3 spawnPosition = Camera.main.transform.position;
             GameObject newBomb = Instantiate(bomb, spawnPosition, Quaternion.identity);
             Vector3 throwForce = throwDirection * throwPower;
             newBomb.GetComponent<Rigidbody>().AddForce(throwForce);

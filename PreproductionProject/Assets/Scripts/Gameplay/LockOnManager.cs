@@ -26,10 +26,11 @@ public class LockOnManager : MonoBehaviour
     private GameObject closestObj;
     private bool islockon = false;
     private bool isSelected = false;
-
+    private Vector3 originalPos;
     void Start()
     {
         cam = Camera.main;
+        originalPos = aim.transform.position;
     }
 
     void Update()
@@ -102,7 +103,9 @@ public class LockOnManager : MonoBehaviour
 
         for (int i = 0; i < targets.Count; i++)
         {
-            distances[i] = Vector2.Distance(Camera.main.WorldToScreenPoint(targets[i].position), new Vector2(Screen.width / 2, Screen.height / 2));
+            //distances[i] = Vector2.Distance(Camera.main.WorldToScreenPoint(targets[i].position), new Vector2(Screen.width / 2, Screen.height / 2));
+            //distances[i] = Vector2.Distance(Camera.main.WorldToScreenPoint(targets[i].position), new Vector2(transform.position.x, transform.position.z));
+            distances[i] = Vector3.Distance(targets[i].position, transform.position);
         }
 
         float minDistance = Mathf.Min(distances);
@@ -132,6 +135,12 @@ public class LockOnManager : MonoBehaviour
         isSelected = state; islockon = false;
         AimInterface(false);
         LockInterface(false);
+        aim.transform.position = originalPos;
         warplockon.color = Color.white;
+    }
+
+    public Vector3 GetAimPosition()
+    {
+        return aim.transform.position;
     }
 }

@@ -30,7 +30,7 @@ public class DoorPrefabScript : MonoBehaviour
 
         if(_distanceToPlayer <= Range)
         {
-            if (Input.GetKey(KeyCode.E))
+            if (Input.GetButtonDown("Action"))
             {
                 if (Keys.Count == 0)
                 {
@@ -39,13 +39,13 @@ public class DoorPrefabScript : MonoBehaviour
                 }
             }
         }
-        if (!_door.IsDoorActive())
-        {
-            if (Input.GetKey(KeyCode.V))
-            {
-                _door.CloseDoor();
-            }
-        }
+        //if (!_door.IsDoorActive())
+        //{
+        //    if (Input.GetButtonDown("Action"))
+        //    {
+        //        _door.CloseDoor();
+        //    }
+        //}
     }
 
     private void OnDrawGizmosSelected()
