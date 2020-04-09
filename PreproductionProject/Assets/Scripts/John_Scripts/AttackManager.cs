@@ -53,14 +53,14 @@ public class AttackManager : MonoBehaviour
     {
        
         isAttacking = true;
-        //Vector3 atkDir = mainCmra.transform.forward;
-        //atkDir.y = 0.0f;
-        //transform.rotation = Quaternion.LookRotation(atkDir);
+        Vector3 atkDir = mainCmra.transform.forward;
+        atkDir.y = 0.0f;
+        transform.rotation = Quaternion.LookRotation(atkDir);
 
-        tpsCam.RotateCamera(Vector3.Angle(tpsCam.transform.forward, transform.forward), tpsCam.transform.rotation.y);
-        var temp = tpsCam.transform.eulerAngles;
-        var temp2 = Vector3.Lerp(temp, transform.eulerAngles, Time.deltaTime);
-        tpsCam.transform.eulerAngles = temp2; 
+        //tpsCam.RotateCamera(Vector3.Angle(tpsCam.transform.forward, transform.forward), tpsCam.transform.rotation.y);
+        //var temp = tpsCam.transform.eulerAngles;
+        //var temp2 = Vector3.Lerp(temp, transform.eulerAngles, Time.deltaTime);
+        //tpsCam.transform.eulerAngles = temp2; 
         string attackTrigger = "Attack" + (attackIndex+1).ToString();
 
         animator.SetTrigger(attackTrigger);

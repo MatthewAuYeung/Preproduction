@@ -141,7 +141,7 @@ namespace Invector.CharacterController
                 return;
             var Y = Input.GetAxis(rotateCameraYInput);
             var X = Input.GetAxis(rotateCameraXInput);
-            Debug.Log(X);
+            //Debug.Log(X);
             tpCamera.RotateCamera(X, Y);
 
             // tranform Character direction from camera if not KeepDirection
