@@ -12,7 +12,7 @@ public class NewPlayerScript : MonoBehaviour
     public GameObject winningCanvas;
     public Image bloodyscreen;
     public float AttckDamage;
-    public int hitcount = 0;
+    public int comboCount = 0;
     public float delay = 3.0f;
     public float WinScreenLast = 3.0f;
     [SerializeField]
@@ -38,6 +38,7 @@ public class NewPlayerScript : MonoBehaviour
     private float WinScreenTimer;
     private EnemyManager enemyManager;
     private bool ShowWinUI = false;
+    private int hitCount = 0;
 
     private void Awake()
     {
@@ -49,6 +50,7 @@ public class NewPlayerScript : MonoBehaviour
 
     private void Start()
     {
+        winningCanvas.SetActive(false);
     }
 
     void Update()
@@ -147,13 +149,14 @@ public class NewPlayerScript : MonoBehaviour
     public void IncrementHitPoint()
     {
         timer = Time.time + delay;
-        hitcount++;
+        comboCount++;
+        hitCount++;
     }
     private void resetCounter()
     {
         if (timer < Time.time)
         {
-            hitcount = 0;
+            comboCount = 0;
             timer = Time.time + delay;
         }
 
@@ -169,5 +172,10 @@ public class NewPlayerScript : MonoBehaviour
     public bool HasMana(float amountUse)
     {
         return (mana >= amountUse);
+    }
+
+    public int GetTotalHitCount()
+    {
+        return hitCount;
     }
 }
