@@ -9,17 +9,16 @@ public class EnemyScript : BaseEnemyScript
 {
     public bool isStun = false;
     private Transform _target;
-    private NavMeshAgent _agent;
     private EnemyManager _manager;
     private WarpController _warpController;
     private SphereCollider _attackTrigger;
     private ParticleSystem _particleSystem;
-    private Rigidbody _rb;
 
     public Image healthBar;
     public Image attackBar;
     float slowSpeed;
     float defaultSpeed;
+    float defaultAttackDelay;
     float stunDuration;
     float _waitTime;
 
@@ -33,6 +32,7 @@ public class EnemyScript : BaseEnemyScript
         _attackTrigger = GetComponent<SphereCollider>();
         _particleSystem = GetComponentInChildren<ParticleSystem>();
         defaultSpeed = _agent.speed;
+        defaultAttackDelay = attackDelay;
         meshRenderer = GetComponent<MeshRenderer>();
         originalMat = meshRenderer.material;
     }
@@ -58,6 +58,7 @@ public class EnemyScript : BaseEnemyScript
        // yield return new WaitForSeconds(2.0f);
         isStun = false;
         _agent.speed *= speedModifier;
+        attackDelay /= speedModifier;
         meshRenderer.material = SlowBombEffectMat;
         Invoke("ResetSpeed", slowEffectDuration);
     }
