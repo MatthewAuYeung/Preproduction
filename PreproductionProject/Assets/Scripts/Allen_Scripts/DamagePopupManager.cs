@@ -30,7 +30,9 @@ public class DamagePopupManager : MonoBehaviour
     public void DisplayDamagePopup(float amount, Transform popupParent)
     {
         Debug.Log("popup");
-        GameObject damagePopup = Instantiate(damagePopupPrefab, popupParent.transform.position, Quaternion.identity, popupParent);
+        Vector3 position= new Vector3(popupParent.transform.position.x, popupParent.transform.position.y + 1.1f, popupParent.transform.position.z);
+        GameObject damagePopup = Instantiate(damagePopupPrefab, position, Quaternion.identity, popupParent);
         damagePopup.GetComponent<DamagePopup>().SetUp(amount);
+        damagePopup.SetActive(true);
     }
 }

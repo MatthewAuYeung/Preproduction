@@ -604,6 +604,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: DamegePopupPrefab
       objectReference: {fileID: 0}
+    - target: {fileID: 4657511557717701318, guid: 512cdfb07e840624faebbb9820f90e2d,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4657511557717701313, guid: 512cdfb07e840624faebbb9820f90e2d,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -834,6 +839,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1787201578}
     m_Modifications:
+    - target: {fileID: 2205154780597391849, guid: ec0bf95e26038b64396fc67509a489cd,
+        type: 3}
+      propertyPath: m_Name
+      value: bombBar
+      objectReference: {fileID: 0}
     - target: {fileID: 8448585220110722588, guid: ec0bf95e26038b64396fc67509a489cd,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -968,11 +978,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Color.g
       value: 0.08972335
-      objectReference: {fileID: 0}
-    - target: {fileID: 2205154780597391849, guid: ec0bf95e26038b64396fc67509a489cd,
-        type: 3}
-      propertyPath: m_Name
-      value: bombBar
       objectReference: {fileID: 0}
     - target: {fileID: 7614619101681231534, guid: ec0bf95e26038b64396fc67509a489cd,
         type: 3}
