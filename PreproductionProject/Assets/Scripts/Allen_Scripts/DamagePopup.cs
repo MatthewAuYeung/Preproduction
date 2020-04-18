@@ -23,7 +23,7 @@ public class DamagePopup : MonoBehaviour
         textColor = textMesh.color;
         textMesh.SetText(amount.ToString());
     }
-
+    
     private void LateUpdate()
     {
         transform.LookAt(2 * transform.position - playerTransform.position);
