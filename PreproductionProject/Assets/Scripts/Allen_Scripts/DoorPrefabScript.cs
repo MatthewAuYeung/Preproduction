@@ -32,11 +32,12 @@ public class DoorPrefabScript : MonoBehaviour
         {
             if (Input.GetButtonDown("Action"))
             {
-                if (Keys.Count == 0)
+                if (_player.GetComponentInParent<NewPlayerScript>().playerKeyCount > 0) 
                 {
                     _door.OpenDoor();
-
+                    _player.GetComponentInParent<NewPlayerScript>().RemoveKey();
                 }
+
             }
         }
         //if (!_door.IsDoorActive())
@@ -46,6 +47,11 @@ public class DoorPrefabScript : MonoBehaviour
         //        _door.CloseDoor();
         //    }
         //}
+    }
+
+    public void CloseDoor()
+    {
+        _door.CloseDoor();
     }
 
     private void OnDrawGizmosSelected()
