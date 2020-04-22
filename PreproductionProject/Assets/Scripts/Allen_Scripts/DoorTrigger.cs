@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class KeyScript : MonoBehaviour
+public class DoorTrigger : MonoBehaviour
 {
     // Start is called before the first frame update
     void Start()
@@ -13,18 +13,16 @@ public class KeyScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //if (Input.GetKey(KeyCode.Space))
-        //{
-        //    Destroy(gameObject);
-        //}
+        
     }
 
     private void OnTriggerEnter(Collider other)
     {
-        //Debug.Log("Collided with " + other.gameObject.name);
         if (other.gameObject.CompareTag("PlayerTag"))
         {
-            Destroy(gameObject);
+            DoorPrefabScript doorPrefabScript = GetComponentInParent<DoorPrefabScript>();
+            doorPrefabScript.CloseDoor();
         }
     }
+
 }
