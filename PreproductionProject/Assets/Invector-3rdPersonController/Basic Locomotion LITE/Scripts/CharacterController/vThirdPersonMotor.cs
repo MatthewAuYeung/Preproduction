@@ -158,6 +158,10 @@ namespace Invector.CharacterController
 
         #endregion
 
+        private Camera cam;
+        private Vector3 camForward;
+        private Vector3 camRight;
+
         public void Init()
         {
             // this method is called on the Start of the ThirdPersonController
@@ -191,6 +195,7 @@ namespace Invector.CharacterController
 
             // capsule collider info
             _capsuleCollider = GetComponent<CapsuleCollider>();
+            cam = Camera.main;
         }
 
         public virtual void UpdateMotor()
@@ -221,6 +226,13 @@ namespace Invector.CharacterController
 
         void StrafeMovement()
         {
+            camForward = cam.transform.forward;
+            camRight = cam.transform.right;
+            camForward.y = 0.0f;
+            camRight.y = 0.0f;
+            camForward.Normalize();
+            camRight.Normalize();
+
             var _speed = Mathf.Clamp(input.y, -1f, 1f);
             var _direction = Mathf.Clamp(input.x, -1f, 1f);
             speed = _speed;
