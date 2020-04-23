@@ -212,6 +212,11 @@ PrefabInstance:
       propertyPath: fov
       value: 180
       objectReference: {fileID: 0}
+    - target: {fileID: 5825453507846488639, guid: 8314f24f78086f848a06455124c18d6d,
+        type: 3}
+      propertyPath: m_IsKinematic
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 764744259861103640, guid: 8314f24f78086f848a06455124c18d6d,
         type: 3}
       propertyPath: looping
@@ -221,11 +226,6 @@ PrefabInstance:
         type: 3}
       propertyPath: lengthInSec
       value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 5825453507846488639, guid: 8314f24f78086f848a06455124c18d6d,
-        type: 3}
-      propertyPath: m_IsKinematic
-      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8314f24f78086f848a06455124c18d6d, type: 3}
@@ -320,6 +320,12 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &650641436 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6226596333624763828, guid: 26a1e40a5ecc2a1459d868188acbc39f,
+    type: 3}
+  m_PrefabInstance: {fileID: 1588028353}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &687677724
 GameObject:
   m_ObjectHideFlags: 0
@@ -532,6 +538,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   target: {fileID: 2056660253}
+  enemies: []
 --- !u!4 &1399143839
 Transform:
   m_ObjectHideFlags: 0
@@ -614,6 +621,20 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5003976980978576150, guid: 26a1e40a5ecc2a1459d868188acbc39f,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6226596335058991075, guid: 26a1e40a5ecc2a1459d868188acbc39f,
+        type: 3}
+      propertyPath: m_Avatar
+      value: 
+      objectReference: {fileID: 9000000, guid: 51d97abdddace2644a07599b698509c9, type: 3}
+    - target: {fileID: 1615343467, guid: 26a1e40a5ecc2a1459d868188acbc39f, type: 3}
+      propertyPath: ybot
+      value: 
+      objectReference: {fileID: 650641436}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 26a1e40a5ecc2a1459d868188acbc39f, type: 3}
 --- !u!114 &1610037706 stripped

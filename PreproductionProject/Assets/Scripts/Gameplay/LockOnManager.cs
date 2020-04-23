@@ -88,6 +88,7 @@ public class LockOnManager : MonoBehaviour
                 AimInterface(false);
                 LockInterface(false);
             }
+
             if(islockon)
             {
                 transform.LookAt(new Vector3(closestObj.transform.position.x, transform.position.y, closestObj.transform.position.z));

@@ -40,6 +40,8 @@ public class NewPlayerScript : MonoBehaviour
     private bool ShowWinUI = false;
     private int hitCount = 0;
 
+    public int playerKeyCount = 0;
+
     private void Awake()
     {
         enemyManager = FindObjectOfType<EnemyManager>();
@@ -75,6 +77,7 @@ public class NewPlayerScript : MonoBehaviour
             StartCoroutine(StopHitEffect());
     }
 
+
     IEnumerator StopHitEffect()
     {
         yield return new WaitForSeconds(0.5f);
@@ -86,6 +89,16 @@ public class NewPlayerScript : MonoBehaviour
         {
             mana += 1.0f;
         }
+    }
+
+    public void AddKey()
+    {
+        playerKeyCount++;
+    }
+
+    public void RemoveKey()
+    {
+        playerKeyCount--;
     }
 
     public void TakeDamage(float damage)
