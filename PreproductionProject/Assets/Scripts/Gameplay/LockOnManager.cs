@@ -3,6 +3,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using Cinemachine;
+using Invector.CharacterController;
 
 public class LockOnManager : MonoBehaviour
 {
@@ -16,8 +18,13 @@ public class LockOnManager : MonoBehaviour
     private Image warplockon;
 
     public Vector2 ui_offset;
-    Camera cam;
     public List<Transform> targets;
+
+    private Camera cam;
+    public CinemachineVirtualCamera freeCam;
+    public CinemachineVirtualCamera lockOnCam;
+
+    public Transform lockOnTarget;
 
     [SerializeField]
     private float range = 10.0f;
@@ -27,10 +34,13 @@ public class LockOnManager : MonoBehaviour
     private bool islockon = false;
     private bool isSelected = false;
     private Vector3 originalPos;
+    private vThirdPersonController cc;
+
     void Start()
     {
         cam = Camera.main;
         originalPos = aim.transform.position;
+        cc = GetComponent<vThirdPersonController>();
     }
 
     void Update()
@@ -57,11 +67,19 @@ public class LockOnManager : MonoBehaviour
                 {
                     islockon = true;
                     LockInterface(true);
+                    transform.LookAt(new Vector3(closestObj.transform.position.x, transform.position.y, closestObj.transform.position.z));
+                    lockOnTarget.gameObject.transform.position = closestObj.transform.position;
+                    freeCam.gameObject.SetActive(false);
+                    lockOnCam.gameObject.SetActive(true);
+                    cc.isStrafing = true;
                 }
                 if (Input.GetButtonUp("LockOn"))
                 {
                     islockon = false;
                     LockInterface(false);
+                    cc.isStrafing = false;
+                    lockOnCam.gameObject.SetActive(false);
+                    freeCam.gameObject.SetActive(true);
                 }
             }
             else
@@ -69,6 +87,11 @@ public class LockOnManager : MonoBehaviour
                 islockon = false;
                 AimInterface(false);
                 LockInterface(false);
+            }
+
+            if(islockon)
+            {
+                transform.LookAt(new Vector3(closestObj.transform.position.x, transform.position.y, closestObj.transform.position.z));
             }
         }
         //else
@@ -142,5 +165,11 @@ public class LockOnManager : MonoBehaviour
     public Vector3 GetAimPosition()
     {
         return aim.transform.position;
+    }
+
+    private void OnDrawGizmos()
+    {
+        Gizmos.color = Color.blue;
+        Gizmos.DrawRay(transform.position + transform.up, transform.forward);
     }
 }

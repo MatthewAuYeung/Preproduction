@@ -118,8 +118,8 @@ public class PlayerScript : MonoBehaviour
         if (aiming)
         {
 
-            _hand.transform.Rotate(new Vector3(-Input.GetAxis("Mouse Y") * Time.deltaTime * 100.0f,0.0f,0.0f));
-            transform.Rotate(new Vector3(0.0f,Input.GetAxis("Mouse X") * Time.deltaTime * 300.0f,0.0f));
+            _hand.transform.Rotate(new Vector3(-Input.GetAxis("Mouse Y") * Time.deltaTime * 100.0f, 0.0f, 0.0f));
+            transform.Rotate(new Vector3(0.0f, Input.GetAxis("Mouse X") * Time.deltaTime * 300.0f, 0.0f));
             //Debug.Log(Input.GetAxis("Mouse Y"));
         }
 
