@@ -9,10 +9,17 @@ public class SlowingBomb : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
+        if (collision.gameObject.CompareTag("PlatformTag"))
+        {
+            MovingPlatform platform = collision.gameObject.GetComponent<MovingPlatform>();
+            platform.speed *= 0.5f;
+        }
+
         // instantiate explosion (include bomb slowing effect
         Instantiate(explosion, transform.position, Quaternion.identity);
 
         // destroy bomb
         Destroy(gameObject);
+
     }
 }
