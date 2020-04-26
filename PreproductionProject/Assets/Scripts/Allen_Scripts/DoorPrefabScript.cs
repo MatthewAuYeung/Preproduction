@@ -7,10 +7,14 @@ public class DoorPrefabScript : MonoBehaviour
     // Start is called before the first frame update
     public float Range;
     public List<KeyScript> Keys;
+    public GameObject enemyListHolder;
 
     private DoorScript _door;
     private GameObject _player;
     private float _distanceToPlayer;
+    private List<EnemyScript>  enemies = new List<EnemyScript>();
+
+
     private void Awake()
     {
         _door = GetComponentInChildren<DoorScript>();
@@ -18,7 +22,10 @@ public class DoorPrefabScript : MonoBehaviour
     }
     void Start()
     {
-
+        foreach (var enemy in enemyListHolder.GetComponentsInChildren<EnemyScript>())
+        {
+            enemies.Add(enemy);
+        }
     }
 
     // Update is called once per frame
@@ -27,6 +34,9 @@ public class DoorPrefabScript : MonoBehaviour
         _distanceToPlayer = Vector3.Distance(transform.position, _player.transform.position);
 
         Keys.RemoveAll(item => item == null);
+
+        if (enemies.Count == 0)
+            _door.OpenDoor();
 
         if(_distanceToPlayer <= Range)
         {
@@ -52,6 +62,11 @@ public class DoorPrefabScript : MonoBehaviour
     public void CloseDoor()
     {
         _door.CloseDoor();
+    }
+
+    public void RemoveEnemy(EnemyScript enemy)
+    {
+        enemies.Remove(enemy);
     }
 
     private void OnDrawGizmosSelected()
