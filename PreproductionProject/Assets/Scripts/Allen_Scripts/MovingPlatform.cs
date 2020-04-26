@@ -4,9 +4,10 @@ using UnityEngine;
 
 public class MovingPlatform : MonoBehaviour
 {
-    public Vector3[] points;
     public int point_number = 0;
     private Vector3 current_target;
+
+    public Transform[] Waypoints;
 
     public float tolerance;
     public float speed;
@@ -17,9 +18,9 @@ public class MovingPlatform : MonoBehaviour
     public bool automatic;
     void Start()
     {
-        if (points.Length > 0)
+        if (Waypoints.Length > 0)
         {
-            current_target = points[0];
+            current_target = Waypoints[0].position;
         }
         tolerance = speed * Time.deltaTime;
     }
@@ -61,11 +62,12 @@ public class MovingPlatform : MonoBehaviour
     public void NextPlatform()
     {
         point_number++;
-        if (point_number >= points.Length)
+        if (point_number >= Waypoints.Length)
         {
             point_number = 0;
         }
-        current_target = points[point_number];
+        current_target = Waypoints[point_number].position;
+
     }
 
     private void OnTriggerEnter(Collider other)
