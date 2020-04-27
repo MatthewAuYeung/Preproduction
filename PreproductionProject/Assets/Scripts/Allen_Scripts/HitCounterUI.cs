@@ -17,6 +17,6 @@ public class HitCounterUI : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        hitcounter.text = playerScript.hitcount.ToString();
+        hitcounter.text = playerScript.comboCount.ToString();
     }
 }

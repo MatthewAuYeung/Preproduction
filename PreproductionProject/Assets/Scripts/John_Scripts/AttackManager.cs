@@ -35,7 +35,7 @@ public class AttackManager : MonoBehaviour
         attackIndex = 0;             // numbers of clicks
         canClick = true;
         mainCmra = Camera.main;
-        tpsCam = mainCmra.GetComponent<vThirdPersonCamera>();
+        tpsCam = FindObjectOfType<vThirdPersonCamera>();
     }
 
     // Update is called once per frame
