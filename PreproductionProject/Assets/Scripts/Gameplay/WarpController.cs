@@ -109,6 +109,7 @@ public class WarpController : MonoBehaviour
                         Destroy(child.gameObject);
                     }
                     cloneObj.SetActive(false);
+                    lockOnManager.TurnoffLockOn();
                 }
             }         
         }
@@ -283,6 +284,7 @@ public class WarpController : MonoBehaviour
     {
         return isWarping;
     }
+
     private void OnDrawGizmosSelected()
     {
         Gizmos.color = Color.red;

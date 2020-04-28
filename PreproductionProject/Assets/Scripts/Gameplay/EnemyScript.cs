@@ -81,8 +81,8 @@ public class EnemyScript : BaseEnemyScript
             _manager.enemies.Remove(this);
             transform.gameObject.SetActive(false);
             FindObjectOfType<DoorPrefabScript>()?.RemoveEnemy(this);
-            return;
             //Destroy(gameObject);
+            return;
         }
 
         if (isStun)
