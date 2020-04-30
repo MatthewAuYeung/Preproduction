@@ -31,16 +31,24 @@ public class LockOnManager : MonoBehaviour
 
     private Vector3 closestEnemyPos;
     private GameObject closestObj;
-    private bool islockon = false;
-    private bool isSelected = false;
+
+    private Vector3 LockOnTargetPos;
+
     private Vector3 originalPos;
     private vThirdPersonController cc;
+
+    private WarpController warpController;
+
+    private bool islockon = false;
+    private bool isSelected = false;
+    private bool isToggled = false;
 
     void Start()
     {
         cam = Camera.main;
         originalPos = aim.transform.position;
         cc = GetComponent<vThirdPersonController>();
+        warpController = GetComponent<WarpController>();
     }
 
     void Update()
@@ -48,35 +56,69 @@ public class LockOnManager : MonoBehaviour
         if (targets.Count == 0)
         {
             islockon = false;
+            isToggled = false;
+            TurnoffLockOn();
+            ToggledLockInterface(false);
             return;
         }
         if(!isSelected)
         {
             warplockon.color = Color.clear;
             closestObj = targets[targetIndex()].gameObject;
+            lockOnTarget.gameObject.transform.position = closestObj.gameObject.transform.position;
 
             float dist = Vector3.Distance(transform.position, closestObj.transform.position);
+
+            if(isSelected && Input.GetButtonDown("WarpEnemy"))
+            {
+                Debug.Log("Pressed");
+            }
 
             if (dist <= range)
             {
                 AimInterface(true);
-                Vector3 screenPos = cam.WorldToScreenPoint(targets[targetIndex()].position);
+                Vector3 screenPos = cam.WorldToScreenPoint(closestObj.transform.position);
                 aim.transform.position = screenPos;
 
-                if (Input.GetButtonDown("LockOn"))
+                if(Input.GetButtonDown("LockOn"))
+                {
+                    LockInterface(true);
+                }
+                if (Input.GetButtonUp("LockOn") && !isToggled)
+                {
+                    LockInterface(false);
+                }
+
+                if (Input.GetButton("LockOn") || isToggled)
                 {
                     islockon = true;
-                    LockInterface(true);
                     transform.LookAt(new Vector3(closestObj.transform.position.x, transform.position.y, closestObj.transform.position.z));
-                    lockOnTarget.gameObject.transform.position = closestObj.transform.position;
+                    lockOnTarget.gameObject.transform.position = (isToggled) ? LockOnTargetPos : closestObj.transform.position;
                     freeCam.gameObject.SetActive(false);
                     lockOnCam.gameObject.SetActive(true);
                     cc.isStrafing = true;
+
+                    if (Input.GetButtonDown("ToggleLockOn"))
+                    {
+                        if (isToggled)
+                        {
+                            ToggledLockInterface(false);
+                            isToggled = false;
+                            islockon = false;
+                            LockOnTargetPos = closestObj.transform.position;
+
+                            return;
+                        }
+
+                        isToggled = true;
+                        ToggledLockInterface(true);
+                        LockOnTargetPos = closestObj.transform.position;
+                    }
                 }
-                if (Input.GetButtonUp("LockOn"))
+                else
                 {
                     islockon = false;
-                    LockInterface(false);
+                    isToggled = false;
                     cc.isStrafing = false;
                     lockOnCam.gameObject.SetActive(false);
                     freeCam.gameObject.SetActive(true);
@@ -85,22 +127,25 @@ public class LockOnManager : MonoBehaviour
             else
             {
                 islockon = false;
+                isToggled = false;
+                cc.isStrafing = false;
                 AimInterface(false);
                 LockInterface(false);
             }
 
-            if(islockon)
+            if(islockon || isToggled)
             {
                 transform.LookAt(new Vector3(closestObj.transform.position.x, transform.position.y, closestObj.transform.position.z));
             }
         }
-        //else
-        //{
-        //    islockon = false;
-        //    AimInterface(false);
-        //    LockInterface(false);
-        //    warplockon.color = Color.white;
-        //}
+        else
+        {
+            islockon = false;
+            isToggled = false;
+            AimInterface(false);
+            LockInterface(false);
+            warplockon.color = Color.white;
+        }
     }
 
     void AimInterface(bool state)
@@ -118,6 +163,16 @@ public class LockOnManager : MonoBehaviour
         lockon.transform.DOScale(size, .15f).SetEase(Ease.OutBack);
         lockon.transform.DORotate(Vector3.forward * 180, .15f, RotateMode.FastBeyond360).From();
         aim.transform.DORotate(Vector3.forward * 90, .15f, RotateMode.LocalAxisAdd);
+    }
+
+    void ToggledLockInterface(bool state)
+    {
+        float size = state ? 1.0f : 2.0f;
+        float fade = state ? 1.0f : 0.0f;
+        lockon.DOFade(fade, .15f);
+        lockon.transform.DOScale(size, .15f).SetEase(Ease.OutBack);
+
+        aim.DOFade(fade, .15f);
     }
 
     public int targetIndex()
@@ -166,7 +221,13 @@ public class LockOnManager : MonoBehaviour
     {
         return aim.transform.position;
     }
-
+     
+    public void TurnoffLockOn()
+    {
+        freeCam.gameObject.SetActive(true);
+        lockOnCam.gameObject.SetActive(false);
+        cc.isStrafing = false;
+    }
     private void OnDrawGizmos()
     {
         Gizmos.color = Color.blue;

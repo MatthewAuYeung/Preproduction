@@ -17,7 +17,7 @@ public class DebugRestart : MonoBehaviour
     {
         if(usingDebug)
         {
-            if (Input.GetKeyDown(KeyCode.P))
+            if (Input.GetButtonDown("DebugRestart"))
             {
                 Restart();
             }
