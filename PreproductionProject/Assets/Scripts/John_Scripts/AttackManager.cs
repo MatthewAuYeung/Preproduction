@@ -24,12 +24,12 @@ public class AttackManager : MonoBehaviour
     [SerializeField]
     private float cooldown = 1.0f;
     private float waitTime;
-   
+
+    private float dpadinput;
+    private float lastinput;
 
     void Start()
     {
-      
-
         animator = GetComponent<Animator>();
         rigidBody = GetComponent<Rigidbody>();
         attackCollider.gameObject.SetActive(false);
@@ -55,6 +55,26 @@ public class AttackManager : MonoBehaviour
         {
             attackIndex = 0;
         }
+
+        dpadinput = Input.GetAxisRaw("DPad_LR");
+        if(dpadinput != lastinput)
+        {
+            if (dpadinput == 1.0f)
+            {
+                lastinput = dpadinput;
+                Debug.Log("Right");
+            }
+            else if(dpadinput == -1.0f)
+            {
+                lastinput = dpadinput;
+                Debug.Log("Left");
+            }
+            else if(dpadinput == 0.0f)
+            {
+                lastinput = 0.0f;
+            }
+        }
+
     }
 
     void Attack()
