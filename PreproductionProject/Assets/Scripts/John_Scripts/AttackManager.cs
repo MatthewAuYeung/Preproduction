@@ -8,7 +8,6 @@ public class AttackManager : MonoBehaviour
 {
     public Action OnAttackStart, OnAttackStop;
     private Camera mainCmra;
-    private vThirdPersonCamera tpsCam;
     [SerializeField]
     Collider attackCollider;
     
@@ -22,12 +21,15 @@ public class AttackManager : MonoBehaviour
 
     float delayAttack = 0.0f;
 
-   
+    [SerializeField]
+    private float cooldown = 1.0f;
+    private float waitTime;
+
+    private float dpadinput;
+    private float lastinput;
 
     void Start()
     {
-      
-
         animator = GetComponent<Animator>();
         rigidBody = GetComponent<Rigidbody>();
         attackCollider.gameObject.SetActive(false);
@@ -35,7 +37,6 @@ public class AttackManager : MonoBehaviour
         attackIndex = 0;             // numbers of clicks
         canClick = true;
         mainCmra = Camera.main;
-        tpsCam = FindObjectOfType<vThirdPersonCamera>();
     }
 
     // Update is called once per frame
@@ -44,9 +45,36 @@ public class AttackManager : MonoBehaviour
         if (Input.GetButtonDown("Fire1") && delayAttack < Time.time && Time.timeScale != 0)
         {
             delayAttack = Time.time + 0.8f;
-
+            waitTime = 0.0f;
             Attack();
-        }      
+        }
+
+        waitTime += Time.deltaTime;
+
+        if(waitTime > cooldown)
+        {
+            attackIndex = 0;
+        }
+
+        dpadinput = Input.GetAxisRaw("DPad_LR");
+        if(dpadinput != lastinput)
+        {
+            if (dpadinput == 1.0f)
+            {
+                lastinput = dpadinput;
+                Debug.Log("Right");
+            }
+            else if(dpadinput == -1.0f)
+            {
+                lastinput = dpadinput;
+                Debug.Log("Left");
+            }
+            else if(dpadinput == 0.0f)
+            {
+                lastinput = 0.0f;
+            }
+        }
+
     }
 
     void Attack()
@@ -57,10 +85,6 @@ public class AttackManager : MonoBehaviour
         atkDir.y = 0.0f;
         transform.rotation = Quaternion.LookRotation(atkDir);
 
-        //tpsCam.RotateCamera(Vector3.Angle(tpsCam.transform.forward, transform.forward), tpsCam.transform.rotation.y);
-        //var temp = tpsCam.transform.eulerAngles;
-        //var temp2 = Vector3.Lerp(temp, transform.eulerAngles, Time.deltaTime);
-        //tpsCam.transform.eulerAngles = temp2; 
         string attackTrigger = "Attack" + (attackIndex+1).ToString();
 
         animator.SetTrigger(attackTrigger);
