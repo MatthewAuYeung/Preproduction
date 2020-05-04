@@ -11,7 +11,7 @@ public class SlowingBomb : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("PlatformTag"))
         {
-            MovingPlatform platform = collision.gameObject.GetComponent<MovingPlatform>();
+            MovingPlatform platform = collision.gameObject.GetComponentInParent<MovingPlatform>();
             platform.speed *= 0.5f;
         }
 
