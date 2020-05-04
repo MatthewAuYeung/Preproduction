@@ -69,6 +69,7 @@ public class WarpController : MonoBehaviour
         {
             if (Input.GetButtonDown("Warp"))
             {
+                player.AbilityUsed(NewPlayerScript.AbilityType.Warp);
                 if (lockOnManager.GetIsLockOn())
                 {
                     WarpAttack(lockOnManager.GetClosestObject());
@@ -80,12 +81,15 @@ public class WarpController : MonoBehaviour
 
         if (Input.GetButtonDown("WarpEnemy"))
         {
+            if (!player.DoneCooldown(NewPlayerScript.AbilityType.WarpEnemy))
+                return;
             if(isSelected)
             {
                 Destroy(cloneObj);
                 WarpEnemy(selectedObj);
                 isSelected = false;
                 lockOnManager.SetIsSelected(isSelected);
+                player.AbilityUsed(NewPlayerScript.AbilityType.WarpEnemy);
             }
             if (lockOnManager.GetIsLockOn() && !isSelected)
             {

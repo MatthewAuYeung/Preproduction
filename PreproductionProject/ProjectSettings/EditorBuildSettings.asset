@@ -11,4 +11,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/TutorialLevel.unity
     guid: f2f84114fb495fd40a2bb5354aa0880e
+  - enabled: 1
+    path: Assets/Scenes/Allen_Scenes/TeleportTest.unity
+    guid: 49374fbabb49e9c46a0ad61e7bc99d89
+  - enabled: 1
+    path: Assets/Scenes/Allen_Scenes/LockDoorTest.unity
+    guid: 793eababf08232b4d8279742081ba563
   m_configObjects: {}
