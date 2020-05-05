@@ -30,6 +30,8 @@ public class BombThrower : MonoBehaviour
     {
         if (!_player.HasMana(manaUsed))
             return;
+        if (!_player.DoneCooldown(NewPlayerScript.AbilityType.Bomb))
+            return;
 
         if (Input.GetButtonDown("Bomb") && ready == false)
         {
@@ -46,6 +48,7 @@ public class BombThrower : MonoBehaviour
         {
             ready = false;
             _player.UseMana(manaUsed);
+            _player.AbilityUsed(NewPlayerScript.AbilityType.Bomb);
             animator.SetTrigger("Throw");
             Vector3 throwDirection = Camera.main.transform.forward;
             Vector3 spawnPosition = bombSpawnTranform.position + (throwDirection * 1f);
