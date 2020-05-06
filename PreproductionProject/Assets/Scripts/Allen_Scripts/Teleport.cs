@@ -19,6 +19,5 @@ public class Teleport : MonoBehaviour
         {
             SceneManager.LoadScene(levelToLoad);
         }
-
     }
 }
