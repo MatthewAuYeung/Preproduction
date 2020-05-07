@@ -46,8 +46,5 @@ MonoBehaviour:
   LootTable:
   - name: Potion
     item: {fileID: 7026849559042409936, guid: ace5c5fcc7d8603409fb0e25a98aba3e, type: 3}
-    dropRarity: 50
-  - name: ManaRecover
-    item: {fileID: 3775176952886304545, guid: f150b560a83bd6b4797fcb2cca9d9396, type: 3}
-    dropRarity: 30
+    dropRarity: 100
   dropChance: 50
