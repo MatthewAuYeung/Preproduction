@@ -38,6 +38,8 @@ public class NewPlayerScript : MonoBehaviour
     float bombCooldown;
     [SerializeField]
     float warpEnemyCooldown;
+    [SerializeField]
+    float warpEnemyDuration;
 
     [SerializeField]
     private AbilityIcon warpIcon;
@@ -66,7 +68,7 @@ public class NewPlayerScript : MonoBehaviour
         enemyManager = FindObjectOfType<EnemyManager>();
         health = maxHealth;
         mana = maxMana;
-        InvokeRepeating("Regenerate", 1.0f, manaRegenDelay);
+        //InvokeRepeating("Regenerate", 1.0f, manaRegenDelay);
         warpIcon.SetAbilityCooldown(warpCooldown);
         bombIcon.SetAbilityCooldown(bombCooldown);
         warpEnemyIcon.SetAbilityCooldown(warpEnemyCooldown);
@@ -258,5 +260,10 @@ public class NewPlayerScript : MonoBehaviour
                 }
         }
         return state;
+    }
+
+    public float GetWarpEnemyDuration()
+    {
+        return warpEnemyDuration;
     }
 }

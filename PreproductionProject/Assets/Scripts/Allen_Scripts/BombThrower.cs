@@ -28,8 +28,8 @@ public class BombThrower : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (!_player.HasMana(manaUsed))
-            return;
+        //if (!_player.HasMana(manaUsed))
+        //    return;
         if (!_player.DoneCooldown(NewPlayerScript.AbilityType.Bomb))
             return;
 
@@ -47,7 +47,7 @@ public class BombThrower : MonoBehaviour
         if (Time.time >= pressTime && ready == true)
         {
             ready = false;
-            _player.UseMana(manaUsed);
+            //_player.UseMana(manaUsed);
             _player.AbilityUsed(NewPlayerScript.AbilityType.Bomb);
             animator.SetTrigger("Throw");
             Vector3 throwDirection = Camera.main.transform.forward;
