@@ -43,16 +43,32 @@ public class LockOnManager : MonoBehaviour
     private bool isSelected = false;
     private bool isToggled = false;
 
+    private bool isFirstTime = true;
     void Start()
     {
         cam = Camera.main;
         originalPos = aim.transform.position;
         cc = GetComponent<vThirdPersonController>();
         warpController = GetComponent<WarpController>();
+        targets.Clear();
+    }
+
+    private void LateUpdate()
+    {
+        if (isFirstTime)
+        {
+            targets.Clear();
+            isFirstTime = false;
+        }
     }
 
     void Update()
     {
+        if(Input.GetKeyDown(KeyCode.Y))
+        {
+            targets.Clear();
+        }
+
         if (targets.Count == 0)
         {
             islockon = false;
@@ -65,17 +81,13 @@ public class LockOnManager : MonoBehaviour
         {
             warplockon.color = Color.clear;
             closestObj = targets[targetIndex()].gameObject;
-            lockOnTarget.gameObject.transform.position = closestObj.gameObject.transform.position;
 
             float dist = Vector3.Distance(transform.position, closestObj.transform.position);
 
-            if(isSelected && Input.GetButtonDown("WarpEnemy"))
-            {
-                Debug.Log("Pressed");
-            }
-
             if (dist <= range)
             {
+                lockOnTarget.gameObject.transform.position = closestObj.gameObject.transform.position;
+
                 AimInterface(true);
                 Vector3 screenPos = cam.WorldToScreenPoint(closestObj.transform.position);
                 aim.transform.position = screenPos;
@@ -86,6 +98,11 @@ public class LockOnManager : MonoBehaviour
                 }
                 if (Input.GetButtonUp("LockOn") && !isToggled)
                 {
+                    islockon = false;
+                    isToggled = false;
+                    cc.isStrafing = false;
+                    lockOnCam.gameObject.SetActive(false);
+                    freeCam.gameObject.SetActive(true);
                     LockInterface(false);
                 }
 
@@ -179,11 +196,15 @@ public class LockOnManager : MonoBehaviour
     {
         float[] distances = new float[targets.Count];
 
-        for (int i = 0; i < targets.Count; i++)
+        for (int i = 0; i < targets.Count; ++i)
         {
+            if(targets[i].GetComponent<MeshRenderer>().isVisible)
+                distances[i] = Vector3.Distance(targets[i].position, transform.position);
             //distances[i] = Vector2.Distance(Camera.main.WorldToScreenPoint(targets[i].position), new Vector2(Screen.width / 2, Screen.height / 2));
             //distances[i] = Vector2.Distance(Camera.main.WorldToScreenPoint(targets[i].position), new Vector2(transform.position.x, transform.position.z));
-            distances[i] = Vector3.Distance(targets[i].position, transform.position);
+
+            //distances[i] = Vector3.Distance(Camera.main.WorldToScreenPoint(targets[i].position), transform.position);
+
         }
 
         float minDistance = Mathf.Min(distances);
@@ -232,5 +253,6 @@ public class LockOnManager : MonoBehaviour
     {
         Gizmos.color = Color.blue;
         Gizmos.DrawRay(transform.position + transform.up, transform.forward);
+
     }
 }
