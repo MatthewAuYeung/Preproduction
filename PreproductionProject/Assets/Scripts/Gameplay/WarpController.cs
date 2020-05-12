@@ -49,21 +49,27 @@ public class WarpController : MonoBehaviour
     private float magnitudeBWTEnemy;
     private Rigidbody _rb;
     private Camera mainCamera;
+    private float abilityDuration;
+    private float abilityWaitTime;
+    private Vector3 originalPos;
 
     private void Awake()
     {
-        player = FindObjectOfType<NewPlayerScript>();
+        player = GetComponentInParent<NewPlayerScript>();
         warpCooldown = player.GetWarpCooldown();
         lockOnManager = GetComponent<LockOnManager>();
         animator = GetComponent<Animator>();
         _rb = GetComponent<Rigidbody>();
         mainCamera = Camera.main;
+        abilityDuration = player.GetWarpEnemyDuration();
     }
 
     private void Update()
     {
-        if (!player.HasMana(manaUsed))
-            return;
+        //if (!player.HasMana(manaUsed))
+        //    return;
+
+        abilityWaitTime += Time.deltaTime;
 
         if(!isWarping && currentTime < Time.time)
         {
@@ -96,6 +102,8 @@ public class WarpController : MonoBehaviour
                 selectedObj = lockOnManager.GetClosestObject();
                 if(selectedObj.CompareTag("EnemyTag"))
                 {
+                    abilityWaitTime = 0.0f;
+                    originalPos = selectedObj.transform.position;
                     Vector3 temp = selectedObj.transform.position - transform.position;
                     magnitudeBWTEnemy = temp.magnitude;
                     selectedObj.SetActive(false);
@@ -115,7 +123,7 @@ public class WarpController : MonoBehaviour
                     cloneObj.SetActive(false);
                     lockOnManager.TurnoffLockOn();
                 }
-            }         
+            }
         }
 
         if (isSelected)
@@ -137,6 +145,19 @@ public class WarpController : MonoBehaviour
             if (!cloneObj.activeSelf)
             {
                 cloneObj.SetActive(true);
+            }
+        }
+
+        if(isSelected)
+        {
+            if(abilityWaitTime > abilityDuration)
+            {
+                Destroy(cloneObj);
+                selectedObj.transform.position = originalPos;
+                selectedObj.SetActive(true);
+                isSelected = false;
+                lockOnManager.SetIsSelected(isSelected);
+                player.AbilityUsed(NewPlayerScript.AbilityType.WarpEnemy);
             }
         }
     }
@@ -174,7 +195,7 @@ public class WarpController : MonoBehaviour
         warpDir.y = 0.0f;
         RaycastHit hit;
         ShowBody(false);
-        player.UseMana(manaUsed);
+        //player.UseMana(manaUsed);
         transform.rotation = Quaternion.LookRotation(warpDir);
 
         // Raycast from the player model to check if there is a not warpable object inside the warp range
@@ -195,7 +216,7 @@ public class WarpController : MonoBehaviour
     {
         transform.rotation = Quaternion.LookRotation(target.transform.position - transform.position);
         ShowBody(false);
-        player.UseMana(manaUsed);
+        //player.UseMana(manaUsed);
         if(target.CompareTag("EnemyTag"))
         {
             var enemy = target.GetComponent<EnemyScript>();

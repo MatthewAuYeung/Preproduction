@@ -837,6 +837,16 @@ PrefabInstance:
       propertyPath: m_MaximumFOV
       value: 79
       objectReference: {fileID: 0}
+    - target: {fileID: 7686226634131380796, guid: 26a1e40a5ecc2a1459d868188acbc39f,
+        type: 3}
+      propertyPath: LootTable.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7686226634131380796, guid: 26a1e40a5ecc2a1459d868188acbc39f,
+        type: 3}
+      propertyPath: LootTable.Array.data[0].dropRarity
+      value: 100
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 26a1e40a5ecc2a1459d868188acbc39f, type: 3}
 --- !u!1001 &1068650675
