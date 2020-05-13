@@ -49,21 +49,27 @@ public class WarpController : MonoBehaviour
     private float magnitudeBWTEnemy;
     private Rigidbody _rb;
     private Camera mainCamera;
+    private float abilityDuration;
+    private float abilityWaitTime;
+    private Vector3 originalPos;
 
     private void Awake()
     {
-        player = FindObjectOfType<NewPlayerScript>();
+        player = GetComponentInParent<NewPlayerScript>();
         warpCooldown = player.GetWarpCooldown();
         lockOnManager = GetComponent<LockOnManager>();
         animator = GetComponent<Animator>();
         _rb = GetComponent<Rigidbody>();
         mainCamera = Camera.main;
+        abilityDuration = player.GetWarpEnemyDuration();
     }
 
     private void Update()
     {
-        if (!player.HasMana(manaUsed))
-            return;
+        //if (!player.HasMana(manaUsed))
+        //    return;
+
+        abilityWaitTime += Time.deltaTime;
 
         if(!isWarping && currentTime < Time.time)
         {
@@ -83,6 +89,8 @@ public class WarpController : MonoBehaviour
         {
             if (!player.DoneCooldown(NewPlayerScript.AbilityType.WarpEnemy))
                 return;
+
+            // Warping the enemy to a new pos
             if(isSelected)
             {
                 Destroy(cloneObj);
@@ -91,21 +99,33 @@ public class WarpController : MonoBehaviour
                 lockOnManager.SetIsSelected(isSelected);
                 player.AbilityUsed(NewPlayerScript.AbilityType.WarpEnemy);
             }
+
+            // Selecting an enemy ready to warp it to a new pos
             if (lockOnManager.GetIsLockOn() && !isSelected)
             {
                 selectedObj = lockOnManager.GetClosestObject();
                 if(selectedObj.CompareTag("EnemyTag"))
                 {
+                    // Start the timer to for ability duration
+                    abilityWaitTime = 0.0f;
+                    // Record the original pos of the selected enemy
+                    originalPos = selectedObj.transform.position;
+                    // Calculate the vector the player and the enemy
                     Vector3 temp = selectedObj.transform.position - transform.position;
                     magnitudeBWTEnemy = temp.magnitude;
+                    // Make the enemy object disappear
                     selectedObj.SetActive(false);
                     isSelected = true;
+                    // Tell the LockOnManager that the player is using the ability
                     lockOnManager.SetIsSelected(isSelected);
 
+                    // Create a clone obj for the indicator
                     cloneObj = Instantiate(selectedObj);
+                    // Delete everything beside the mesh
                     Destroy(cloneObj.GetComponent<EnemyScript>());
                     Destroy(cloneObj.GetComponent<UnityEngine.AI.NavMeshAgent>());
                     Destroy(cloneObj.GetComponentInChildren<ParticleSystem>());
+                    // Change the material to a transparent texture
                     var meshRenderer = cloneObj.GetComponent<MeshRenderer>();
                     meshRenderer.material = glowMat;
                     foreach (Transform child in cloneObj.transform)
@@ -115,9 +135,25 @@ public class WarpController : MonoBehaviour
                     cloneObj.SetActive(false);
                     lockOnManager.TurnoffLockOn();
                 }
-            }         
+            }
         }
 
+        // If the player hasn't warp the enemy to a new pos in a speacific time,
+        // the enemy remains at his original pos then start the cooldown for the ability
+        if(isSelected)
+        {
+            if(abilityWaitTime > abilityDuration)
+            {
+                Destroy(cloneObj);
+                selectedObj.transform.position = originalPos;
+                selectedObj.SetActive(true);
+                isSelected = false;
+                lockOnManager.SetIsSelected(isSelected);
+                player.AbilityUsed(NewPlayerScript.AbilityType.WarpEnemy);
+            }
+        }
+
+        // Showing the indicator for the enemy's position when using the ability
         if (isSelected)
         {
             Vector3 targetPos = cloneObj.transform.position;
@@ -174,7 +210,7 @@ public class WarpController : MonoBehaviour
         warpDir.y = 0.0f;
         RaycastHit hit;
         ShowBody(false);
-        player.UseMana(manaUsed);
+        //player.UseMana(manaUsed);
         transform.rotation = Quaternion.LookRotation(warpDir);
 
         // Raycast from the player model to check if there is a not warpable object inside the warp range
@@ -195,7 +231,7 @@ public class WarpController : MonoBehaviour
     {
         transform.rotation = Quaternion.LookRotation(target.transform.position - transform.position);
         ShowBody(false);
-        player.UseMana(manaUsed);
+        //player.UseMana(manaUsed);
         if(target.CompareTag("EnemyTag"))
         {
             var enemy = target.GetComponent<EnemyScript>();
