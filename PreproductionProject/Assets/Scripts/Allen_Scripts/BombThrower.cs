@@ -17,16 +17,14 @@ public class BombThrower : MonoBehaviour
     public float downTime, upTime, pressTime = 0;
     public float countDown = 1.0f;
     public bool ready = false;
-    public Image bombBar;
-    [SerializeField]
-    float manaUsed;
     private float waitTime;
 
     private NewPlayerScript _player;
     // Start is called before the first frame update
     void Start()
     {
-        _player = GetComponent<NewPlayerScript>();
+        _player = GetComponentInParent<NewPlayerScript>();
+        chargePrefab.gameObject.transform.position = handPosition.position;
     }
 
     // Update is called once per frame
@@ -48,22 +46,15 @@ public class BombThrower : MonoBehaviour
             {
                 pressTime = 0.0f;
                 chargePrefab.GetComponentInChildren<ParticleSystem>().Stop();
-                animator.SetTrigger("Throw");
+                //animator.SetTrigger("Throw");
                 ready = true;
             }
         }
         if (Input.GetButtonUp("Bomb"))
         {
             pressTime = 0.0f;
+            ThrowBomb();
             chargePrefab.GetComponentInChildren<ParticleSystem>().Stop();
-        }
-        if (ready)
-        {
-            bombBar.fillAmount = Time.time - downTime / countDown;
-        }
-        else
-        {
-            bombBar.fillAmount = 0;
         }
     }
 
