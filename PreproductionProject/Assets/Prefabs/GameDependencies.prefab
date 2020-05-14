@@ -2182,7 +2182,8 @@ MonoBehaviour:
   bloodyscreenalpha: 0.533
   warpCooldown: 5
   bombCooldown: 10
-  warpEnemyCooldown: 15
+  warpEnemyCooldown: 5
+  warpEnemyDuration: 10
   warpIcon: {fileID: 9065008250953925071}
   bombIcon: {fileID: 7182143967360357689}
   warpEnemyIcon: {fileID: 3825368437565504656}
@@ -4193,9 +4194,45 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 6226596333264784430}
     m_Modifications:
-    - target: {fileID: 197494, guid: 8af7fc23449fb134587debd98a00604a, type: 3}
-      propertyPath: m_Name
-      value: Sparks Subtle
+    - target: {fileID: 19848952, guid: 8af7fc23449fb134587debd98a00604a, type: 3}
+      propertyPath: looping
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 19848952, guid: 8af7fc23449fb134587debd98a00604a, type: 3}
+      propertyPath: InitialModule.startLifetime.scalar
+      value: 0.24
+      objectReference: {fileID: 0}
+    - target: {fileID: 19848952, guid: 8af7fc23449fb134587debd98a00604a, type: 3}
+      propertyPath: InitialModule.startSpeed.scalar
+      value: 4.28
+      objectReference: {fileID: 0}
+    - target: {fileID: 19848952, guid: 8af7fc23449fb134587debd98a00604a, type: 3}
+      propertyPath: InitialModule.maxNumParticles
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 19848952, guid: 8af7fc23449fb134587debd98a00604a, type: 3}
+      propertyPath: ShapeModule.radiusThickness
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 19848952, guid: 8af7fc23449fb134587debd98a00604a, type: 3}
+      propertyPath: ShapeModule.radius.value
+      value: 0.0001
+      objectReference: {fileID: 0}
+    - target: {fileID: 19848952, guid: 8af7fc23449fb134587debd98a00604a, type: 3}
+      propertyPath: EmissionModule.rateOverTime.scalar
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 19848952, guid: 8af7fc23449fb134587debd98a00604a, type: 3}
+      propertyPath: SizeModule.curve.maxCurve.m_Curve.Array.data[0].value
+      value: 0.3260746
+      objectReference: {fileID: 0}
+    - target: {fileID: 19848952, guid: 8af7fc23449fb134587debd98a00604a, type: 3}
+      propertyPath: SizeModule.curve.maxCurve.m_Curve.Array.data[1].time
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 19848952, guid: 8af7fc23449fb134587debd98a00604a, type: 3}
+      propertyPath: SizeModule.curve.maxCurve.m_Curve.Array.data[1].value
+      value: 0.33151114
       objectReference: {fileID: 0}
     - target: {fileID: 410886, guid: 8af7fc23449fb134587debd98a00604a, type: 3}
       propertyPath: m_LocalPosition.x
@@ -4241,45 +4278,9 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 19848952, guid: 8af7fc23449fb134587debd98a00604a, type: 3}
-      propertyPath: looping
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 19848952, guid: 8af7fc23449fb134587debd98a00604a, type: 3}
-      propertyPath: InitialModule.startLifetime.scalar
-      value: 0.24
-      objectReference: {fileID: 0}
-    - target: {fileID: 19848952, guid: 8af7fc23449fb134587debd98a00604a, type: 3}
-      propertyPath: InitialModule.startSpeed.scalar
-      value: 4.28
-      objectReference: {fileID: 0}
-    - target: {fileID: 19848952, guid: 8af7fc23449fb134587debd98a00604a, type: 3}
-      propertyPath: InitialModule.maxNumParticles
-      value: 100
-      objectReference: {fileID: 0}
-    - target: {fileID: 19848952, guid: 8af7fc23449fb134587debd98a00604a, type: 3}
-      propertyPath: ShapeModule.radiusThickness
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 19848952, guid: 8af7fc23449fb134587debd98a00604a, type: 3}
-      propertyPath: ShapeModule.radius.value
-      value: 0.0001
-      objectReference: {fileID: 0}
-    - target: {fileID: 19848952, guid: 8af7fc23449fb134587debd98a00604a, type: 3}
-      propertyPath: EmissionModule.rateOverTime.scalar
-      value: 100
-      objectReference: {fileID: 0}
-    - target: {fileID: 19848952, guid: 8af7fc23449fb134587debd98a00604a, type: 3}
-      propertyPath: SizeModule.curve.maxCurve.m_Curve.Array.data[0].value
-      value: 0.3260746
-      objectReference: {fileID: 0}
-    - target: {fileID: 19848952, guid: 8af7fc23449fb134587debd98a00604a, type: 3}
-      propertyPath: SizeModule.curve.maxCurve.m_Curve.Array.data[1].time
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 19848952, guid: 8af7fc23449fb134587debd98a00604a, type: 3}
-      propertyPath: SizeModule.curve.maxCurve.m_Curve.Array.data[1].value
-      value: 0.33151114
+    - target: {fileID: 197494, guid: 8af7fc23449fb134587debd98a00604a, type: 3}
+      propertyPath: m_Name
+      value: Sparks Subtle
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8af7fc23449fb134587debd98a00604a, type: 3}
@@ -5268,11 +5269,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 6226596333869513262}
     m_Modifications:
-    - target: {fileID: 7184261183619657486, guid: 7d7c48d441019124ca8c2ca8fac6ee25,
-        type: 3}
-      propertyPath: m_Name
-      value: UIManager
-      objectReference: {fileID: 0}
     - target: {fileID: 7184261183619657484, guid: 7d7c48d441019124ca8c2ca8fac6ee25,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -5328,6 +5324,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7184261183619657486, guid: 7d7c48d441019124ca8c2ca8fac6ee25,
+        type: 3}
+      propertyPath: m_Name
+      value: UIManager
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7d7c48d441019124ca8c2ca8fac6ee25, type: 3}
 --- !u!4 &313236654948923875 stripped
@@ -5343,11 +5344,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 6226596333264784430}
     m_Modifications:
-    - target: {fileID: 5331140456284532850, guid: 5b50394fadd85834fa69df337eac822d,
-        type: 3}
-      propertyPath: m_Name
-      value: TrailParticle
-      objectReference: {fileID: 0}
     - target: {fileID: 5331140456284532851, guid: 5b50394fadd85834fa69df337eac822d,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -5418,6 +5414,11 @@ PrefabInstance:
       propertyPath: VelocityModule.speedModifier.scalar
       value: 0.5
       objectReference: {fileID: 0}
+    - target: {fileID: 5331140456284532850, guid: 5b50394fadd85834fa69df337eac822d,
+        type: 3}
+      propertyPath: m_Name
+      value: TrailParticle
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5b50394fadd85834fa69df337eac822d, type: 3}
 --- !u!4 &3574435347530858740 stripped
@@ -5439,10 +5440,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 6226596333264784430}
     m_Modifications:
-    - target: {fileID: 4492491600143358145, guid: df94b96dfae36f04189eb26403455588,
+    - target: {fileID: 4492491600143358144, guid: df94b96dfae36f04189eb26403455588,
         type: 3}
-      propertyPath: m_Name
-      value: TrailParticle2
+      propertyPath: useRigidbodyForVelocity
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4492491600143358150, guid: df94b96dfae36f04189eb26403455588,
         type: 3}
@@ -5499,10 +5500,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 4492491600143358144, guid: df94b96dfae36f04189eb26403455588,
+    - target: {fileID: 4492491600143358145, guid: df94b96dfae36f04189eb26403455588,
         type: 3}
-      propertyPath: useRigidbodyForVelocity
-      value: 0
+      propertyPath: m_Name
+      value: TrailParticle2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: df94b96dfae36f04189eb26403455588, type: 3}
