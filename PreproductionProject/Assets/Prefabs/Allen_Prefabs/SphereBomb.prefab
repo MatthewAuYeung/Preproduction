@@ -94,6 +94,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   explosion: {fileID: 204135940715393309, guid: 4720164b5427a234ab11f9927093356d,
     type: 3}
+  particleAttractor: {fileID: 0}
+  range: 50
+  startingPosition: {x: 0, y: 0, z: 0}
 --- !u!54 &8647197775337808628
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -105,7 +108,7 @@ Rigidbody:
   m_Mass: 1
   m_Drag: 0
   m_AngularDrag: 0.05
-  m_UseGravity: 1
+  m_UseGravity: 0
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 0

@@ -6,6 +6,9 @@ using UnityEngine.AI;
 public class SlowingBomb : MonoBehaviour
 {
     public GameObject explosion;
+    public GameObject particleAttractor;
+    public float range = 10.0f;
+    public Vector3 startingPosition;
 
     private void OnCollisionEnter(Collision collision)
     {
@@ -21,5 +24,21 @@ public class SlowingBomb : MonoBehaviour
         // destroy bomb
         Destroy(gameObject);
 
+    }
+
+    private void Update()
+    {
+        if (Vector3.Distance(startingPosition,transform.position) > range)
+        {
+            Destroy(particleAttractor.transform.parent.gameObject);
+            Destroy(gameObject);
+        }
+        particleAttractor.transform.position = transform.position;
+    }
+
+    public void DestroyOnHit()
+    {
+        Destroy(particleAttractor.transform.parent.gameObject);
+        Destroy(gameObject);
     }
 }
