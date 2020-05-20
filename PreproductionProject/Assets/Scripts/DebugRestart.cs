@@ -2,14 +2,17 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using Invector.CharacterController;
 
 public class DebugRestart : MonoBehaviour
 {
     public bool usingDebug;
-    // Start is called before the first frame update
-    void Start()
-    {
+    public bool usingMouse = false;
 
+    private vThirdPersonInput input;
+    private void Awake()
+    {
+        input = GetComponentInChildren<vThirdPersonInput>();
     }
 
     // Update is called once per frame
@@ -21,6 +24,12 @@ public class DebugRestart : MonoBehaviour
             {
                 Restart();
             }
+        }
+
+        if (usingMouse)
+        {
+            input.rotateCameraXInput = "Mouse X";
+            input.rotateCameraYInput = "Mouse Y";
         }
     }
 

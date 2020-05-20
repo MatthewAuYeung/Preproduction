@@ -2199,7 +2199,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 30fba1fceaeabc6429e683c5ed54248f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  usingDebug: 0
+  usingDebug: 1
+  usingMouse: 0
 --- !u!1 &6226596333872932104
 GameObject:
   m_ObjectHideFlags: 0
@@ -3750,8 +3751,8 @@ MonoBehaviour:
   jumpInput: 32
   strafeInput: 0
   sprintInput: 304
-  rotateCameraXInput: Mouse X
-  rotateCameraYInput: Mouse Y
+  rotateCameraXInput: Joystick X
+  rotateCameraYInput: Joystick Y
   customCameraState: 
   customlookAtPoint: 
   changeCameraState: 0
@@ -3812,6 +3813,7 @@ MonoBehaviour:
   pressTime: 0
   countDown: 1
   ready: 0
+  laserSpeed: 0.25
 --- !u!1 &6226596335167636599
 GameObject:
   m_ObjectHideFlags: 0
