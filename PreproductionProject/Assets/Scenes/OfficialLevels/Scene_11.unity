@@ -6462,6 +6462,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5360426035847042199, guid: 3d8e164626b4e3f48a29f6375ec3e93f,
         type: 3}
+      propertyPath: Keys.Array.size
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5360426035847042199, guid: 3d8e164626b4e3f48a29f6375ec3e93f,
+        type: 3}
       propertyPath: enemyListHolder
       value: 
       objectReference: {fileID: 1727901975}
@@ -7605,6 +7610,11 @@ PrefabInstance:
     - target: {fileID: 1123728484904674857, guid: 3d8e164626b4e3f48a29f6375ec3e93f,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5360426035847042199, guid: 3d8e164626b4e3f48a29f6375ec3e93f,
+        type: 3}
+      propertyPath: Keys.Array.size
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5360426035847042199, guid: 3d8e164626b4e3f48a29f6375ec3e93f,
