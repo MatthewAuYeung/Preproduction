@@ -1099,11 +1099,6 @@ PrefabInstance:
       propertyPath: warpEnemyDuration
       value: 5
       objectReference: {fileID: 0}
-    - target: {fileID: 2987437023415551084, guid: 26a1e40a5ecc2a1459d868188acbc39f,
-        type: 3}
-      propertyPath: usingDebug
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 8919418275780022991, guid: 26a1e40a5ecc2a1459d868188acbc39f,
         type: 3}
       propertyPath: m_IsActive

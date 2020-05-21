@@ -17,13 +17,11 @@ public class SlowingBomb : MonoBehaviour
             MovingPlatform platform = collision.gameObject.GetComponentInParent<MovingPlatform>();
             platform.speed *= 0.5f;
         }
-
         // instantiate explosion (include bomb slowing effect
         Instantiate(explosion, transform.position, Quaternion.identity);
 
         // destroy bomb
-        Destroy(gameObject);
-
+        DestroyOnHit();
     }
 
     private void Update()
@@ -41,4 +39,5 @@ public class SlowingBomb : MonoBehaviour
         Destroy(particleAttractor.transform.parent.gameObject);
         Destroy(gameObject);
     }
+
 }

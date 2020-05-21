@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 using UnityEngine.UI;
+using DG.Tweening;
+
 
 public class BombThrower : MonoBehaviour
 {
@@ -17,16 +19,18 @@ public class BombThrower : MonoBehaviour
     public float downTime, upTime, pressTime = 0;
     public float countDown = 1.0f;
     public bool ready = false;
-    public Image bombBar;
-    [SerializeField]
-    float manaUsed;
     private float waitTime;
+    [SerializeField]
+    private float laserSpeed = 0.25f;
 
+    private float emptylaserSpeed;
     private NewPlayerScript _player;
     // Start is called before the first frame update
     void Start()
     {
-        _player = GetComponent<NewPlayerScript>();
+        _player = GetComponentInParent<NewPlayerScript>();
+        chargePrefab.gameObject.transform.position = handPosition.position;
+        emptylaserSpeed = laserSpeed + 1.0f;
     }
 
     // Update is called once per frame
@@ -48,22 +52,15 @@ public class BombThrower : MonoBehaviour
             {
                 pressTime = 0.0f;
                 chargePrefab.GetComponentInChildren<ParticleSystem>().Stop();
-                animator.SetTrigger("Throw");
+                //animator.SetTrigger("Throw");
                 ready = true;
             }
         }
         if (Input.GetButtonUp("Bomb"))
         {
             pressTime = 0.0f;
+            ThrowBomb();
             chargePrefab.GetComponentInChildren<ParticleSystem>().Stop();
-        }
-        if (ready)
-        {
-            bombBar.fillAmount = Time.time - downTime / countDown;
-        }
-        else
-        {
-            bombBar.fillAmount = 0;
         }
     }
 
@@ -79,9 +76,25 @@ public class BombThrower : MonoBehaviour
         GameObject bombParticle = Instantiate(bombParticlePrefab, spawnPosition, Quaternion.identity);
         newBomb.GetComponent<SlowingBomb>().particleAttractor = bombParticle.GetComponentInChildren<particleAttractorLinear>().target.gameObject;
         newBomb.GetComponent<SlowingBomb>().startingPosition = spawnPosition;
-        Vector3 throwForce = throwDirection * throwPower;
-        newBomb.GetComponent<Rigidbody>().AddForce(throwForce);
+        RaycastHit hit;
+        if(Physics.Raycast(spawnPosition, throwDirection.normalized,out hit, 50.0f))
+        {
+            newBomb.transform.DOMove(hit.point, laserSpeed);
+        }
+        else
+        {
+            
+            newBomb.transform.DOMove(transform.position + throwDirection.normalized * 50.0f, emptylaserSpeed).OnComplete(() => EndThrow(newBomb));
+        }
+        //Vector3 throwForce = throwDirection * throwPower;
+        //newBomb.GetComponent<Rigidbody>().AddForce(throwForce);
         //waitTime = 0.0f;
         pressTime = 0.0f;
+    }
+
+    private void EndThrow(GameObject bomb)
+    {
+        var temp = bomb.GetComponent<SlowingBomb>();
+        temp.DestroyOnHit();
     }
 }
