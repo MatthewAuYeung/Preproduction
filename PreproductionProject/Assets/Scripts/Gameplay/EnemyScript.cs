@@ -7,6 +7,7 @@ using UnityEngine.UI;
 [RequireComponent(typeof(NavMeshAgent))]
 public class EnemyScript : BaseEnemyScript
 {
+    public event System.Action<EnemyScript> OnDeath;
     public bool isStun = false;
     private Transform _target;
     private EnemyManager _manager;
@@ -84,8 +85,9 @@ public class EnemyScript : BaseEnemyScript
             loot.calculateLoot(lootPosition);
             _manager.enemies.Remove(this);
             transform.gameObject.SetActive(false);
-            FindObjectOfType<DoorPrefabScript>()?.RemoveEnemy(this);
-                //Destroy(gameObject);
+            //FindObjectOfType<DoorPrefabScript>()?.RemoveEnemy(this);
+            //Destroy(gameObject);
+            OnDeath.Invoke(this);
             return;
         }
 
