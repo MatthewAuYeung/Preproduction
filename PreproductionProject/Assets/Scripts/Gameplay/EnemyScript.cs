@@ -44,6 +44,8 @@ public class EnemyScript : BaseEnemyScript
         _attackTrigger.radius = attackRange;
         _particleSystem.Pause();
         loot = FindObjectOfType<RandomLoot>();
+        if (isEventTriggered)
+            this.gameObject.SetActive(false);
     }
 
     public void StunFromBomb(float speedModifier, float stuntEffectDuration = 5.0f)

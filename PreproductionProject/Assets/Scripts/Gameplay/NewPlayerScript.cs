@@ -7,6 +7,8 @@ using DG.Tweening;
 
 public class NewPlayerScript : MonoBehaviour
 {
+    public static NewPlayerScript Instance { get; set; }
+
     public SimpleHealthBar healthBar;
     public SimpleHealthBar manaBar;
     public GameObject winningCanvas;
@@ -48,6 +50,8 @@ public class NewPlayerScript : MonoBehaviour
     [SerializeField]
     private AbilityIcon warpEnemyIcon;
 
+    private bool isBombUnlocked;
+
     private float timer;
     private float WinScreenTimer;
     private EnemyManager enemyManager;
@@ -65,6 +69,15 @@ public class NewPlayerScript : MonoBehaviour
 
     private void Awake()
     {
+        if(Instance == null)
+        {
+            Instance = this;
+            DontDestroyOnLoad(gameObject);
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
         enemyManager = FindObjectOfType<EnemyManager>();
         health = maxHealth;
         mana = maxMana;
@@ -265,5 +278,15 @@ public class NewPlayerScript : MonoBehaviour
     public float GetWarpEnemyDuration()
     {
         return warpEnemyDuration;
+    }
+
+    public void UnlockBombAbility()
+    {
+        isBombUnlocked = true;
+    }
+
+    public bool GetBombAbilityState()
+    {
+        return isBombUnlocked;
     }
 }

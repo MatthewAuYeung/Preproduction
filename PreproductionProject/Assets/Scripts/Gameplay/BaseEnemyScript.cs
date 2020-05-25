@@ -35,6 +35,9 @@ public abstract class BaseEnemyScript : MonoBehaviour
     [SerializeField, Range(0.0f, 1.0f)]
     protected float knockbackDuration;
 
+    [SerializeField]
+    protected bool isEventTriggered;
+
     protected Material originalMat;
     protected MeshRenderer meshRenderer;
 
@@ -88,6 +91,11 @@ public abstract class BaseEnemyScript : MonoBehaviour
     {
         yield return new WaitForSeconds(knockbackDuration);
         _rb.isKinematic = true;
+    }
+
+    public void SpawnEnemy()
+    {
+        this.gameObject.SetActive(true);
     }
 
     void OnDrawGizmosSelected()

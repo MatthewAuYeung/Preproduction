@@ -28,7 +28,8 @@ public class BombThrower : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        _player = GetComponentInParent<NewPlayerScript>();
+        //_player = GetComponentInParent<NewPlayerScript>();
+        _player = NewPlayerScript.Instance;
         chargePrefab.gameObject.transform.position = handPosition.position;
         emptylaserSpeed = laserSpeed + 1.0f;
     }
@@ -36,8 +37,8 @@ public class BombThrower : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //if (!_player.HasMana(manaUsed))
-        //    return;
+        if (!_player.GetBombAbilityState())
+            return;
         if (!_player.DoneCooldown(NewPlayerScript.AbilityType.Bomb))
             return;
 
