@@ -81,7 +81,7 @@ public class EnemyScript : BaseEnemyScript
 
         if(health <= 0.0f)
         {
-            Vector3 lootPosition = new Vector3(transform.position.x, 0.3f, transform.position.z);
+            Vector3 lootPosition = new Vector3(transform.position.x, transform.position.y - 0.3f, transform.position.z);
             loot.calculateLoot(lootPosition);
             _manager.enemies.Remove(this);
             transform.gameObject.SetActive(false);
