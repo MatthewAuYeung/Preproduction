@@ -2045,6 +2045,11 @@ PrefabInstance:
       propertyPath: enemyListHolder
       value: 
       objectReference: {fileID: 1488449678}
+    - target: {fileID: 5360426035847042199, guid: 3d8e164626b4e3f48a29f6375ec3e93f,
+        type: 3}
+      propertyPath: Keys.Array.data[0]
+      value: 
+      objectReference: {fileID: 7983206951468636738}
     - target: {fileID: 4317758400115316284, guid: 3d8e164626b4e3f48a29f6375ec3e93f,
         type: 3}
       propertyPath: m_Materials.Array.data[1]
@@ -19802,3 +19807,15 @@ PrefabInstance:
       objectReference: {fileID: 2100000, guid: affde96aea29fe54daf1b3ba21266837, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 119550c3be8730d4aaeeca0face93732, type: 3}
+--- !u!114 &7983206951468636738 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7095834007463853767, guid: 119550c3be8730d4aaeeca0face93732,
+    type: 3}
+  m_PrefabInstance: {fileID: 7983206951468636737}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b6bb80182ba8c434d8e5da5cb3b0a6b0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
