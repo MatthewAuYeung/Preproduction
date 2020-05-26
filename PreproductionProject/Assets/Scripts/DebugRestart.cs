@@ -8,6 +8,7 @@ public class DebugRestart : MonoBehaviour
 {
     public bool usingDebug;
     public bool usingMouse = false;
+    public bool hasBombAbility;
 
     private vThirdPersonInput input;
     private void Awake()
@@ -30,6 +31,11 @@ public class DebugRestart : MonoBehaviour
         {
             input.rotateCameraXInput = "Mouse X";
             input.rotateCameraYInput = "Mouse Y";
+        }
+
+        if(hasBombAbility)
+        {
+            NewPlayerScript.Instance.UnlockBombAbility();
         }
     }
 

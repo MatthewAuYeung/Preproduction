@@ -39,7 +39,7 @@ public class vThirdPersonCamera : MonoBehaviour
     public float xMouseSensitivity = 3f;
     public float yMouseSensitivity = 3f;
     public float yMinLimit = -40f;
-    public float yMaxLimit = 80f; 
+    public float yMaxLimit = 80f;
     #endregion
 
     #region hide properties    
