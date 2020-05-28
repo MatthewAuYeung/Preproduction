@@ -62,14 +62,16 @@ public abstract class BaseEnemyScript : MonoBehaviour
     public bool beingWarpAttacked = false;
     [SerializeField]
     private Transform damagePopupTransform;
-    protected EnemyState currentState;
+    protected EnemyState currentState = EnemyState.NONE;
 
     public enum EnemyState
     {
         Idle,
-        Move,
+        Chase,
         Attack,
-        Damaged
+        Damaged,
+        Wandering,
+        NONE
     };
 
     public void ChangeState(EnemyState state)

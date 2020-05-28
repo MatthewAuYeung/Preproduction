@@ -125,15 +125,25 @@ public class EnemyScript : BaseEnemyScript
                     _agent.transform.LookAt(newLookPos);
                 }
             }
-            else
+            else if(currentState != EnemyState.Wandering)
             {
-                Wandering();
+                currentIndex = 0;
+                _agent.SetDestination(wanderingpath.path[currentIndex].transform.position);
+                ChangeState(EnemyState.Wandering);
             }
         }
-        else
+        else if(currentState != EnemyState.Wandering)
+        {
+            currentIndex = 0;
+            _agent.SetDestination(wanderingpath.path[currentIndex].transform.position);
+            ChangeState(EnemyState.Wandering);
+        }
+
+        if(currentState == EnemyState.Wandering)
         {
             Wandering();
         }
+
         healthBar.fillAmount = health / maxhealth;
         attackBar.fillAmount = _waitTime / attackDelay;
 
@@ -145,13 +155,14 @@ public class EnemyScript : BaseEnemyScript
             _agent.isStopped = true;
         else
         {
-            if(lastPos != wanderingpath.path[currentIndex].transform.position)
+            Debug.Log(Vector3.Distance(_agent.transform.position, wanderingpath.path[currentIndex].transform.position));
+            if(Vector3.Distance(_agent.transform.position, wanderingpath.path[currentIndex].transform.position) < 0.5f)
             {
-                _agent.SetDestination(wanderingpath.path[currentIndex].transform.position);
-                lastPos = wanderingpath.path[currentIndex].transform.position;
                 currentIndex++;
                 if (currentIndex >= wanderingpath.path.Count)
                     currentIndex = 0;
+                _agent.SetDestination(wanderingpath.path[currentIndex].transform.position);
+                //lastPos = wanderingpath.path[currentIndex].transform.position;
             }
             
         }
