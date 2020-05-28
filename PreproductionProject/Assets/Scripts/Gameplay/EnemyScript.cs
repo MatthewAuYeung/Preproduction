@@ -116,6 +116,7 @@ public class EnemyScript : BaseEnemyScript
         {
             if (InView(_target))
             {
+                ChangeState(EnemyState.Chase);
                 _agent.isStopped = false;
                 _agent.SetDestination(_target.position);
                 if (disBetweenPlayer < attackRange)
@@ -127,15 +128,13 @@ public class EnemyScript : BaseEnemyScript
             }
             else if(currentState != EnemyState.Wandering)
             {
-                currentIndex = 0;
-                _agent.SetDestination(wanderingpath.path[currentIndex].transform.position);
+                StartWandering();
                 ChangeState(EnemyState.Wandering);
             }
         }
         else if(currentState != EnemyState.Wandering)
         {
-            currentIndex = 0;
-            _agent.SetDestination(wanderingpath.path[currentIndex].transform.position);
+            StartWandering();
             ChangeState(EnemyState.Wandering);
         }
 
@@ -146,7 +145,12 @@ public class EnemyScript : BaseEnemyScript
 
         healthBar.fillAmount = health / maxhealth;
         attackBar.fillAmount = _waitTime / attackDelay;
+    }
 
+    private void StartWandering()
+    {
+        currentIndex = 0;
+        _agent.SetDestination(wanderingpath.path[currentIndex].transform.position);
     }
 
     private void Wandering()
@@ -155,18 +159,35 @@ public class EnemyScript : BaseEnemyScript
             _agent.isStopped = true;
         else
         {
-            Debug.Log(Vector3.Distance(_agent.transform.position, wanderingpath.path[currentIndex].transform.position));
+            if (currentIndex < 0)
+                currentIndex = 0;
             if(Vector3.Distance(_agent.transform.position, wanderingpath.path[currentIndex].transform.position) < 0.5f)
             {
-                currentIndex++;
+                if (!reverse)
+                    currentIndex++;
+                else
+                    currentIndex--;
                 if (currentIndex >= wanderingpath.path.Count)
-                    currentIndex = 0;
-                _agent.SetDestination(wanderingpath.path[currentIndex].transform.position);
-                //lastPos = wanderingpath.path[currentIndex].transform.position;
+                {
+                    reverse = true;
+                    currentIndex--;
+                }
+                if (currentIndex == 0)
+                {
+                    reverse = false;
+                }
+
+                StartCoroutine(SetWaypoint(wanderingpath.path[currentIndex]));
             }
-            
         }
     }
+
+    IEnumerator SetWaypoint(WanderingWaypoint waypoint)
+    {
+        yield return new WaitForSeconds(waypoint.GetWaitTime());
+        _agent.SetDestination(waypoint.transform.position);
+    }
+
     private bool InView(Transform target)
     {
         Vector3 targetDir = _target.position - transform.position;
