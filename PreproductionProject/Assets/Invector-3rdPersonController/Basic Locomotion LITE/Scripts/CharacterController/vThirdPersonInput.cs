@@ -107,9 +107,9 @@ namespace Invector.CharacterController
 
         protected virtual void SprintInput()
         {
-            if (Input.GetKeyDown(sprintInput) || CheckSprintInput(Input.GetAxis("Sprint")))
+            if (Input.GetKeyDown(sprintInput) || Input.GetButtonDown("Sprint"))
                 cc.Sprint(true);
-            else if(Input.GetKeyUp(sprintInput) || !CheckSprintInput(Input.GetAxis("Sprint")))
+            else if(Input.GetKeyUp(sprintInput) || Input.GetButtonUp("Sprint"))
                 cc.Sprint(false);
         }
 

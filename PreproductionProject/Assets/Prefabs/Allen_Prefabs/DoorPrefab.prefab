@@ -564,6 +564,7 @@ MonoBehaviour:
   Range: 5
   Keys:
   - {fileID: 0}
+  enemyListHolder: {fileID: 0}
 --- !u!65 &6881022214673616014
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -596,6 +597,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1123728484904674857}
     m_Modifications:
+    - target: {fileID: 1514489277716338, guid: 24f3bfb6ffbd4e449a23c62225e14873, type: 3}
+      propertyPath: m_Name
+      value: Gen_Door_01_snaps002
+      objectReference: {fileID: 0}
+    - target: {fileID: 1514489277716338, guid: 24f3bfb6ffbd4e449a23c62225e14873, type: 3}
+      propertyPath: m_TagString
+      value: NotWarpable
+      objectReference: {fileID: 0}
     - target: {fileID: 4151980975440356, guid: 24f3bfb6ffbd4e449a23c62225e14873, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0.00000011920929
@@ -647,14 +656,6 @@ PrefabInstance:
     - target: {fileID: 4151980975440356, guid: 24f3bfb6ffbd4e449a23c62225e14873, type: 3}
       propertyPath: m_LocalScale.z
       value: 1.0000002
-      objectReference: {fileID: 0}
-    - target: {fileID: 1514489277716338, guid: 24f3bfb6ffbd4e449a23c62225e14873, type: 3}
-      propertyPath: m_Name
-      value: Gen_Door_01_snaps002
-      objectReference: {fileID: 0}
-    - target: {fileID: 1514489277716338, guid: 24f3bfb6ffbd4e449a23c62225e14873, type: 3}
-      propertyPath: m_TagString
-      value: NotWarpable
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 24f3bfb6ffbd4e449a23c62225e14873, type: 3}

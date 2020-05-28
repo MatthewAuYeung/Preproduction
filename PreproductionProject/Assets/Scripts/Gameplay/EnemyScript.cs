@@ -7,6 +7,7 @@ using UnityEngine.UI;
 [RequireComponent(typeof(NavMeshAgent))]
 public class EnemyScript : BaseEnemyScript
 {
+    public event System.Action<EnemyScript> OnDeath;
     public bool isStun = false;
     private Transform _target;
     private EnemyManager _manager;
@@ -16,6 +17,7 @@ public class EnemyScript : BaseEnemyScript
 
     public Image healthBar;
     public Image attackBar;
+    public RandomLoot loot;
     float slowSpeed;
     float defaultSpeed;
     float defaultAttackDelay;
@@ -42,6 +44,9 @@ public class EnemyScript : BaseEnemyScript
         _agent.speed = speed;
         _attackTrigger.radius = attackRange;
         _particleSystem.Pause();
+        loot = FindObjectOfType<RandomLoot>();
+        if (isEventTriggered)
+            this.gameObject.SetActive(false);
     }
 
     public void StunFromBomb(float speedModifier, float stuntEffectDuration = 5.0f)
@@ -78,10 +83,13 @@ public class EnemyScript : BaseEnemyScript
 
         if(health <= 0.0f)
         {
+            Vector3 lootPosition = new Vector3(transform.position.x, 0.3f, transform.position.z);
+            loot.calculateLoot(lootPosition);
             _manager.enemies.Remove(this);
             transform.gameObject.SetActive(false);
-            FindObjectOfType<DoorPrefabScript>()?.RemoveEnemy(this);
+            //FindObjectOfType<DoorPrefabScript>()?.RemoveEnemy(this);
             //Destroy(gameObject);
+            OnDeath.Invoke(this);
             return;
         }
 

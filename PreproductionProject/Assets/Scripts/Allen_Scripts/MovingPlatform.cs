@@ -18,6 +18,8 @@ public class MovingPlatform : MonoBehaviour
     public bool automatic;
     void Start()
     {
+        transform.localScale = new Vector3(1.0f, 1.0f, 1.0f);
+
         if (Waypoints.Length > 0)
         {
             current_target = Waypoints[0].position;
@@ -68,15 +70,5 @@ public class MovingPlatform : MonoBehaviour
         }
         current_target = Waypoints[point_number].position;
 
-    }
-
-    private void OnTriggerEnter(Collider other)
-    {
-        other.transform.parent = transform;
-    }
-
-    private void OnTriggerExit(Collider other)
-    {
-        other.transform.parent = null;
     }
 }

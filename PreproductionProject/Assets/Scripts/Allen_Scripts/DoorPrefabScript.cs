@@ -25,6 +25,7 @@ public class DoorPrefabScript : MonoBehaviour
         foreach (var enemy in enemyListHolder.GetComponentsInChildren<EnemyScript>())
         {
             enemies.Add(enemy);
+            enemy.OnDeath += (x) => { enemies.Remove(x); };
         }
     }
 

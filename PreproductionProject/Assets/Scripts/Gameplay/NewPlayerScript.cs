@@ -7,6 +7,8 @@ using DG.Tweening;
 
 public class NewPlayerScript : MonoBehaviour
 {
+    public static NewPlayerScript Instance { get; set; }
+
     public SimpleHealthBar healthBar;
     public SimpleHealthBar manaBar;
     public GameObject winningCanvas;
@@ -26,13 +28,29 @@ public class NewPlayerScript : MonoBehaviour
     [SerializeField]
     float manaRegenDelay;
     [SerializeField]
-    float warpCooldown;
-    [SerializeField]
     protected ParticleSystem hitEffect;
     [SerializeField]
     private float bloodyscreendelay;
     [SerializeField, Range(0.0f, 1.0f)]
     private float bloodyscreenalpha;
+
+    [SerializeField]
+    float warpCooldown;
+    [SerializeField]
+    float bombCooldown;
+    [SerializeField]
+    float warpEnemyCooldown;
+    [SerializeField]
+    float warpEnemyDuration;
+
+    [SerializeField]
+    private AbilityIcon warpIcon;
+    [SerializeField]
+    private AbilityIcon bombIcon;
+    [SerializeField]
+    private AbilityIcon warpEnemyIcon;
+
+    private bool isBombUnlocked;
 
     private float timer;
     private float WinScreenTimer;
@@ -42,12 +60,31 @@ public class NewPlayerScript : MonoBehaviour
 
     public int playerKeyCount = 0;
 
+    public enum AbilityType
+    {
+        Warp,
+        Bomb,
+        WarpEnemy
+    };
+
     private void Awake()
     {
+        if(Instance == null)
+        {
+            Instance = this;
+            DontDestroyOnLoad(gameObject);
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
         enemyManager = FindObjectOfType<EnemyManager>();
         health = maxHealth;
         mana = maxMana;
-        InvokeRepeating("Regenerate", 1.0f, manaRegenDelay);
+        //InvokeRepeating("Regenerate", 1.0f, manaRegenDelay);
+        warpIcon.SetAbilityCooldown(warpCooldown);
+        bombIcon.SetAbilityCooldown(bombCooldown);
+        warpEnemyIcon.SetAbilityCooldown(warpEnemyCooldown);
     }
 
     private void Start()
@@ -190,5 +227,66 @@ public class NewPlayerScript : MonoBehaviour
     public int GetTotalHitCount()
     {
         return hitCount;
+    }
+
+    public void AbilityUsed(AbilityType ability)
+    {
+        switch (ability)
+        {
+            case AbilityType.Warp:
+                {
+                    warpIcon.AbilityUsed();
+                    break;
+                }
+            case AbilityType.Bomb:
+                {
+                    bombIcon.AbilityUsed();
+                    break;
+                }
+            case AbilityType.WarpEnemy:
+                {
+                    warpEnemyIcon.AbilityUsed();
+                    break;
+                }
+        }
+    }
+
+    public bool DoneCooldown(AbilityType ability)
+    {
+        bool state = false;
+        switch (ability)
+        {
+            case AbilityType.Warp:
+                {
+                    state = warpIcon.CheckAbilityCooldown();
+                    break;
+                }
+            case AbilityType.Bomb:
+                {
+                    state = bombIcon.CheckAbilityCooldown();
+                    break;
+                }
+            case AbilityType.WarpEnemy:
+                {
+                    state = warpEnemyIcon.CheckAbilityCooldown();
+                    break;
+                }
+        }
+        return state;
+    }
+
+    public float GetWarpEnemyDuration()
+    {
+        return warpEnemyDuration;
+    }
+
+    public void UnlockBombAbility()
+    {
+        isBombUnlocked = true;
+    }
+
+    public bool GetBombAbilityState()
+    {
+        return isBombUnlocked;
     }
 }

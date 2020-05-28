@@ -17,19 +17,34 @@ public class AttackManager : MonoBehaviour
 
     int attackIndex = 0;                 // Determines which animation will play
     bool canClick;                  // Locks ability to click during animation event
-    private const int totalAttacks = 3;
+    private const int totalAttacks = 6;
 
     float delayAttack = 0.0f;
 
     [SerializeField]
     private float cooldown = 1.0f;
     private float waitTime;
-   
+
+    private float dpadinput;
+    private float lastinput;
+
+    //=============================
+    public enum comboSelection
+    {
+        firstAttackCombo,
+        secondAttackCombo
+    }
+
+    public comboSelection currentCombo;
+
+    private int startAttackIndex = 0;
+    private int endAttackIndex = 0;
+    private int keySelection = 0;
+    //=============================
+
 
     void Start()
     {
-      
-
         animator = GetComponent<Animator>();
         rigidBody = GetComponent<Rigidbody>();
         attackCollider.gameObject.SetActive(false);
@@ -51,10 +66,63 @@ public class AttackManager : MonoBehaviour
 
         waitTime += Time.deltaTime;
 
-        if(waitTime > cooldown)
+       
+
+        dpadinput = Input.GetAxisRaw("DPad_LR");
+        if(dpadinput != lastinput)
         {
-            attackIndex = 0;
+            if (dpadinput == 1.0f)
+            {
+                lastinput = dpadinput;
+                Debug.Log("Right");
+                //=================
+                keySelection++;
+                if (keySelection > 1)
+                {
+                    keySelection = 0;
+                }
+                currentCombo = (comboSelection)keySelection;
+                //=================
+            }
+            else if(dpadinput == -1.0f)
+            {
+                lastinput = dpadinput;
+                Debug.Log("Left");
+                //=================
+                keySelection--;
+                if (keySelection < 0)
+                {
+                    keySelection = 1;
+                }
+                currentCombo = (comboSelection)keySelection;
+                //=================
+            }
+            else if(dpadinput == 0.0f)
+            {
+                lastinput = 0.0f;
+            }
         }
+
+        //============
+        //choose start index and end index
+        switch (currentCombo)
+        {
+            case comboSelection.firstAttackCombo:
+                startAttackIndex = 0;
+                endAttackIndex = 3;
+                break;
+            case comboSelection.secondAttackCombo:
+                startAttackIndex = 3;
+                endAttackIndex = 6;
+                break;
+            default:
+                break;
+        }
+        if (waitTime > cooldown)
+        {
+            attackIndex = startAttackIndex;
+        }
+        //============
     }
 
     void Attack()
@@ -69,10 +137,10 @@ public class AttackManager : MonoBehaviour
 
         animator.SetTrigger(attackTrigger);
 
-        if (attackIndex < totalAttacks-1)
+        if (attackIndex < endAttackIndex - 1)
             attackIndex++;
         else
-            attackIndex = 0;
+            attackIndex = startAttackIndex;
 
         OnAttackStart?.Invoke();
     }

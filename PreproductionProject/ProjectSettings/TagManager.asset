@@ -9,6 +9,7 @@ TagManager:
   - EnemyTag
   - Floor
   - NotWarpable
+  - PlatformTag
   layers:
   - Default
   - TransparentFX
@@ -19,7 +20,7 @@ TagManager:
   - 
   - 
   - ingameUI
-  - 
+  - Wall
   - 
   - 
   - 
