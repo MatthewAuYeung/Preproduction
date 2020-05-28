@@ -127,19 +127,35 @@ public class EnemyScript : BaseEnemyScript
             }
             else
             {
-                _agent.isStopped = true;
+                Wandering();
             }
         }
         else
         {
-            _agent.isStopped = true;
+            Wandering();
         }
         healthBar.fillAmount = health / maxhealth;
         attackBar.fillAmount = _waitTime / attackDelay;
 
     }
 
-
+    private void Wandering()
+    {
+        if (wanderingpath == null)
+            _agent.isStopped = true;
+        else
+        {
+            if(lastPos != wanderingpath.path[currentIndex].transform.position)
+            {
+                _agent.SetDestination(wanderingpath.path[currentIndex].transform.position);
+                lastPos = wanderingpath.path[currentIndex].transform.position;
+                currentIndex++;
+                if (currentIndex >= wanderingpath.path.Count)
+                    currentIndex = 0;
+            }
+            
+        }
+    }
     private bool InView(Transform target)
     {
         Vector3 targetDir = _target.position - transform.position;

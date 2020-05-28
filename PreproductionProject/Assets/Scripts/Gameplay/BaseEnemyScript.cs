@@ -38,6 +38,13 @@ public abstract class BaseEnemyScript : MonoBehaviour
     [SerializeField]
     protected bool isEventTriggered;
 
+    [SerializeField]
+    protected WanderingPath wanderingpath;
+
+    protected int currentIndex;
+    protected bool reverse;
+    protected Vector3 lastPos;
+
     protected Material originalMat;
     protected MeshRenderer meshRenderer;
 
