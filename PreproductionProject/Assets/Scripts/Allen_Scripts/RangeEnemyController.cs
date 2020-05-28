@@ -1,32 +1,75 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
+using UnityEngine.UI;
 
-public class RangeEnemyController : MonoBehaviour
+[RequireComponent(typeof(NavMeshAgent))]
+public class RangeEnemyController : BaseEnemyScript
 {
+    public event System.Action<EnemyScript> OnDeath;
+    private EnemyManager _manager;
+    private Transform _target;
+    private WarpController _warpController;
     public Transform target, aim, head;
     public float reloadTime = 1.0f;
     public float turnSpeed = 5.0f;
     public float firePauseTime = 0.25f;
     public float range = 5.0f;
-    public float damage = 10.0f;
+    public float rangeEnemyDamage = 10.0f;
     public Transform[] muzzlePos;
     public bool canSee = false;
     public GameObject muzzleFlash;
+    public Image healthBar;
+    public RandomLoot loot;
 
-    public float nextFireTime;
+    private float nextFireTime;
     private float nextMoveTime;
     public int randomMuzzel;
 
+    private void Awake()
+    {
+        _rb = GetComponent<Rigidbody>();
+        _agent = GetComponent<NavMeshAgent>();
+        _manager = FindObjectOfType<EnemyManager>();
+        _target = _manager.target;
+        _warpController = FindObjectOfType<WarpController>();
+    }
     void Start()
     {
         muzzleFlash.SetActive(false);
+        if (isEventTriggered)
+            this.gameObject.SetActive(false);
+    }
+
+    public float GetNextFireTime()
+    {
+        return nextFireTime;
+    }
+    public float GetReloadTime()
+    {
+        return reloadTime;
     }
 
     void Update()
     {
         Tracking();
         AimFire();
+        if (health <= 0.0f)
+        {
+            transform.gameObject.SetActive(false);
+            return;
+        }
+
+        if (beingWarpAttacked)
+        {
+            _agent.isStopped = true;
+            _rb.velocity = new Vector3();
+            _agent.velocity = new Vector3();
+            return;
+        }
+
+        healthBar.fillAmount = health / maxhealth;
     }
 
     void AimFire()
@@ -36,11 +79,11 @@ public class RangeEnemyController : MonoBehaviour
             if (Time.time >= nextMoveTime)
             {
                 aim.LookAt(target);
-                aim.eulerAngles = new Vector3(0, aim.eulerAngles.y, 0);
+                aim.eulerAngles = new Vector3(aim.eulerAngles.x, aim.eulerAngles.y, 0);
                 head.rotation = Quaternion.Lerp(head.rotation, aim.rotation, Time.deltaTime * turnSpeed);
             }
 
-            if (/*Time.time >= nextFireTime && */canSee)
+            if (Time.time >= nextFireTime && canSee)
             {
                 Fire();
             }
@@ -60,12 +103,12 @@ public class RangeEnemyController : MonoBehaviour
         nextFireTime = Time.time + reloadTime;
         nextMoveTime = Time.time + firePauseTime;
         muzzleFlash.SetActive(true);
+        NewPlayerScript.Instance.TakeDamage(rangeEnemyDamage);
     }
 
     void Tracking()
     {
         Vector3 fwd = muzzlePos[randomMuzzel].TransformDirection(Vector3.forward);
-        //Vector3 fwd = muzzlePos[randomMuzzel].transform.forward;
         RaycastHit hit;
         Debug.DrawRay(muzzlePos[randomMuzzel].position, fwd * range, Color.green);
 
@@ -74,7 +117,6 @@ public class RangeEnemyController : MonoBehaviour
             if (hit.collider.CompareTag("PlayerTag"))
             {
                 canSee = true;
-                GetComponentInParent<NewPlayerScript>().TakeDamage(damage);
             }
         }
         else
@@ -83,23 +125,6 @@ public class RangeEnemyController : MonoBehaviour
         }
     }
 
-    void OnTriggerStay(Collider col)
-    {
-        if (!target)
-        {
-            if (col.CompareTag("PlayerTag"))
-            {
-                nextFireTime = Time.time + (reloadTime * 0.5f);
-                target = col.gameObject.transform;
-            }
-        }
-            
-    }
 
-    void OnTriggerExit(Collider col)
-    {
-        if (col.gameObject.transform == target)
-            target = null;
-    }
 
 }
