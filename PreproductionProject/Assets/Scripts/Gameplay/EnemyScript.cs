@@ -149,6 +149,8 @@ public class EnemyScript : BaseEnemyScript
 
     private void StartWandering()
     {
+        if (wanderingpath == null)
+            return;
         currentIndex = 0;
         _agent.SetDestination(wanderingpath.path[currentIndex].transform.position);
     }
