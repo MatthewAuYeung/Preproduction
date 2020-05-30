@@ -38,6 +38,13 @@ public abstract class BaseEnemyScript : MonoBehaviour
     [SerializeField]
     protected bool isEventTriggered;
 
+    [SerializeField]
+    protected WanderingPath wanderingpath;
+
+    protected int currentIndex;
+    protected bool reverse;
+    protected Vector3 lastPos;
+
     protected Material originalMat;
     protected MeshRenderer meshRenderer;
 
@@ -55,14 +62,16 @@ public abstract class BaseEnemyScript : MonoBehaviour
     public bool beingWarpAttacked = false;
     [SerializeField]
     private Transform damagePopupTransform;
-    protected EnemyState currentState;
+    protected EnemyState currentState = EnemyState.NONE;
 
     public enum EnemyState
     {
         Idle,
-        Move,
+        Chase,
         Attack,
-        Damaged
+        Damaged,
+        Wandering,
+        NONE
     };
 
     public void ChangeState(EnemyState state)

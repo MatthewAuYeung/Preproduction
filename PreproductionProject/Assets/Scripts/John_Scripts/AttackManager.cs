@@ -32,7 +32,8 @@ public class AttackManager : MonoBehaviour
     public enum comboSelection
     {
         firstAttackCombo,
-        secondAttackCombo
+        secondAttackCombo,
+        testAttackCombo
     }
 
     public comboSelection currentCombo;
@@ -114,6 +115,10 @@ public class AttackManager : MonoBehaviour
             case comboSelection.secondAttackCombo:
                 startAttackIndex = 3;
                 endAttackIndex = 6;
+                break;
+            case comboSelection.testAttackCombo:
+                startAttackIndex = 0;
+                endAttackIndex = 4;
                 break;
             default:
                 break;

@@ -83,7 +83,7 @@ public class EnemyScript : BaseEnemyScript
 
         if(health <= 0.0f)
         {
-            Vector3 lootPosition = new Vector3(transform.position.x, 0.3f, transform.position.z);
+            Vector3 lootPosition = new Vector3(transform.position.x, transform.position.y - 0.3f, transform.position.z);
             loot.calculateLoot(lootPosition);
             _manager.enemies.Remove(this);
             transform.gameObject.SetActive(false);
@@ -116,6 +116,7 @@ public class EnemyScript : BaseEnemyScript
         {
             if (InView(_target))
             {
+                ChangeState(EnemyState.Chase);
                 _agent.isStopped = false;
                 _agent.SetDestination(_target.position);
                 if (disBetweenPlayer < attackRange)
@@ -125,20 +126,69 @@ public class EnemyScript : BaseEnemyScript
                     _agent.transform.LookAt(newLookPos);
                 }
             }
-            else
+            else if(currentState != EnemyState.Wandering)
             {
-                _agent.isStopped = true;
+                StartWandering();
+                ChangeState(EnemyState.Wandering);
             }
         }
-        else
+        else if(currentState != EnemyState.Wandering)
         {
-            _agent.isStopped = true;
+            StartWandering();
+            ChangeState(EnemyState.Wandering);
         }
+
+        if(currentState == EnemyState.Wandering)
+        {
+            Wandering();
+        }
+
         healthBar.fillAmount = health / maxhealth;
         attackBar.fillAmount = _waitTime / attackDelay;
-
     }
 
+    private void StartWandering()
+    {
+        if (wanderingpath == null)
+            return;
+        currentIndex = 0;
+        _agent.SetDestination(wanderingpath.path[currentIndex].transform.position);
+    }
+
+    private void Wandering()
+    {
+        if (wanderingpath == null)
+            _agent.isStopped = true;
+        else
+        {
+            if (currentIndex < 0)
+                currentIndex = 0;
+            if(Vector3.Distance(_agent.transform.position, wanderingpath.path[currentIndex].transform.position) < 0.5f)
+            {
+                if (!reverse)
+                    currentIndex++;
+                else
+                    currentIndex--;
+                if (currentIndex >= wanderingpath.path.Count)
+                {
+                    reverse = true;
+                    currentIndex--;
+                }
+                if (currentIndex == 0)
+                {
+                    reverse = false;
+                }
+
+                StartCoroutine(SetWaypoint(wanderingpath.path[currentIndex]));
+            }
+        }
+    }
+
+    IEnumerator SetWaypoint(WanderingWaypoint waypoint)
+    {
+        yield return new WaitForSeconds(waypoint.GetWaitTime());
+        _agent.SetDestination(waypoint.transform.position);
+    }
 
     private bool InView(Transform target)
     {
