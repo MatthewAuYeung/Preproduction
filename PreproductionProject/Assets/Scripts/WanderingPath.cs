@@ -4,5 +4,14 @@ using UnityEngine;
 
 public class WanderingPath : MonoBehaviour
 {
-    public List<Transform> path;
+    public List<WanderingWaypoint> path = new List<WanderingWaypoint>();
+
+    private void OnDrawGizmos()
+    {
+        for (int i = 0; i < path.Count - 1; ++i)
+        {
+            Gizmos.color = Color.cyan;
+            Gizmos.DrawLine(path[i].transform.position, path[i + 1].transform.position);
+        }
+    }
 }

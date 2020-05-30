@@ -4,6 +4,21 @@ using UnityEngine;
 
 public class WanderingWaypoint : MonoBehaviour
 {
-    public float Max;
-    public float Min;
+    [SerializeField]
+    private float Min;
+
+    [SerializeField]
+    private float Max;
+
+    private float waitTime;
+
+    private void Awake()
+    {
+        waitTime = Random.Range(Min, Max);
+    }
+
+    public float GetWaitTime()
+    {
+        return waitTime;
+    }
 }
