@@ -2720,7 +2720,7 @@ GameObject:
   - component: {fileID: 1555268841536895482}
   - component: {fileID: 6058733288063174655}
   m_Layer: 2
-  m_Name: FastAfBoi
+  m_Name: Spider_Enemy
   m_TagString: EnemyTag
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2831,7 +2831,7 @@ NavMeshAgent:
   m_Enabled: 1
   m_AgentTypeID: 0
   m_Radius: 0.5
-  m_Speed: 3.5
+  m_Speed: 8
   m_Acceleration: 8
   avoidancePriority: 50
   m_AngularSpeed: 120
@@ -2866,7 +2866,8 @@ MonoBehaviour:
   SlowBombEffectMat: {fileID: 2100000, guid: 29d77a8096962b64ea1dfe7620819cf6, type: 2}
   knockbackDuration: 0.25
   isEventTriggered: 0
-  speed: 2
+  wanderingpath: {fileID: 0}
+  speed: 6
   beingWarpAttacked: 0
   damagePopupTransform: {fileID: 0}
   isStun: 0
