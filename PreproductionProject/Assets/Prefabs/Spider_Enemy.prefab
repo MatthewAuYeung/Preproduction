@@ -2867,7 +2867,7 @@ MonoBehaviour:
   knockbackDuration: 0.25
   isEventTriggered: 0
   wanderingpath: {fileID: 0}
-  speed: 6
+  speed: 7.5
   beingWarpAttacked: 0
   damagePopupTransform: {fileID: 0}
   isStun: 0
