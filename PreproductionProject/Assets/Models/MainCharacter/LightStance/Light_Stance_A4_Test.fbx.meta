@@ -1,0 +1,561 @@
+fileFormatVersion: 2
+guid: 5cef0db2e5e1e43448110c1e22f9a16d
+ModelImporter:
+  serializedVersion: 25
+  internalIDToNameTable:
+  - first:
+      74: 1827226128182048838
+    second: Take 001
+  externalObjects: {}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 3
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: Take 001
+      takeName: Take 001
+      internalID: 1827226128182048838
+      firstFrame: 36
+      lastFrame: 56
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 1
+      loopBlendPositionY: 1
+      loopBlendPositionXZ: 1
+      keepOriginalOrientation: 1
+      keepOriginalPositionY: 0
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 1
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events:
+      - time: 0.11352039
+        functionName: AttackStart
+        data: 
+        objectReferenceParameter: {instanceID: 0}
+        floatParameter: 0
+        intParameter: 0
+        messageOptions: 0
+      - time: 0.17602044
+        functionName: AttackStop
+        data: 
+        objectReferenceParameter: {instanceID: 0}
+        floatParameter: 0
+        intParameter: 0
+        messageOptions: 0
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    useSRGBMaterialColor: 1
+    importVisibility: 0
+    importBlendShapes: 1
+    importCameras: 0
+    importLights: 0
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    skinWeightsMode: 0
+    maxBonesPerVertex: 4
+    minBoneWeight: 0.001
+    meshOptimizationFlags: -1
+    indexFormat: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 0
+    legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 1
+    blendShapeNormalImportMode: 1
+    normalSmoothingSource: 0
+  referencedClips: []
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 3
+    human: []
+    skeleton:
+    - name: Light_Stance_A4_Test(Clone)
+      parentName: 
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: AG_Character_Rig_Final:Geo_GRP
+      parentName: Light_Stance_A4_Test(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: AG_Character_Rig_Final:AG_Character_GEO_update:AG_Character
+      parentName: AG_Character_Rig_Final:Geo_GRP
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: AG_Character_Rig_Final:Character_Rig_GRP
+      parentName: Light_Stance_A4_Test(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: AG_Character_Rig_Final:JT_C_COG
+      parentName: AG_Character_Rig_Final:Character_Rig_GRP
+      position: {x: 0.008394554, y: 1.0514773, z: 0.057282448}
+      rotation: {x: 3.6379788e-10, y: -1.7370793e-19, z: -4.774847e-10, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: AG_Character_Rig_Final:JT_C_Spine_0
+      parentName: AG_Character_Rig_Final:JT_C_COG
+      position: {x: 0.024975702, y: 0.04956546, z: -0.02157652}
+      rotation: {x: 0.45076627, y: -0.54480255, z: -0.4507662, w: 0.54480255}
+      scale: {x: 1.0000005, y: 1.0000005, z: 1}
+    - name: AG_Character_Rig_Final:JT_C_Spine_1
+      parentName: AG_Character_Rig_Final:JT_C_Spine_0
+      position: {x: -0.089401774, y: 0.036692772, z: 0.013236409}
+      rotation: {x: -0.000000029802319, y: -0.000000029802319, z: -0.013670189, w: 0.99990654}
+      scale: {x: 1.000001, y: 1.0000013, z: 1.0000007}
+    - name: AG_Character_Rig_Final:JT_C_Spine_2
+      parentName: AG_Character_Rig_Final:JT_C_Spine_1
+      position: {x: -0.11530447, y: -0.0017594665, z: -0.006364949}
+      rotation: {x: 0.000000028127726, y: 0.000000001948539, z: -0.053929225, w: 0.9985448}
+      scale: {x: 1.0000002, y: 0.9999997, z: 0.99999994}
+    - name: AG_Character_Rig_Final:JT_C_Spine_3
+      parentName: AG_Character_Rig_Final:JT_C_Spine_2
+      position: {x: -0.10487054, y: -0.038870912, z: -0.04056055}
+      rotation: {x: -0.00000003430664, y: -0.0000000026826563, z: -0.15459138, w: 0.98797846}
+      scale: {x: 1.0000001, y: 1.0000007, z: 1.0000005}
+    - name: AG_Character_Rig_Final:JT_C_Neck_0
+      parentName: AG_Character_Rig_Final:JT_C_Spine_3
+      position: {x: -0.07489198, y: 0.0000000010314939, z: -7.81597e-16}
+      rotation: {x: 0.000000004698299, y: -0.000000015458387, z: 0.039915357, w: 0.9992031}
+      scale: {x: 1.0000004, y: 1.0000012, z: 1.0000007}
+    - name: AG_Character_Rig_Final:JT_C_Neck_1
+      parentName: AG_Character_Rig_Final:JT_C_Neck_0
+      position: {x: -0.068219684, y: 0.000057703277, z: 8.5265126e-16}
+      rotation: {x: 0.000000050666348, y: 0.000000054719635, z: 0.0037921448, w: -0.99999285}
+      scale: {x: 0.99999994, y: 1.0000006, z: 1.0000005}
+    - name: AG_Character_Rig_Final:JT_C_Head
+      parentName: AG_Character_Rig_Final:JT_C_Neck_1
+      position: {x: -0.07803241, y: -0.004051685, z: -8.5265126e-16}
+      rotation: {x: 9.1922914e-10, y: -0.00000005087154, z: -0.10058656, w: -0.99492836}
+      scale: {x: 1.0000019, y: 0.9999996, z: 1.0000008}
+    - name: AG_Character_Rig_Final:JT_C_Top
+      parentName: AG_Character_Rig_Final:JT_C_Head
+      position: {x: -0.1470724, y: 1.945512e-18, z: 3.704048e-17}
+      rotation: {x: -0, y: -0, z: 4.6762598e-17, w: 1}
+      scale: {x: 1.0000002, y: 1.0000004, z: 1.0000005}
+    - name: AG_Character_Rig_Final:JT_L_Clavicle
+      parentName: AG_Character_Rig_Final:JT_C_Spine_3
+      position: {x: -0.046314564, y: -0.01979046, z: 0.047700737}
+      rotation: {x: -0.10289819, y: 0.7953231, z: 0.07665071, w: 0.5924508}
+      scale: {x: 1.0000006, y: 1.0000012, z: 1.0000018}
+    - name: AG_Character_Rig_Final:JT_L_Shoulder
+      parentName: AG_Character_Rig_Final:JT_L_Clavicle
+      position: {x: -0.14201812, y: 0.012043438, z: -5.287581e-16}
+      rotation: {x: -0.0018962921, y: -0.11878944, z: -0.023717524, w: 0.99263436}
+      scale: {x: 1.0000014, y: 0.99999875, z: 1.0000011}
+    - name: AG_Character_Rig_Final:JT_L_Elbow
+      parentName: AG_Character_Rig_Final:JT_L_Shoulder
+      position: {x: -0.2695506, y: -0.0120135015, z: 8.837651e-16}
+      rotation: {x: -0.0020824545, y: -0.015860466, z: -0.013589446, w: 0.9997797}
+      scale: {x: 0.99999845, y: 1.0000017, z: 0.99999994}
+    - name: AG_Character_Rig_Final:JT_L_Twist
+      parentName: AG_Character_Rig_Final:JT_L_Elbow
+      position: {x: -0.123438194, y: 0.00000037504773, z: -0.0000015406924}
+      rotation: {x: 5.8207654e-11, y: -0, z: 0.0000000034583532, w: 1}
+      scale: {x: 1.0000005, y: 1.0000002, z: 1.0000008}
+    - name: AG_Character_Rig_Final:JT_L_Wrist
+      parentName: AG_Character_Rig_Final:JT_L_Elbow
+      position: {x: -0.23005207, y: 7.105427e-17, z: -4.2632563e-16}
+      rotation: {x: -0.0046426137, y: 0.02168696, z: 0.028809072, w: 0.9993389}
+      scale: {x: 1.000001, y: 1.0000004, z: 1.0000011}
+    - name: AG_Character_Rig_Final:JT_L_Palm
+      parentName: AG_Character_Rig_Final:JT_L_Wrist
+      position: {x: -0.02977731, y: 0.00065615145, z: -0.0038815779}
+      rotation: {x: -0, y: -0, z: 7.566995e-10, w: 1}
+      scale: {x: 1.0000017, y: 0.9999998, z: 1.0000014}
+    - name: AG_Character_Rig_Final:JT_L_Pinky_0
+      parentName: AG_Character_Rig_Final:JT_L_Palm
+      position: {x: -0.010414538, y: -0.02511865, z: -0.004100362}
+      rotation: {x: 0.6862716, y: -0.029107999, z: 0.10413889, w: 0.719263}
+      scale: {x: 1.0000021, y: 1.0000007, z: 1.000001}
+    - name: AG_Character_Rig_Final:JT_L_Pinky_1
+      parentName: AG_Character_Rig_Final:JT_L_Pinky_0
+      position: {x: -0.029386798, y: 1.4210854e-16, z: 3.5527136e-17}
+      rotation: {x: -0.0016763502, y: 0.0008016411, z: -0.038619254, w: 0.99925226}
+      scale: {x: 1.000002, y: 1.0000011, z: 1.0000014}
+    - name: AG_Character_Rig_Final:JT_L_Pinky_2
+      parentName: AG_Character_Rig_Final:JT_L_Pinky_1
+      position: {x: -0.031633984, y: -2.842171e-16, z: 1.7763568e-17}
+      rotation: {x: -0.021020655, y: 0.022179922, z: 0.019387089, w: 0.99934494}
+      scale: {x: 1.0000023, y: 1.0000007, z: 1.0000007}
+    - name: AG_Character_Rig_Final:JT_L_Pinky_3
+      parentName: AG_Character_Rig_Final:JT_L_Pinky_2
+      position: {x: -0.018992271, y: -2.842171e-16, z: 3.5527136e-17}
+      rotation: {x: 0.03123928, y: -0.03712448, z: 0.039593313, w: 0.9980372}
+      scale: {x: 1.0000005, y: 1.000001, z: 1.0000005}
+    - name: AG_Character_Rig_Final:JT_L_Pinky_4
+      parentName: AG_Character_Rig_Final:JT_L_Pinky_3
+      position: {x: -0.01991758, y: -1.4210854e-16, z: 3.5527136e-17}
+      rotation: {x: -0, y: -0, z: -2.3283062e-10, w: 1}
+      scale: {x: 1.0000007, y: 1.0000004, z: 1.0000006}
+    - name: AG_Character_Rig_Final:JT_L_Ring_0
+      parentName: AG_Character_Rig_Final:JT_L_Palm
+      position: {x: -0.01436463, y: -0.012608914, z: -0.0056125107}
+      rotation: {x: 0.7287114, y: -0.04377308, z: 0.116496295, w: 0.67341834}
+      scale: {x: 1.0000014, y: 1.0000001, z: 1.0000004}
+    - name: AG_Character_Rig_Final:JT_L_Ring_1
+      parentName: AG_Character_Rig_Final:JT_L_Ring_0
+      position: {x: -0.029868647, y: 0, z: 6.661338e-18}
+      rotation: {x: -0.02397501, y: 0.008798575, z: -0.03588903, w: 0.9990294}
+      scale: {x: 1.0000008, y: 1.0000015, z: 1.0000013}
+    - name: AG_Character_Rig_Final:JT_L_Ring_2
+      parentName: AG_Character_Rig_Final:JT_L_Ring_1
+      position: {x: -0.04269259, y: -2.842171e-16, z: -1.7763568e-17}
+      rotation: {x: -0.008000016, y: 0.007574491, z: -0.03734266, w: 0.9992418}
+      scale: {x: 1.0000007, y: 1.0000001, z: 1.0000002}
+    - name: AG_Character_Rig_Final:JT_L_Ring_3
+      parentName: AG_Character_Rig_Final:JT_L_Ring_2
+      position: {x: -0.022381948, y: -1.4210854e-16, z: 8.881784e-18}
+      rotation: {x: 0.005085509, y: -0.00555853, z: 0.108871184, w: 0.9940273}
+      scale: {x: 1.0000004, y: 0.9999998, z: 0.99999964}
+    - name: AG_Character_Rig_Final:JT_L_Ring_4
+      parentName: AG_Character_Rig_Final:JT_L_Ring_3
+      position: {x: -0.025390863, y: 1.4210854e-16, z: 1.7763568e-17}
+      rotation: {x: -0, y: -0, z: -0.0000000069921926, w: 1}
+      scale: {x: 0.99999964, y: 1.0000002, z: 0.9999997}
+    - name: AG_Character_Rig_Final:JT_L_Mid_0
+      parentName: AG_Character_Rig_Final:JT_L_Palm
+      position: {x: -0.01677343, y: 0.0015927801, z: -0.0054234928}
+      rotation: {x: 0.76176524, y: -0.09305924, z: 0.06959611, w: 0.63734615}
+      scale: {x: 1.0000008, y: 1.0000005, z: 1.0000002}
+    - name: AG_Character_Rig_Final:JT_L_Mid_1
+      parentName: AG_Character_Rig_Final:JT_L_Mid_0
+      position: {x: -0.03063741, y: 2.842171e-16, z: 3.5527136e-17}
+      rotation: {x: -0.0104191275, y: 0.0039967513, z: -0.03683068, w: 0.9992593}
+      scale: {x: 1.0000004, y: 1.0000004, z: 1.0000004}
+    - name: AG_Character_Rig_Final:JT_L_Mid_2
+      parentName: AG_Character_Rig_Final:JT_L_Mid_1
+      position: {x: -0.043221228, y: 0, z: 3.5527136e-17}
+      rotation: {x: -0.022493698, y: 0.019096056, z: 0.036109485, w: 0.99891216}
+      scale: {x: 1.0000006, y: 1, z: 1.0000002}
+    - name: AG_Character_Rig_Final:JT_L_Mid_3
+      parentName: AG_Character_Rig_Final:JT_L_Mid_2
+      position: {x: -0.026507713, y: -5.684342e-16, z: 1.8873792e-17}
+      rotation: {x: 0.022632014, y: -0.029632939, z: 0.0130748805, w: 0.99921906}
+      scale: {x: 1.000001, y: 1.0000011, z: 1.0000004}
+    - name: AG_Character_Rig_Final:JT_L_Mid_4
+      parentName: AG_Character_Rig_Final:JT_L_Mid_3
+      position: {x: -0.023922285, y: -2.842171e-16, z: -5.3290704e-17}
+      rotation: {x: -0, y: -0, z: -5.2386884e-10, w: 1}
+      scale: {x: 1.000001, y: 1.0000006, z: 1.0000004}
+    - name: AG_Character_Rig_Final:JT_L_Index_0
+      parentName: AG_Character_Rig_Final:JT_L_Palm
+      position: {x: -0.014769159, y: 0.020049375, z: -0.0008081244}
+      rotation: {x: 0.78591454, y: -0.09359902, z: 0.0103240395, w: 0.6111228}
+      scale: {x: 1.000002, y: 1.0000011, z: 1.000001}
+    - name: AG_Character_Rig_Final:JT_L_Index_1
+      parentName: AG_Character_Rig_Final:JT_L_Index_0
+      position: {x: -0.036316037, y: 1.4210854e-16, z: 3.5527136e-17}
+      rotation: {x: -0.014234509, y: 0.020321203, z: -0.03209938, w: 0.9991768}
+      scale: {x: 1.0000007, y: 1.0000005, z: 1.0000006}
+    - name: AG_Character_Rig_Final:JT_L_Index_2
+      parentName: AG_Character_Rig_Final:JT_L_Index_1
+      position: {x: -0.03334284, y: 1.4210854e-16, z: 0}
+      rotation: {x: -0.019426988, y: 0.024409201, z: -0.029039368, w: 0.9990913}
+      scale: {x: 1.0000014, y: 1.0000008, z: 1.0000005}
+    - name: AG_Character_Rig_Final:JT_L_Index_3
+      parentName: AG_Character_Rig_Final:JT_L_Index_2
+      position: {x: -0.024981203, y: -1.4210854e-16, z: -2.6645352e-17}
+      rotation: {x: 0.032071322, y: -0.043852866, z: 0.06967136, w: 0.9960895}
+      scale: {x: 1.0000012, y: 1.0000004, z: 1.0000004}
+    - name: AG_Character_Rig_Final:JT_L_Index_4
+      parentName: AG_Character_Rig_Final:JT_L_Index_3
+      position: {x: -0.023408214, y: 2.842171e-16, z: 1.2434498e-16}
+      rotation: {x: -0, y: -0, z: 0.0000000036088732, w: 1}
+      scale: {x: 1.0000005, y: 1.0000002, z: 1}
+    - name: AG_Character_Rig_Final:JT_L_Thumb_0
+      parentName: AG_Character_Rig_Final:JT_L_Palm
+      position: {x: -0.005353415, y: 0.028567612, z: 0.015772428}
+      rotation: {x: 0.9258294, y: -0.36854464, z: -0.040514752, w: 0.07330263}
+      scale: {x: 1.0000008, y: 1.0000004, z: 1.0000008}
+    - name: AG_Character_Rig_Final:JT_L_Thumb_1
+      parentName: AG_Character_Rig_Final:JT_L_Thumb_0
+      position: {x: -0.027599242, y: 0, z: 2.842171e-16}
+      rotation: {x: -0.016767582, y: -0.0051615457, z: 0.036573406, w: -0.99917704}
+      scale: {x: 0.9999999, y: 1.0000011, z: 1}
+    - name: AG_Character_Rig_Final:JT_L_Thumb_2
+      parentName: AG_Character_Rig_Final:JT_L_Thumb_1
+      position: {x: -0.0268717, y: 2.1316282e-16, z: -1.4210854e-16}
+      rotation: {x: 0.03169217, y: 0.033519372, z: 0.023548014, w: 0.99865794}
+      scale: {x: 1.0000012, y: 1.0000004, z: 0.9999996}
+    - name: AG_Character_Rig_Final:JT_L_Thumb_3
+      parentName: AG_Character_Rig_Final:JT_L_Thumb_2
+      position: {x: -0.027577735, y: -1.0658141e-16, z: 2.842171e-16}
+      rotation: {x: -0, y: -0.000000003725289, z: 2.3283056e-10, w: 1}
+      scale: {x: 1.0000008, y: 1.0000007, z: 0.9999998}
+    - name: AG_Character_Rig_Final:JT_R_Clavicle
+      parentName: AG_Character_Rig_Final:JT_C_Spine_3
+      position: {x: -0.046314564, y: -0.01979046, z: -0.047700737}
+      rotation: {x: -0.7953231, y: -0.10289823, z: 0.59245074, w: -0.07665077}
+      scale: {x: 1.0000011, y: 1.0000004, z: 1.0000007}
+    - name: AG_Character_Rig_Final:JT_R_Shoulder
+      parentName: AG_Character_Rig_Final:JT_R_Clavicle
+      position: {x: 0.14202015, y: -0.012043403, z: -0.000006513856}
+      rotation: {x: -0.0018963891, y: -0.118787676, z: -0.023716863, w: 0.9926346}
+      scale: {x: 1, y: 1.0000005, z: 0.99999964}
+    - name: AG_Character_Rig_Final:JT_R_Elbow
+      parentName: AG_Character_Rig_Final:JT_R_Shoulder
+      position: {x: 0.26955044, y: 0.012013433, z: 0.0000007075451}
+      rotation: {x: -0.0020822426, y: -0.01586255, z: -0.013589873, w: 0.9997797}
+      scale: {x: 1.0000014, y: 1.0000007, z: 1.0000004}
+    - name: AG_Character_Rig_Final:JT_R_Twist
+      parentName: AG_Character_Rig_Final:JT_R_Elbow
+      position: {x: 0.12343856, y: -0.00000029534493, z: 0.0000012228696}
+      rotation: {x: -0.00000019918657, y: -0.00000004703178, z: -0.000000026788932,
+        w: 1}
+      scale: {x: 1.0000004, y: 1.0000001, z: 1}
+    - name: AG_Character_Rig_Final:JT_R_Wrist
+      parentName: AG_Character_Rig_Final:JT_R_Elbow
+      position: {x: 0.23005262, y: 0.00000012801793, z: -0.00000047752553}
+      rotation: {x: -0.0046426025, y: 0.02168686, z: 0.028808974, w: 0.9993389}
+      scale: {x: 0.99999917, y: 1.0000005, z: 1.0000012}
+    - name: AG_Character_Rig_Final:JT_R_Palm
+      parentName: AG_Character_Rig_Final:JT_R_Wrist
+      position: {x: 0.029772801, y: -0.00065690506, z: 0.0038860631}
+      rotation: {x: -0, y: -0, z: 5.0931696e-11, w: 1}
+      scale: {x: 1.0000001, y: 1.0000001, z: 1.0000002}
+    - name: AG_Character_Rig_Final:JT_R_Pinky_1
+      parentName: AG_Character_Rig_Final:JT_R_Palm
+      position: {x: 0.01041679, y: 0.025119025, z: 0.0040972363}
+      rotation: {x: 0.68626904, y: -0.029130455, z: 0.10415316, w: 0.7192625}
+      scale: {x: 1.0000006, y: 0.9999997, z: 1.0000004}
+    - name: AG_Character_Rig_Final:JT_R_Pinky_2
+      parentName: AG_Character_Rig_Final:JT_R_Pinky_1
+      position: {x: 0.029387772, y: -0.0000018800713, z: 0.000000008987099}
+      rotation: {x: -0.0016763796, y: 0.00080468087, z: -0.03867508, w: 0.9992501}
+      scale: {x: 1.0000002, y: 1.0000007, z: 1.0000006}
+    - name: AG_Character_Rig_Final:JT_R_Pinky_3
+      parentName: AG_Character_Rig_Final:JT_R_Pinky_2
+      position: {x: 0.031632867, y: 0.0000014116856, z: -0.000000050339242}
+      rotation: {x: -0.021020534, y: 0.022179851, z: 0.019387146, w: 0.99934494}
+      scale: {x: 0.99999964, y: 1.0000004, z: 1}
+    - name: AG_Character_Rig_Final:JT_R_Pinky_4
+      parentName: AG_Character_Rig_Final:JT_R_Pinky_3
+      position: {x: 0.018989053, y: 0.0000033752715, z: 0.00000003251459}
+      rotation: {x: 0.03123904, y: -0.03712434, z: 0.039593093, w: 0.9980372}
+      scale: {x: 1.0000008, y: 0.9999999, z: 1.0000001}
+    - name: AG_Character_Rig_Final:JT_R_Pinky_5
+      parentName: AG_Character_Rig_Final:JT_R_Pinky_4
+      position: {x: 0.019918082, y: 0.00000014079504, z: -0.0000000070800374}
+      rotation: {x: -0, y: -0.000000003725289, z: 0.000000001629814, w: 1}
+      scale: {x: 1.0000002, y: 1, z: 1.0000002}
+    - name: AG_Character_Rig_Final:JT_R_Ring_1
+      parentName: AG_Character_Rig_Final:JT_R_Palm
+      position: {x: 0.014366982, y: 0.012609298, z: 0.0056094793}
+      rotation: {x: 0.72871125, y: -0.043773044, z: 0.11649632, w: 0.67341846}
+      scale: {x: 1.0000005, y: 0.9999996, z: 1.0000001}
+    - name: AG_Character_Rig_Final:JT_R_Ring_2
+      parentName: AG_Character_Rig_Final:JT_R_Ring_1
+      position: {x: 0.029866068, y: 0.0000039725405, z: 0.000000005777006}
+      rotation: {x: -0.023975188, y: 0.008790938, z: -0.035774566, w: 0.99903363}
+      scale: {x: 1.0000004, y: 1.0000012, z: 1.000001}
+    - name: AG_Character_Rig_Final:JT_R_Ring_3
+      parentName: AG_Character_Rig_Final:JT_R_Ring_2
+      position: {x: 0.042697053, y: -0.000004244467, z: 0.000000020950377}
+      rotation: {x: -0.007999997, y: 0.0075745573, z: -0.03734265, w: 0.99924177}
+      scale: {x: 1.0000004, y: 0.99999976, z: 0.9999997}
+    - name: AG_Character_Rig_Final:JT_R_Ring_4
+      parentName: AG_Character_Rig_Final:JT_R_Ring_3
+      position: {x: 0.022377726, y: 0.0000045846023, z: 8.718061e-10}
+      rotation: {x: 0.005085507, y: -0.005558572, z: 0.1088712, w: 0.9940273}
+      scale: {x: 0.9999999, y: 1.0000005, z: 1.0000007}
+    - name: AG_Character_Rig_Final:JT_R_Ring_5
+      parentName: AG_Character_Rig_Final:JT_R_Ring_4
+      position: {x: 0.025393413, y: -0.0000034839945, z: 0.0000000044562243}
+      rotation: {x: -0, y: 4.6566112e-10, z: -0.0000000067884662, w: 1}
+      scale: {x: 1.0000002, y: 1.000001, z: 1.000001}
+    - name: AG_Character_Rig_Final:JT_R_Mid_1
+      parentName: AG_Character_Rig_Final:JT_R_Palm
+      position: {x: 0.016775768, y: -0.0015923931, z: 0.0054204497}
+      rotation: {x: 0.7617651, y: -0.09305913, z: 0.06959619, w: 0.6373462}
+      scale: {x: 1.0000008, y: 0.9999995, z: 1.0000006}
+    - name: AG_Character_Rig_Final:JT_R_Mid_2
+      parentName: AG_Character_Rig_Final:JT_R_Mid_1
+      position: {x: 0.030635528, y: 0.000004363738, z: -0.00000010847469}
+      rotation: {x: -0.010419246, y: 0.0039938674, z: -0.036698096, w: 0.9992642}
+      scale: {x: 0.99999994, y: 1.0000013, z: 1.000001}
+    - name: AG_Character_Rig_Final:JT_R_Mid_3
+      parentName: AG_Character_Rig_Final:JT_R_Mid_2
+      position: {x: 0.043224923, y: -0.000004980031, z: 0.00000013176006}
+      rotation: {x: -0.02249419, y: 0.019054776, z: 0.03600446, w: 0.9989167}
+      scale: {x: 1.000001, y: 1.0000006, z: 1.0000014}
+    - name: AG_Character_Rig_Final:JT_R_Mid_4
+      parentName: AG_Character_Rig_Final:JT_R_Mid_3
+      position: {x: 0.026506104, y: 0.000003277234, z: -0.00000043676226}
+      rotation: {x: 0.022632053, y: -0.029632958, z: 0.013074834, w: 0.99921906}
+      scale: {x: 1.0000006, y: 1, z: 1.0000008}
+    - name: AG_Character_Rig_Final:JT_R_Mid_5
+      parentName: AG_Character_Rig_Final:JT_R_Mid_4
+      position: {x: 0.023922531, y: -0.0000009960401, z: 0.00000016385998}
+      rotation: {x: -0, y: -0, z: -8.149071e-10, w: 1}
+      scale: {x: 1.0000002, y: 1.0000004, z: 1.0000005}
+    - name: AG_Character_Rig_Final:JT_R_Index_1
+      parentName: AG_Character_Rig_Final:JT_R_Palm
+      position: {x: 0.014773068, y: -0.020048885, z: 0.0008037302}
+      rotation: {x: 0.7859144, y: -0.09359882, z: 0.010324046, w: 0.61112297}
+      scale: {x: 1.0000008, y: 1, z: 1.0000005}
+    - name: AG_Character_Rig_Final:JT_R_Index_2
+      parentName: AG_Character_Rig_Final:JT_R_Index_1
+      position: {x: 0.036316488, y: -0.000000022069848, z: -0.000000019738678}
+      rotation: {x: -0.014234569, y: 0.020321088, z: -0.03209931, w: 0.9991768}
+      scale: {x: 1.0000007, y: 1.0000011, z: 1.0000017}
+    - name: AG_Character_Rig_Final:JT_R_Index_3
+      parentName: AG_Character_Rig_Final:JT_R_Index_2
+      position: {x: 0.03333807, y: 0.0000048748475, z: 0.00000019556857}
+      rotation: {x: -0.019426744, y: 0.024409208, z: -0.029039286, w: 0.9990913}
+      scale: {x: 0.9999999, y: 1.0000005, z: 1.0000001}
+    - name: AG_Character_Rig_Final:JT_R_Index_4
+      parentName: AG_Character_Rig_Final:JT_R_Index_3
+      position: {x: 0.024983212, y: -0.0000011918653, z: -0.0000006352282}
+      rotation: {x: 0.032071106, y: -0.04385273, z: 0.06967123, w: 0.9960895}
+      scale: {x: 1.0000002, y: 1.0000002, z: 1.0000007}
+    - name: AG_Character_Rig_Final:JT_R_Index_5
+      parentName: AG_Character_Rig_Final:JT_R_Index_4
+      position: {x: 0.023409758, y: -0.0000035127907, z: 0.0000005511419}
+      rotation: {x: -0, y: -0, z: -0.000000002561136, w: 1}
+      scale: {x: 0.9999999, y: 1.000001, z: 1.0000007}
+    - name: AG_Character_Rig_Final:JT_R_Thumb_1
+      parentName: AG_Character_Rig_Final:JT_R_Palm
+      position: {x: 0.0053519807, y: -0.028567532, z: -0.015770992}
+      rotation: {x: 0.909484, y: -0.3607422, z: -0.08594539, w: 0.18792912}
+      scale: {x: 0.99999964, y: 1.0000001, z: 1.0000002}
+    - name: AG_Character_Rig_Final:JT_R_Thumb_2
+      parentName: AG_Character_Rig_Final:JT_R_Thumb_1
+      position: {x: 0.027603945, y: -0.000006269591, z: 0.0000032796017}
+      rotation: {x: -0.004991798, y: 0.014713373, z: -0.034029655, w: 0.9993001}
+      scale: {x: 1, y: 0.99999976, z: 1.0000002}
+    - name: AG_Character_Rig_Final:JT_R_Thumb_3
+      parentName: AG_Character_Rig_Final:JT_R_Thumb_2
+      position: {x: 0.026867783, y: 0.0000041191943, z: -0.0000023070045}
+      rotation: {x: 0.07254584, y: 0.026649414, z: 0.031241678, w: 0.99651945}
+      scale: {x: 1, y: 1, z: 0.9999996}
+    - name: AG_Character_Rig_Final:JT_R_Thumb_4
+      parentName: AG_Character_Rig_Final:JT_R_Thumb_3
+      position: {x: 0.02757743, y: -0.00000067819593, z: -0.00000020196381}
+      rotation: {x: 0.10533643, y: 0.000000096857526, z: -0.000000045867626, w: 0.9944367}
+      scale: {x: 1.0000005, y: 1, z: 1.0000008}
+    - name: AG_Character_Rig_Final:JT_C_Pelvis
+      parentName: AG_Character_Rig_Final:JT_C_COG
+      position: {x: -0.00839454, y: -0.027855057, z: -0.05078268}
+      rotation: {x: 0.63731766, y: 0.30631068, z: 0.63731766, w: 0.30631068}
+      scale: {x: 1.0000001, y: 1.0000005, z: 1.0000002}
+    - name: AG_Character_Rig_Final:JT_R_Thigh
+      parentName: AG_Character_Rig_Final:JT_C_Pelvis
+      position: {x: -0.049382623, y: 0.031182302, z: 0.095835395}
+      rotation: {x: -0, y: -0, z: 0.93254477, w: 0.3610544}
+      scale: {x: 1.0000005, y: 1.0000004, z: 1.0000007}
+    - name: AG_Character_Rig_Final:JT_R_Knee
+      parentName: AG_Character_Rig_Final:JT_R_Thigh
+      position: {x: 0.3441518, y: 0.000000020341933, z: -1.2434498e-16}
+      rotation: {x: 0.000000038552255, y: -0.00000001703174, z: -0.09905775, w: -0.99508166}
+      scale: {x: 1.000001, y: 1.0000001, z: 1.0000012}
+    - name: AG_Character_Rig_Final:JT_R_Ankle
+      parentName: AG_Character_Rig_Final:JT_R_Knee
+      position: {x: 0.46001354, y: 0.000000023182226, z: -5.8619773e-16}
+      rotation: {x: -0.00000006439843, y: 0.000000027053824, z: 0.4442971, w: -0.8958795}
+      scale: {x: 1.0000002, y: 1.000001, z: 1.0000007}
+    - name: AG_Character_Rig_Final:JT_R_Ball
+      parentName: AG_Character_Rig_Final:JT_R_Ankle
+      position: {x: 0.19556151, y: -0.00000031750346, z: 0.0000000032807423}
+      rotation: {x: -0.87731206, y: 0.4799205, z: 0.000000006977796, w: -0.000000043007674}
+      scale: {x: 1.0000014, y: 0.99999976, z: 1.0000008}
+    - name: AG_Character_Rig_Final:JT_R_Toe
+      parentName: AG_Character_Rig_Final:JT_R_Ball
+      position: {x: 0.13392596, y: 0.000000050084697, z: -0.0000000026500944}
+      rotation: {x: -0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1.0000004}
+    - name: AG_Character_Rig_Final:JT_L_Thigh
+      parentName: AG_Character_Rig_Final:JT_C_Pelvis
+      position: {x: -0.049382642, y: 0.03118228, z: -0.09583542}
+      rotation: {x: -0.000000029802319, y: -0.000000029802319, z: -0.36105442, w: 0.9325447}
+      scale: {x: 1.0000002, y: 1.0000001, z: 1.0000004}
+    - name: AG_Character_Rig_Final:JT_L_Knee
+      parentName: AG_Character_Rig_Final:JT_L_Thigh
+      position: {x: -0.34415144, y: -1.11022296e-17, z: -3.4467835e-19}
+      rotation: {x: 0.00000002076687, y: 0.00000003667552, z: 0.09905775, w: 0.9950817}
+      scale: {x: 0.9999998, y: 0.9999998, z: 0.9999995}
+    - name: AG_Character_Rig_Final:JT_L_Ankle
+      parentName: AG_Character_Rig_Final:JT_L_Knee
+      position: {x: -0.4600134, y: -1.8762694e-16, z: -1.3805066e-32}
+      rotation: {x: -0, y: 7.1054274e-15, z: -0.44429705, w: 0.89587957}
+      scale: {x: 0.99999976, y: 1, z: 1.0000002}
+    - name: AG_Character_Rig_Final:JT_L_Ball
+      parentName: AG_Character_Rig_Final:JT_L_Ankle
+      position: {x: -0.19556186, y: 1.2138858e-16, z: 3.8867834e-17}
+      rotation: {x: 0.87731206, y: -0.47992048, z: -0.000000005260435, w: -2.887295e-10}
+      scale: {x: 1.0000007, y: 1.0000011, z: 1.0000005}
+    - name: AG_Character_Rig_Final:JT_L_Toe
+      parentName: AG_Character_Rig_Final:JT_L_Ball
+      position: {x: -0.13392618, y: 8.1778364e-17, z: -1.1062651e-17}
+      rotation: {x: 1.9428899e-16, y: 4.579669e-16, z: -0, w: 1}
+      scale: {x: 1.0000001, y: 1.0000004, z: 1}
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    globalScale: 1
+    rootMotionBoneName: AG_Character_Rig_Final:JT_C_Pelvis
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 3
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
