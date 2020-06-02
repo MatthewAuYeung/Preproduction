@@ -7,7 +7,8 @@ public class AbilityIcon : MonoBehaviour
 {
     [SerializeField]
     private Image cooldownMeter;
-
+    [SerializeField]
+    private GameObject icon;
     private float abilityCooldown;
     private float waitTime;
     private bool done = true;
@@ -36,6 +37,7 @@ public class AbilityIcon : MonoBehaviour
 
     public void AbilityUsed()
     {
+        GetComponent<Image>().enabled = true;
         cooldownMeter.gameObject.SetActive(true);
         waitTime = 0.0f;
         done = false;
