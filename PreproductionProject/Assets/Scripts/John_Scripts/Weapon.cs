@@ -17,7 +17,7 @@ public class Weapon : MonoBehaviour
     {
         if (other.gameObject.CompareTag("EnemyTag"))
         {
-            EnemyScript enemy = other.GetComponent<EnemyScript>();
+            BaseEnemyScript enemy = other.GetComponent<BaseEnemyScript>();
             enemy.TakeDamage(attackDmg);
             enemy.ChangeState(BaseEnemyScript.EnemyState.Damaged);
             RaycastHit hit;
