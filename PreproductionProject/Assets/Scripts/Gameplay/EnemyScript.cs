@@ -163,7 +163,8 @@ public class EnemyScript : BaseEnemyScript
         {
             if (currentIndex < 0)
                 currentIndex = 0;
-            if(Vector3.Distance(_agent.transform.position, wanderingpath.path[currentIndex].transform.position) < 0.5f)
+            var dis = Vector3.Distance(_agent.transform.position, wanderingpath.path[currentIndex].transform.position);
+            if ( dis < OARadius)
             {
                 if (!reverse)
                     currentIndex++;
