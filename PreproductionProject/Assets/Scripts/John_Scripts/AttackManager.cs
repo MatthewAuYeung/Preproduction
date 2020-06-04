@@ -33,7 +33,8 @@ public class AttackManager : MonoBehaviour
     {
         firstAttackCombo,
         secondAttackCombo,
-        testAttackCombo
+        testLightAttackCombo,
+        testHeavyAttackCombo
     }
 
     public comboSelection currentCombo;
@@ -43,8 +44,7 @@ public class AttackManager : MonoBehaviour
     private int keySelection = 0;
     //=============================
 
-
-    void Start()
+    private void Awake()
     {
         animator = GetComponent<Animator>();
         rigidBody = GetComponent<Rigidbody>();
@@ -53,19 +53,11 @@ public class AttackManager : MonoBehaviour
         attackIndex = 0;             // numbers of clicks
         canClick = true;
         mainCmra = Camera.main;
+        SetCombo(currentCombo);
     }
 
-    // Update is called once per frame
     void Update()
     {
-        if (Input.GetButtonDown("Fire1") && delayAttack < Time.time && Time.timeScale != 0)
-        {
-            delayAttack = Time.time + 0.8f;
-            waitTime = 0.0f;
-            Attack();
-        }
-
-        waitTime += Time.deltaTime;
 
        
 
@@ -104,9 +96,28 @@ public class AttackManager : MonoBehaviour
             }
         }
 
+        SetCombo(currentCombo);
         //============
         //choose start index and end index
-        switch (currentCombo)
+        if (waitTime > cooldown)
+        {
+            attackIndex = startAttackIndex;
+        }
+        //============
+        if (Input.GetButtonDown("Fire1") && delayAttack < Time.time && Time.timeScale != 0)
+        {
+            delayAttack = Time.time + 0.8f;
+            waitTime = 0.0f;
+            Attack();
+        }
+
+        waitTime += Time.deltaTime;
+
+    }
+
+    private void SetCombo(comboSelection combo)
+    {
+        switch (combo)
         {
             case comboSelection.firstAttackCombo:
                 startAttackIndex = 0;
@@ -116,20 +127,18 @@ public class AttackManager : MonoBehaviour
                 startAttackIndex = 3;
                 endAttackIndex = 6;
                 break;
-            case comboSelection.testAttackCombo:
+            case comboSelection.testLightAttackCombo:
                 startAttackIndex = 0;
                 endAttackIndex = 4;
+                break;
+            case comboSelection.testHeavyAttackCombo:
+                startAttackIndex = 5;
+                endAttackIndex = 8;
                 break;
             default:
                 break;
         }
-        if (waitTime > cooldown)
-        {
-            attackIndex = startAttackIndex;
-        }
-        //============
     }
-
     void Attack()
     {
        
