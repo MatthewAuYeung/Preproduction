@@ -1,34 +1,27 @@
 fileFormatVersion: 2
-guid: 373f674228e950d4995dee66adc8f6ef
+guid: 5ace150497af35243acd966aaeed30ed
 ModelImporter:
   serializedVersion: 25
-  internalIDToNameTable: []
+  internalIDToNameTable:
+  - first:
+      74: 1827226128182048838
+    second: Take 001
   externalObjects:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: Arm_MAT
-    second: {fileID: 2100000, guid: d8a7f12b7230ffa429148f9749124482, type: 2}
+      name: pasted__Body_MAT
+    second: {fileID: 2100000, guid: 7491ae6fbdd31ac428d3b71cdbedff56, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: Face_MAT
-    second: {fileID: 2100000, guid: 56b7686dfcd2b2c48a4bb8a073752a5d, type: 2}
+      name: pasted__Head_MAT
+    second: {fileID: 2100000, guid: bf254f7ca3283b44f9e107b3537698bc, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: Leg_MAT
-    second: {fileID: 2100000, guid: b97117f94ae4ff043a36b8a878eac09a, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Pelvis_MAT
-    second: {fileID: 2100000, guid: 9df35d6ea57ff3c4f9c0c66f87b56645, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Upper_Body_MAT
-    second: {fileID: 2100000, guid: 588a25a350813d347a868724e6e62e42, type: 2}
+      name: pasted__Leg_MAT
+    second: {fileID: 2100000, guid: 18d1af7b93aabe143b630ebaf4ce1a04, type: 2}
   materials:
     importMaterials: 1
     materialName: 0
@@ -55,7 +48,36 @@ ModelImporter:
     animationWrapMode: 0
     extraExposedTransformPaths: []
     extraUserProperties: []
-    clipAnimations: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: Take 001
+      takeName: Take 001
+      internalID: 1827226128182048838
+      firstFrame: 1
+      lastFrame: 15
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 1
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
     isReadable: 0
   meshes:
     lODScreenPercentages: []
@@ -63,10 +85,10 @@ ModelImporter:
     meshCompression: 0
     addColliders: 0
     useSRGBMaterialColor: 1
-    importVisibility: 0
+    importVisibility: 1
     importBlendShapes: 1
-    importCameras: 0
-    importLights: 0
+    importCameras: 1
+    importLights: 1
     swapUVChannels: 0
     generateSecondaryUV: 0
     useFileUnits: 1
@@ -111,7 +133,7 @@ ModelImporter:
     hasExtraRoot: 0
     skeletonHasParents: 1
   lastHumanDescriptionAvatarSource: {instanceID: 0}
-  animationType: 0
+  animationType: 2
   humanoidOversampling: 1
   additionalBone: 0
   userData: 
