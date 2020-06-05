@@ -1,9 +1,29 @@
 fileFormatVersion: 2
-guid: 128d40aa1ad78c646b130806ba5ed6ae
+guid: c8ece123c28e0904f87d6233399dfcee
 ModelImporter:
   serializedVersion: 25
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: floor_MAT
+    second: {fileID: 2100000, guid: 8312f04bbb6a34f4e9a5f93b65f5d2bd, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: lambert6
+    second: {fileID: 2100000, guid: 8312f04bbb6a34f4e9a5f93b65f5d2bd, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: mainbody_MAT
+    second: {fileID: 2100000, guid: 8312f04bbb6a34f4e9a5f93b65f5d2bd, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: propulsor_MAT
+    second: {fileID: 2100000, guid: 8312f04bbb6a34f4e9a5f93b65f5d2bd, type: 2}
   materials:
     importMaterials: 1
     materialName: 0
