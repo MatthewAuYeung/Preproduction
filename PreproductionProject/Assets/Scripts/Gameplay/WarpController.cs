@@ -55,7 +55,7 @@ public class WarpController : MonoBehaviour
 
     private void Awake()
     {
-        player = GetComponentInParent<NewPlayerScript>();
+        player = NewPlayerScript.Instance;
         warpCooldown = player.GetWarpCooldown();
         lockOnManager = GetComponent<LockOnManager>();
         animator = GetComponent<Animator>();
@@ -87,17 +87,20 @@ public class WarpController : MonoBehaviour
 
         if (Input.GetButtonDown("WarpEnemy"))
         {
-            if (!player.DoneCooldown(NewPlayerScript.AbilityType.WarpEnemy))
+            if (!player.GetPhaseGrabState())
+                return;
+
+            if (!player.DoneCooldown(NewPlayerScript.AbilityType.PhaseGrab))
                 return;
 
             // Warping the enemy to a new pos
-            if(isSelected)
+            if (isSelected)
             {
                 Destroy(cloneObj);
                 WarpEnemy(selectedObj);
                 isSelected = false;
                 lockOnManager.SetIsSelected(isSelected);
-                player.AbilityUsed(NewPlayerScript.AbilityType.WarpEnemy);
+                player.AbilityUsed(NewPlayerScript.AbilityType.PhaseGrab);
             }
 
             // Selecting an enemy ready to warp it to a new pos
@@ -149,7 +152,7 @@ public class WarpController : MonoBehaviour
                 selectedObj.SetActive(true);
                 isSelected = false;
                 lockOnManager.SetIsSelected(isSelected);
-                player.AbilityUsed(NewPlayerScript.AbilityType.WarpEnemy);
+                player.AbilityUsed(NewPlayerScript.AbilityType.PhaseGrab);
             }
         }
 
