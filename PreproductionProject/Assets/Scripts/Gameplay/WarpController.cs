@@ -55,7 +55,7 @@ public class WarpController : MonoBehaviour
 
     private void Awake()
     {
-        player = NewPlayerScript.Instance;
+        player = GetComponentInParent<NewPlayerScript>();
         warpCooldown = player.GetWarpCooldown();
         lockOnManager = GetComponent<LockOnManager>();
         animator = GetComponent<Animator>();
