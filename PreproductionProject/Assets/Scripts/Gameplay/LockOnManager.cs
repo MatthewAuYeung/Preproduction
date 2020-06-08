@@ -89,7 +89,7 @@ public class LockOnManager : MonoBehaviour
                 lockOnTarget.gameObject.transform.position = closestObj.gameObject.transform.position;
 
                 AimInterface(true);
-                Vector3 screenPos = cam.WorldToScreenPoint(closestObj.transform.position);
+                Vector3 screenPos = cam.WorldToScreenPoint(closestObj.transform.position + closestObj.transform.up);
                 aim.transform.position = screenPos;
 
                 if(Input.GetButtonDown("LockOn"))
@@ -198,18 +198,8 @@ public class LockOnManager : MonoBehaviour
 
         for (int i = 0; i < targets.Count; ++i)
         {
-            MeshRenderer temp = targets[i].GetComponent<MeshRenderer>();
-            if (temp != null)
-            {
-                if(temp.isVisible)
-                    distances[i] = Vector3.Distance(targets[i].position, transform.position);
-            }
-            else
-            {
-                SkinnedMeshRenderer temp2 = targets[i].GetComponent<SkinnedMeshRenderer>();
-                if (temp2.isVisible)
-                    distances[i] = Vector3.Distance(targets[i].position, transform.position);
-            }
+            if (targets[i].GetComponent<SkinnedMeshRenderer>().isVisible)
+                distances[i] = Vector3.Distance(targets[i].position, transform.position);
             //if (targets[i].GetComponent<MeshRenderer>().isVisible)
             //    distances[i] = Vector3.Distance(targets[i].position, transform.position);
             //distances[i] = Vector2.Distance(Camera.main.WorldToScreenPoint(targets[i].position), new Vector2(Screen.width / 2, Screen.height / 2));
