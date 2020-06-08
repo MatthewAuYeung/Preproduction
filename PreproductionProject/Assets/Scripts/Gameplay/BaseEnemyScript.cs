@@ -41,6 +41,9 @@ public abstract class BaseEnemyScript : MonoBehaviour
     [SerializeField]
     protected WanderingPath wanderingpath;
 
+    [SerializeField]
+    protected float OARadius = 0.6f;
+
     protected int currentIndex;
     protected bool reverse;
     protected Vector3 lastPos;

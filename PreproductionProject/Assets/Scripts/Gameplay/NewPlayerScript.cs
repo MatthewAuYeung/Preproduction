@@ -39,18 +39,19 @@ public class NewPlayerScript : MonoBehaviour
     [SerializeField]
     float bombCooldown;
     [SerializeField]
-    float warpEnemyCooldown;
+    float phaseGrabCooldown;
     [SerializeField]
-    float warpEnemyDuration;
+    float phaseGrabDuration;
 
     [SerializeField]
     private AbilityIcon warpIcon;
     [SerializeField]
     private AbilityIcon bombIcon;
     [SerializeField]
-    private AbilityIcon warpEnemyIcon;
+    private AbilityIcon phaseGrabIcon;
 
     private bool isBombUnlocked;
+    private bool isPhaseGrabUnlocked;
 
     private float timer;
     private float WinScreenTimer;
@@ -64,7 +65,7 @@ public class NewPlayerScript : MonoBehaviour
     {
         Warp,
         Bomb,
-        WarpEnemy
+        PhaseGrab
     };
 
     private void Awake()
@@ -84,11 +85,13 @@ public class NewPlayerScript : MonoBehaviour
         //InvokeRepeating("Regenerate", 1.0f, manaRegenDelay);
         warpIcon.SetAbilityCooldown(warpCooldown);
         bombIcon.SetAbilityCooldown(bombCooldown);
-        warpEnemyIcon.SetAbilityCooldown(warpEnemyCooldown);
+        phaseGrabIcon.SetAbilityCooldown(phaseGrabCooldown);
     }
 
     private void Start()
     {
+        bombIcon.gameObject.SetActive(isBombUnlocked);
+        phaseGrabIcon.gameObject.SetActive(isPhaseGrabUnlocked);
         winningCanvas.SetActive(false);
     }
 
@@ -243,9 +246,9 @@ public class NewPlayerScript : MonoBehaviour
                     bombIcon.AbilityUsed();
                     break;
                 }
-            case AbilityType.WarpEnemy:
+            case AbilityType.PhaseGrab:
                 {
-                    warpEnemyIcon.AbilityUsed();
+                    phaseGrabIcon.AbilityUsed();
                     break;
                 }
         }
@@ -266,9 +269,9 @@ public class NewPlayerScript : MonoBehaviour
                     state = bombIcon.CheckAbilityCooldown();
                     break;
                 }
-            case AbilityType.WarpEnemy:
+            case AbilityType.PhaseGrab:
                 {
-                    state = warpEnemyIcon.CheckAbilityCooldown();
+                    state = phaseGrabIcon.CheckAbilityCooldown();
                     break;
                 }
         }
@@ -277,16 +280,30 @@ public class NewPlayerScript : MonoBehaviour
 
     public float GetWarpEnemyDuration()
     {
-        return warpEnemyDuration;
+        return phaseGrabDuration;
     }
 
     public void UnlockBombAbility()
     {
         isBombUnlocked = true;
+        if (!bombIcon.gameObject.activeSelf)
+            bombIcon.gameObject.SetActive(true);
     }
 
     public bool GetBombAbilityState()
     {
         return isBombUnlocked;
+    }
+
+    public void UnlockPhaseGrab()
+    {
+        isPhaseGrabUnlocked = true;
+        if (!phaseGrabIcon.gameObject.activeSelf)
+            phaseGrabIcon.gameObject.SetActive(true);
+    }
+
+    public bool GetPhaseGrabState()
+    {
+        return isPhaseGrabUnlocked;
     }
 }

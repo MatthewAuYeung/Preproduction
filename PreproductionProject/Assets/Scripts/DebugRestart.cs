@@ -9,6 +9,7 @@ public class DebugRestart : MonoBehaviour
     public bool usingDebug;
     public bool usingMouse = false;
     public bool hasBombAbility;
+    public bool hasPhaseGrab;
 
     private vThirdPersonInput input;
     private void Awake()
@@ -36,6 +37,11 @@ public class DebugRestart : MonoBehaviour
         if(hasBombAbility)
         {
             NewPlayerScript.Instance.UnlockBombAbility();
+        }
+
+        if(hasPhaseGrab)
+        {
+            NewPlayerScript.Instance.UnlockPhaseGrab();
         }
     }
 
