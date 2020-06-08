@@ -51,6 +51,12 @@ public class DoorPrefabScript : MonoBehaviour
 
             }
         }
+
+        if (Input.GetKeyDown(KeyCode.J)) //  <---you should use your own codition
+        {
+            // this is how to use parameter in the animator to open door
+            _door.OpenDoor();
+        }
         //if (!_door.IsDoorActive())
         //{
         //    if (Input.GetButtonDown("Action"))
