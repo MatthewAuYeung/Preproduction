@@ -13,13 +13,18 @@ public class DoorPrefabScript : MonoBehaviour
     private GameObject _player;
     private float _distanceToPlayer;
     private List<EnemyScript>  enemies = new List<EnemyScript>();
-
-
+    //................John add.....................
+    private Animator ani;
+    //................John add.....................
     private void Awake()
     {
+        //................John add.....................
+        ani = GetComponent<Animator>();
+        //................John add.....................
         _door = GetComponentInChildren<DoorScript>();
         _player = GameObject.FindGameObjectWithTag("PlayerTag");
     }
+
     void Start()
     {
         foreach (var enemy in enemyListHolder.GetComponentsInChildren<EnemyScript>())
@@ -38,25 +43,20 @@ public class DoorPrefabScript : MonoBehaviour
 
         if (enemies.Count == 0)
             _door.OpenDoor();
-
+        
         if(_distanceToPlayer <= Range)
         {
             if (Input.GetButtonDown("Action"))
             {
                 if (_player.GetComponentInParent<NewPlayerScript>().playerKeyCount > 0) 
                 {
-                    _door.OpenDoor();
+                    OpenDoor();
                     _player.GetComponentInParent<NewPlayerScript>().RemoveKey();
                 }
 
             }
         }
 
-        if (Input.GetKeyDown(KeyCode.J)) //  <---you should use your own codition
-        {
-            // this is how to use parameter in the animator to open door
-            _door.OpenDoor();
-        }
         //if (!_door.IsDoorActive())
         //{
         //    if (Input.GetButtonDown("Action"))
@@ -64,12 +64,32 @@ public class DoorPrefabScript : MonoBehaviour
         //        _door.CloseDoor();
         //    }
         //}
+
+        if(Input.GetKeyDown(KeyCode.K))
+        {
+            CloseDoor();
+        }
+
+    }
+
+    public void OpenDoor()
+    {
+        //gameObject.SetActive(false);
+        ani.SetBool("DoorCondition", true);
+
     }
 
     public void CloseDoor()
     {
-        _door.CloseDoor();
+        //gameObject.SetActive(true);
+        ani.SetBool("DoorCondition", false);
+
     }
+
+    //public void CloseDoor()
+    //{
+    //    _door.CloseDoor();
+    //}
 
     public void RemoveEnemy(EnemyScript enemy)
     {
