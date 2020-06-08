@@ -106,7 +106,7 @@ public class WarpController : MonoBehaviour
             // Selecting an enemy ready to warp it to a new pos
             if (lockOnManager.GetIsLockOn() && !isSelected)
             {
-                selectedObj = lockOnManager.GetClosestObject();
+                selectedObj = lockOnManager.GetClosestObject().transform.parent.gameObject;
                 if(selectedObj.CompareTag("EnemyTag"))
                 {
                     // Start the timer to for ability duration
