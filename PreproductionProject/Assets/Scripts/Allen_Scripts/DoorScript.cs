@@ -38,7 +38,6 @@ public class DoorScript : MonoBehaviour
     {
         //gameObject.SetActive(true);
         animator.SetBool("DoorCondition", false);
-
     }
 
     public bool IsDoorActive()

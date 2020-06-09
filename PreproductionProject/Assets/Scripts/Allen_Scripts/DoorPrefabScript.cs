@@ -13,14 +13,10 @@ public class DoorPrefabScript : MonoBehaviour
     private GameObject _player;
     private float _distanceToPlayer;
     private List<EnemyScript>  enemies = new List<EnemyScript>();
-    //................John add.....................
     private Animator ani;
-    //................John add.....................
     private void Awake()
     {
-        //................John add.....................
         ani = GetComponent<Animator>();
-        //................John add.....................
         _door = GetComponentInChildren<DoorScript>();
         _player = GameObject.FindGameObjectWithTag("PlayerTag");
     }
@@ -42,7 +38,7 @@ public class DoorPrefabScript : MonoBehaviour
         Keys.RemoveAll(item => item == null);
 
         if (enemies.Count == 0)
-            _door.OpenDoor();
+            OpenDoor();
         
         if(_distanceToPlayer <= Range)
         {
@@ -65,10 +61,10 @@ public class DoorPrefabScript : MonoBehaviour
         //    }
         //}
 
-        if(Input.GetKeyDown(KeyCode.K))
-        {
-            CloseDoor();
-        }
+        //if(Input.GetKeyDown(KeyCode.K))
+        //{
+        //    CloseDoor();
+        //}
 
     }
 

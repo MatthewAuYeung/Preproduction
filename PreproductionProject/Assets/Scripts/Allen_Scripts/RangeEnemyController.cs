@@ -22,6 +22,8 @@ public class RangeEnemyController : BaseEnemyScript
     public GameObject muzzleFlash;
     public Image healthBar;
     public RandomLoot loot;
+    private Animator ani;
+
 
     private float nextFireTime;
     private float nextMoveTime;
@@ -34,6 +36,8 @@ public class RangeEnemyController : BaseEnemyScript
         _manager = FindObjectOfType<EnemyManager>();
         _target = _manager.target;
         _warpController = FindObjectOfType<WarpController>();
+        ani = GetComponent<Animator>();
+
     }
     void Start()
     {
@@ -70,6 +74,12 @@ public class RangeEnemyController : BaseEnemyScript
         }
 
         healthBar.fillAmount = health / maxhealth;
+
+        if (Input.GetKeyDown(KeyCode.K))
+        {
+            OpenTurret();
+
+        }
     }
 
     void AimFire()
@@ -117,14 +127,25 @@ public class RangeEnemyController : BaseEnemyScript
             if (hit.collider.CompareTag("PlayerTag"))
             {
                 canSee = true;
+                OpenTurret();
             }
         }
         else
         {
             canSee = false;
+            CloseTurret();
         }
     }
 
+    public void OpenTurret()
+    {
+        ani.SetBool("TurretCondition", true);
+    }
+
+    public void CloseTurret()
+    {
+        ani.SetBool("TurretCondition", false);
+    }
 
 
 }
