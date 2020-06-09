@@ -19,14 +19,18 @@ public class SearchTrigger : MonoBehaviour
                 var nextFireTime = parent.GetNextFireTime();
                 nextFireTime = Time.time + (parent.reloadTime * 0.5f);
                 parent.target = col.gameObject.transform;
+                parent.OpenTurret();
             }
         }
-
     }
 
     void OnTriggerExit(Collider col)
     {
         if (col.gameObject.transform == parent.target)
+        {
             parent.target = null;
+            parent.CloseTurret();
+
+        }
     }
 }
