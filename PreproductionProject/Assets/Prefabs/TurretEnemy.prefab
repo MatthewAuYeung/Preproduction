@@ -628,7 +628,7 @@ MonoBehaviour:
   searchRange: 5
   attackRange: 5
   damage: 10
-  attackDelay: 1
+  attackDelay: 0.5
   fov: 60
   hitEffect: {fileID: 0}
   SlowBombEffectMat: {fileID: 0}
@@ -641,11 +641,11 @@ MonoBehaviour:
   damagePopupTransform: {fileID: 0}
   target: {fileID: 0}
   aim: {fileID: 859844307425010430}
-  head: {fileID: 0}
-  reloadTime: 1
+  head: {fileID: 1438187512099129114}
+  reloadTime: 0.5
   turnSpeed: 5
   firePauseTime: 0.25
-  range: 5
+  range: 8
   rangeEnemyDamage: 10
   muzzlePos:
   - {fileID: 387742419664879029}
