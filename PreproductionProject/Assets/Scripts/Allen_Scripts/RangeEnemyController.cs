@@ -75,11 +75,10 @@ public class RangeEnemyController : BaseEnemyScript
 
         healthBar.fillAmount = health / maxhealth;
 
-        if (Input.GetKeyDown(KeyCode.K))
-        {
-            OpenTurret();
-
-        }
+        //if (Input.GetKeyDown(KeyCode.K))
+        //{
+        //    OpenTurret();
+        //}
     }
 
     void AimFire()
@@ -127,13 +126,13 @@ public class RangeEnemyController : BaseEnemyScript
             if (hit.collider.CompareTag("PlayerTag"))
             {
                 canSee = true;
-                OpenTurret();
+                //OpenTurret();
             }
         }
         else
         {
             canSee = false;
-            CloseTurret();
+            //CloseTurret();
         }
     }
 
