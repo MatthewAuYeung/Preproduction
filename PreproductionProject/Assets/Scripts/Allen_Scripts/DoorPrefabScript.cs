@@ -14,6 +14,7 @@ public class DoorPrefabScript : MonoBehaviour
     private float _distanceToPlayer;
     private List<EnemyScript>  enemies = new List<EnemyScript>();
     private Animator ani;
+    public bool KillEnemyToOpen = false;
     private void Awake()
     {
         ani = GetComponent<Animator>();
@@ -37,9 +38,11 @@ public class DoorPrefabScript : MonoBehaviour
 
         Keys.RemoveAll(item => item == null);
 
-        if (enemies.Count == 0)
-            OpenDoor();
-        
+        if (KillEnemyToOpen)
+        {
+            if (enemies.Count == 0)
+                OpenDoor();
+        }
         if(_distanceToPlayer <= Range)
         {
             if (Input.GetButtonDown("Action"))
