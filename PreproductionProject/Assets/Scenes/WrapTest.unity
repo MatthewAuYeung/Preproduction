@@ -242,6 +242,11 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 6028244197043859742, guid: 8314f24f78086f848a06455124c18d6d,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5825453507814268741, guid: 8314f24f78086f848a06455124c18d6d,
         type: 3}
       propertyPath: m_Enabled
@@ -251,11 +256,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_IsActive
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6028244197043859742, guid: 8314f24f78086f848a06455124c18d6d,
-        type: 3}
-      propertyPath: m_Enabled
-      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8314f24f78086f848a06455124c18d6d, type: 3}
@@ -1776,7 +1776,7 @@ PrefabInstance:
     - target: {fileID: 6226596335058991074, guid: 26a1e40a5ecc2a1459d868188acbc39f,
         type: 3}
       propertyPath: jumpHeight
-      value: 3
+      value: 2.5
       objectReference: {fileID: 0}
     - target: {fileID: 6226596335058991074, guid: 26a1e40a5ecc2a1459d868188acbc39f,
         type: 3}
@@ -1802,6 +1802,11 @@ PrefabInstance:
         type: 3}
       propertyPath: freeSprintSpeed
       value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 6226596335058991074, guid: 26a1e40a5ecc2a1459d868188acbc39f,
+        type: 3}
+      propertyPath: jumpTimer
+      value: 0.3
       objectReference: {fileID: 0}
     - target: {fileID: 2803958098892351733, guid: 26a1e40a5ecc2a1459d868188acbc39f,
         type: 3}
@@ -2190,16 +2195,16 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 6283657571828197729, guid: 05f4b4bc03641904a94d67e82ff4dc60,
-        type: 3}
-      propertyPath: EnemyList
-      value: 
-      objectReference: {fileID: 245344615}
     - target: {fileID: 6283657571828197731, guid: 05f4b4bc03641904a94d67e82ff4dc60,
         type: 3}
       propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 6283657571828197729, guid: 05f4b4bc03641904a94d67e82ff4dc60,
+        type: 3}
+      propertyPath: EnemyList
+      value: 
+      objectReference: {fileID: 245344615}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 05f4b4bc03641904a94d67e82ff4dc60, type: 3}
 --- !u!1 &1661110295
