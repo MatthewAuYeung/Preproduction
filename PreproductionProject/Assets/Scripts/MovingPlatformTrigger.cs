@@ -11,6 +11,6 @@ public class MovingPlatformTrigger : MonoBehaviour
 
     private void OnTriggerExit(Collider other)
     {
-        other.transform.parent = null;
+        other.transform.parent = NewPlayerScript.Instance.gameObject.transform;
     }
 }
