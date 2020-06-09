@@ -625,8 +625,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health: 100
   maxhealth: 100
-  searchRange: 5
-  attackRange: 5
+  searchRange: 15
+  attackRange: 10
   damage: 10
   attackDelay: 0.5
   fov: 60
@@ -645,8 +645,8 @@ MonoBehaviour:
   reloadTime: 0.5
   turnSpeed: 5
   firePauseTime: 0.25
-  range: 8
-  rangeEnemyDamage: 10
+  range: 15
+  rangeEnemyDamage: 5
   muzzlePos:
   - {fileID: 387742419664879029}
   - {fileID: 3708372133933174528}
