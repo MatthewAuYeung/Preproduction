@@ -720,7 +720,7 @@ GameObject:
   - component: {fileID: 6362115292573466625}
   m_Layer: 0
   m_Name: door_new
-  m_TagString: Untagged
+  m_TagString: NotWarpable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -794,6 +794,7 @@ MonoBehaviour:
   Range: 5
   Keys: []
   enemyListHolder: {fileID: 0}
+  KillEnemyToOpen: 0
 --- !u!1 &3246505420819270929
 GameObject:
   m_ObjectHideFlags: 0
