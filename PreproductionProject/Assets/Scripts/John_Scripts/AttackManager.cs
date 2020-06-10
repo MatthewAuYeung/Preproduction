@@ -8,7 +8,20 @@ public class AttackManager : MonoBehaviour
 {
     public Action OnAttackStart, OnAttackStop;
     private Camera mainCmra;
+
     [SerializeField]
+    private Collider redSwordCollider;
+    [SerializeField]
+    private Collider blueSwordCollider;
+
+    private GameObject redSword;
+    private GameObject blueSword;
+    private GameObject currentSword;
+
+    [SerializeField]
+    private bool useRedSword;
+
+    //[SerializeField]
     Collider attackCollider;
     
     Animator animator;
@@ -48,6 +61,15 @@ public class AttackManager : MonoBehaviour
     {
         animator = GetComponent<Animator>();
         rigidBody = GetComponent<Rigidbody>();
+
+        redSword = redSwordCollider.transform.parent.gameObject;
+        blueSword = blueSwordCollider.transform.parent.gameObject;
+
+        if (useRedSword)
+            attackCollider = redSwordCollider;
+        else
+            attackCollider = blueSwordCollider;
+
         attackCollider.gameObject.SetActive(false);
 
         attackIndex = 0;             // numbers of clicks
@@ -58,8 +80,31 @@ public class AttackManager : MonoBehaviour
 
     void Update()
     {
+        if (Input.GetKeyDown(KeyCode.Y))
+        {
+            if (!useRedSword)
+                useRedSword = true;
+            else
+                useRedSword = false;
+        }
 
-       
+        if (useRedSword)
+        {
+            redSword.SetActive(true);
+            blueSword.SetActive(false);
+            currentSword = redSword;
+        }
+        else
+        {
+            redSword.SetActive(false);
+            blueSword.SetActive(true);
+            currentSword = blueSword;
+        }
+
+        if (redSword.activeSelf)
+            attackCollider = redSwordCollider;
+        else
+            attackCollider = blueSwordCollider;
 
         dpadinput = Input.GetAxisRaw("DPad_LR");
         if(dpadinput != lastinput)
@@ -171,5 +216,10 @@ public class AttackManager : MonoBehaviour
         isAttacking = false;
 
         OnAttackStop?.Invoke();
+    }
+
+    public void SetActiveSword(bool isRed)
+    {
+        useRedSword = isRed;
     }
 }
