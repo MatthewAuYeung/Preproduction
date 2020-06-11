@@ -23,7 +23,7 @@ public class RangeEnemyController : BaseEnemyScript
     public Image healthBar;
     public RandomLoot loot;
     private Animator ani;
-
+    public GameObject LaserPrefab;
 
     private float nextFireTime;
     private float nextMoveTime;
@@ -112,6 +112,26 @@ public class RangeEnemyController : BaseEnemyScript
         nextFireTime = Time.time + reloadTime;
         nextMoveTime = Time.time + firePauseTime;
         muzzleFlash.SetActive(true);
+        Vector3 fwd = muzzlePos[randomMuzzel].TransformDirection(Vector3.forward);
+
+        //Debug.DrawRay(muzzlePos[randomMuzzel].position, fwd * range, Color.red);
+
+        //Laser shooting
+        RaycastHit hit;
+
+        Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+        if (Physics.Raycast(muzzlePos[randomMuzzel].position, fwd, out hit, range))
+        {
+            //GameObject laser = GameObject.Instantiate(LaserPrefab, transform.position, transform.rotation) as GameObject;
+            //laser.GetComponent<ShotBehavior>().setTarget(hit.point);
+            GameObject laser = GameObject.Instantiate(LaserPrefab, muzzlePos[randomMuzzel].position, transform.rotation) as GameObject;
+            laser.GetComponent<RangeEnemyLaserBehavior>().setTarget(hit.point);
+            GameObject.Destroy(laser, 0.2f);
+
+
+        }
+
+
         NewPlayerScript.Instance.TakeDamage(rangeEnemyDamage);
     }
 
@@ -119,7 +139,7 @@ public class RangeEnemyController : BaseEnemyScript
     {
         Vector3 fwd = muzzlePos[randomMuzzel].TransformDirection(Vector3.forward);
         RaycastHit hit;
-        Debug.DrawRay(muzzlePos[randomMuzzel].position, fwd * range, Color.green);
+        //Debug.DrawRay(muzzlePos[randomMuzzel].position, fwd * range, Color.green);
 
         if (Physics.Raycast(muzzlePos[randomMuzzel].position, fwd, out hit, range))
         {
