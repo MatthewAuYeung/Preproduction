@@ -7,6 +7,8 @@ public class RangeEnemyLaserBehavior : MonoBehaviour
     public Vector3 m_target;
     //public GameObject collisionExplosion;
     public float speed;
+    public float rangeEnemyDamage = 10.0f;
+
 
 
     // Update is called once per frame
@@ -19,7 +21,7 @@ public class RangeEnemyLaserBehavior : MonoBehaviour
         {
             if (transform.position == m_target)
             {
-                //explode();
+                //DealDamage();
                 return;
             }
             transform.position = Vector3.MoveTowards(transform.position, m_target, step);
@@ -32,6 +34,13 @@ public class RangeEnemyLaserBehavior : MonoBehaviour
         m_target = target;
     }
 
+    void OnTriggerEnter(Collider col)
+    {
+        if (col.gameObject.CompareTag("PlayerTag"))
+        {
+            NewPlayerScript.Instance.TakeDamage(rangeEnemyDamage);
+        }
+    }
     //void explode()
     //{
     //    if (collisionExplosion != null)
@@ -42,4 +51,6 @@ public class RangeEnemyLaserBehavior : MonoBehaviour
     //        Destroy(explosion, 1f);
     //    }
     //}
+
+
 }

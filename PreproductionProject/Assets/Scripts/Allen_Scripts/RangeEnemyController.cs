@@ -29,6 +29,9 @@ public class RangeEnemyController : BaseEnemyScript
 
     private float nextFireTime;
     private float nextMoveTime;
+    public float openedTime;
+    public float TimeNow;
+    public float openTime = 1.5f;
     public int randomMuzzel;
 
     private void Awake()
@@ -63,6 +66,7 @@ public class RangeEnemyController : BaseEnemyScript
         //Tracking();
 
         AimFire();
+        TimeNow = Time.time;
 
         if (health <= 0.0f)
         {
@@ -92,6 +96,7 @@ public class RangeEnemyController : BaseEnemyScript
         {
             if (state != State.Opened)
             {
+                openedTime = Time.time + openTime;
                 OpenTurret();
                 state = State.Opened;
             }
@@ -103,7 +108,7 @@ public class RangeEnemyController : BaseEnemyScript
                 head.rotation = Quaternion.Lerp(head.rotation, aim.rotation, Time.deltaTime * turnSpeed);
             }
 
-            if (Time.time >= nextFireTime)
+            if (Time.time >= nextFireTime && Time.time >= openedTime)
             {
                 Fire();
             }
@@ -134,7 +139,7 @@ public class RangeEnemyController : BaseEnemyScript
         laser.GetComponent<RangeEnemyLaserBehavior>().setTarget(target.position);
         Destroy(laser, 0.5f);
 
-        NewPlayerScript.Instance.TakeDamage(rangeEnemyDamage);
+        //NewPlayerScript.Instance.TakeDamage(rangeEnemyDamage);
     }
 
     public void OpenTurret()
