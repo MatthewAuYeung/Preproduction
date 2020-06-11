@@ -107,7 +107,7 @@ public class WarpController : MonoBehaviour
             if (lockOnManager.GetIsLockOn() && !isSelected)
             {
                 selectedObj = lockOnManager.GetClosestObject().transform.parent.gameObject;
-                if(selectedObj.CompareTag("EnemyTag"))
+                if(selectedObj.CompareTag("EnemyTag") || selectedObj.CompareTag("Grabable"))
                 {
                     // Start the timer to for ability duration
                     abilityWaitTime = 0.0f;
@@ -129,8 +129,8 @@ public class WarpController : MonoBehaviour
                     Destroy(cloneObj.GetComponent<UnityEngine.AI.NavMeshAgent>());
                     Destroy(cloneObj.GetComponentInChildren<ParticleSystem>());
                     // Change the material to a transparent texture
-                    var meshRenderer = cloneObj.GetComponent<MeshRenderer>();
-                    meshRenderer.material = glowMat;
+                    //var meshRenderer = cloneObj.GetComponent<MeshRenderer>();
+                    //meshRenderer.material = glowMat;
                     foreach (Transform child in cloneObj.transform)
                     {
                         Destroy(child.gameObject);

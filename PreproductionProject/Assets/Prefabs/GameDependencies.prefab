@@ -3818,6 +3818,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3d769b0a4975c4e4abcda1dea803c1f7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  redSwordCollider: {fileID: 2790022924337868048}
+  blueSwordCollider: {fileID: 3264009138151647864}
+  useRedSword: 1
   attackCollider: {fileID: 2790022924337868048}
   cooldown: 1
   currentCombo: 0

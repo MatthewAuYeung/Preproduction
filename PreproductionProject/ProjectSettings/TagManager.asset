@@ -10,6 +10,7 @@ TagManager:
   - Floor
   - NotWarpable
   - PlatformTag
+  - Grabable
   layers:
   - Default
   - TransparentFX
