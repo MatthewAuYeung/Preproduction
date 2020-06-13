@@ -17,7 +17,7 @@ public class RangeEnemyController : BaseEnemyScript
     public Transform target, aim, head;
     public float reloadTime = 1.0f;
     public float turnSpeed = 5.0f;
-    public float firePauseTime = 0.25f;
+    public float firePauseTime = 0.5f;
     public float range = 5.0f;
     public float rangeEnemyDamage = 10.0f;
     public Transform[] muzzlePos;
@@ -33,6 +33,12 @@ public class RangeEnemyController : BaseEnemyScript
     public float TimeNow;
     public float openTime = 1.5f;
     public int randomMuzzel;
+    public bool isStun = false;
+    float slowSpeed;
+    float defaultTurnSpeed;
+    float defaultFirePauseTime;
+    float stunDuration;
+
 
     private void Awake()
     {
@@ -42,7 +48,8 @@ public class RangeEnemyController : BaseEnemyScript
         _target = _manager.target;
         _warpController = FindObjectOfType<WarpController>();
         ani = GetComponent<Animator>();
-
+        defaultFirePauseTime = firePauseTime;
+        defaultTurnSpeed = turnSpeed;
         target = GameObject.Find("NewPlayerModel").transform;
     }
     void Start()
@@ -51,6 +58,34 @@ public class RangeEnemyController : BaseEnemyScript
         if (isEventTriggered)
             this.gameObject.SetActive(false);
     }
+
+    public void StunFromBomb(float speedModifier, float stuntEffectDuration = 1.0f)
+    {
+        isStun = true;
+        stunDuration = Time.time + stuntEffectDuration;
+        firePauseTime = 1.0f;
+        turnSpeed = 1.0f;
+        //meshRenderer.material = SlowBombEffectMat;
+        //StartCoroutine(SlowFromBomb(5.0f));
+    }
+
+    public void SlowFromBomb(float speedModifier, float slowEffectDuration = 5.0f)
+    {
+        // yield return new WaitForSeconds(2.0f);
+        isStun = false;
+        firePauseTime = 1.0f;
+        turnSpeed = 1.0f;
+        //meshRenderer.material = SlowBombEffectMat;
+        Invoke("ResetSpeed", slowEffectDuration);
+    }
+
+    void ResetSpeed()
+    {
+        turnSpeed = defaultTurnSpeed;
+        firePauseTime = defaultFirePauseTime;
+        meshRenderer.material = originalMat;
+    }
+
 
     public float GetNextFireTime()
     {
@@ -139,7 +174,7 @@ public class RangeEnemyController : BaseEnemyScript
         laser.GetComponent<RangeEnemyLaserBehavior>().setTarget(target.position);
         Destroy(laser, 0.5f);
 
-        //NewPlayerScript.Instance.TakeDamage(rangeEnemyDamage);
+        NewPlayerScript.Instance.TakeDamage(rangeEnemyDamage);
     }
 
     public void OpenTurret()
