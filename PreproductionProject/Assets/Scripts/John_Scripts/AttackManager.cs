@@ -13,13 +13,14 @@ public class AttackManager : MonoBehaviour
     private Collider redSwordCollider;
     [SerializeField]
     private Collider blueSwordCollider;
+    [SerializeField]
+    private Collider goldSwordCollider;
+
 
     private GameObject redSword;
     private GameObject blueSword;
+    private GameObject goldSword;
     private GameObject currentSword;
-
-    [SerializeField]
-    private bool useRedSword;
 
     //[SerializeField]
     Collider attackCollider;
@@ -57,6 +58,16 @@ public class AttackManager : MonoBehaviour
     private int keySelection = 0;
     //=============================
 
+    public enum SwordType
+    {
+        RedSword,
+        BlueSword,
+        GoldSword,
+        MAX_SWORDTYPE
+    }
+    private int swordIndex;
+    public SwordType currentSwordType;
+
     private void Awake()
     {
         animator = GetComponent<Animator>();
@@ -64,11 +75,14 @@ public class AttackManager : MonoBehaviour
 
         redSword = redSwordCollider.transform.parent.gameObject;
         blueSword = blueSwordCollider.transform.parent.gameObject;
+        goldSword = goldSwordCollider.transform.parent.gameObject;
 
-        if (useRedSword)
-            attackCollider = redSwordCollider;
-        else
-            attackCollider = blueSwordCollider;
+        //if (useRedSword)
+        //    attackCollider = redSwordCollider;
+        //else
+        //    attackCollider = blueSwordCollider;
+
+        CheckCurrentSword();
 
         attackCollider.gameObject.SetActive(false);
 
@@ -76,35 +90,39 @@ public class AttackManager : MonoBehaviour
         canClick = true;
         mainCmra = Camera.main;
         SetCombo(currentCombo);
+        swordIndex = (int)currentSwordType;
     }
 
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.Y))
         {
-            if (!useRedSword)
-                useRedSword = true;
+            if (swordIndex < (int)SwordType.MAX_SWORDTYPE - 1)
+                swordIndex++;
             else
-                useRedSword = false;
+                swordIndex = 0;
+
+            currentSwordType = (SwordType)swordIndex;
         }
 
-        if (useRedSword)
-        {
-            redSword.SetActive(true);
-            blueSword.SetActive(false);
-            currentSword = redSword;
-        }
-        else
-        {
-            redSword.SetActive(false);
-            blueSword.SetActive(true);
-            currentSword = blueSword;
-        }
+        CheckCurrentSword();
+        //if (useRedSword)
+        //{
+        //    redSword.SetActive(true);
+        //    blueSword.SetActive(false);
+        //    currentSword = redSword;
+        //}
+        //else
+        //{
+        //    redSword.SetActive(false);
+        //    blueSword.SetActive(true);
+        //    currentSword = blueSword;
+        //}
 
-        if (redSword.activeSelf)
-            attackCollider = redSwordCollider;
-        else
-            attackCollider = blueSwordCollider;
+        //if (redSword.activeSelf)
+        //    attackCollider = redSwordCollider;
+        //else
+        //    attackCollider = blueSwordCollider;
 
         dpadinput = Input.GetAxisRaw("DPad_LR");
         if(dpadinput != lastinput)
@@ -218,8 +236,43 @@ public class AttackManager : MonoBehaviour
         OnAttackStop?.Invoke();
     }
 
-    public void SetActiveSword(bool isRed)
+    private void CheckCurrentSword()
     {
-        useRedSword = isRed;
+        switch (currentSwordType)
+        {
+            case SwordType.RedSword:
+                redSword.SetActive(true);
+                blueSword.SetActive(false);
+                goldSword.SetActive(false);
+
+                currentSword = redSword;
+                attackCollider = redSwordCollider;
+                break;
+            case SwordType.BlueSword:
+                redSword.SetActive(false);
+                blueSword.SetActive(true);
+                goldSword.SetActive(false);
+
+                currentSword = blueSword;
+                attackCollider = blueSwordCollider;
+                break;
+            case SwordType.GoldSword:
+                redSword.SetActive(false);
+                blueSword.SetActive(false);
+                goldSword.SetActive(true);
+
+                currentSword = goldSword;
+                attackCollider = goldSwordCollider;
+                break;
+            case SwordType.MAX_SWORDTYPE:
+                redSword.SetActive(true);
+                blueSword.SetActive(false);
+                goldSword.SetActive(false);
+
+                currentSword = redSword;
+                attackCollider = redSwordCollider;
+                break;
+        }
+        attackCollider.gameObject.SetActive(false);
     }
 }
