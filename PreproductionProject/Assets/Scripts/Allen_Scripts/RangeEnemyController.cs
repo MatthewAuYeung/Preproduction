@@ -59,12 +59,13 @@ public class RangeEnemyController : BaseEnemyScript
             this.gameObject.SetActive(false);
     }
 
-    public void StunFromBomb(float speedModifier, float stuntEffectDuration = 1.0f)
+    public override void StunFromBomb(float speedModifier, float stuntEffectDuration = 1.0f)
     {
         isStun = true;
         stunDuration = Time.time + stuntEffectDuration;
         firePauseTime = 1.0f;
         turnSpeed = 1.0f;
+        Debug.Log("Stuned from bomb.");
         //meshRenderer.material = SlowBombEffectMat;
         //StartCoroutine(SlowFromBomb(5.0f));
     }
@@ -73,6 +74,7 @@ public class RangeEnemyController : BaseEnemyScript
     {
         // yield return new WaitForSeconds(2.0f);
         isStun = false;
+        Debug.Log("Slowed from bomb.");
         firePauseTime = 1.0f;
         turnSpeed = 1.0f;
         //meshRenderer.material = SlowBombEffectMat;
@@ -83,7 +85,7 @@ public class RangeEnemyController : BaseEnemyScript
     {
         turnSpeed = defaultTurnSpeed;
         firePauseTime = defaultFirePauseTime;
-        meshRenderer.material = originalMat;
+        //meshRenderer.material = originalMat;
     }
 
 
@@ -119,10 +121,10 @@ public class RangeEnemyController : BaseEnemyScript
 
         healthBar.fillAmount = health / maxhealth;
 
-        //if (Input.GetKeyDown(KeyCode.K))
-        //{
-        //    OpenTurret();
-        //}
+        if(isStun)
+        {
+            SlowFromBomb(0.5f);
+        }
     }
 
     void AimFire()
