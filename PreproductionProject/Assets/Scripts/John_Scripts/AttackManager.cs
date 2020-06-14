@@ -177,7 +177,7 @@ public class AttackManager : MonoBehaviour
                 endAttackIndex = 4;
                 break;
             case comboSelection.testHeavyAttackCombo:
-                startAttackIndex = 5;
+                startAttackIndex = 4;
                 endAttackIndex = 8;
                 break;
             default:

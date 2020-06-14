@@ -739,7 +739,7 @@ PrefabInstance:
     - target: {fileID: 7443772372247003620, guid: 26a1e40a5ecc2a1459d868188acbc39f,
         type: 3}
       propertyPath: currentCombo
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 7443772372247003620, guid: 26a1e40a5ecc2a1459d868188acbc39f,
         type: 3}
@@ -837,11 +837,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: SpiderWalkTooManyFrames
       objectReference: {fileID: 0}
-    - target: {fileID: -6057140222963153312, guid: d95fe80e9287bf248a22b2d59ba0464a,
-        type: 3}
-      propertyPath: m_Controller
-      value: 
-      objectReference: {fileID: 9100000, guid: e2d25ce2d6062cd4b8ce6f2950d20adb, type: 2}
     - target: {fileID: -4216859302048453862, guid: d95fe80e9287bf248a22b2d59ba0464a,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -897,6 +892,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -6057140222963153312, guid: d95fe80e9287bf248a22b2d59ba0464a,
+        type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: e2d25ce2d6062cd4b8ce6f2950d20adb, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d95fe80e9287bf248a22b2d59ba0464a, type: 3}
 --- !u!1001 &1719014548
