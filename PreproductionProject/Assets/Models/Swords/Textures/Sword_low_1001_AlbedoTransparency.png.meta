@@ -1,13 +1,5 @@
 fileFormatVersion: 2
-<<<<<<< HEAD
-<<<<<<< HEAD:PreproductionProject/Assets/Models/Swords/Textures/Sword_low_1001_AlbedoTransparency.png.meta
 guid: 9e24cbf3f866760479b9c668acb4af11
-=======
-guid: b692a498a0379a341872703d288b04af
->>>>>>> parent of 0103b9e... Added Walls and Platform:PreproductionProject/Assets/Starfield Skybox/Demo/Textures/Back_Tex.png.meta
-=======
-guid: 9e24cbf3f866760479b9c668acb4af11
->>>>>>> 350fa1ab0ec7ed399956097ce23bf97629612ac4
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -42,21 +34,9 @@ TextureImporter:
     filterMode: -1
     aniso: -1
     mipBias: -100
-<<<<<<< HEAD
-<<<<<<< HEAD:PreproductionProject/Assets/Models/Swords/Textures/Sword_low_1001_AlbedoTransparency.png.meta
     wrapU: -1
     wrapV: -1
     wrapW: -1
-=======
-    wrapU: 1
-    wrapV: 1
-    wrapW: 1
->>>>>>> parent of 0103b9e... Added Walls and Platform:PreproductionProject/Assets/Starfield Skybox/Demo/Textures/Back_Tex.png.meta
-=======
-    wrapU: -1
-    wrapV: -1
-    wrapW: -1
->>>>>>> 350fa1ab0ec7ed399956097ce23bf97629612ac4
   nPOTScale: 1
   lightmap: 0
   compressionQuality: 50
@@ -80,54 +60,10 @@ TextureImporter:
   platformSettings:
   - serializedVersion: 2
     buildTarget: DefaultTexturePlatform
-<<<<<<< HEAD
-    maxTextureSize: 1024
-    resizeAlgorithm: 0
-    textureFormat: -1
-<<<<<<< HEAD:PreproductionProject/Assets/Models/Swords/Textures/Sword_low_1001_AlbedoTransparency.png.meta
-    textureCompression: 1
-=======
-    textureCompression: 2
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    androidETC2FallbackOverride: 0
-  - serializedVersion: 2
-    buildTarget: Standalone
-    maxTextureSize: 1024
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 2
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    androidETC2FallbackOverride: 0
-  - serializedVersion: 2
-    buildTarget: Android
-    maxTextureSize: 1024
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 2
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    androidETC2FallbackOverride: 0
-  - serializedVersion: 2
-    buildTarget: WebGL
-    maxTextureSize: 1024
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 2
->>>>>>> parent of 0103b9e... Added Walls and Platform:PreproductionProject/Assets/Starfield Skybox/Demo/Textures/Back_Tex.png.meta
-=======
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
     textureCompression: 1
->>>>>>> 350fa1ab0ec7ed399956097ce23bf97629612ac4
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
