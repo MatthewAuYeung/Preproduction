@@ -46,5 +46,5 @@ MonoBehaviour:
   LootTable:
   - name: Potion
     item: {fileID: 7026849559042409936, guid: ace5c5fcc7d8603409fb0e25a98aba3e, type: 3}
-    dropRarity: 100
-  dropChance: 100
+    dropRarity: 75
+  dropChance: 75
