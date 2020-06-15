@@ -28,7 +28,7 @@ public class BombExplosion : MonoBehaviour
     {
         if (other.gameObject.CompareTag("EnemyTag"))
         {
-            EnemyScript enemy = other.GetComponent<EnemyScript>();
+            var enemy = other.GetComponent<BaseEnemyScript>();
             stunEffectDuration = 3.0f;
             enemy.StunFromBomb(enemyAgentSlowSpeed, stunEffectDuration);
             //StartCoroutine(enemy.SlowFromBomb(stunEffectDuration, enemyAgentSlowSpeed, slowEffectDuration));
