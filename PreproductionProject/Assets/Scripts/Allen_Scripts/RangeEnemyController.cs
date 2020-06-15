@@ -75,7 +75,7 @@ public class RangeEnemyController : BaseEnemyScript
         // yield return new WaitForSeconds(2.0f);
         isStun = false;
         Debug.Log("Slowed from bomb.");
-        firePauseTime = 1.0f;
+        firePauseTime = 3.0f;
         turnSpeed = 1.0f;
         //meshRenderer.material = SlowBombEffectMat;
         Invoke("ResetSpeed", slowEffectDuration);
