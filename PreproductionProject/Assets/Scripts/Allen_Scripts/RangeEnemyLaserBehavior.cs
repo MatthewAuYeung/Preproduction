@@ -34,13 +34,13 @@ public class RangeEnemyLaserBehavior : MonoBehaviour
         m_target = target;
     }
 
-    void OnTriggerEnter(Collider col)
-    {
-        if (col.gameObject.CompareTag("PlayerTag"))
-        {
-            NewPlayerScript.Instance.TakeDamage(rangeEnemyDamage);
-        }
-    }
+    //void OnTriggerEnter(Collider col)
+    //{
+    //    if (col.gameObject.CompareTag("PlayerTag"))
+    //    {
+    //        NewPlayerScript.Instance.TakeDamage(rangeEnemyDamage);
+    //    }
+    //}
     //void explode()
     //{
     //    if (collisionExplosion != null)
