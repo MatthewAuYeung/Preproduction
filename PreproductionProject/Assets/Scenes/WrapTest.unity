@@ -1658,6 +1658,11 @@ PrefabInstance:
       propertyPath: currentCombo
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 7443772372247003620, guid: 26a1e40a5ecc2a1459d868188acbc39f,
+        type: 3}
+      propertyPath: useRedSword
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1983201259, guid: 26a1e40a5ecc2a1459d868188acbc39f, type: 3}
       propertyPath: warpIcon
       value: 
@@ -1862,6 +1867,10 @@ PrefabInstance:
         type: 3}
       propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1615343467, guid: 26a1e40a5ecc2a1459d868188acbc39f, type: 3}
+      propertyPath: warpEnemyRange
+      value: 20
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 26a1e40a5ecc2a1459d868188acbc39f, type: 3}
@@ -3066,11 +3075,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 7939055371771095387, guid: f3a1915c4e94f8347b5a8b7bbff678c8,
-        type: 3}
-      propertyPath: m_Name
-      value: Box_Separate
-      objectReference: {fileID: 0}
     - target: {fileID: 3224882142723336754, guid: f3a1915c4e94f8347b5a8b7bbff678c8,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -3125,6 +3129,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7939055371771095387, guid: f3a1915c4e94f8347b5a8b7bbff678c8,
+        type: 3}
+      propertyPath: m_Name
+      value: Box_Separate
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f3a1915c4e94f8347b5a8b7bbff678c8, type: 3}
@@ -3273,11 +3282,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 3766801090399674301, guid: 92ab6d5a9c52cf14c99f6256f36659bd,
-        type: 3}
-      propertyPath: m_Name
-      value: Box
-      objectReference: {fileID: 0}
     - target: {fileID: 3766801090399674300, guid: 92ab6d5a9c52cf14c99f6256f36659bd,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -3332,6 +3336,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3766801090399674301, guid: 92ab6d5a9c52cf14c99f6256f36659bd,
+        type: 3}
+      propertyPath: m_Name
+      value: Box
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 92ab6d5a9c52cf14c99f6256f36659bd, type: 3}

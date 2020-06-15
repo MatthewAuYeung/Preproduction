@@ -26,7 +26,11 @@ RenderSettings:
   m_AmbientIntensity: 1
   m_AmbientMode: 3
   m_SubtractiveShadowColor: {r: 0.42, g: 0.478, b: 0.627, a: 1}
+<<<<<<< HEAD
+  m_SkyboxMaterial: {fileID: 0}
+=======
   m_SkyboxMaterial: {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+>>>>>>> parent of 0103b9e... Added Walls and Platform
   m_HaloStrength: 0.5
   m_FlareStrength: 1
   m_FlareFadeSpeed: 3
@@ -17274,37 +17278,65 @@ PrefabInstance:
     - target: {fileID: 456125584055859585, guid: 26a1e40a5ecc2a1459d868188acbc39f,
         type: 3}
       propertyPath: m_LocalRotation.y
+<<<<<<< HEAD
+      value: -0.5488282
+=======
       value: -0.56770813
+>>>>>>> parent of 0103b9e... Added Walls and Platform
       objectReference: {fileID: 0}
     - target: {fileID: 456125584055859585, guid: 26a1e40a5ecc2a1459d868188acbc39f,
         type: 3}
       propertyPath: m_LocalRotation.z
+<<<<<<< HEAD
+      value: 0.5393331
+=======
       value: 0.55788577
+>>>>>>> parent of 0103b9e... Added Walls and Platform
       objectReference: {fileID: 0}
     - target: {fileID: 456125584055859585, guid: 26a1e40a5ecc2a1459d868188acbc39f,
         type: 3}
       propertyPath: m_LocalRotation.w
+<<<<<<< HEAD
+      value: 0.455537
+=======
       value: 0.43177962
+>>>>>>> parent of 0103b9e... Added Walls and Platform
       objectReference: {fileID: 0}
     - target: {fileID: 456125584055859585, guid: 26a1e40a5ecc2a1459d868188acbc39f,
         type: 3}
       propertyPath: m_LocalPosition.x
+<<<<<<< HEAD
+      value: 37.185913
+=======
       value: 1.0440674
+>>>>>>> parent of 0103b9e... Added Walls and Platform
       objectReference: {fileID: 0}
     - target: {fileID: 456125584055859585, guid: 26a1e40a5ecc2a1459d868188acbc39f,
         type: 3}
       propertyPath: m_LocalPosition.y
+<<<<<<< HEAD
+      value: 8.519409
+=======
       value: 8.519226
+>>>>>>> parent of 0103b9e... Added Walls and Platform
       objectReference: {fileID: 0}
     - target: {fileID: 456125584055859585, guid: 26a1e40a5ecc2a1459d868188acbc39f,
         type: 3}
       propertyPath: m_LocalPosition.z
+<<<<<<< HEAD
+      value: -181.75392
+=======
       value: -129.99672
+>>>>>>> parent of 0103b9e... Added Walls and Platform
       objectReference: {fileID: 0}
     - target: {fileID: 456125584055859585, guid: 26a1e40a5ecc2a1459d868188acbc39f,
         type: 3}
       propertyPath: m_LocalRotation.x
+<<<<<<< HEAD
+      value: 0.44765344
+=======
       value: 0.424308
+>>>>>>> parent of 0103b9e... Added Walls and Platform
       objectReference: {fileID: 0}
     - target: {fileID: 6226596333955823182, guid: 26a1e40a5ecc2a1459d868188acbc39f,
         type: 3}
@@ -17686,37 +17718,65 @@ PrefabInstance:
     - target: {fileID: 1236223186756163110, guid: 26a1e40a5ecc2a1459d868188acbc39f,
         type: 3}
       propertyPath: m_LocalRotation.x
+<<<<<<< HEAD
+      value: 0.44765344
+=======
       value: 0.424308
+>>>>>>> parent of 0103b9e... Added Walls and Platform
       objectReference: {fileID: 0}
     - target: {fileID: 1236223186756163110, guid: 26a1e40a5ecc2a1459d868188acbc39f,
         type: 3}
       propertyPath: m_LocalRotation.y
+<<<<<<< HEAD
+      value: -0.5488282
+=======
       value: -0.56770813
+>>>>>>> parent of 0103b9e... Added Walls and Platform
       objectReference: {fileID: 0}
     - target: {fileID: 1236223186756163110, guid: 26a1e40a5ecc2a1459d868188acbc39f,
         type: 3}
       propertyPath: m_LocalRotation.z
+<<<<<<< HEAD
+      value: 0.5393331
+=======
       value: 0.55788577
+>>>>>>> parent of 0103b9e... Added Walls and Platform
       objectReference: {fileID: 0}
     - target: {fileID: 1236223186756163110, guid: 26a1e40a5ecc2a1459d868188acbc39f,
         type: 3}
       propertyPath: m_LocalRotation.w
+<<<<<<< HEAD
+      value: 0.455537
+=======
       value: 0.43177962
+>>>>>>> parent of 0103b9e... Added Walls and Platform
       objectReference: {fileID: 0}
     - target: {fileID: 1236223186756163110, guid: 26a1e40a5ecc2a1459d868188acbc39f,
         type: 3}
       propertyPath: m_LocalPosition.x
+<<<<<<< HEAD
+      value: 37.185913
+=======
       value: 1.0440674
+>>>>>>> parent of 0103b9e... Added Walls and Platform
       objectReference: {fileID: 0}
     - target: {fileID: 1236223186756163110, guid: 26a1e40a5ecc2a1459d868188acbc39f,
         type: 3}
       propertyPath: m_LocalPosition.y
+<<<<<<< HEAD
+      value: 8.519409
+=======
       value: 8.519226
+>>>>>>> parent of 0103b9e... Added Walls and Platform
       objectReference: {fileID: 0}
     - target: {fileID: 1236223186756163110, guid: 26a1e40a5ecc2a1459d868188acbc39f,
         type: 3}
       propertyPath: m_LocalPosition.z
+<<<<<<< HEAD
+      value: -181.75392
+=======
       value: -129.99672
+>>>>>>> parent of 0103b9e... Added Walls and Platform
       objectReference: {fileID: 0}
     - target: {fileID: 8919418275780022987, guid: 26a1e40a5ecc2a1459d868188acbc39f,
         type: 3}
@@ -36123,6 +36183,88 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2138981854}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+<<<<<<< HEAD
+--- !u!1001 &1409290088025034740
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 268545658}
+    m_Modifications:
+    - target: {fileID: 7281353320400752783, guid: f33e03b507991cc4092332e06605f07b,
+        type: 3}
+      propertyPath: m_Name
+      value: floating_platform02_new
+      objectReference: {fileID: 0}
+    - target: {fileID: 8062845655726219087, guid: f33e03b507991cc4092332e06605f07b,
+        type: 3}
+      propertyPath: m_Name
+      value: Mesh
+      objectReference: {fileID: 0}
+    - target: {fileID: 6005490302877426332, guid: f33e03b507991cc4092332e06605f07b,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -40.59613
+      objectReference: {fileID: 0}
+    - target: {fileID: 6005490302877426332, guid: f33e03b507991cc4092332e06605f07b,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -29.615845
+      objectReference: {fileID: 0}
+    - target: {fileID: 6005490302877426332, guid: f33e03b507991cc4092332e06605f07b,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -9.684242
+      objectReference: {fileID: 0}
+    - target: {fileID: 6005490302877426332, guid: f33e03b507991cc4092332e06605f07b,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6005490302877426332, guid: f33e03b507991cc4092332e06605f07b,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6005490302877426332, guid: f33e03b507991cc4092332e06605f07b,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6005490302877426332, guid: f33e03b507991cc4092332e06605f07b,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6005490302877426332, guid: f33e03b507991cc4092332e06605f07b,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6005490302877426332, guid: f33e03b507991cc4092332e06605f07b,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6005490302877426332, guid: f33e03b507991cc4092332e06605f07b,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6005490302877426332, guid: f33e03b507991cc4092332e06605f07b,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 108242446819868807, guid: f33e03b507991cc4092332e06605f07b,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: f33e03b507991cc4092332e06605f07b, type: 3}
+=======
+>>>>>>> parent of 0103b9e... Added Walls and Platform
 --- !u!4 &4094949031165243047
 Transform:
   m_ObjectHideFlags: 0
