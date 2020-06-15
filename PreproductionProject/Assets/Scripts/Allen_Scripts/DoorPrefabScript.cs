@@ -13,13 +13,15 @@ public class DoorPrefabScript : MonoBehaviour
     private GameObject _player;
     private float _distanceToPlayer;
     private List<EnemyScript>  enemies = new List<EnemyScript>();
-
-
+    private Animator ani;
+    public bool KillEnemyToOpen = false;
     private void Awake()
     {
+        ani = GetComponent<Animator>();
         _door = GetComponentInChildren<DoorScript>();
         _player = GameObject.FindGameObjectWithTag("PlayerTag");
     }
+
     void Start()
     {
         foreach (var enemy in enemyListHolder.GetComponentsInChildren<EnemyScript>())
@@ -36,21 +38,24 @@ public class DoorPrefabScript : MonoBehaviour
 
         Keys.RemoveAll(item => item == null);
 
-        if (enemies.Count == 0)
-            _door.OpenDoor();
-
+        if (KillEnemyToOpen)
+        {
+            if (enemies.Count == 0)
+                OpenDoor();
+        }
         if(_distanceToPlayer <= Range)
         {
             if (Input.GetButtonDown("Action"))
             {
                 if (_player.GetComponentInParent<NewPlayerScript>().playerKeyCount > 0) 
                 {
-                    _door.OpenDoor();
+                    OpenDoor();
                     _player.GetComponentInParent<NewPlayerScript>().RemoveKey();
                 }
 
             }
         }
+
         //if (!_door.IsDoorActive())
         //{
         //    if (Input.GetButtonDown("Action"))
@@ -58,12 +63,32 @@ public class DoorPrefabScript : MonoBehaviour
         //        _door.CloseDoor();
         //    }
         //}
+
+        //if(Input.GetKeyDown(KeyCode.K))
+        //{
+        //    CloseDoor();
+        //}
+
+    }
+
+    public void OpenDoor()
+    {
+        //gameObject.SetActive(false);
+        ani.SetBool("DoorCondition", true);
+
     }
 
     public void CloseDoor()
     {
-        _door.CloseDoor();
+        //gameObject.SetActive(true);
+        ani.SetBool("DoorCondition", false);
+
     }
+
+    //public void CloseDoor()
+    //{
+    //    _door.CloseDoor();
+    //}
 
     public void RemoveEnemy(EnemyScript enemy)
     {

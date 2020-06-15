@@ -87,24 +87,27 @@ public class WarpController : MonoBehaviour
 
         if (Input.GetButtonDown("WarpEnemy"))
         {
-            if (!player.DoneCooldown(NewPlayerScript.AbilityType.WarpEnemy))
+            if (!player.GetPhaseGrabState())
+                return;
+
+            if (!player.DoneCooldown(NewPlayerScript.AbilityType.PhaseGrab))
                 return;
 
             // Warping the enemy to a new pos
-            if(isSelected)
+            if (isSelected)
             {
                 Destroy(cloneObj);
                 WarpEnemy(selectedObj);
                 isSelected = false;
                 lockOnManager.SetIsSelected(isSelected);
-                player.AbilityUsed(NewPlayerScript.AbilityType.WarpEnemy);
+                player.AbilityUsed(NewPlayerScript.AbilityType.PhaseGrab);
             }
 
             // Selecting an enemy ready to warp it to a new pos
             if (lockOnManager.GetIsLockOn() && !isSelected)
             {
-                selectedObj = lockOnManager.GetClosestObject();
-                if(selectedObj.CompareTag("EnemyTag"))
+                selectedObj = lockOnManager.GetClosestObject().transform.parent.gameObject;
+                if(selectedObj.CompareTag("EnemyTag") || selectedObj.CompareTag("Grabable"))
                 {
                     // Start the timer to for ability duration
                     abilityWaitTime = 0.0f;
@@ -126,8 +129,8 @@ public class WarpController : MonoBehaviour
                     Destroy(cloneObj.GetComponent<UnityEngine.AI.NavMeshAgent>());
                     Destroy(cloneObj.GetComponentInChildren<ParticleSystem>());
                     // Change the material to a transparent texture
-                    var meshRenderer = cloneObj.GetComponent<MeshRenderer>();
-                    meshRenderer.material = glowMat;
+                    //var meshRenderer = cloneObj.GetComponent<MeshRenderer>();
+                    //meshRenderer.material = glowMat;
                     foreach (Transform child in cloneObj.transform)
                     {
                         Destroy(child.gameObject);
@@ -149,7 +152,7 @@ public class WarpController : MonoBehaviour
                 selectedObj.SetActive(true);
                 isSelected = false;
                 lockOnManager.SetIsSelected(isSelected);
-                player.AbilityUsed(NewPlayerScript.AbilityType.WarpEnemy);
+                player.AbilityUsed(NewPlayerScript.AbilityType.PhaseGrab);
             }
         }
 
