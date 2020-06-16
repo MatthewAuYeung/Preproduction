@@ -198,8 +198,17 @@ public class LockOnManager : MonoBehaviour
 
         for (int i = 0; i < targets.Count; ++i)
         {
-            if (targets[i].GetComponent<SkinnedMeshRenderer>().isVisible)
-                distances[i] = Vector3.Distance(targets[i].position, transform.position);
+
+            if(TryGetSkinnedMeshRenderer(targets[i]))
+            {
+                if (targets[i].GetComponent<SkinnedMeshRenderer>().isVisible)
+                    distances[i] = Vector3.Distance(targets[i].position, transform.position);
+            }
+            else
+            {
+                if (targets[i].GetComponent<MeshRenderer>().isVisible)
+                    distances[i] = Vector3.Distance(targets[i].position, transform.position);
+            }
             //if (targets[i].GetComponent<MeshRenderer>().isVisible)
             //    distances[i] = Vector3.Distance(targets[i].position, transform.position);
             //distances[i] = Vector2.Distance(Camera.main.WorldToScreenPoint(targets[i].position), new Vector2(Screen.width / 2, Screen.height / 2));
@@ -255,6 +264,10 @@ public class LockOnManager : MonoBehaviour
     {
         Gizmos.color = Color.blue;
         Gizmos.DrawRay(transform.position + transform.up, transform.forward);
+    }
 
+    bool TryGetSkinnedMeshRenderer(Transform obj)
+    {
+        return (obj.GetComponent<SkinnedMeshRenderer>() != null) ? true : false;
     }
 }
