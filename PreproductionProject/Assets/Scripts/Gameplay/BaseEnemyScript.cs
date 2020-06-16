@@ -134,4 +134,9 @@ public abstract class BaseEnemyScript : MonoBehaviour
         //Vector3 direction = transform.TransformDirection(Vector3.forward) * 5;
         //Gizmos.DrawRay(transform.position, direction);
     }
+
+    public virtual void StunFromBomb(float speedModifier, float stuntEffectDuration = 1.0f)
+    {
+        // Implemented in child class.
+    }
 }
