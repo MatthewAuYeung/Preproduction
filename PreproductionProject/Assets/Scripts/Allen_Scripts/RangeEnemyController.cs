@@ -50,7 +50,7 @@ public class RangeEnemyController : BaseEnemyScript
         ani = GetComponent<Animator>();
         defaultFirePauseTime = firePauseTime;
         defaultTurnSpeed = turnSpeed;
-        target = GameObject.Find("NewPlayerModel").transform;
+        target = GameObject.Find("LaserTarget").transform;
     }
     void Start()
     {
@@ -174,9 +174,9 @@ public class RangeEnemyController : BaseEnemyScript
         //Laser shooting
         GameObject laser = Instantiate(LaserPrefab, muzzlePos[randomMuzzel].position, transform.rotation) as GameObject;
         laser.GetComponent<RangeEnemyLaserBehavior>().setTarget(target.position);
-        Destroy(laser, 0.5f);
+        Destroy(laser, 1.0f);
 
-        NewPlayerScript.Instance.TakeDamage(rangeEnemyDamage);
+        //NewPlayerScript.Instance.TakeDamage(rangeEnemyDamage);
     }
 
     public void OpenTurret()
