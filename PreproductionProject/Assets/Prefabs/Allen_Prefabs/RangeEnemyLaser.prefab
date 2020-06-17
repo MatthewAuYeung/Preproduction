@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 11468384}
   - component: {fileID: 10825254}
   - component: {fileID: 7387201857312453534}
+  - component: {fileID: 1963343407729999387}
   m_Layer: 0
   m_Name: RangeEnemyLaser
   m_TagString: Untagged
@@ -185,4 +186,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_target: {x: 0, y: 0, z: 0}
-  speed: 100
+  speed: 50
+  rangeEnemyDamage: 10
+--- !u!136 &1963343407729999387
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 136330}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  m_Radius: 3.4099536
+  m_Height: 57.39978
+  m_Direction: 2
+  m_Center: {x: 0, y: 0, z: 24.22569}
