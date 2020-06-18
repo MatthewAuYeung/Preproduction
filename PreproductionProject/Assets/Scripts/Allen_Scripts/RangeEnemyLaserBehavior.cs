@@ -41,21 +41,9 @@ public class RangeEnemyLaserBehavior : MonoBehaviour
             NewPlayerScript.Instance.TakeDamage(rangeEnemyDamage);
             Destroy(gameObject);
         }
-        //else if(!col.gameObject.CompareTag("EnemyTag"))
-        //{
-        //    Destroy(gameObject);
-        //}
+        else if (!col.gameObject.CompareTag("EnemyTag"))
+        {
+            Destroy(gameObject);
+        }
     }
-    //void explode()
-    //{
-    //    if (collisionExplosion != null)
-    //    {
-    //        GameObject explosion = (GameObject)Instantiate(
-    //            collisionExplosion, transform.position, transform.rotation);
-    //        Destroy(gameObject);
-    //        Destroy(explosion, 1f);
-    //    }
-    //}
-
-
 }
