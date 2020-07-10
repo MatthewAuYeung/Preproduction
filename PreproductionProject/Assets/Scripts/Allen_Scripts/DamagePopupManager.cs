@@ -17,7 +17,10 @@ public class DamagePopupManager : MonoBehaviour
         else
         {
             Debug.Log("Error ! Damage popup!");
+            Destroy(gameObject);
         }
+        DontDestroyOnLoad(gameObject);
+
     }
 
     #endregion
@@ -25,7 +28,6 @@ public class DamagePopupManager : MonoBehaviour
 
     [SerializeField]
     private GameObject damagePopupPrefab;
-
 
     public void DisplayDamagePopup(float amount, Transform popupParent)
     {

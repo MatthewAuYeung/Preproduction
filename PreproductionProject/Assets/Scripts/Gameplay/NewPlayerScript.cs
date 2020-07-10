@@ -86,6 +86,7 @@ public class NewPlayerScript : MonoBehaviour
         warpIcon.SetAbilityCooldown(warpCooldown);
         bombIcon.SetAbilityCooldown(bombCooldown);
         phaseGrabIcon.SetAbilityCooldown(phaseGrabCooldown);
+        DontDestroyOnLoad(gameObject);
     }
 
     private void Start()

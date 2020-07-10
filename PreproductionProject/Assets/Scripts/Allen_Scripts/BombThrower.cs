@@ -25,6 +25,7 @@ public class BombThrower : MonoBehaviour
 
     private float emptylaserSpeed;
     private NewPlayerScript _player;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -53,7 +54,7 @@ public class BombThrower : MonoBehaviour
             {
                 pressTime = 0.0f;
                 chargePrefab.GetComponentInChildren<ParticleSystem>().Stop();
-                //animator.SetTrigger("Throw");
+                //animator.SetTrigger("ShootLaser");
                 ready = true;
             }
         }

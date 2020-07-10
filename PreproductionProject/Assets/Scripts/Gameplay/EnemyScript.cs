@@ -24,6 +24,9 @@ public class EnemyScript : BaseEnemyScript
     float stunDuration;
     float _waitTime;
 
+    [SerializeField]
+    private Animator animator;
+
     private void Awake()
     {
         _rb = GetComponent<Rigidbody>();
@@ -99,7 +102,9 @@ public class EnemyScript : BaseEnemyScript
         if (isStun)
         {
             _agent.isStopped = true;
-            if(stunDuration < Time.time)
+            if (animator != null)
+                animator.SetBool("isWalking", false);
+            if (stunDuration < Time.time)
             {
                 SlowFromBomb(slowSpeed);
             }
@@ -109,6 +114,8 @@ public class EnemyScript : BaseEnemyScript
         if (beingWarpAttacked)
         {
             _agent.isStopped = true;
+            if (animator != null)
+                animator.SetBool("isWalking", false);
             _rb.velocity = new Vector3();
             _agent.velocity = new Vector3();
             return;
@@ -121,10 +128,14 @@ public class EnemyScript : BaseEnemyScript
             {
                 ChangeState(EnemyState.Chase);
                 _agent.isStopped = false;
+                if (animator != null)
+                    animator.SetBool("isWalking", true);
                 _agent.SetDestination(_target.position);
                 if (disBetweenPlayer < attackRange)
                 {
                     _agent.isStopped = true;
+                    if (animator != null)
+                        animator.SetBool("isWalking", false);
                     Vector3 newLookPos = new Vector3(_target.position.x,transform.position.y, _target.position.z);
                     _agent.transform.LookAt(newLookPos);
                 }
@@ -155,13 +166,19 @@ public class EnemyScript : BaseEnemyScript
         if (wanderingpath == null)
             return;
         currentIndex = 0;
+        if (animator != null)
+            animator.SetBool("isWalking", true);
         _agent.SetDestination(wanderingpath.path[currentIndex].transform.position);
     }
 
     private void Wandering()
     {
         if (wanderingpath == null)
+        {
             _agent.isStopped = true;
+            if (animator != null)
+                animator.SetBool("isWalking", false);
+        }
         else
         {
             if (currentIndex < 0)
@@ -183,6 +200,9 @@ public class EnemyScript : BaseEnemyScript
                     reverse = false;
                 }
 
+                if (currentIndex < 0)
+                    currentIndex = 0;
+
                 StartCoroutine(SetWaypoint(wanderingpath.path[currentIndex]));
             }
         }
@@ -190,7 +210,11 @@ public class EnemyScript : BaseEnemyScript
 
     IEnumerator SetWaypoint(WanderingWaypoint waypoint)
     {
+        if (animator != null)
+            animator.SetBool("isWalking", false);
         yield return new WaitForSeconds(waypoint.GetWaitTime());
+        if(animator != null)
+            animator.SetBool("isWalking", true);
         _agent.SetDestination(waypoint.transform.position);
     }
 
@@ -227,6 +251,8 @@ public class EnemyScript : BaseEnemyScript
                 return;
             }
             _particleSystem.Play();
+            if (animator != null)
+                animator.SetBool("isAttacking", true);
             _waitTime = 0.0f;
             currentTime = Time.time + attackDelay;
             other.gameObject.GetComponentInParent<NewPlayerScript>().TakeDamage(damage);
@@ -235,6 +261,16 @@ public class EnemyScript : BaseEnemyScript
         {
             _waitTime += Time.deltaTime;
         }
+    }
+
+    private void OnTriggerExit(Collider other)
+    {
+        if (!other.gameObject.CompareTag("PlayerTag"))
+        {
+            return;
+        }
+        if (animator != null)
+            animator.SetBool("isAttacking", false);
     }
 
     public void KnockBack(float amount, Vector3 point)

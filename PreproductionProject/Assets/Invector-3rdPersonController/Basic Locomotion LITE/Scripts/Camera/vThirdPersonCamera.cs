@@ -15,7 +15,7 @@ public class vThirdPersonCamera : MonoBehaviour
                 _instance = GameObject.FindObjectOfType<vThirdPersonCamera>();
 
                 //Tell unity not to destroy this object when loading a new scene!
-                //DontDestroyOnLoad(_instance.gameObject);
+                DontDestroyOnLoad(_instance.gameObject);
             }
 
             return _instance;
