@@ -28,15 +28,20 @@ public class AttackManager : MonoBehaviour
     Animator animator;
     Rigidbody rigidBody;
     public bool isAttacking;
+    private bool showSword;
 
     int attackIndex = 0;                 // Determines which animation will play
     bool canClick;                  // Locks ability to click during animation event
     private const int totalAttacks = 6;
 
     float delayAttack = 0.0f;
+    float swordTimer = 0.0f;
 
     [SerializeField]
     private float cooldown = 1.0f;
+    [SerializeField]
+    private float swordDisapearTime = 3.0f;
+
     private float waitTime;
 
     private float dpadinput;
@@ -154,15 +159,28 @@ public class AttackManager : MonoBehaviour
             attackIndex = startAttackIndex;
         }
         //============
+
+        if (showSword)
+        {
+            currentSword.SetActive(true);
+        }
+        else
+        {
+            currentSword.SetActive(false);
+        }
+
         if (Input.GetButtonDown("Fire1") && delayAttack < Time.time && Time.timeScale != 0)
         {
             delayAttack = Time.time + 0.8f;
             waitTime = 0.0f;
+            swordTimer = Time.time + swordDisapearTime;
+            showSword = true;
             Attack();
         }
 
         waitTime += Time.deltaTime;
-
+        if (swordTimer < Time.time)
+            showSword = false;
     }
 
     private void SetCombo(comboSelection combo)
