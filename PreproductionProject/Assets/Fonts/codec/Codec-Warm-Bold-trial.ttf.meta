@@ -1,0 +1,32 @@
+fileFormatVersion: 2
+guid: 5cfde72d580945d45bea5a9c824620af
+TrueTypeFontImporter:
+  externalObjects: {}
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontName: Codec Warm Trial
+  fontNames:
+  - Codec Warm Trial
+  fallbackFontReferences:
+  - {fileID: 12800000, guid: 2493a3e30e3c29741bc3eeb3af00e55f, type: 3}
+  - {fileID: 12800000, guid: 1ecca538a8205b6499c062e625b914e2, type: 3}
+  - {fileID: 12800000, guid: 5a568d98cdc00bd4f837a799b6d9faf4, type: 3}
+  - {fileID: 12800000, guid: 35cb6bf82830fbc4cb753032a5a27e99, type: 3}
+  - {fileID: 12800000, guid: 48f93439a0bde34419bedfc7423b0e45, type: 3}
+  - {fileID: 12800000, guid: 57c348c93f26967419bc992d3ccfca94, type: 3}
+  - {fileID: 12800000, guid: 4ddee0aa4a1acab42aa0726c957bebca, type: 3}
+  - {fileID: 12800000, guid: 152229fbe3a7b9142aeb0de6e3a3d0a9, type: 3}
+  - {fileID: 12800000, guid: 1c28282cb73576447a21fefb1747bf83, type: 3}
+  - {fileID: 12800000, guid: 41b5e12d9ac5e0b48872460397c69f9a, type: 3}
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  useLegacyBoundsCalculation: 0
+  shouldRoundAdvanceValue: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

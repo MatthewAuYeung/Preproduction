@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 6362115292373051420}
   m_Layer: 0
   m_Name: pCube42
-  m_TagString: Untagged
+  m_TagString: NotWarpable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -58,7 +58,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 1e03d9e936a574445a7881e4018b30b0, type: 2}
+  - {fileID: 2100000, guid: 8982fc8c6894d4448b97468a2af1e601, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -104,7 +104,7 @@ GameObject:
   - component: {fileID: 6887374901135611448}
   m_Layer: 0
   m_Name: pCube18
-  m_TagString: Untagged
+  m_TagString: NotWarpable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -148,7 +148,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 793d5a765232bc64eaa55b7356d3ba9e, type: 2}
+  - {fileID: 2100000, guid: 2d3162d7911a29149aa569393086acbd, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -181,7 +181,7 @@ GameObject:
   - component: {fileID: 5954903811674834177}
   m_Layer: 0
   m_Name: pCylinder5
-  m_TagString: Untagged
+  m_TagString: NotWarpable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -225,7 +225,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 8982fc8c6894d4448b97468a2af1e601, type: 2}
+  - {fileID: 2100000, guid: 793d5a765232bc64eaa55b7356d3ba9e, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -258,7 +258,7 @@ GameObject:
   - component: {fileID: 313663730888535893}
   m_Layer: 0
   m_Name: pCube13
-  m_TagString: Untagged
+  m_TagString: NotWarpable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -335,7 +335,7 @@ GameObject:
   - component: {fileID: 6652334045053107159}
   m_Layer: 0
   m_Name: pCube17
-  m_TagString: Untagged
+  m_TagString: NotWarpable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -412,7 +412,7 @@ GameObject:
   - component: {fileID: 239585097987637009}
   m_Layer: 0
   m_Name: pCylinder21
-  m_TagString: Untagged
+  m_TagString: NotWarpable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -456,7 +456,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 2d3162d7911a29149aa569393086acbd, type: 2}
+  - {fileID: 2100000, guid: 85acd07512e3df841bd3a7a3e1e008e2, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -489,7 +489,7 @@ GameObject:
   - component: {fileID: 754450173084049605}
   m_Layer: 0
   m_Name: polySurface35
-  m_TagString: Untagged
+  m_TagString: NotWarpable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -566,7 +566,7 @@ GameObject:
   - component: {fileID: 1022538915844130204}
   m_Layer: 0
   m_Name: pCylinder19
-  m_TagString: Untagged
+  m_TagString: NotWarpable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -610,7 +610,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 2d3162d7911a29149aa569393086acbd, type: 2}
+  - {fileID: 2100000, guid: 85acd07512e3df841bd3a7a3e1e008e2, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -643,7 +643,7 @@ GameObject:
   - component: {fileID: 4574149590470482451}
   m_Layer: 0
   m_Name: pCylinder13
-  m_TagString: Untagged
+  m_TagString: NotWarpable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -720,7 +720,7 @@ GameObject:
   - component: {fileID: 6362115292573466625}
   m_Layer: 0
   m_Name: door_new
-  m_TagString: Untagged
+  m_TagString: NotWarpable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -794,6 +794,7 @@ MonoBehaviour:
   Range: 5
   Keys: []
   enemyListHolder: {fileID: 0}
+  KillEnemyToOpen: 0
 --- !u!1 &3246505420819270929
 GameObject:
   m_ObjectHideFlags: 0
@@ -807,7 +808,7 @@ GameObject:
   - component: {fileID: 276443908209245159}
   m_Layer: 0
   m_Name: pCylinder11
-  m_TagString: Untagged
+  m_TagString: NotWarpable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -851,7 +852,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 2d3162d7911a29149aa569393086acbd, type: 2}
+  - {fileID: 2100000, guid: 85acd07512e3df841bd3a7a3e1e008e2, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -884,7 +885,7 @@ GameObject:
   - component: {fileID: 4205015568620282080}
   m_Layer: 0
   m_Name: pCube15
-  m_TagString: Untagged
+  m_TagString: NotWarpable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -961,7 +962,7 @@ GameObject:
   - component: {fileID: 3935421138959976284}
   m_Layer: 0
   m_Name: pCube11
-  m_TagString: Untagged
+  m_TagString: NotWarpable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1005,7 +1006,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 793d5a765232bc64eaa55b7356d3ba9e, type: 2}
+  - {fileID: 2100000, guid: 2d3162d7911a29149aa569393086acbd, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1039,7 +1040,7 @@ GameObject:
   - component: {fileID: 6362115293329433757}
   m_Layer: 0
   m_Name: pCube43
-  m_TagString: Untagged
+  m_TagString: NotWarpable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1083,7 +1084,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 1e03d9e936a574445a7881e4018b30b0, type: 2}
+  - {fileID: 2100000, guid: 8982fc8c6894d4448b97468a2af1e601, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1129,7 +1130,7 @@ GameObject:
   - component: {fileID: 3878090250298058764}
   m_Layer: 0
   m_Name: pCylinder20
-  m_TagString: Untagged
+  m_TagString: NotWarpable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1173,7 +1174,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 2d3162d7911a29149aa569393086acbd, type: 2}
+  - {fileID: 2100000, guid: 85acd07512e3df841bd3a7a3e1e008e2, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1206,7 +1207,7 @@ GameObject:
   - component: {fileID: 1776164131030478195}
   m_Layer: 0
   m_Name: pCube12
-  m_TagString: Untagged
+  m_TagString: NotWarpable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1250,8 +1251,8 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 85acd07512e3df841bd3a7a3e1e008e2, type: 2}
-  - {fileID: 2100000, guid: 793d5a765232bc64eaa55b7356d3ba9e, type: 2}
+  - {fileID: 2100000, guid: 1e03d9e936a574445a7881e4018b30b0, type: 2}
+  - {fileID: 2100000, guid: 2d3162d7911a29149aa569393086acbd, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1284,7 +1285,7 @@ GameObject:
   - component: {fileID: 2168052026571880053}
   m_Layer: 0
   m_Name: pCylinder18
-  m_TagString: Untagged
+  m_TagString: NotWarpable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1328,7 +1329,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 2d3162d7911a29149aa569393086acbd, type: 2}
+  - {fileID: 2100000, guid: 85acd07512e3df841bd3a7a3e1e008e2, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1361,7 +1362,7 @@ GameObject:
   - component: {fileID: 1325102064369953787}
   m_Layer: 0
   m_Name: pCylinder14
-  m_TagString: Untagged
+  m_TagString: NotWarpable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1438,7 +1439,7 @@ GameObject:
   - component: {fileID: 7138996567534408915}
   m_Layer: 0
   m_Name: pCube20
-  m_TagString: Untagged
+  m_TagString: NotWarpable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1515,7 +1516,7 @@ GameObject:
   - component: {fileID: 9149476465678901253}
   m_Layer: 0
   m_Name: pCylinder6
-  m_TagString: Untagged
+  m_TagString: NotWarpable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1559,7 +1560,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 8982fc8c6894d4448b97468a2af1e601, type: 2}
+  - {fileID: 2100000, guid: 793d5a765232bc64eaa55b7356d3ba9e, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1592,7 +1593,7 @@ GameObject:
   - component: {fileID: 9055838579985251080}
   m_Layer: 0
   m_Name: pCylinder17
-  m_TagString: Untagged
+  m_TagString: NotWarpable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1636,7 +1637,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 2d3162d7911a29149aa569393086acbd, type: 2}
+  - {fileID: 2100000, guid: 85acd07512e3df841bd3a7a3e1e008e2, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1669,7 +1670,7 @@ GameObject:
   - component: {fileID: 1547095413264322488}
   m_Layer: 0
   m_Name: pCube19
-  m_TagString: Untagged
+  m_TagString: NotWarpable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

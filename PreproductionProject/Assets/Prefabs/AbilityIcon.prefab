@@ -166,6 +166,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cooldownMeter: {fileID: 85070104908951866}
+  icon: {fileID: 0}
 --- !u!223 &4347395467936755540
 Canvas:
   m_ObjectHideFlags: 0

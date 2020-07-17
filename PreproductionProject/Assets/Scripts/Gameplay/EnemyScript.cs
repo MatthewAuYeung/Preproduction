@@ -52,7 +52,7 @@ public class EnemyScript : BaseEnemyScript
             this.gameObject.SetActive(false);
     }
 
-    public void StunFromBomb(float speedModifier, float stuntEffectDuration = 5.0f)
+    public override void StunFromBomb(float speedModifier, float stuntEffectDuration = 5.0f)
     {
         isStun = true;
         stunDuration = Time.time + stuntEffectDuration;

@@ -7,6 +7,9 @@ using UnityEngine.UI;
 [RequireComponent(typeof(NavMeshAgent))]
 public class RangeEnemyController : BaseEnemyScript
 {
+    public enum State { Closed, Opened };
+    public State state = State.Closed;
+
     public event System.Action<EnemyScript> OnDeath;
     private EnemyManager _manager;
     private Transform _target;
@@ -14,20 +17,28 @@ public class RangeEnemyController : BaseEnemyScript
     public Transform target, aim, head;
     public float reloadTime = 1.0f;
     public float turnSpeed = 5.0f;
-    public float firePauseTime = 0.25f;
+    public float firePauseTime = 0.5f;
     public float range = 5.0f;
     public float rangeEnemyDamage = 10.0f;
     public Transform[] muzzlePos;
-    public bool canSee = false;
     public GameObject muzzleFlash;
     public Image healthBar;
     public RandomLoot loot;
     private Animator ani;
-
+    public GameObject LaserPrefab;
 
     private float nextFireTime;
     private float nextMoveTime;
+    public float openedTime;
+    public float TimeNow;
+    public float openTime = 1.5f;
     public int randomMuzzel;
+    public bool isStun = false;
+    float slowSpeed;
+    float defaultTurnSpeed;
+    float defaultFirePauseTime;
+    float stunDuration;
+
 
     private void Awake()
     {
@@ -37,7 +48,9 @@ public class RangeEnemyController : BaseEnemyScript
         _target = _manager.target;
         _warpController = FindObjectOfType<WarpController>();
         ani = GetComponent<Animator>();
-
+        defaultFirePauseTime = firePauseTime;
+        defaultTurnSpeed = turnSpeed;
+        target = GameObject.Find("LaserTarget").transform;
     }
     void Start()
     {
@@ -45,6 +58,36 @@ public class RangeEnemyController : BaseEnemyScript
         if (isEventTriggered)
             this.gameObject.SetActive(false);
     }
+
+    public override void StunFromBomb(float speedModifier, float stuntEffectDuration = 1.0f)
+    {
+        isStun = true;
+        stunDuration = Time.time + stuntEffectDuration;
+        firePauseTime = 1.0f;
+        turnSpeed = 1.0f;
+        Debug.Log("Stuned from bomb.");
+        //meshRenderer.material = SlowBombEffectMat;
+        //StartCoroutine(SlowFromBomb(5.0f));
+    }
+
+    public void SlowFromBomb(float speedModifier, float slowEffectDuration = 5.0f)
+    {
+        // yield return new WaitForSeconds(2.0f);
+        isStun = false;
+        Debug.Log("Slowed from bomb.");
+        firePauseTime = 3.0f;
+        turnSpeed = 1.0f;
+        //meshRenderer.material = SlowBombEffectMat;
+        Invoke("ResetSpeed", slowEffectDuration);
+    }
+
+    void ResetSpeed()
+    {
+        turnSpeed = defaultTurnSpeed;
+        firePauseTime = defaultFirePauseTime;
+        //meshRenderer.material = originalMat;
+    }
+
 
     public float GetNextFireTime()
     {
@@ -57,8 +100,11 @@ public class RangeEnemyController : BaseEnemyScript
 
     void Update()
     {
-        Tracking();
+        //Tracking();
+
         AimFire();
+        TimeNow = Time.time;
+
         if (health <= 0.0f)
         {
             transform.gameObject.SetActive(false);
@@ -75,16 +121,23 @@ public class RangeEnemyController : BaseEnemyScript
 
         healthBar.fillAmount = health / maxhealth;
 
-        //if (Input.GetKeyDown(KeyCode.K))
-        //{
-        //    OpenTurret();
-        //}
+        if(isStun)
+        {
+            SlowFromBomb(0.5f);
+        }
     }
 
     void AimFire()
     {
-        if (target)
+        if (Vector3.Distance(transform.position, target.position) < range)
         {
+            if (state != State.Opened)
+            {
+                openedTime = Time.time + openTime;
+                OpenTurret();
+                state = State.Opened;
+            }
+
             if (Time.time >= nextMoveTime)
             {
                 aim.LookAt(target);
@@ -92,7 +145,7 @@ public class RangeEnemyController : BaseEnemyScript
                 head.rotation = Quaternion.Lerp(head.rotation, aim.rotation, Time.deltaTime * turnSpeed);
             }
 
-            if (Time.time >= nextFireTime && canSee)
+            if (Time.time >= nextFireTime && Time.time >= openedTime)
             {
                 Fire();
             }
@@ -100,6 +153,11 @@ public class RangeEnemyController : BaseEnemyScript
             {
                 muzzleFlash.SetActive(false);
             }
+        }
+        else if (state != State.Closed)
+        {
+            CloseTurret();
+            state = State.Closed;
         }
 
         if (target == null)
@@ -112,28 +170,13 @@ public class RangeEnemyController : BaseEnemyScript
         nextFireTime = Time.time + reloadTime;
         nextMoveTime = Time.time + firePauseTime;
         muzzleFlash.SetActive(true);
-        NewPlayerScript.Instance.TakeDamage(rangeEnemyDamage);
-    }
 
-    void Tracking()
-    {
-        Vector3 fwd = muzzlePos[randomMuzzel].TransformDirection(Vector3.forward);
-        RaycastHit hit;
-        Debug.DrawRay(muzzlePos[randomMuzzel].position, fwd * range, Color.green);
+        //Laser shooting
+        GameObject laser = Instantiate(LaserPrefab, muzzlePos[randomMuzzel].position, transform.rotation) as GameObject;
+        laser.GetComponent<RangeEnemyLaserBehavior>().setTarget(target.position);
+        Destroy(laser, 1.0f);
 
-        if (Physics.Raycast(muzzlePos[randomMuzzel].position, fwd, out hit, range))
-        {
-            if (hit.collider.CompareTag("PlayerTag"))
-            {
-                canSee = true;
-                //OpenTurret();
-            }
-        }
-        else
-        {
-            canSee = false;
-            //CloseTurret();
-        }
+        //NewPlayerScript.Instance.TakeDamage(rangeEnemyDamage);
     }
 
     public void OpenTurret()
@@ -145,6 +188,4 @@ public class RangeEnemyController : BaseEnemyScript
     {
         ani.SetBool("TurretCondition", false);
     }
-
-
 }
