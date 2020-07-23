@@ -5,9 +5,16 @@ using UnityEngine;
 public class DoorPrefabScript : MonoBehaviour
 {
     // Start is called before the first frame update
+    public enum DoorColor
+    {
+        Red,
+        Green,
+        Normal
+    }
     public float Range;
     public List<KeyScript> Keys;
     public GameObject enemyListHolder;
+    public DoorColor doorColor = DoorColor.Normal;
 
     private DoorScript _door;
     private GameObject _player;
@@ -47,10 +54,20 @@ public class DoorPrefabScript : MonoBehaviour
         {
             if (Input.GetButtonDown("Action"))
             {
-                if (_player.GetComponentInParent<NewPlayerScript>().playerKeyCount > 0) 
+                if (doorColor == DoorColor.Normal && _player.GetComponentInParent<NewPlayerScript>().playerKeyCount > 0) 
                 {
                     OpenDoor();
-                    _player.GetComponentInParent<NewPlayerScript>().RemoveKey();
+                    //_player.GetComponentInParent<NewPlayerScript>().RemoveKey(KeyScript.KeyColor.Normal);
+                }
+                else if (doorColor == DoorColor.Red && _player.GetComponentInParent<NewPlayerScript>().playerRedKeyCount > 0)
+                {
+                    OpenDoor();
+                    //_player.GetComponentInParent<NewPlayerScript>().RemoveKey(KeyScript.KeyColor.Red);
+                }
+                else if (doorColor == DoorColor.Green && _player.GetComponentInParent<NewPlayerScript>().playerGreenKeyCount > 0)
+                {
+                    OpenDoor();
+                    //_player.GetComponentInParent<NewPlayerScript>().RemoveKey(KeyScript.KeyColor.Green);
                 }
 
             }

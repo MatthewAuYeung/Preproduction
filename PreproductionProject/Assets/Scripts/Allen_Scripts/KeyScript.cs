@@ -5,6 +5,14 @@ using UnityEngine;
 public class KeyScript : MonoBehaviour
 {
     // Start is called before the first frame update
+    public enum KeyColor
+    {
+        Red,
+        Green,
+        Normal
+    }
+
+    public KeyColor keyColor = KeyColor.Normal;
     void Start()
     {
         
@@ -24,7 +32,7 @@ public class KeyScript : MonoBehaviour
         //Debug.Log("Collided with " + other.gameObject.name);
         if (other.gameObject.CompareTag("PlayerTag"))
         {
-            other.gameObject.GetComponentInParent<NewPlayerScript>().AddKey();
+            other.gameObject.GetComponentInParent<NewPlayerScript>().AddKey(keyColor);
             Destroy(gameObject);
         }
     }
