@@ -60,6 +60,8 @@ public class NewPlayerScript : MonoBehaviour
     private int hitCount = 0;
 
     public int playerKeyCount = 0;
+    public int playerRedKeyCount = 0;
+    public int playerGreenKeyCount = 0;
 
     public enum AbilityType
     {
@@ -132,14 +134,36 @@ public class NewPlayerScript : MonoBehaviour
         }
     }
 
-    public void AddKey()
+    public void AddKey(KeyScript.KeyColor keyColor)
     {
-        playerKeyCount++;
+        switch (keyColor)
+        {
+            case KeyScript.KeyColor.Red:
+                playerRedKeyCount++;
+                break;
+            case KeyScript.KeyColor.Green:
+                playerGreenKeyCount++;
+                break;
+            default:
+                playerKeyCount++;
+                break;
+        }
     }
 
-    public void RemoveKey()
+    public void RemoveKey(KeyScript.KeyColor keyColor)
     {
-        playerKeyCount--;
+        switch (keyColor)
+        {
+            case KeyScript.KeyColor.Red:
+                playerRedKeyCount--;
+                break;
+            case KeyScript.KeyColor.Green:
+                playerGreenKeyCount--;
+                break;
+            default:
+                playerKeyCount--;
+                break;
+        }
     }
 
     public void TakeDamage(float damage)
