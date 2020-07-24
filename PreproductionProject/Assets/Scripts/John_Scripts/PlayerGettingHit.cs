@@ -13,7 +13,7 @@ public class PlayerGettingHit : MonoBehaviour
 
     public void PlayerHurtAnimation()
     {
-        animator.SetBool("GettingHit", true);
+        animator.SetTrigger("GettingHit");
 
     }
 }

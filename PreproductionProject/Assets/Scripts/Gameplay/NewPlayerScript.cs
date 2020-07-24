@@ -94,7 +94,7 @@ public class NewPlayerScript : MonoBehaviour
         phaseGrabIcon.SetAbilityCooldown(phaseGrabCooldown);
         DontDestroyOnLoad(gameObject);
 
-        playerhurt = GetComponent<PlayerGettingHit>();
+        playerhurt = GetComponentInChildren<PlayerGettingHit>();
         
         
     }
@@ -180,8 +180,8 @@ public class NewPlayerScript : MonoBehaviour
     public void TakeDamage(float damage)
     {
 
-        playerhurt.PlayerHurtAnimation();
 
+        playerhurt.PlayerHurtAnimation();
         health -= damage;
         hitEffect.Play();
         bloodyscreen.DOFade(bloodyscreenalpha, 0.15f);
