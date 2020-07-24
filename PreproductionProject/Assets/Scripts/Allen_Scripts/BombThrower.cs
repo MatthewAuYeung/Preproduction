@@ -54,14 +54,14 @@ public class BombThrower : MonoBehaviour
             {
                 pressTime = 0.0f;
                 chargePrefab.GetComponentInChildren<ParticleSystem>().Stop();
-                //animator.SetTrigger("ShootLaser");
                 ready = true;
             }
         }
         if (Input.GetButtonUp("Bomb"))
         {
             pressTime = 0.0f;
-            ThrowBomb();
+            //animator.SetTrigger("ShootLaser");
+            ThrowBomb(); 
             chargePrefab.GetComponentInChildren<ParticleSystem>().Stop();
         }
     }
