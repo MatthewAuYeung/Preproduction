@@ -63,6 +63,10 @@ public class NewPlayerScript : MonoBehaviour
     public int playerRedKeyCount = 0;
     public int playerGreenKeyCount = 0;
 
+
+
+    private PlayerGettingHit playerhurt;
+        
     public enum AbilityType
     {
         Warp,
@@ -89,6 +93,10 @@ public class NewPlayerScript : MonoBehaviour
         bombIcon.SetAbilityCooldown(bombCooldown);
         phaseGrabIcon.SetAbilityCooldown(phaseGrabCooldown);
         DontDestroyOnLoad(gameObject);
+
+        playerhurt = GetComponentInChildren<PlayerGettingHit>();
+        
+        
     }
 
     private void Start()
@@ -171,6 +179,9 @@ public class NewPlayerScript : MonoBehaviour
 
     public void TakeDamage(float damage)
     {
+
+
+        playerhurt.PlayerHurtAnimation();
         health -= damage;
         hitEffect.Play();
         bloodyscreen.DOFade(bloodyscreenalpha, 0.15f);
