@@ -100,7 +100,10 @@ public class NewPlayerScript : MonoBehaviour
     void Update()
     {
         if (health <= 0.0f)
-            DebugRestart.Restart();
+        {
+            health = maxHealth;
+            //DebugRestart.Restart();
+        }
 
         healthBar.UpdateBar(health, maxHealth);
         manaBar.UpdateBar(mana, maxMana);
