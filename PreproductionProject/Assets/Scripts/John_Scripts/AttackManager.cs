@@ -180,7 +180,10 @@ public class AttackManager : MonoBehaviour
 
         waitTime += Time.deltaTime;
         if (swordTimer < Time.time)
+        {
+            // play particle
             showSword = false;
+        }
     }
 
     private void SetCombo(comboSelection combo)

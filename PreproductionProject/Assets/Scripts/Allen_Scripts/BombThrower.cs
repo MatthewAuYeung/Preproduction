@@ -15,7 +15,6 @@ public class BombThrower : MonoBehaviour
     public Transform handPosition;
     public Transform bombSpawnTranform;
     public float throwPower = 1500f;
-    public Animator animator;
     public float downTime, upTime, pressTime = 0;
     public float countDown = 1.0f;
     public bool ready = false;
@@ -23,6 +22,7 @@ public class BombThrower : MonoBehaviour
     [SerializeField]
     private float laserSpeed = 0.25f;
 
+    private Animator animator;
     private float emptylaserSpeed;
     private NewPlayerScript _player;
 
@@ -33,6 +33,7 @@ public class BombThrower : MonoBehaviour
         _player = NewPlayerScript.Instance;
         chargePrefab.gameObject.transform.position = handPosition.position;
         emptylaserSpeed = laserSpeed + 1.0f;
+        animator = GetComponent<Animator>();
     }
 
     // Update is called once per frame
@@ -54,14 +55,14 @@ public class BombThrower : MonoBehaviour
             {
                 pressTime = 0.0f;
                 chargePrefab.GetComponentInChildren<ParticleSystem>().Stop();
-                //animator.SetTrigger("ShootLaser");
                 ready = true;
             }
         }
         if (Input.GetButtonUp("Bomb"))
         {
             pressTime = 0.0f;
-            ThrowBomb();
+            animator.SetTrigger("ShootLaser");
+            //ThrowBomb(); 
             chargePrefab.GetComponentInChildren<ParticleSystem>().Stop();
         }
     }
