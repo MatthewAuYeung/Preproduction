@@ -34,6 +34,9 @@ public class WarpController : MonoBehaviour
     [SerializeField]
     private Material glowMat;
 
+    [SerializeField]
+    private GameObject indicator;
+
     public GameObject ybot;
 
     private NewPlayerScript player;
@@ -62,6 +65,7 @@ public class WarpController : MonoBehaviour
         _rb = GetComponent<Rigidbody>();
         mainCamera = Camera.main;
         abilityDuration = player.GetWarpEnemyDuration();
+        indicator.SetActive(false);
     }
 
     private void Update()
@@ -96,7 +100,8 @@ public class WarpController : MonoBehaviour
             // Warping the enemy to a new pos
             if (isSelected)
             {
-                Destroy(cloneObj);
+                //Destroy(cloneObj);
+                indicator.SetActive(false);
                 WarpEnemy(selectedObj);
                 isSelected = false;
                 lockOnManager.SetIsSelected(isSelected);
@@ -122,20 +127,32 @@ public class WarpController : MonoBehaviour
                     // Tell the LockOnManager that the player is using the ability
                     lockOnManager.SetIsSelected(isSelected);
 
-                    // Create a clone obj for the indicator
-                    cloneObj = Instantiate(selectedObj);
-                    // Delete everything beside the mesh
-                    Destroy(cloneObj.GetComponent<EnemyScript>());
-                    Destroy(cloneObj.GetComponent<UnityEngine.AI.NavMeshAgent>());
-                    Destroy(cloneObj.GetComponentInChildren<ParticleSystem>());
-                    // Change the material to a transparent texture
-                    //var meshRenderer = cloneObj.GetComponent<MeshRenderer>();
-                    //meshRenderer.material = glowMat;
-                    foreach (Transform child in cloneObj.transform)
-                    {
-                        Destroy(child.gameObject);
-                    }
-                    cloneObj.SetActive(false);
+                    #region OldStuff
+                    //// Create a clone obj for the indicator
+                    //cloneObj = Instantiate(selectedObj);
+                    //// Delete everything beside the mesh
+
+                    //// Change the material to a transparent texture
+                    ////var meshRenderer = cloneObj.GetComponent<MeshRenderer>();
+                    ////meshRenderer.material = glowMat;
+                    //if (selectedObj.CompareTag("EnemyTag"))
+                    //{
+                    //    SkinnedMeshRenderer[] skinMeshList = cloneObj.GetComponentsInChildren<SkinnedMeshRenderer>();
+                    //    foreach (SkinnedMeshRenderer smr in skinMeshList)
+                    //    {
+                    //        smr.material = glowMat;
+                    //    }
+                    //}
+                    //else
+                    //{
+                    //    MeshRenderer meshRenderer = cloneObj.GetComponentInChildren<MeshRenderer>();
+                    //    meshRenderer.material = glowMat;
+                    //    Destroy(cloneObj.GetComponentInChildren<Rigidbody>());
+                    //}
+
+                    //cloneObj.SetActive(false);
+                    #endregion
+
                     lockOnManager.TurnoffLockOn();
                 }
             }
@@ -147,7 +164,8 @@ public class WarpController : MonoBehaviour
         {
             if(abilityWaitTime > abilityDuration)
             {
-                Destroy(cloneObj);
+                //Destroy(cloneObj);
+                indicator.SetActive(false);
                 selectedObj.transform.position = originalPos;
                 selectedObj.SetActive(true);
                 isSelected = false;
@@ -159,7 +177,7 @@ public class WarpController : MonoBehaviour
         // Showing the indicator for the enemy's position when using the ability
         if (isSelected)
         {
-            Vector3 targetPos = cloneObj.transform.position;
+            Vector3 targetPos = indicator.transform.position;
             Vector3 warpDir = mainCamera.transform.forward;
             RaycastHit hit;
             Vector3 newPos;
@@ -172,10 +190,10 @@ public class WarpController : MonoBehaviour
             {
                 newPos = mainCamera.transform.position + warpDir.normalized * warpEnemyRange;
             }
-            cloneObj.transform.position = newPos;
-            if (!cloneObj.activeSelf)
+            indicator.transform.position = new Vector3(newPos.x, gameObject.transform.position.y, newPos.z);
+            if (!indicator.activeSelf)
             {
-                cloneObj.SetActive(true);
+                indicator.SetActive(true);
             }
         }
     }
