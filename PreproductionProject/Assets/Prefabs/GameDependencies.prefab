@@ -2187,6 +2187,8 @@ MonoBehaviour:
   bombIcon: {fileID: 7182143967360357689}
   phaseGrabIcon: {fileID: 3825368437565504656}
   playerKeyCount: 0
+  playerRedKeyCount: 0
+  playerGreenKeyCount: 0
 --- !u!114 &2987437023415551084
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3593,7 +3595,7 @@ MonoBehaviour:
   blueTrail: {fileID: 3574435347530858746}
   whiteTrail: {fileID: 4764674821781306896}
   glowMat: {fileID: 2100000, guid: 29d77a8096962b64ea1dfe7620819cf6, type: 2}
-  indicator: {fileID: 0}
+  indicator: {fileID: 6249442503996781257}
   ybot: {fileID: 8874325352158619595}
 --- !u!114 &1038329704
 MonoBehaviour:
@@ -4111,7 +4113,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6256725288753716693}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 485.6023, y: 568.858, z: 253.77338}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 6226596333869513262}
