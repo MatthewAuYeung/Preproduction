@@ -6,7 +6,8 @@ using Invector.CharacterController;
 
 public class AttackManager : MonoBehaviour
 {
-    public Action OnAttackStart, OnAttackStop;
+    public Action<float> OnAttackStart;
+    public Action OnAttackStop;
     private Camera mainCmra;
 
     [SerializeField]
@@ -23,19 +24,19 @@ public class AttackManager : MonoBehaviour
     private GameObject currentSword;
 
     //[SerializeField]
-    Collider attackCollider;
+    private Collider attackCollider;
     
-    Animator animator;
-    Rigidbody rigidBody;
+    private  Animator animator;
+    private Rigidbody rigidBody;
     public bool isAttacking;
     private bool showSword;
 
-    int attackIndex = 0;                 // Determines which animation will play
-    bool canClick;                  // Locks ability to click during animation event
+    private int attackIndex = 0;                 // Determines which animation will play
+    private bool canClick;                  // Locks ability to click during animation event
     private const int totalAttacks = 6;
 
-    float delayAttack = 0.0f;
-    float swordTimer = 0.0f;
+    private float delayAttack = 0.0f;
+    private float swordTimer = 0.0f;
 
     [SerializeField]
     private float cooldown = 1.0f;
@@ -47,11 +48,31 @@ public class AttackManager : MonoBehaviour
     private float dpadinput;
     private float lastinput;
 
+    [Header("Attack Distances")]
+    [SerializeField]
+    private float light_attack1 = 3.0f;
+    [SerializeField]
+    private float light_attack2 = 3.0f;
+    [SerializeField]
+    private float light_attack3 = 3.0f;
+    [SerializeField]
+    private float light_attack4 = 3.0f;
+
+    [SerializeField]
+    private float heavy_attack1 = 3.0f;
+    [SerializeField]
+    private float heavy_attack2 = 3.0f;
+    [SerializeField]
+    private float heavy_attack3 = 3.0f;
+    [SerializeField]
+    private float heavy_attack4 = 3.0f;
+    [SerializeField]
+    private float heavy_attack5 = 3.0f;
     //=============================
     public enum comboSelection
     {
-        firstAttackCombo,
-        secondAttackCombo,
+        lightStance,
+        heavyStacne,
         testLightAttackCombo,
         testHeavyAttackCombo
     }
@@ -190,13 +211,13 @@ public class AttackManager : MonoBehaviour
     {
         switch (combo)
         {
-            case comboSelection.firstAttackCombo:
+            case comboSelection.lightStance:
                 startAttackIndex = 0;
-                endAttackIndex = 3;
+                endAttackIndex = 4;
                 break;
-            case comboSelection.secondAttackCombo:
-                startAttackIndex = 3;
-                endAttackIndex = 6;
+            case comboSelection.heavyStacne:
+                startAttackIndex = 4;
+                endAttackIndex = 9;
                 break;
             case comboSelection.testLightAttackCombo:
                 startAttackIndex = 0;
@@ -222,12 +243,12 @@ public class AttackManager : MonoBehaviour
 
         animator.SetTrigger(attackTrigger);
 
+        OnAttackStart?.Invoke(GetAttackDistance(attackIndex));
+
         if (attackIndex < endAttackIndex - 1)
             attackIndex++;
         else
             attackIndex = startAttackIndex;
-
-        OnAttackStart?.Invoke();
     }
 
     void AttackStart()
@@ -242,6 +263,46 @@ public class AttackManager : MonoBehaviour
         isAttacking = false;
 
         OnAttackStop?.Invoke();
+    }
+
+    private float GetAttackDistance(int index)
+    {
+        float result;
+        switch (index)
+        {
+            case 0:
+                result = light_attack1;
+                break;
+            case 1:
+                result = light_attack2;
+                break;
+            case 2:
+                result = light_attack3;
+                break;
+            case 3:
+                result = light_attack4;
+                break;
+            case 4:
+                result = heavy_attack1;
+                break;
+            case 5:
+                result = heavy_attack2;
+                break;
+            case 6:
+                result = heavy_attack3;
+                break;
+            case 7:
+                result = heavy_attack4;
+                break;
+            case 8:
+                result = heavy_attack5;
+                break;
+
+            default:
+                result = 3.0f;
+                break;
+        }
+        return result;
     }
 
     private void CheckCurrentSword()

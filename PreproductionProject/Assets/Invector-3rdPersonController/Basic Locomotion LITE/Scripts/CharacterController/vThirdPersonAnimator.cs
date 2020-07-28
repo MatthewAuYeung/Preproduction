@@ -14,7 +14,7 @@ namespace Invector.CharacterController
             attackManager.OnAttackStop += AttackStop1;
         }
 
-        void AttackStart()
+        void AttackStart(float padding)
         {
             canMove = false;
 

@@ -13,12 +13,6 @@ public class PlayerAttackMovement : MonoBehaviour
         GetComponent<AttackManager>().OnAttackStop += AttackStop;
     }
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
     // Update is called once per frame
     void FixedUpdate()
     {
@@ -26,9 +20,10 @@ public class PlayerAttackMovement : MonoBehaviour
             transform.position = transform.position + (transform.forward * Time.fixedDeltaTime * speed);
     }
 
-    void AttackStart()
+    void AttackStart(float dis)
     {
-        doMove = true;   
+        doMove = true;
+        speed = dis;
     }
 
     void AttackStop()
