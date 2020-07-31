@@ -161,6 +161,8 @@ namespace Invector.CharacterController
         private Camera cam;
         private Vector3 camForward;
         private Vector3 camRight;
+        protected bool canMove = true;
+        private bool test = true;
 
         public void Init()
         {
@@ -196,6 +198,12 @@ namespace Invector.CharacterController
             // capsule collider info
             _capsuleCollider = GetComponent<CapsuleCollider>();
             cam = Camera.main;
+            test = true;
+        }
+
+        public void SetCanMove(bool state)
+        {
+            test = state;
         }
 
         public virtual void UpdateMotor()
@@ -243,27 +251,31 @@ namespace Invector.CharacterController
 
         public virtual void FreeMovement()
         {
-            // set speed to both vertical and horizontal inputs
-            speed = Mathf.Abs(input.x) + Mathf.Abs(input.y);            
-            speed = Mathf.Clamp(speed, 0, 1f);
-            // add 0.5f on sprint to change the animation on animator
-            if (isSprinting) speed += 0.5f;
-                        
-            if (input != Vector2.zero && targetDirection.magnitude > 0.1f)
+            if(test)
             {
-                Vector3 lookDirection = targetDirection.normalized;
-                freeRotation = Quaternion.LookRotation(lookDirection, transform.up);
-                var diferenceRotation = freeRotation.eulerAngles.y - transform.eulerAngles.y;
-                var eulerY = transform.eulerAngles.y;
+                // set speed to both vertical and horizontal inputs
+                speed = Mathf.Abs(input.x) + Mathf.Abs(input.y);
+                speed = Mathf.Clamp(speed, 0, 1f);
+                // add 0.5f on sprint to change the animation on animator
+                if (isSprinting) speed += 0.5f;
 
-                // apply free directional rotation while not turning180 animations
-                if (isGrounded || (!isGrounded && jumpAirControl))
+                if (input != Vector2.zero && targetDirection.magnitude > 0.1f)
                 {
-                    if (diferenceRotation < 0 || diferenceRotation > 0) eulerY = freeRotation.eulerAngles.y;
-                    var euler = new Vector3(transform.eulerAngles.x, eulerY, transform.eulerAngles.z);
-                    transform.rotation = Quaternion.Lerp(transform.rotation, Quaternion.Euler(euler), freeRotationSpeed * Time.deltaTime);
-                }               
+                    Vector3 lookDirection = targetDirection.normalized;
+                    freeRotation = Quaternion.LookRotation(lookDirection, transform.up);
+                    var diferenceRotation = freeRotation.eulerAngles.y - transform.eulerAngles.y;
+                    var eulerY = transform.eulerAngles.y;
+
+                    // apply free directional rotation while not turning180 animations
+                    if (isGrounded || (!isGrounded && jumpAirControl))
+                    {
+                        if (diferenceRotation < 0 || diferenceRotation > 0) eulerY = freeRotation.eulerAngles.y;
+                        var euler = new Vector3(transform.eulerAngles.x, eulerY, transform.eulerAngles.z);
+                        transform.rotation = Quaternion.Lerp(transform.rotation, Quaternion.Euler(euler), freeRotationSpeed * Time.deltaTime);
+                    }
+                }
             }
+            
         }
         protected void ControlSpeed(float velocity)
         {

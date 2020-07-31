@@ -48,6 +48,8 @@ public class AttackManager : MonoBehaviour
     private float dpadinput;
     private float lastinput;
 
+    private vThirdPersonController controller;
+
     [Header("Attack Distances")]
     [SerializeField]
     private float light_attack1 = 3.0f;
@@ -121,6 +123,7 @@ public class AttackManager : MonoBehaviour
         mainCmra = Camera.main;
         SetCombo(currentCombo);
         swordIndex = (int)currentSwordType;
+        controller = GetComponent<vThirdPersonController>();
     }
 
     void Update()
@@ -137,6 +140,14 @@ public class AttackManager : MonoBehaviour
 
         CheckCurrentSword();
 
+        if (Input.GetKeyDown(KeyCode.U))
+        {
+            controller.SetCanMove(false);
+        }
+        if (Input.GetKeyDown(KeyCode.I))
+        {
+            controller.SetCanMove(true);
+        }
         dpadinput = Input.GetAxisRaw("DPad_LR");
         if(dpadinput != lastinput)
         {
@@ -233,7 +244,7 @@ public class AttackManager : MonoBehaviour
     }
     void Attack()
     {
-       
+        controller.SetCanMove(false);
         isAttacking = true;
         Vector3 atkDir = mainCmra.transform.forward;
         atkDir.y = 0.0f;
