@@ -50,7 +50,8 @@ public class RangeEnemyController : BaseEnemyScript
         ani = GetComponent<Animator>();
         defaultFirePauseTime = firePauseTime;
         defaultTurnSpeed = turnSpeed;
-        target = GameObject.Find("LaserTarget").transform;
+        //target = GameObject.Find("LaserTarget").transform;
+        target = GameObject.Find("NewPlayerModel").transform;
     }
     void Start()
     {
