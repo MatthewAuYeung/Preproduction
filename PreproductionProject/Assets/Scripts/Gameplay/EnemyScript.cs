@@ -14,6 +14,7 @@ public class EnemyScript : BaseEnemyScript
     private WarpController _warpController;
     private SphereCollider _attackTrigger;
     private ParticleSystem _particleSystem;
+    private GameObject _playerObj;
 
     public Image healthBar;
     public Image attackBar;
@@ -23,6 +24,19 @@ public class EnemyScript : BaseEnemyScript
     float defaultAttackDelay;
     float stunDuration;
     float _waitTime;
+    private float disBetweenPlayer;
+
+    [SerializeField]
+    private Animator animator;
+
+    [SerializeField]
+    private EnemyAttackTrigger leftArm;
+
+    [SerializeField]
+    private EnemyAttackTrigger rightArm;
+
+    [SerializeField]
+    private bool isRobot;
 
     private void Awake()
     {
@@ -33,6 +47,7 @@ public class EnemyScript : BaseEnemyScript
         _warpController = FindObjectOfType<WarpController>();
         _attackTrigger = GetComponent<SphereCollider>();
         _particleSystem = GetComponentInChildren<ParticleSystem>();
+        _playerObj = _warpController.gameObject;
         defaultSpeed = _agent.speed;
         defaultAttackDelay = attackDelay;
         meshRenderer = GetComponent<MeshRenderer>();
@@ -47,6 +62,7 @@ public class EnemyScript : BaseEnemyScript
         loot = FindObjectOfType<RandomLoot>();
         if (isEventTriggered)
             this.gameObject.SetActive(false);
+        currentState = EnemyState.Idle;
     }
 
     public override void StunFromBomb(float speedModifier, float stuntEffectDuration = 5.0f)
@@ -99,7 +115,9 @@ public class EnemyScript : BaseEnemyScript
         if (isStun)
         {
             _agent.isStopped = true;
-            if(stunDuration < Time.time)
+            if (animator != null)
+                animator.SetBool("isWalking", false);
+            if (stunDuration < Time.time)
             {
                 SlowFromBomb(slowSpeed);
             }
@@ -109,45 +127,158 @@ public class EnemyScript : BaseEnemyScript
         if (beingWarpAttacked)
         {
             _agent.isStopped = true;
+            if (animator != null)
+                animator.SetBool("isWalking", false);
             _rb.velocity = new Vector3();
             _agent.velocity = new Vector3();
             return;
         }
 
-        var disBetweenPlayer = Vector3.Distance(_agent.transform.position, _target.transform.position);
-        if (disBetweenPlayer < searchRange)
+        if(!isRobot)
         {
-            if (InView(_target))
+            #region oldUpdate
+            disBetweenPlayer = Vector3.Distance(_agent.transform.position, _target.transform.position);
+            if (disBetweenPlayer < searchRange)
             {
-                ChangeState(EnemyState.Chase);
-                _agent.isStopped = false;
-                _agent.SetDestination(_target.position);
-                if (disBetweenPlayer < attackRange)
+                if (InView())
                 {
-                    _agent.isStopped = true;
-                    Vector3 newLookPos = new Vector3(_target.position.x,transform.position.y, _target.position.z);
-                    _agent.transform.LookAt(newLookPos);
+                    ChangeState(EnemyState.Chase);
+                    _agent.isStopped = false;
+                    if (animator != null)
+                        animator.SetBool("isWalking", true);
+                    _agent.SetDestination(_target.position);
+                    if (disBetweenPlayer < attackRange)
+                    {
+                        _agent.isStopped = true;
+                        if (animator != null)
+                            animator.SetBool("isWalking", false);
+                        Vector3 newLookPos = new Vector3(_target.position.x, transform.position.y, _target.position.z);
+                        _agent.transform.LookAt(newLookPos);
+                    }
+                }
+                else if (currentState != EnemyState.Wandering)
+                {
+                    StartWandering();
+                    ChangeState(EnemyState.Wandering);
                 }
             }
-            else if(currentState != EnemyState.Wandering)
+            else if (currentState != EnemyState.Wandering)
             {
                 StartWandering();
                 ChangeState(EnemyState.Wandering);
             }
+
+            if (currentState == EnemyState.Wandering)
+            {
+                Wandering();
+            }
+            #endregion
         }
-        else if(currentState != EnemyState.Wandering)
+        else
+        {
+            switch (currentState)
+            {
+                case EnemyState.Idle:
+                    Idle();
+                    break;
+                case EnemyState.Chase:
+                    Chase();
+                    break;
+                case EnemyState.Attack:
+                    Attack();
+                    break;
+                case EnemyState.Damaged:
+                    Damaged();
+                    break;
+                case EnemyState.Wandering:
+                    Wandering();
+                    break;
+                case EnemyState.NONE:
+                    break;
+                default:
+                    break;
+            }
+        }
+        healthBar.fillAmount = health / maxhealth;
+        attackBar.fillAmount = _waitTime / attackDelay;
+    }
+
+    private void Idle()
+    {
+        if (InSearchRange() && InView())
+            ChangeState(EnemyState.Chase);
+        else
         {
             StartWandering();
             ChangeState(EnemyState.Wandering);
         }
-
-        if(currentState == EnemyState.Wandering)
+    }
+    private void Chase()
+    {
+        _agent.isStopped = false;
+        if (animator != null)
         {
-            Wandering();
+            animator.SetBool("isAttacking", false);
+            animator.SetBool("isWalking", true);
+        }
+        _agent.SetDestination(_target.position);
+        if (InAttackRange())
+        {
+            _agent.isStopped = true;
+            if (animator != null)
+                animator.SetBool("isWalking", false);
+            Vector3 newLookPos = new Vector3(_target.position.x, transform.position.y, _target.position.z);
+            _agent.transform.LookAt(newLookPos);
+            ChangeState(EnemyState.Attack);
+        }
+        if (!InSearchRange())
+        {
+            StartWandering();
+            ChangeState(EnemyState.Wandering);
+        }
+    }
+
+    private void Attack()
+    {
+        animator.SetBool("isAttacking", true);
+
+        if(leftArm.hit || rightArm.hit)
+        {
+            NewPlayerScript.Instance.TakeDamage(damage);
+            leftArm.hit = false;
+            rightArm.hit = false;
         }
 
-        healthBar.fillAmount = health / maxhealth;
-        attackBar.fillAmount = _waitTime / attackDelay;
+        if (!InSearchRange())
+        {
+            //animator.SetBool("isAttacking", false);
+            //StartWandering();
+            //ChangeState(EnemyState.Wandering);
+            ChangeState(EnemyState.Chase);
+        }
+
+        if (!InAttackRange())
+        {
+            if (InSearchRange() && InView())
+            {
+                ChangeState(EnemyState.Chase);
+            }
+        }
+    }
+
+    private void Damaged()
+    {
+        if (InAttackRange())
+        {
+            ChangeState(EnemyState.Attack);
+        }
+        else if (InSearchRange() && InView())
+            ChangeState(EnemyState.Chase);
+        else
+        {
+            StartWandering();
+            ChangeState(EnemyState.Wandering);
+        }
     }
 
     private void StartWandering()
@@ -155,13 +286,22 @@ public class EnemyScript : BaseEnemyScript
         if (wanderingpath == null)
             return;
         currentIndex = 0;
+        if (animator != null)
+        {
+            animator.SetBool("isAttacking", false);
+            animator.SetBool("isWalking", true);
+        }
         _agent.SetDestination(wanderingpath.path[currentIndex].transform.position);
     }
 
     private void Wandering()
     {
         if (wanderingpath == null)
+        {
             _agent.isStopped = true;
+            if (animator != null)
+                animator.SetBool("isWalking", false);
+        }
         else
         {
             if (currentIndex < 0)
@@ -183,18 +323,34 @@ public class EnemyScript : BaseEnemyScript
                     reverse = false;
                 }
 
+                if (currentIndex < 0)
+                    currentIndex = 0;
+
                 StartCoroutine(SetWaypoint(wanderingpath.path[currentIndex]));
             }
+
+            if (InSearchRange() && InView())
+                ChangeState(EnemyState.Chase);
         }
     }
 
     IEnumerator SetWaypoint(WanderingWaypoint waypoint)
     {
+        if (animator != null)
+            animator.SetBool("isWalking", false);
         yield return new WaitForSeconds(waypoint.GetWaitTime());
+        if(animator != null)
+            animator.SetBool("isWalking", true);
         _agent.SetDestination(waypoint.transform.position);
     }
 
-    private bool InView(Transform target)
+    private bool InSearchRange()
+    {
+        disBetweenPlayer = Vector3.Distance(_agent.transform.position, _target.transform.position);
+        return (disBetweenPlayer < searchRange) ? true : false;
+    }
+
+    private bool InView()
     {
         Vector3 targetDir = _target.position - transform.position;
 
@@ -214,19 +370,29 @@ public class EnemyScript : BaseEnemyScript
         return false;
     }
 
+    private bool InAttackRange()
+    {
+        disBetweenPlayer = Vector3.Distance(_agent.transform.position, _target.transform.position);
+        return (disBetweenPlayer < attackRange) ? true : false;
+    }
+
     private void OnTriggerStay(Collider other)
     {
+        if (isRobot)
+            return;
         if(!other.gameObject.CompareTag("PlayerTag"))
         {
             return;
         }
-        if (currentTime < Time.time && InView(other.gameObject.transform))
+        if (currentTime < Time.time && InView())
         {
             if(_warpController.IsWarping())
             {
                 return;
             }
             _particleSystem.Play();
+            if (animator != null)
+                animator.SetBool("isAttacking", true);
             _waitTime = 0.0f;
             currentTime = Time.time + attackDelay;
             other.gameObject.GetComponentInParent<NewPlayerScript>().TakeDamage(damage);
@@ -235,6 +401,18 @@ public class EnemyScript : BaseEnemyScript
         {
             _waitTime += Time.deltaTime;
         }
+    }
+
+    private void OnTriggerExit(Collider other)
+    {
+        if (isRobot)
+            return;
+        if (!other.gameObject.CompareTag("PlayerTag"))
+        {
+            return;
+        }
+        if (animator != null)
+            animator.SetBool("isAttacking", false);
     }
 
     public void KnockBack(float amount, Vector3 point)

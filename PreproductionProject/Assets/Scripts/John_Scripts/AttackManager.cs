@@ -6,7 +6,8 @@ using Invector.CharacterController;
 
 public class AttackManager : MonoBehaviour
 {
-    public Action OnAttackStart, OnAttackStop;
+    public Action<float> OnAttackStart;
+    public Action OnAttackStop;
     private Camera mainCmra;
 
     [SerializeField]
@@ -23,30 +24,55 @@ public class AttackManager : MonoBehaviour
     private GameObject currentSword;
 
     //[SerializeField]
-    Collider attackCollider;
+    private Collider attackCollider;
     
-    Animator animator;
-    Rigidbody rigidBody;
-    bool isAttacking;
+    private  Animator animator;
+    private Rigidbody rigidBody;
+    public bool isAttacking;
+    private bool showSword;
 
-    int attackIndex = 0;                 // Determines which animation will play
-    bool canClick;                  // Locks ability to click during animation event
+    private int attackIndex = 0;                 // Determines which animation will play
+    private bool canClick;                  // Locks ability to click during animation event
     private const int totalAttacks = 6;
 
-    float delayAttack = 0.0f;
+    private float delayAttack = 0.0f;
+    private float swordTimer = 0.0f;
 
     [SerializeField]
     private float cooldown = 1.0f;
+    [SerializeField]
+    private float swordDisapearTime = 3.0f;
+
     private float waitTime;
 
     private float dpadinput;
     private float lastinput;
 
+    [Header("Attack Distances")]
+    [SerializeField]
+    private float light_attack1 = 3.0f;
+    [SerializeField]
+    private float light_attack2 = 3.0f;
+    [SerializeField]
+    private float light_attack3 = 3.0f;
+    [SerializeField]
+    private float light_attack4 = 3.0f;
+
+    [SerializeField]
+    private float heavy_attack1 = 3.0f;
+    [SerializeField]
+    private float heavy_attack2 = 3.0f;
+    [SerializeField]
+    private float heavy_attack3 = 3.0f;
+    [SerializeField]
+    private float heavy_attack4 = 3.0f;
+    [SerializeField]
+    private float heavy_attack5 = 3.0f;
     //=============================
     public enum comboSelection
     {
-        firstAttackCombo,
-        secondAttackCombo,
+        lightStance,
+        heavyStacne,
         testLightAttackCombo,
         testHeavyAttackCombo
     }
@@ -77,13 +103,17 @@ public class AttackManager : MonoBehaviour
         blueSword = blueSwordCollider.transform.parent.gameObject;
         goldSword = goldSwordCollider.transform.parent.gameObject;
 
-        //if (useRedSword)
-        //    attackCollider = redSwordCollider;
-        //else
-        //    attackCollider = blueSwordCollider;
+        redSword.gameObject.SetActive(false);
+        blueSword.gameObject.SetActive(false);
+        goldSword.gameObject.SetActive(false);
+
+        redSwordCollider.gameObject.SetActive(false);
+        blueSwordCollider.gameObject.SetActive(false);
+        goldSwordCollider.gameObject.SetActive(false);
 
         CheckCurrentSword();
 
+        currentSword.SetActive(true);
         attackCollider.gameObject.SetActive(false);
 
         attackIndex = 0;             // numbers of clicks
@@ -106,23 +136,6 @@ public class AttackManager : MonoBehaviour
         }
 
         CheckCurrentSword();
-        //if (useRedSword)
-        //{
-        //    redSword.SetActive(true);
-        //    blueSword.SetActive(false);
-        //    currentSword = redSword;
-        //}
-        //else
-        //{
-        //    redSword.SetActive(false);
-        //    blueSword.SetActive(true);
-        //    currentSword = blueSword;
-        //}
-
-        //if (redSword.activeSelf)
-        //    attackCollider = redSwordCollider;
-        //else
-        //    attackCollider = blueSwordCollider;
 
         dpadinput = Input.GetAxisRaw("DPad_LR");
         if(dpadinput != lastinput)
@@ -167,28 +180,44 @@ public class AttackManager : MonoBehaviour
             attackIndex = startAttackIndex;
         }
         //============
+
+        if (showSword)
+        {
+            currentSword.SetActive(true);
+        }
+        else
+        {
+            currentSword.SetActive(false);
+        }
+
         if (Input.GetButtonDown("Fire1") && delayAttack < Time.time && Time.timeScale != 0)
         {
             delayAttack = Time.time + 0.8f;
             waitTime = 0.0f;
+            swordTimer = Time.time + swordDisapearTime;
+            showSword = true;
             Attack();
         }
 
         waitTime += Time.deltaTime;
-
+        if (swordTimer < Time.time)
+        {
+            // play particle
+            showSword = false;
+        }
     }
 
     private void SetCombo(comboSelection combo)
     {
         switch (combo)
         {
-            case comboSelection.firstAttackCombo:
+            case comboSelection.lightStance:
                 startAttackIndex = 0;
-                endAttackIndex = 3;
+                endAttackIndex = 4;
                 break;
-            case comboSelection.secondAttackCombo:
-                startAttackIndex = 3;
-                endAttackIndex = 6;
+            case comboSelection.heavyStacne:
+                startAttackIndex = 4;
+                endAttackIndex = 9;
                 break;
             case comboSelection.testLightAttackCombo:
                 startAttackIndex = 0;
@@ -214,12 +243,12 @@ public class AttackManager : MonoBehaviour
 
         animator.SetTrigger(attackTrigger);
 
+        OnAttackStart?.Invoke(GetAttackDistance(attackIndex));
+
         if (attackIndex < endAttackIndex - 1)
             attackIndex++;
         else
             attackIndex = startAttackIndex;
-
-        OnAttackStart?.Invoke();
     }
 
     void AttackStart()
@@ -236,43 +265,105 @@ public class AttackManager : MonoBehaviour
         OnAttackStop?.Invoke();
     }
 
+    private float GetAttackDistance(int index)
+    {
+        float result;
+        switch (index)
+        {
+            case 0:
+                result = light_attack1;
+                break;
+            case 1:
+                result = light_attack2;
+                break;
+            case 2:
+                result = light_attack3;
+                break;
+            case 3:
+                result = light_attack4;
+                break;
+            case 4:
+                result = heavy_attack1;
+                break;
+            case 5:
+                result = heavy_attack2;
+                break;
+            case 6:
+                result = heavy_attack3;
+                break;
+            case 7:
+                result = heavy_attack4;
+                break;
+            case 8:
+                result = heavy_attack5;
+                break;
+
+            default:
+                result = 3.0f;
+                break;
+        }
+        return result;
+    }
+
     private void CheckCurrentSword()
     {
         switch (currentSwordType)
         {
             case SwordType.RedSword:
-                redSword.SetActive(true);
-                blueSword.SetActive(false);
-                goldSword.SetActive(false);
+                SwordSetActive(SwordType.RedSword, true);
+                SwordSetActive(SwordType.BlueSword, false);
+                SwordSetActive(SwordType.GoldSword, false);
 
                 currentSword = redSword;
                 attackCollider = redSwordCollider;
                 break;
             case SwordType.BlueSword:
-                redSword.SetActive(false);
-                blueSword.SetActive(true);
-                goldSword.SetActive(false);
+                SwordSetActive(SwordType.RedSword, false);
+                SwordSetActive(SwordType.BlueSword, true);
+                SwordSetActive(SwordType.GoldSword, false);
 
                 currentSword = blueSword;
                 attackCollider = blueSwordCollider;
                 break;
             case SwordType.GoldSword:
-                redSword.SetActive(false);
-                blueSword.SetActive(false);
-                goldSword.SetActive(true);
+                SwordSetActive(SwordType.RedSword, false);
+                SwordSetActive(SwordType.BlueSword, false);
+                SwordSetActive(SwordType.GoldSword, true);
 
                 currentSword = goldSword;
                 attackCollider = goldSwordCollider;
                 break;
             case SwordType.MAX_SWORDTYPE:
-                redSword.SetActive(true);
-                blueSword.SetActive(false);
-                goldSword.SetActive(false);
+                SwordSetActive(SwordType.RedSword, true);
+                SwordSetActive(SwordType.BlueSword, false);
+                SwordSetActive(SwordType.GoldSword, false);
 
                 currentSword = redSword;
                 attackCollider = redSwordCollider;
                 break;
         }
-        attackCollider.gameObject.SetActive(false);
+    }
+
+    private void SwordSetActive(SwordType sword, bool state)
+    {
+        switch (sword)
+        {
+            case SwordType.RedSword:
+                redSword.SetActive(state);
+                //redSwordCollider.gameObject.SetActive(state);
+                break;
+            case SwordType.BlueSword:
+                blueSword.SetActive(state);
+                //blueSwordCollider.gameObject.SetActive(state);
+                break;
+            case SwordType.GoldSword:
+                goldSword.SetActive(state);
+                //goldSwordCollider.gameObject.SetActive(state);
+                break;
+            case SwordType.MAX_SWORDTYPE:
+                redSword.SetActive(state);
+                //redSwordCollider.gameObject.SetActive(state);
+                break;
+        }
     }
 }

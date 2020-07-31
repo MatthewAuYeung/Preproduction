@@ -1,0 +1,29 @@
+fileFormatVersion: 2
+guid: f24cc2ab8d7311c4dac5e2e83a461125
+TrueTypeFontImporter:
+  externalObjects: {}
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontName: Codec Cold
+  fontNames:
+  - Codec Cold
+  fallbackFontReferences:
+  - {fileID: 12800000, guid: 42ec1b74c4f616f4a88220dbf74b0438, type: 3}
+  - {fileID: 12800000, guid: cd8f6407932babd46910e049377678a2, type: 3}
+  - {fileID: 12800000, guid: c9e4a37ab51df6147a0cb89b1a2db5a7, type: 3}
+  - {fileID: 12800000, guid: 02eccaaa759760641bc9f7d945fc984b, type: 3}
+  - {fileID: 12800000, guid: 3ae1ef6cfd338fd41bc8090979b9bfab, type: 3}
+  - {fileID: 12800000, guid: 93650a9ef1cf8c14bb93c4c6fc1fa679, type: 3}
+  - {fileID: 12800000, guid: bd305b7fb545c364ea378510366c3efb, type: 3}
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  useLegacyBoundsCalculation: 0
+  shouldRoundAdvanceValue: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

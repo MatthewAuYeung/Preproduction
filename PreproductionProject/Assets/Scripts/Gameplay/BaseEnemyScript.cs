@@ -116,7 +116,7 @@ public abstract class BaseEnemyScript : MonoBehaviour
         Gizmos.color = Color.red;
         Gizmos.DrawWireSphere(transform.position, searchRange);
 
-        Gizmos.color = Color.green;
+        Gizmos.color = Color.cyan;
         Gizmos.DrawWireSphere(transform.position, attackRange);
 
         half_fov = fov * 0.5f;

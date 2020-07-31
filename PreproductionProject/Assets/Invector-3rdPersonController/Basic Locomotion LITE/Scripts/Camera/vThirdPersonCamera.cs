@@ -1,37 +1,18 @@
-﻿using UnityEngine;
-using System.Collections;
-using System.Collections.Generic;
-using Invector;
+﻿using Invector;
+using UnityEngine;
 
 public class vThirdPersonCamera : MonoBehaviour
 {
-    private static vThirdPersonCamera _instance;
-    public static vThirdPersonCamera instance
-    {
-        get
-        {
-            if (_instance == null)
-            {
-                _instance = GameObject.FindObjectOfType<vThirdPersonCamera>();
-
-                //Tell unity not to destroy this object when loading a new scene!
-                //DontDestroyOnLoad(_instance.gameObject);
-            }
-
-            return _instance;
-        }
-    }
-
     #region inspector properties    
 
     public Transform target;
     [Tooltip("Lerp speed between Camera States")]
-    public float smoothCameraRotation = 12f;    
+    public float smoothCameraRotation = 12f;
     [Tooltip("What layer will be culled")]
-    public LayerMask cullingLayer = 1 << 0;                
+    public LayerMask cullingLayer = 1 << 0;
     [Tooltip("Debug purposes, lock the camera behind the character for better align the states")]
     public bool lockCamera;
-    
+
     public float rightOffset = 0f;
     public float defaultDistance = 2.5f;
     public float height = 1.4f;
@@ -40,6 +21,7 @@ public class vThirdPersonCamera : MonoBehaviour
     public float yMouseSensitivity = 3f;
     public float yMinLimit = -40f;
     public float yMaxLimit = 80f;
+
     #endregion
 
     #region hide properties    
@@ -54,7 +36,7 @@ public class vThirdPersonCamera : MonoBehaviour
     public Transform currentTarget;
     [HideInInspector]
     public Vector2 movementSpeed;
-   
+
     private Transform targetLookAt;
     private Vector3 currentTargetPos;
     private Vector3 lookPoint;
@@ -93,7 +75,7 @@ public class vThirdPersonCamera : MonoBehaviour
         targetLookAt = new GameObject("targetLookAt").transform;
         targetLookAt.position = currentTarget.position;
         targetLookAt.hideFlags = HideFlags.HideInHierarchy;
-        targetLookAt.rotation = currentTarget.rotation;     
+        targetLookAt.rotation = currentTarget.rotation;
 
         mouseY = currentTarget.eulerAngles.x;
         mouseX = currentTarget.eulerAngles.y;
@@ -108,7 +90,6 @@ public class vThirdPersonCamera : MonoBehaviour
 
         CameraMovement();
     }
-
 
     /// <summary>
     /// Set the target for the camera
@@ -172,7 +153,6 @@ public class vThirdPersonCamera : MonoBehaviour
             return;
 
         distance = Mathf.Lerp(distance, defaultDistance, smoothFollow * Time.deltaTime);
-        //_camera.fieldOfView = fov;
         cullingDistance = Mathf.Lerp(cullingDistance, distance, Time.deltaTime);
         var camDir = (forward * targetLookAt.forward) + (rightOffset * targetLookAt.right);
 
@@ -224,13 +204,9 @@ public class vThirdPersonCamera : MonoBehaviour
         transform.position = current_cPos + (camDir * (distance));
         var rotation = Quaternion.LookRotation((lookPoint) - transform.position);
 
-        //lookTargetOffSet = Vector3.Lerp(lookTargetOffSet, Vector3.zero, 1 * Time.fixedDeltaTime);
-
-        //rotation.eulerAngles += rotationOffSet + lookTargetOffSet;
         transform.rotation = rotation;
         movementSpeed = Vector2.zero;
     }
-
 
     /// <summary>
     /// Custom Raycast using NearClipPlanesPoints
@@ -269,6 +245,6 @@ public class vThirdPersonCamera : MonoBehaviour
             if (cullingDistance > hitInfo.distance) cullingDistance = hitInfo.distance;
         }
 
-        return value;
+        return hitInfo.collider && value;
     }
 }
