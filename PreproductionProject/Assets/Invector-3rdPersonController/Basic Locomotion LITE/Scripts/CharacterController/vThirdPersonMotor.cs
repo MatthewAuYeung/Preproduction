@@ -251,32 +251,29 @@ namespace Invector.CharacterController
 
         public virtual void FreeMovement()
         {
-            if(test)
+            // set speed to both vertical and horizontal inputs
+            speed = Mathf.Abs(input.x) + Mathf.Abs(input.y);
+            speed = Mathf.Clamp(speed, 0, 1f);
+            // add 0.5f on sprint to change the animation on animator
+            if (isSprinting) speed += 0.5f;
+
+            if (input != Vector2.zero && targetDirection.magnitude > 0.1f)
             {
-                // set speed to both vertical and horizontal inputs
-                speed = Mathf.Abs(input.x) + Mathf.Abs(input.y);
-                speed = Mathf.Clamp(speed, 0, 1f);
-                // add 0.5f on sprint to change the animation on animator
-                if (isSprinting) speed += 0.5f;
+                Vector3 lookDirection = targetDirection.normalized;
+                freeRotation = Quaternion.LookRotation(lookDirection, transform.up);
+                var diferenceRotation = freeRotation.eulerAngles.y - transform.eulerAngles.y;
+                var eulerY = transform.eulerAngles.y;
 
-                if (input != Vector2.zero && targetDirection.magnitude > 0.1f)
+                // apply free directional rotation while not turning180 animations
+                if (isGrounded || (!isGrounded && jumpAirControl))
                 {
-                    Vector3 lookDirection = targetDirection.normalized;
-                    freeRotation = Quaternion.LookRotation(lookDirection, transform.up);
-                    var diferenceRotation = freeRotation.eulerAngles.y - transform.eulerAngles.y;
-                    var eulerY = transform.eulerAngles.y;
-
-                    // apply free directional rotation while not turning180 animations
-                    if (isGrounded || (!isGrounded && jumpAirControl))
-                    {
-                        if (diferenceRotation < 0 || diferenceRotation > 0) eulerY = freeRotation.eulerAngles.y;
-                        var euler = new Vector3(transform.eulerAngles.x, eulerY, transform.eulerAngles.z);
-                        transform.rotation = Quaternion.Lerp(transform.rotation, Quaternion.Euler(euler), freeRotationSpeed * Time.deltaTime);
-                    }
+                    if (diferenceRotation < 0 || diferenceRotation > 0) eulerY = freeRotation.eulerAngles.y;
+                    var euler = new Vector3(transform.eulerAngles.x, eulerY, transform.eulerAngles.z);
+                    transform.rotation = Quaternion.Lerp(transform.rotation, Quaternion.Euler(euler), freeRotationSpeed * Time.deltaTime);
                 }
             }
-            
         }
+
         protected void ControlSpeed(float velocity)
         {
             if (Time.deltaTime == 0) return;

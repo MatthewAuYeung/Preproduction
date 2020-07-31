@@ -96,6 +96,9 @@ public class AttackManager : MonoBehaviour
     private int swordIndex;
     public SwordType currentSwordType;
 
+    [SerializeField]
+    private ParticleSystem swordParticle;
+
     private void Awake()
     {
         animator = GetComponent<Animator>();
@@ -140,14 +143,6 @@ public class AttackManager : MonoBehaviour
 
         CheckCurrentSword();
 
-        if (Input.GetKeyDown(KeyCode.U))
-        {
-            controller.SetCanMove(false);
-        }
-        if (Input.GetKeyDown(KeyCode.I))
-        {
-            controller.SetCanMove(true);
-        }
         dpadinput = Input.GetAxisRaw("DPad_LR");
         if(dpadinput != lastinput)
         {
@@ -206,16 +201,24 @@ public class AttackManager : MonoBehaviour
             delayAttack = Time.time + 0.8f;
             waitTime = 0.0f;
             swordTimer = Time.time + swordDisapearTime;
-            showSword = true;
+            if (!showSword)
+                ShowSword();
             Attack();
         }
 
         waitTime += Time.deltaTime;
-        if (swordTimer < Time.time)
+        if (swordTimer < Time.time && showSword)
         {
             // play particle
             showSword = false;
+            swordParticle.Play();
         }
+    }
+
+    private void ShowSword()
+    {
+        showSword = true;
+        swordParticle.Play();
     }
 
     private void SetCombo(comboSelection combo)
