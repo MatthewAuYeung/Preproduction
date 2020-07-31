@@ -226,6 +226,15 @@ public class WarpController : MonoBehaviour
 
     private void FreeWarp()
     {
+        ////Test
+        //GameObject clone = Instantiate(gameObject, transform.position, transform.rotation);
+        //SkinnedMeshRenderer[] skinMeshList = clone.GetComponentsInChildren<SkinnedMeshRenderer>();
+        //foreach (SkinnedMeshRenderer smr in skinMeshList)
+        //{
+        //    smr.material = glowMat;
+        //    smr.material.DOFloat(2, "_AlphaThreshold", 5f).OnComplete(() => Destroy(clone));
+        //}
+
         isWarping = true;
         Vector3 warpDir = mainCamera.transform.forward;
         warpDir.y = 0.0f;
@@ -233,6 +242,7 @@ public class WarpController : MonoBehaviour
         ShowBody(false);
         //player.UseMana(manaUsed);
         transform.rotation = Quaternion.LookRotation(warpDir);
+
 
         // Raycast from the player model to check if there is a not warpable object inside the warp range
         if (Physics.Raycast(transform.position + transform.up, warpDir.normalized, out hit, warpRange))
