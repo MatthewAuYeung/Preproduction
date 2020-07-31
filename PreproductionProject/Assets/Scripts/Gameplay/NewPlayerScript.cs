@@ -4,7 +4,6 @@ using UnityEngine;
 using UnityEngine.UI;
 using DG.Tweening;
 
-
 public class NewPlayerScript : MonoBehaviour
 {
     public static NewPlayerScript Instance { get; set; }
@@ -58,6 +57,7 @@ public class NewPlayerScript : MonoBehaviour
     private EnemyManager enemyManager;
     private bool ShowWinUI = false;
     private int hitCount = 0;
+    private CameraShake camShake;
 
     public int playerKeyCount = 0;
     public int playerRedKeyCount = 0;
@@ -95,8 +95,7 @@ public class NewPlayerScript : MonoBehaviour
         DontDestroyOnLoad(gameObject);
 
         playerhurt = GetComponentInChildren<PlayerGettingHit>();
-        
-        
+        camShake = GetComponent<CameraShake>();
     }
 
     private void Start()
@@ -179,13 +178,12 @@ public class NewPlayerScript : MonoBehaviour
 
     public void TakeDamage(float damage)
     {
-
-
         playerhurt.PlayerHurtAnimation();
         health -= damage;
         hitEffect.Play();
         bloodyscreen.DOFade(bloodyscreenalpha, 0.15f);
         StartCoroutine(DisableBloodyScreen());
+        camShake.Shake();
     }
 
     IEnumerator DisableBloodyScreen()
