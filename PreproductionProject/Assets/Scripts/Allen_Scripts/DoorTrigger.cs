@@ -20,8 +20,8 @@ public class DoorTrigger : MonoBehaviour
     {
         if (other.gameObject.CompareTag("PlayerTag"))
         {
-            DoorPrefabScript doorPrefabScript = GetComponentInParent<DoorPrefabScript>();
-            doorPrefabScript.CloseDoor();
+            DoorPrefabScript door = GetComponentInParent<DoorPrefabScript>();
+            door.CloseDoor();
         }
     }
 
