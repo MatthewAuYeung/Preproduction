@@ -244,11 +244,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3bba11f1c54cef24abf22d31d7305dbf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 50
-  maxhealth: 50
+  health: 100
+  maxhealth: 100
   searchRange: 18
   attackRange: 2
-  damage: 4
+  damage: 3
   attackDelay: 2
   fov: 360
   hitEffect: {fileID: 19848952, guid: 8af7fc23449fb134587debd98a00604a, type: 3}
@@ -264,6 +264,10 @@ MonoBehaviour:
   healthBar: {fileID: 370972254627582947}
   attackBar: {fileID: 3710812449602205984}
   loot: {fileID: 0}
+  animator: {fileID: 0}
+  leftArm: {fileID: 0}
+  rightArm: {fileID: 0}
+  isRobot: 0
 --- !u!135 &1555268841536895482
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -5053,11 +5057,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: SpiderWalkTooManyFrames
       objectReference: {fileID: 0}
-    - target: {fileID: -6057140222963153312, guid: d95fe80e9287bf248a22b2d59ba0464a,
-        type: 3}
-      propertyPath: m_Controller
-      value: 
-      objectReference: {fileID: 9100000, guid: e2d25ce2d6062cd4b8ce6f2950d20adb, type: 2}
     - target: {fileID: -4216859302048453862, guid: d95fe80e9287bf248a22b2d59ba0464a,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -5113,6 +5112,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -6057140222963153312, guid: d95fe80e9287bf248a22b2d59ba0464a,
+        type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: e2d25ce2d6062cd4b8ce6f2950d20adb, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d95fe80e9287bf248a22b2d59ba0464a, type: 3}
 --- !u!4 &5704061467134596280 stripped

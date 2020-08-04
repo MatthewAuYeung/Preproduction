@@ -100,9 +100,9 @@ public class LockOnManager : MonoBehaviour
                 {
                     islockon = false;
                     isToggled = false;
-                    cc.isStrafing = false;
-                    lockOnCam.gameObject.SetActive(false);
-                    freeCam.gameObject.SetActive(true);
+                    //cc.isStrafing = false;
+                    //lockOnCam.gameObject.SetActive(false);
+                    //freeCam.gameObject.SetActive(true);
                     LockInterface(false);
                 }
 
@@ -111,9 +111,9 @@ public class LockOnManager : MonoBehaviour
                     islockon = true;
                     transform.LookAt(new Vector3(closestObj.transform.position.x, transform.position.y, closestObj.transform.position.z));
                     lockOnTarget.gameObject.transform.position = (isToggled) ? LockOnTargetPos : closestObj.transform.position;
-                    freeCam.gameObject.SetActive(false);
-                    lockOnCam.gameObject.SetActive(true);
-                    cc.isStrafing = true;
+                    //freeCam.gameObject.SetActive(false);
+                    //lockOnCam.gameObject.SetActive(true);
+                    //cc.isStrafing = true;
 
                     if (Input.GetButtonDown("ToggleLockOn"))
                     {
@@ -136,16 +136,16 @@ public class LockOnManager : MonoBehaviour
                 {
                     islockon = false;
                     isToggled = false;
-                    cc.isStrafing = false;
-                    lockOnCam.gameObject.SetActive(false);
-                    freeCam.gameObject.SetActive(true);
+                    //cc.isStrafing = false;
+                    //lockOnCam.gameObject.SetActive(false);
+                    //freeCam.gameObject.SetActive(true);
                 }
             }
             else
             {
                 islockon = false;
                 isToggled = false;
-                cc.isStrafing = false;
+                //cc.isStrafing = false;
                 AimInterface(false);
                 LockInterface(false);
             }
@@ -256,9 +256,9 @@ public class LockOnManager : MonoBehaviour
      
     public void TurnoffLockOn()
     {
-        freeCam.gameObject.SetActive(true);
-        lockOnCam.gameObject.SetActive(false);
-        cc.isStrafing = false;
+        //freeCam.gameObject.SetActive(true);
+        //lockOnCam.gameObject.SetActive(false);
+        //cc.isStrafing = false;
     }
     private void OnDrawGizmos()
     {

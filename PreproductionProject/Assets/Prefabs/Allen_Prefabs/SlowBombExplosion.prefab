@@ -64,7 +64,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: a4ff8986c46187a4c9083d966266890f, type: 2}
+  - {fileID: 2100000, guid: 6157d577e61520a43944d0379799410f, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -105,5 +105,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemyAgentSlowSpeed: 0.5
-  effectDuration: 2.5
+  slowEffectDuration: 5
+  stunEffectDuration: 2
   lifeSpan: 0.25
+  slowingBomb: {fileID: 0}
