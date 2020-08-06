@@ -10,11 +10,12 @@ public class SlowingBomb : MonoBehaviour
     public float range = 10.0f;
     public Vector3 startingPosition;
 
-    private void OnCollisionEnter(Collision collision)
+
+    private void OnTriggerEnter(Collider other)
     {
-        if (collision.gameObject.CompareTag("PlatformTag"))
+        if (other.gameObject.CompareTag("PlatformTag"))
         {
-            MovingPlatform platform = collision.gameObject.GetComponentInParent<MovingPlatform>();
+            MovingPlatform platform = other.gameObject.GetComponentInParent<MovingPlatform>();
             platform.speed *= 0.5f;
         }
         // instantiate explosion (include bomb slowing effect
