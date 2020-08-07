@@ -99,6 +99,9 @@ public class AttackManager : MonoBehaviour
     [SerializeField]
     private ParticleSystem swordParticle;
 
+    //[SerializeField]
+    private ParticleSystem attackParticle;
+
     private void Awake()
     {
         animator = GetComponent<Animator>();
@@ -127,6 +130,7 @@ public class AttackManager : MonoBehaviour
         SetCombo(currentCombo);
         swordIndex = (int)currentSwordType;
         controller = GetComponent<vThirdPersonController>();
+        attackParticle = currentSword.gameObject.GetComponentInChildren<ParticleSystem>();
     }
 
     void Update()
@@ -247,6 +251,7 @@ public class AttackManager : MonoBehaviour
     }
     void Attack()
     {
+        attackParticle.Play();
         controller.SetCanMove(false);
         isAttacking = true;
         Vector3 atkDir = mainCmra.transform.forward;
@@ -275,7 +280,7 @@ public class AttackManager : MonoBehaviour
         attackCollider.gameObject.SetActive(false);
 
         isAttacking = false;
-
+        attackParticle.Stop();
         OnAttackStop?.Invoke();
     }
 
