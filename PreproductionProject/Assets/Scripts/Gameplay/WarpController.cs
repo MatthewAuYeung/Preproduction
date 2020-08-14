@@ -11,15 +11,16 @@ public class WarpController : MonoBehaviour
 
     [SerializeField]
     float warpRange = 1.0f;
+
     [SerializeField]
     float warpDuration = 1.0f;
+
     [SerializeField]
     float warpOffset = 0.5f;
-    [SerializeField]
-    float manaUsed;
 
     [SerializeField]
     float warpEnemyRange = 10.0f;
+
     [SerializeField]
     float warpEnemyDuration = 0.5f;
 
@@ -28,6 +29,7 @@ public class WarpController : MonoBehaviour
 
     [SerializeField]
     ParticleSystem blueTrail;
+
     [SerializeField]
     ParticleSystem whiteTrail;
 

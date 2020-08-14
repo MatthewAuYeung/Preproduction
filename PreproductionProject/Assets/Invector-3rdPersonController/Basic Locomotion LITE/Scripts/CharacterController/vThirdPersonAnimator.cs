@@ -5,7 +5,7 @@ namespace Invector.CharacterController
 {
     public abstract class vThirdPersonAnimator : vThirdPersonMotor
     {
-        bool canMove = true;
+        
 
         private void Awake()
         {

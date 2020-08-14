@@ -48,6 +48,8 @@ public class AttackManager : MonoBehaviour
     private float dpadinput;
     private float lastinput;
 
+    private vThirdPersonController controller;
+
     [Header("Attack Distances")]
     [SerializeField]
     private float light_attack1 = 3.0f;
@@ -94,6 +96,9 @@ public class AttackManager : MonoBehaviour
     private int swordIndex;
     public SwordType currentSwordType;
 
+    [SerializeField]
+    private ParticleSystem swordParticle;
+
     private void Awake()
     {
         animator = GetComponent<Animator>();
@@ -121,6 +126,7 @@ public class AttackManager : MonoBehaviour
         mainCmra = Camera.main;
         SetCombo(currentCombo);
         swordIndex = (int)currentSwordType;
+        controller = GetComponent<vThirdPersonController>();
     }
 
     void Update()
@@ -195,16 +201,24 @@ public class AttackManager : MonoBehaviour
             delayAttack = Time.time + 0.8f;
             waitTime = 0.0f;
             swordTimer = Time.time + swordDisapearTime;
-            showSword = true;
+            if (!showSword)
+                ShowSword();
             Attack();
         }
 
         waitTime += Time.deltaTime;
-        if (swordTimer < Time.time)
+        if (swordTimer < Time.time && showSword)
         {
             // play particle
             showSword = false;
+            swordParticle.Play();
         }
+    }
+
+    private void ShowSword()
+    {
+        showSword = true;
+        swordParticle.Play();
     }
 
     private void SetCombo(comboSelection combo)
@@ -233,7 +247,7 @@ public class AttackManager : MonoBehaviour
     }
     void Attack()
     {
-       
+        controller.SetCanMove(false);
         isAttacking = true;
         Vector3 atkDir = mainCmra.transform.forward;
         atkDir.y = 0.0f;

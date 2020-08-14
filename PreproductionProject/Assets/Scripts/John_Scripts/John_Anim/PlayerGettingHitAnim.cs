@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerGettingHit : MonoBehaviour
+public class PlayerGettingHitAnim : MonoBehaviour
 {
     Animator animator;
 
