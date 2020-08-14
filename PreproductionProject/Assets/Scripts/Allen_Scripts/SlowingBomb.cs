@@ -25,6 +25,21 @@ public class SlowingBomb : MonoBehaviour
         DestroyOnHit();
     }
 
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.CompareTag("PlatformTag"))
+        {
+            MovingPlatform platform = collision.gameObject.GetComponentInParent<MovingPlatform>();
+            platform.speed *= 0.5f;
+        }
+        // instantiate explosion (include bomb slowing effect
+        Instantiate(explosion, transform.position, Quaternion.identity);
+
+        // destroy bomb
+        DestroyOnHit();
+    }
+
+
     private void Update()
     {
         if (Vector3.Distance(startingPosition,transform.position) > range)
