@@ -5716,7 +5716,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Controller
       value: 
-      objectReference: {fileID: 9100000, guid: 20352257b49e5fc41a68b73c6f57b953, type: 2}
+      objectReference: {fileID: 9100000, guid: 39d0cfb7ebc61ea4c97c86f0e70f37b4, type: 2}
     - target: {fileID: -7179286588371662614, guid: b60d0cab085563f4089afb5a63220251,
         type: 3}
       propertyPath: m_LocalScale.z
@@ -6090,6 +6090,11 @@ PrefabInstance:
       propertyPath: m_LocalScale.y
       value: 0.00032383788
       objectReference: {fileID: 0}
+    - target: {fileID: 7614619101681231534, guid: ec0bf95e26038b64396fc67509a489cd,
+        type: 3}
+      propertyPath: m_Name
+      value: AttackBar
+      objectReference: {fileID: 0}
     - target: {fileID: 6063270804053980427, guid: ec0bf95e26038b64396fc67509a489cd,
         type: 3}
       propertyPath: m_Color.g
@@ -6099,11 +6104,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Color.b
       value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7614619101681231534, guid: ec0bf95e26038b64396fc67509a489cd,
-        type: 3}
-      propertyPath: m_Name
-      value: AttackBar
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ec0bf95e26038b64396fc67509a489cd, type: 3}

@@ -109,7 +109,7 @@ public class LockOnManager : MonoBehaviour
                 if (Input.GetButton("LockOn") || isToggled)
                 {
                     islockon = true;
-                    transform.LookAt(new Vector3(closestObj.transform.position.x, transform.position.y, closestObj.transform.position.z));
+                    //transform.LookAt(new Vector3(closestObj.transform.position.x, transform.position.y, closestObj.transform.position.z));
                     lockOnTarget.gameObject.transform.position = (isToggled) ? LockOnTargetPos : closestObj.transform.position;
                     //freeCam.gameObject.SetActive(false);
                     //lockOnCam.gameObject.SetActive(true);
@@ -152,7 +152,7 @@ public class LockOnManager : MonoBehaviour
 
             if(islockon || isToggled)
             {
-                transform.LookAt(new Vector3(closestObj.transform.position.x, transform.position.y, closestObj.transform.position.z));
+                //transform.LookAt(new Vector3(closestObj.transform.position.x, transform.position.y, closestObj.transform.position.z));
             }
         }
         else
