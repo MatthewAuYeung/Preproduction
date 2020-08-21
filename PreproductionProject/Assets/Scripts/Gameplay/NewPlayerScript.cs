@@ -65,7 +65,7 @@ public class NewPlayerScript : MonoBehaviour
 
 
 
-    private PlayerGettingHit playerhurt;
+    private PlayerGettingHitAnim playerhurt;
         
     public enum AbilityType
     {
@@ -94,7 +94,7 @@ public class NewPlayerScript : MonoBehaviour
         phaseGrabIcon.SetAbilityCooldown(phaseGrabCooldown);
         DontDestroyOnLoad(gameObject);
 
-        playerhurt = GetComponentInChildren<PlayerGettingHit>();
+        playerhurt = GetComponentInChildren<PlayerGettingHitAnim>();
         camShake = GetComponent<CameraShake>();
     }
 
