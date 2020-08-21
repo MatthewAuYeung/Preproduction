@@ -74,9 +74,9 @@ public class EnemyScript : BaseEnemyScript
         //StartCoroutine(SlowFromBomb(5.0f));
     }
 
-    public void SlowFromBomb( float speedModifier, float slowEffectDuration = 5.0f)
+    public void SlowFromBomb(float speedModifier, float slowEffectDuration = 5.0f)
     {
-       // yield return new WaitForSeconds(2.0f);
+        // yield return new WaitForSeconds(2.0f);
         isStun = false;
         _agent.speed *= speedModifier;
         attackDelay /= speedModifier;
@@ -97,7 +97,7 @@ public class EnemyScript : BaseEnemyScript
             return;
         }
 
-        if(health <= 0.0f)
+        if (health <= 0.0f)
         {
             Vector3 lootPosition = new Vector3(transform.position.x, transform.position.y - 0.3f, transform.position.z);
             loot.calculateLoot(lootPosition);
@@ -134,7 +134,7 @@ public class EnemyScript : BaseEnemyScript
             return;
         }
 
-        if(!isRobot)
+        if (!isRobot)
         {
             #region oldUpdate
             disBetweenPlayer = Vector3.Distance(_agent.transform.position, _target.transform.position);
@@ -240,9 +240,19 @@ public class EnemyScript : BaseEnemyScript
 
     private void Attack()
     {
-        animator.SetBool("isAttacking", true);
-
-        if(leftArm.hit || rightArm.hit)
+        //animator.SetBool("isAttacking", true);
+        if (currentTime < Time.time)
+        {
+            animator.SetTrigger("Attack");
+            _waitTime = 0.0f;
+            currentTime = Time.time + attackDelay;
+        }
+        else
+        {
+            _waitTime += Time.deltaTime;
+        }
+        
+        if (leftArm.hit || rightArm.hit)
         {
             NewPlayerScript.Instance.TakeDamage(damage);
             leftArm.hit = false;
@@ -307,7 +317,7 @@ public class EnemyScript : BaseEnemyScript
             if (currentIndex < 0)
                 currentIndex = 0;
             var dis = Vector3.Distance(_agent.transform.position, wanderingpath.path[currentIndex].transform.position);
-            if ( dis < OARadius)
+            if (dis < OARadius)
             {
                 if (!reverse)
                     currentIndex++;
@@ -339,7 +349,7 @@ public class EnemyScript : BaseEnemyScript
         if (animator != null)
             animator.SetBool("isWalking", false);
         yield return new WaitForSeconds(waypoint.GetWaitTime());
-        if(animator != null)
+        if (animator != null)
             animator.SetBool("isWalking", true);
         _agent.SetDestination(waypoint.transform.position);
     }
@@ -359,9 +369,9 @@ public class EnemyScript : BaseEnemyScript
         if (angle <= fov)
         {
             RaycastHit hit;
-            if (Physics.Raycast(transform.position + transform.up,targetDir.normalized, out hit, searchRange))
+            if (Physics.Raycast(transform.position + transform.up, targetDir.normalized, out hit, searchRange))
             {
-                if(hit.collider.gameObject.CompareTag("PlayerTag"))
+                if (hit.collider.gameObject.CompareTag("PlayerTag"))
                 {
                     return true;
                 }
@@ -380,13 +390,13 @@ public class EnemyScript : BaseEnemyScript
     {
         if (isRobot)
             return;
-        if(!other.gameObject.CompareTag("PlayerTag"))
+        if (!other.gameObject.CompareTag("PlayerTag"))
         {
             return;
         }
         if (currentTime < Time.time && InView())
         {
-            if(_warpController.IsWarping())
+            if (_warpController.IsWarping())
             {
                 return;
             }

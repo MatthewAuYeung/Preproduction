@@ -99,6 +99,9 @@ public class AttackManager : MonoBehaviour
     [SerializeField]
     private ParticleSystem swordParticle;
 
+    //[SerializeField]
+    private ParticleSystem attackParticle;
+
     private void Awake()
     {
         animator = GetComponent<Animator>();
@@ -124,24 +127,39 @@ public class AttackManager : MonoBehaviour
         attackIndex = 0;             // numbers of clicks
         canClick = true;
         mainCmra = Camera.main;
-        SetCombo(currentCombo);
+        
         swordIndex = (int)currentSwordType;
         controller = GetComponent<vThirdPersonController>();
+        attackParticle = currentSword.gameObject.GetComponentInChildren<ParticleSystem>();
+    }
+
+    private void Start()
+    {
+        SetCombo(currentCombo);
     }
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Y))
+        //if (Input.GetKeyDown(KeyCode.Y))
+        //{
+        //    if (swordIndex < (int)SwordType.MAX_SWORDTYPE - 1)
+        //        swordIndex++;
+        //    else
+        //        swordIndex = 0;
+
+        //    currentSwordType = (SwordType)swordIndex;
+        //}
+
+        //CheckCurrentSword();
+
+        if(Input.GetButtonDown("SwitchStance"))
         {
-            if (swordIndex < (int)SwordType.MAX_SWORDTYPE - 1)
-                swordIndex++;
+            if (currentCombo == comboSelection.lightStance)
+                currentCombo = comboSelection.heavyStacne;
             else
-                swordIndex = 0;
-
-            currentSwordType = (SwordType)swordIndex;
+                currentCombo = comboSelection.lightStance;
+            SetCombo(currentCombo);
         }
-
-        CheckCurrentSword();
 
         dpadinput = Input.GetAxisRaw("DPad_LR");
         if(dpadinput != lastinput)
@@ -176,9 +194,9 @@ public class AttackManager : MonoBehaviour
             {
                 lastinput = 0.0f;
             }
+            SetCombo(currentCombo);
         }
 
-        SetCombo(currentCombo);
         //============
         //choose start index and end index
         if (waitTime > cooldown)
@@ -200,6 +218,7 @@ public class AttackManager : MonoBehaviour
         {
             delayAttack = Time.time + 0.8f;
             waitTime = 0.0f;
+            
             swordTimer = Time.time + swordDisapearTime;
             if (!showSword)
                 ShowSword();
@@ -247,7 +266,8 @@ public class AttackManager : MonoBehaviour
     }
     void Attack()
     {
-        controller.SetCanMove(false);
+        DisableMovement();
+        attackParticle.Play();
         isAttacking = true;
         Vector3 atkDir = mainCmra.transform.forward;
         atkDir.y = 0.0f;
@@ -275,7 +295,7 @@ public class AttackManager : MonoBehaviour
         attackCollider.gameObject.SetActive(false);
 
         isAttacking = false;
-
+        attackParticle.Stop();
         OnAttackStop?.Invoke();
     }
 
@@ -379,5 +399,17 @@ public class AttackManager : MonoBehaviour
                 //redSwordCollider.gameObject.SetActive(state);
                 break;
         }
+    }
+
+    private void DisableMovement()
+    {
+        controller.lockMovement = true;
+        controller.input.x = 0.0f;
+        controller.input.y = 0.0f;
+    }
+
+    public void EnableMovement()
+    {
+        controller.lockMovement = false;
     }
 }

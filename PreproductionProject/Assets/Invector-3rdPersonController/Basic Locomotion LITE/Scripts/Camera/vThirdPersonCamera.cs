@@ -68,7 +68,7 @@ public class vThirdPersonCamera : MonoBehaviour
         if (target == null)
             return;
 
-        _camera = GetComponent<Camera>();
+        _camera = Camera.main;
         currentTarget = target;
         currentTargetPos = new Vector3(currentTarget.position.x, currentTarget.position.y + offSetPlayerPivot, currentTarget.position.z);
 

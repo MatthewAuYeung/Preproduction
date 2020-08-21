@@ -19,7 +19,6 @@ public class DamagePopupManager : MonoBehaviour
             Debug.Log("Error ! Damage popup!");
             Destroy(gameObject);
         }
-        DontDestroyOnLoad(gameObject);
 
     }
 
