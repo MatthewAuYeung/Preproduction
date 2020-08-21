@@ -101,7 +101,9 @@ public class AttackManager : MonoBehaviour
 
     //[SerializeField]
     private ParticleSystem attackParticle;
-
+    // -----------------------------------------------------------------------
+    private string attackName;
+    // -----------------------------------------------------------------------
     private void Awake()
     {
         animator = GetComponent<Animator>();
@@ -264,8 +266,13 @@ public class AttackManager : MonoBehaviour
                 break;
         }
     }
+
     void Attack()
     {
+        string attackTrigger = "Attack" + (attackIndex + 1).ToString();
+        // -----------------------------------------------------------------------
+        attackName = attackTrigger;
+        // -----------------------------------------------------------------------
         DisableMovement();
         attackParticle.Play();
         isAttacking = true;
@@ -273,7 +280,6 @@ public class AttackManager : MonoBehaviour
         atkDir.y = 0.0f;
         transform.rotation = Quaternion.LookRotation(atkDir);
 
-        string attackTrigger = "Attack" + (attackIndex+1).ToString();
 
         animator.SetTrigger(attackTrigger);
 
@@ -403,6 +409,9 @@ public class AttackManager : MonoBehaviour
 
     private void DisableMovement()
     {
+        // -----------------------------------------------------------------------
+        Debug.Log(attackName + " Disable Movement called.");
+        // -----------------------------------------------------------------------
         controller.lockMovement = true;
         controller.input.x = 0.0f;
         controller.input.y = 0.0f;
@@ -410,6 +419,14 @@ public class AttackManager : MonoBehaviour
 
     public void EnableMovement()
     {
+        // -----------------------------------------------------------------------
+        //Debug.Log(attackName + " Enable Movement called.");
+        // -----------------------------------------------------------------------
         controller.lockMovement = false;
+    }
+
+    public void DestroySword()
+    {
+        Destroy(currentSword);
     }
 }

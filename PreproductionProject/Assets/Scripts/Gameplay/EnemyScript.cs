@@ -105,6 +105,7 @@ public class EnemyScript : BaseEnemyScript
             transform.gameObject.SetActive(false);
             //FindObjectOfType<DoorPrefabScript>()?.RemoveEnemy(this);
             //Destroy(gameObject);
+            NewPlayerScript.Instance.TriggerSlowMo();
             if (OnDeath != null)
             {
                 OnDeath.Invoke(this);

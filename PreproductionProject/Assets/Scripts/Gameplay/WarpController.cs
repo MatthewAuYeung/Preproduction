@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Rendering.PostProcessing;
+using Invector.CharacterController;
 
 public class WarpController : MonoBehaviour
 {
@@ -25,6 +26,9 @@ public class WarpController : MonoBehaviour
     float warpEnemyDuration = 0.5f;
 
     [SerializeField]
+    private float fresnelDurration = 5.0f;
+
+    [SerializeField]
     bool isDebuging = true;
 
     [SerializeField]
@@ -34,7 +38,13 @@ public class WarpController : MonoBehaviour
     ParticleSystem whiteTrail;
 
     [SerializeField]
-    private Material glowMat;
+    private Material PG_glowMat;
+
+    [SerializeField]
+    private Material Warp_glowMat;
+
+    [SerializeField]
+    private Transform sword;
 
     [SerializeField]
     private GameObject indicator;
@@ -200,8 +210,32 @@ public class WarpController : MonoBehaviour
         }
     }
 
+    private void Fresnel()
+    {
+        GameObject clone = Instantiate(gameObject, transform.position, transform.rotation);
+        Destroy(clone.GetComponent<WarpController>());
+        Destroy(clone.GetComponent<LockOnManager>());
+        var temp = clone.GetComponent<AttackManager>();
+        temp.DestroySword();
+        Destroy(temp);
+        Destroy(clone.GetComponent<PlayerAttackMovement>());
+        Destroy(clone.GetComponent<Animator>());
+        Destroy(clone.GetComponent<vThirdPersonController>());
+        Destroy(clone.GetComponent<vThirdPersonInput>());
+        Destroy(clone.GetComponent<BombThrower>());
+        Destroy(clone.GetComponent<PlayerGettingHitAnim>());
+
+        SkinnedMeshRenderer[] skinMeshList = clone.GetComponentsInChildren<SkinnedMeshRenderer>();
+        foreach (SkinnedMeshRenderer smr in skinMeshList)
+        {
+            smr.material = Warp_glowMat;
+            smr.material.DOFloat(2, "_AlphaThreshold", fresnelDurration).OnComplete(() => Destroy(clone));
+        }
+    }
+
     private void WarpToNewPos(Vector3 targetPos, GameObject target = null)
     {
+        Fresnel();
         // Calculate the new position for the warp
         Vector2 PlayerPos = new Vector2(transform.position.x, transform.position.z);
         Vector2 ObjPos = new Vector2(targetPos.x, targetPos.z);
@@ -228,21 +262,14 @@ public class WarpController : MonoBehaviour
 
     private void FreeWarp()
     {
-        ////Test
-        //GameObject clone = Instantiate(gameObject, transform.position, transform.rotation);
-        //SkinnedMeshRenderer[] skinMeshList = clone.GetComponentsInChildren<SkinnedMeshRenderer>();
-        //foreach (SkinnedMeshRenderer smr in skinMeshList)
-        //{
-        //    smr.material = glowMat;
-        //    smr.material.DOFloat(2, "_AlphaThreshold", 5f).OnComplete(() => Destroy(clone));
-        //}
-
         isWarping = true;
         Vector3 warpDir = mainCamera.transform.forward;
         warpDir.y = 0.0f;
         RaycastHit hit;
+
+        Fresnel();
+
         ShowBody(false);
-        //player.UseMana(manaUsed);
         transform.rotation = Quaternion.LookRotation(warpDir);
 
 

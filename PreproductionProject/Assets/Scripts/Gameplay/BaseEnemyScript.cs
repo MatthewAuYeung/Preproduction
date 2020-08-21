@@ -62,6 +62,8 @@ public abstract class BaseEnemyScript : MonoBehaviour
     protected Rigidbody _rb;
     protected NavMeshAgent _agent;
     protected CapsuleCollider _collider;
+    protected int hitcount;
+    protected float hitcountDelay;
     public bool beingWarpAttacked = false;
     [SerializeField]
     private Transform damagePopupTransform;
@@ -84,6 +86,12 @@ public abstract class BaseEnemyScript : MonoBehaviour
 
     public void TakeDamage(float damage)
     {
+        hitcount++;
+        if(hitcount == 3)
+        {
+            hitcount = 0;
+
+        }
         health -= damage;
         hitEffect.Play();
         DamagePopupManager.instance.DisplayDamagePopup(damage, transform);
