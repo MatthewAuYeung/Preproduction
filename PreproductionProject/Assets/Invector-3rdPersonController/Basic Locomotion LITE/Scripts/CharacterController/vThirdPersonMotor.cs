@@ -162,7 +162,6 @@ namespace Invector.CharacterController
         private Vector3 camForward;
         private Vector3 camRight;
         protected bool canMove = true;
-        private bool test = true;
 
         public void Init()
         {
@@ -198,12 +197,6 @@ namespace Invector.CharacterController
             // capsule collider info
             _capsuleCollider = GetComponent<CapsuleCollider>();
             cam = Camera.main;
-            test = true;
-        }
-
-        public void SetCanMove(bool state)
-        {
-            test = state;
         }
 
         public virtual void UpdateMotor()

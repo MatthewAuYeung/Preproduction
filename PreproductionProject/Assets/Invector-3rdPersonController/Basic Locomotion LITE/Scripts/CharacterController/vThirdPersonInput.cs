@@ -2,6 +2,7 @@
 #if UNITY_5_3_OR_NEWER
 using UnityEngine.SceneManagement;
 #endif
+using Cinemachine;
 
 namespace Invector.CharacterController
 {
@@ -20,6 +21,11 @@ namespace Invector.CharacterController
         public string rotateCameraXInput = "Mouse X";
         public string rotateCameraYInput = "Mouse Y";
 
+        [SerializeField]
+        private CinemachineVirtualCamera aimCam;
+        [SerializeField]
+        private CinemachineVirtualCamera tpsCam;
+
         protected vThirdPersonCamera tpCamera;                // acess camera info        
         [HideInInspector]
         public string customCameraState;                    // generic string to change the CameraState        
@@ -33,7 +39,6 @@ namespace Invector.CharacterController
         public bool keepDirection;                          // keep the current direction in case you change the cameraState
 
         protected vThirdPersonController cc;                // access the ThirdPersonController component                
-
         #endregion
 
         protected virtual void Start()
@@ -48,6 +53,7 @@ namespace Invector.CharacterController
                 cc.Init();
 
             tpCamera = FindObjectOfType<vThirdPersonCamera>();
+
             if (tpCamera) tpCamera.SetMainTarget(this.transform);
 
             Cursor.visible = false;
@@ -71,6 +77,7 @@ namespace Invector.CharacterController
         {
             cc.UpdateMotor();                   // call ThirdPersonMotor methods               
             cc.UpdateAnimator();                // call ThirdPersonAnimator methods		               
+            //Debug.Log(cc.input.y);
         }
 
         protected virtual void InputHandle()
@@ -84,6 +91,11 @@ namespace Invector.CharacterController
                 SprintInput();
                 StrafeInput();
                 JumpInput();
+            }
+            else
+            {
+                cc.input.x = 0.0f;
+                cc.input.y = 0.0f;
             }
         }
 
@@ -142,7 +154,8 @@ namespace Invector.CharacterController
             var Y = Input.GetAxis(rotateCameraYInput);
             var X = Input.GetAxis(rotateCameraXInput);
             //Debug.Log(X);
-            tpCamera.RotateCamera(X, Y);
+            //if(tpsCam.Priority > aimCam.Priority)
+              tpCamera.RotateCamera(X, Y);
 
             // tranform Character direction from camera if not KeepDirection
             if (!keepDirection)

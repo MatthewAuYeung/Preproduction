@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.AI;
 using UnityEngine.UI;
 using DG.Tweening;
-
+using Cinemachine;
 
 public class BombThrower : MonoBehaviour
 {
@@ -26,6 +26,9 @@ public class BombThrower : MonoBehaviour
     private float emptylaserSpeed;
     private NewPlayerScript _player;
 
+    [SerializeField]
+    private CinemachineVirtualCamera aimCam;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -46,6 +49,7 @@ public class BombThrower : MonoBehaviour
 
         if (Input.GetButton("Bomb") && ready == false)
         {
+            //aimCam.Priority = 11;
             downTime = Time.time;
             if (!chargePrefab.GetComponentInChildren<ParticleSystem>().isPlaying)
                 chargePrefab.GetComponentInChildren<ParticleSystem>().Play();
@@ -60,10 +64,13 @@ public class BombThrower : MonoBehaviour
         }
         if (Input.GetButtonUp("Bomb"))
         {
+            //aimCam.Priority = 9;
             pressTime = 0.0f;
             animator.SetTrigger("ShootLaser");
             //ThrowBomb(); 
             chargePrefab.GetComponentInChildren<ParticleSystem>().Stop();
+            
+
         }
     }
 
