@@ -422,7 +422,8 @@ public class AttackManager : MonoBehaviour
         // -----------------------------------------------------------------------
         //Debug.Log(attackName + " Enable Movement called.");
         // -----------------------------------------------------------------------
-        controller.lockMovement = false;
+        if(!isAttacking)
+            controller.lockMovement = false;
     }
 
     public void DestroySword()
