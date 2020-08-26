@@ -15,7 +15,7 @@ public class SoundManagerScript : MonoBehaviour
         swingSound4 = Resources.Load<AudioClip>("SwordSwing4");
         swingSound5 = Resources.Load<AudioClip>("SwordSwing5");
         runningSound = Resources.Load<AudioClip>("Running");
-        walkingSound = Resources.Load<AudioClip>("Walking");
+        walkingSound = Resources.Load<AudioClip>("Walking2");
         robotDeathSound = Resources.Load<AudioClip>("RobotDeath");
         hurtHitSound = Resources.Load<AudioClip>("HurtHit");
 
