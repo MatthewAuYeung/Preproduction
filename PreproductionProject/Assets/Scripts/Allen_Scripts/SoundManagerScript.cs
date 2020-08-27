@@ -29,15 +29,16 @@ public class SoundManagerScript : MonoBehaviour
 
     public static void PlaySound(string clip)
     {
+        bool foundClip = true;
         switch (clip)
         {
             case "Running":
                 audioSrc.clip = runningSound;
-                audioSrc.Play();
+                audioSrc.loop = true;
                 break;
             case "Walking":
                 audioSrc.clip = walkingSound;
-                audioSrc.Play();
+                audioSrc.loop = true;
                 break;
             case "RobotDeath":
                 audioSrc.PlayOneShot(robotDeathSound);
@@ -45,7 +46,33 @@ public class SoundManagerScript : MonoBehaviour
             case "HurtHit":
                 audioSrc.PlayOneShot(hurtHitSound);
                 break;
+            case "SwordSwing1":
+                audioSrc.clip = swingSound1;
+                audioSrc.loop = false;
+                break;
+            case "SwordSwing2":
+                audioSrc.clip = swingSound2;
+                audioSrc.loop = false;
+                break;
+            case "SwordSwing3":
+                audioSrc.clip = swingSound3;
+                audioSrc.loop = false;
+                break;
+            case "SwordSwing4":
+                audioSrc.clip = swingSound4;
+                audioSrc.loop = false;
+                break;
+            case "SwordSwing5":
+                audioSrc.clip = swingSound5;
+                audioSrc.loop = false;
+                break;
+            default:
+                foundClip = false;
+                break;
+
         }
+        if (!audioSrc.isPlaying && foundClip)
+            audioSrc.Play();
     }
 
     public static void EndPlay()
