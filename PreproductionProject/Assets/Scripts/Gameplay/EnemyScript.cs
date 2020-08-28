@@ -19,11 +19,11 @@ public class EnemyScript : BaseEnemyScript
     public Image healthBar;
     public Image attackBar;
     public RandomLoot loot;
-    float slowSpeed;
-    float defaultSpeed;
-    float defaultAttackDelay;
-    float stunDuration;
-    float _waitTime;
+    private float slowSpeed;
+    private float defaultSpeed;
+    private float defaultAttackDelay;
+    private float stunDuration;
+    private float _waitTime;
     private float disBetweenPlayer;
 
     [SerializeField]
@@ -37,6 +37,7 @@ public class EnemyScript : BaseEnemyScript
 
     [SerializeField]
     private bool isRobot;
+
 
     private void Awake()
     {
@@ -68,10 +69,18 @@ public class EnemyScript : BaseEnemyScript
     public override void StunFromBomb(float speedModifier, float stuntEffectDuration = 5.0f)
     {
         isStun = true;
+        stunFromPlayer = false;
         stunDuration = Time.time + stuntEffectDuration;
         slowSpeed = speedModifier;
         meshRenderer.material = SlowBombEffectMat;
         //StartCoroutine(SlowFromBomb(5.0f));
+    }
+
+    public override void Stun()
+    {
+        isStun = true;
+        stunFromPlayer = true;
+        stunDuration = Time.time + stunFromPlayerDuration;
     }
 
     public void SlowFromBomb(float speedModifier, float slowEffectDuration = 5.0f)
@@ -113,16 +122,30 @@ public class EnemyScript : BaseEnemyScript
             return;
         }
 
+        ResetHitCount();
+
         if (isStun)
         {
             _agent.isStopped = true;
             if (animator != null)
                 animator.SetBool("isWalking", false);
-            if (stunDuration < Time.time)
+
+            if(stunFromPlayer)
             {
-                SlowFromBomb(slowSpeed);
+                if (stunDuration < Time.time)
+                {
+                    isStun = false;
+                }
+                return;
             }
-            return;
+            else
+            {
+                if (stunDuration < Time.time)
+                {
+                    SlowFromBomb(slowSpeed);
+                }
+                return;
+            }
         }
 
         if (beingWarpAttacked)
