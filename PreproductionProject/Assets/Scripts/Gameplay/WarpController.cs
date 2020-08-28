@@ -86,8 +86,8 @@ public class WarpController : MonoBehaviour
         mainCamera = Camera.main;
         abilityDuration = player.GetWarpEnemyDuration();
         indicator.SetActive(false);
-        swordOrigPos = sword.localPosition;
-        swordOrigRot = sword.localEulerAngles;
+        //swordOrigPos = sword.localPosition;
+        //swordOrigRot = sword.localEulerAngles;
     }
 
     private void Update()
