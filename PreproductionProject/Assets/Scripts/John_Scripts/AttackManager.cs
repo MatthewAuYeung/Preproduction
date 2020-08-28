@@ -25,8 +25,8 @@ public class AttackManager : MonoBehaviour
 
     //[SerializeField]
     private Collider attackCollider;
-    
-    private  Animator animator;
+
+    private Animator animator;
     private Rigidbody rigidBody;
     public bool isAttacking;
     private bool showSword;
@@ -129,7 +129,7 @@ public class AttackManager : MonoBehaviour
         attackIndex = 0;             // numbers of clicks
         canClick = true;
         mainCmra = Camera.main;
-        
+
         swordIndex = (int)currentSwordType;
         controller = GetComponent<vThirdPersonController>();
         attackParticle = currentSword.gameObject.GetComponentInChildren<ParticleSystem>();
@@ -154,7 +154,7 @@ public class AttackManager : MonoBehaviour
 
         //CheckCurrentSword();
 
-        if(Input.GetButtonDown("SwitchStance"))
+        if (Input.GetButtonDown("SwitchStance"))
         {
             if (currentCombo == comboSelection.lightStance)
                 currentCombo = comboSelection.heavyStacne;
@@ -164,7 +164,7 @@ public class AttackManager : MonoBehaviour
         }
 
         dpadinput = Input.GetAxisRaw("DPad_LR");
-        if(dpadinput != lastinput)
+        if (dpadinput != lastinput)
         {
             if (dpadinput == 1.0f)
             {
@@ -179,7 +179,7 @@ public class AttackManager : MonoBehaviour
                 currentCombo = (comboSelection)keySelection;
                 //=================
             }
-            else if(dpadinput == -1.0f)
+            else if (dpadinput == -1.0f)
             {
                 lastinput = dpadinput;
                 Debug.Log("Left");
@@ -192,7 +192,7 @@ public class AttackManager : MonoBehaviour
                 currentCombo = (comboSelection)keySelection;
                 //=================
             }
-            else if(dpadinput == 0.0f)
+            else if (dpadinput == 0.0f)
             {
                 lastinput = 0.0f;
             }
@@ -220,7 +220,7 @@ public class AttackManager : MonoBehaviour
         {
             delayAttack = Time.time + 0.8f;
             waitTime = 0.0f;
-            
+
             swordTimer = Time.time + swordDisapearTime;
             if (!showSword)
                 ShowSword();
@@ -284,6 +284,11 @@ public class AttackManager : MonoBehaviour
         animator.SetTrigger(attackTrigger);
 
         OnAttackStart?.Invoke(GetAttackDistance(attackIndex));
+
+        int soundIndex = attackIndex + 1;
+        if (currentCombo == comboSelection.heavyStacne)
+            soundIndex -= startAttackIndex;
+        SoundManagerScript.PlaySound("SwordSwing"+soundIndex.ToString());
 
         if (attackIndex < endAttackIndex - 1)
             attackIndex++;

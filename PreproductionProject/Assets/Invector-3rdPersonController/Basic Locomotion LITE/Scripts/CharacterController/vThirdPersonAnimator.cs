@@ -43,6 +43,12 @@ namespace Invector.CharacterController
             // fre movement get the input 0 to 1
             if (canMove)
             {
+                if (speed > 0 && !isSprinting)
+                    SoundManagerScript.PlaySound("Walking");
+                else if (speed > 0 && isSprinting)
+                    SoundManagerScript.PlaySound("Running");
+                else
+                    SoundManagerScript.EndPlay();
                 animator.SetFloat("InputVertical", speed);//, 0.1f, Time.deltaTime);
 
                 if (isStrafing)
