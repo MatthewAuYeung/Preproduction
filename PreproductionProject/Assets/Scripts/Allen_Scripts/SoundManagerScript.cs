@@ -41,10 +41,12 @@ public class SoundManagerScript : MonoBehaviour
                 audioSrc.loop = true;
                 break;
             case "RobotDeath":
-                audioSrc.PlayOneShot(robotDeathSound);
+                audioSrc.clip = robotDeathSound;
+                audioSrc.loop = false;
                 break;
             case "HurtHit":
-                audioSrc.PlayOneShot(hurtHitSound);
+                audioSrc.clip = hurtHitSound;
+                audioSrc.loop = false;
                 break;
             case "SwordSwing1":
                 audioSrc.clip = swingSound1;

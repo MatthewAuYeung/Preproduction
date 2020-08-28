@@ -84,6 +84,7 @@ public abstract class BaseEnemyScript : MonoBehaviour
 
     public void TakeDamage(float damage)
     {
+        SoundManagerScript.PlaySound("HurtHit");
         health -= damage;
         hitEffect.Play();
         DamagePopupManager.instance.DisplayDamagePopup(damage, transform);
