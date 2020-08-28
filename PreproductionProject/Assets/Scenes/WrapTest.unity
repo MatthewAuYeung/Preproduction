@@ -2072,7 +2072,7 @@ PrefabInstance:
     - target: {fileID: 7443772372247003620, guid: 26a1e40a5ecc2a1459d868188acbc39f,
         type: 3}
       propertyPath: cooldown
-      value: 5
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 7443772372247003620, guid: 26a1e40a5ecc2a1459d868188acbc39f,
         type: 3}
@@ -2158,6 +2158,14 @@ PrefabInstance:
       propertyPath: indicator
       value: 
       objectReference: {fileID: 1270716443}
+    - target: {fileID: 1615343467, guid: 26a1e40a5ecc2a1459d868188acbc39f, type: 3}
+      propertyPath: PG_glowMat
+      value: 
+      objectReference: {fileID: 2100000, guid: 29d77a8096962b64ea1dfe7620819cf6, type: 2}
+    - target: {fileID: 1615343467, guid: 26a1e40a5ecc2a1459d868188acbc39f, type: 3}
+      propertyPath: Warp_glowMat
+      value: 
+      objectReference: {fileID: 2100000, guid: 523be1626a594c34aa7539bb74a589ba, type: 2}
     - target: {fileID: 8919418275780022991, guid: 26a1e40a5ecc2a1459d868188acbc39f,
         type: 3}
       propertyPath: m_IsActive

@@ -551,6 +551,8 @@ MonoBehaviour:
   attackDelay: 10
   fov: 160
   hitEffect: {fileID: 4004281242495501795}
+  explosionEffect: {fileID: 1107882085014728933, guid: a155042b870eb2d4abd46666303d7e5d,
+    type: 3}
   SlowBombEffectMat: {fileID: 2100000, guid: 6157d577e61520a43944d0379799410f, type: 2}
   knockbackDuration: 0.25
   isEventTriggered: 0

@@ -28,7 +28,10 @@ public abstract class BaseEnemyScript : MonoBehaviour
 
     [SerializeField]
     protected ParticleSystem hitEffect;
-
+    //=============================
+    [SerializeField]
+    protected ParticleSystem explosionEffect;
+    //=============================
     [SerializeField]
     protected Material SlowBombEffectMat;
 
@@ -62,6 +65,8 @@ public abstract class BaseEnemyScript : MonoBehaviour
     protected Rigidbody _rb;
     protected NavMeshAgent _agent;
     protected CapsuleCollider _collider;
+    protected int hitcount;
+    protected float hitcountDelay;
     public bool beingWarpAttacked = false;
     [SerializeField]
     private Transform damagePopupTransform;
@@ -84,11 +89,24 @@ public abstract class BaseEnemyScript : MonoBehaviour
 
     public void TakeDamage(float damage)
     {
+        hitcount++;
+        if(hitcount == 3)
+        {
+            hitcount = 0;
+
+        }
         health -= damage;
         hitEffect.Play();
         DamagePopupManager.instance.DisplayDamagePopup(damage, transform);
     }
+    
+    public void enemyExplosion()
+    {
+        //explosionEffect.Play();
 
+        Instantiate(explosionEffect,transform.position,Quaternion.identity);
+    }
+    
     public void KnockBack(float amount, Vector3 point)
     {
         _rb.isKinematic = false;
