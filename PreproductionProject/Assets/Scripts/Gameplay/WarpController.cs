@@ -210,6 +210,11 @@ public class WarpController : MonoBehaviour
         }
     }
 
+    public void Warp()
+    {
+
+    }
+
     private void Fresnel()
     {
         GameObject clone = Instantiate(gameObject, transform.position, transform.rotation);
