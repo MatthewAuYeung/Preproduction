@@ -99,6 +99,7 @@ public class EnemyScript : BaseEnemyScript
 
         if (health <= 0.0f)
         {
+            SoundManagerScript.PlaySound("RobotDeath");
             Vector3 lootPosition = new Vector3(transform.position.x, transform.position.y - 0.3f, transform.position.z);
             loot.calculateLoot(lootPosition);
             _manager.enemies.Remove(this);

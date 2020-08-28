@@ -95,6 +95,7 @@ public abstract class BaseEnemyScript : MonoBehaviour
             hitcount = 0;
 
         }
+        SoundManagerScript.PlaySound("HurtHit");
         health -= damage;
         hitEffect.Play();
         DamagePopupManager.instance.DisplayDamagePopup(damage, transform);
