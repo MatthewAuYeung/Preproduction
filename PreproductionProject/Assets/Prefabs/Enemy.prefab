@@ -513,6 +513,8 @@ MonoBehaviour:
   attackDelay: 10
   fov: 160
   hitEffect: {fileID: 4004281242495501795}
+  explosionEffect: {fileID: 1107882085014728933, guid: a155042b870eb2d4abd46666303d7e5d,
+    type: 3}
   SlowBombEffectMat: {fileID: 2100000, guid: 6157d577e61520a43944d0379799410f, type: 2}
   knockbackDuration: 0.25
   isEventTriggered: 0
@@ -6090,11 +6092,6 @@ PrefabInstance:
       propertyPath: m_LocalScale.y
       value: 0.00032383788
       objectReference: {fileID: 0}
-    - target: {fileID: 7614619101681231534, guid: ec0bf95e26038b64396fc67509a489cd,
-        type: 3}
-      propertyPath: m_Name
-      value: AttackBar
-      objectReference: {fileID: 0}
     - target: {fileID: 6063270804053980427, guid: ec0bf95e26038b64396fc67509a489cd,
         type: 3}
       propertyPath: m_Color.g
@@ -6104,6 +6101,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Color.b
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7614619101681231534, guid: ec0bf95e26038b64396fc67509a489cd,
+        type: 3}
+      propertyPath: m_Name
+      value: AttackBar
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ec0bf95e26038b64396fc67509a489cd, type: 3}

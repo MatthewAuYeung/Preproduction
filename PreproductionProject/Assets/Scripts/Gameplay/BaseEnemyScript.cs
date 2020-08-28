@@ -28,7 +28,10 @@ public abstract class BaseEnemyScript : MonoBehaviour
 
     [SerializeField]
     protected ParticleSystem hitEffect;
-
+    //=============================
+    [SerializeField]
+    protected ParticleSystem explosionEffect;
+    //=============================
     [SerializeField]
     protected Material SlowBombEffectMat;
 
@@ -96,7 +99,14 @@ public abstract class BaseEnemyScript : MonoBehaviour
         hitEffect.Play();
         DamagePopupManager.instance.DisplayDamagePopup(damage, transform);
     }
+    
+    public void enemyExplosion()
+    {
+        //explosionEffect.Play();
 
+        Instantiate(explosionEffect,transform.position,Quaternion.identity);
+    }
+    
     public void KnockBack(float amount, Vector3 point)
     {
         _rb.isKinematic = false;
