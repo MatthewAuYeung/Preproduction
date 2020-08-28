@@ -101,7 +101,9 @@ public class AttackManager : MonoBehaviour
 
     //[SerializeField]
     private ParticleSystem attackParticle;
-
+    // -----------------------------------------------------------------------
+    private string attackName;
+    // -----------------------------------------------------------------------
     private void Awake()
     {
         animator = GetComponent<Animator>();
@@ -264,14 +266,20 @@ public class AttackManager : MonoBehaviour
                 break;
         }
     }
+
     void Attack()
     {
+        string attackTrigger = "Attack" + (attackIndex + 1).ToString();
+        // -----------------------------------------------------------------------
+        attackName = attackTrigger;
+        // -----------------------------------------------------------------------
         DisableMovement();
         attackParticle.Play();
         isAttacking = true;
         Vector3 atkDir = mainCmra.transform.forward;
         atkDir.y = 0.0f;
         transform.rotation = Quaternion.LookRotation(atkDir);
+
 
         string attackTrigger = "Attack" + (attackIndex + 1).ToString();
 
@@ -408,6 +416,9 @@ public class AttackManager : MonoBehaviour
 
     private void DisableMovement()
     {
+        // -----------------------------------------------------------------------
+        Debug.Log(attackName + " Disable Movement called.");
+        // -----------------------------------------------------------------------
         controller.lockMovement = true;
         controller.input.x = 0.0f;
         controller.input.y = 0.0f;
@@ -415,6 +426,15 @@ public class AttackManager : MonoBehaviour
 
     public void EnableMovement()
     {
-        controller.lockMovement = false;
+        // -----------------------------------------------------------------------
+        //Debug.Log(attackName + " Enable Movement called.");
+        // -----------------------------------------------------------------------
+        if(!isAttacking)
+            controller.lockMovement = false;
+    }
+
+    public void DestroySword()
+    {
+        Destroy(currentSword);
     }
 }

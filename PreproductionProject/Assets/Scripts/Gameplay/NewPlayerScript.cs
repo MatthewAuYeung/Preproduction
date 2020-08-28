@@ -63,7 +63,10 @@ public class NewPlayerScript : MonoBehaviour
     public int playerRedKeyCount = 0;
     public int playerGreenKeyCount = 0;
 
+    [SerializeField]
+    private float slowMoDurration = 1.0f;
 
+    private bool isSlowMo = false;
 
     private PlayerGettingHitAnim playerhurt;
         
@@ -128,6 +131,11 @@ public class NewPlayerScript : MonoBehaviour
         }
         if (hitEffect.isPlaying)
             StartCoroutine(StopHitEffect());
+
+        if(isSlowMo)
+        {
+            StartCoroutine(SlowMo());
+        }
     }
 
 
@@ -342,5 +350,19 @@ public class NewPlayerScript : MonoBehaviour
     public bool GetPhaseGrabState()
     {
         return isPhaseGrabUnlocked;
+    }
+
+    public void TriggerSlowMo()
+    {
+        if (!isSlowMo)
+            isSlowMo = true;
+    }
+
+    private IEnumerator SlowMo()
+    {
+        Time.timeScale = 0.5f;
+        yield return new WaitForSeconds(slowMoDurration);
+        Time.timeScale = 1.0f;
+        isSlowMo = false;
     }
 }
