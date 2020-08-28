@@ -80,13 +80,17 @@ public class WarpController : MonoBehaviour
     private void Awake()
     {
         player = GetComponentInParent<NewPlayerScript>();
-        warpCooldown = player.GetWarpCooldown();
+        if(player != null)
+        {
+            warpCooldown = player.GetWarpCooldown();
+            abilityDuration = player.GetWarpEnemyDuration();
+        }
         lockOnManager = GetComponent<LockOnManager>();
         attackManager = GetComponent<AttackManager>();
         animator = GetComponent<Animator>();
         _rb = GetComponent<Rigidbody>();
         mainCamera = Camera.main;
-        abilityDuration = player.GetWarpEnemyDuration();
+        
         indicator.SetActive(false);
         swordOrigPos = sword.localPosition;
         swordOrigRot = sword.localEulerAngles;
@@ -312,7 +316,7 @@ public class WarpController : MonoBehaviour
 
         sword.parent = null;
         sword.DOMove(transform.position + warpDir.normalized * warpRange, warpEnemyDuration / 1.2f);
-        sword.DOLookAt(transform.position + warpDir.normalized * warpRange, .2f, AxisConstraint.None);
+        sword.rotation = Quaternion.LookRotation(-warpDir);
         PlayParticles();
     }
 

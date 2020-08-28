@@ -423,7 +423,7 @@ public class AttackManager : MonoBehaviour
     private void DisableMovement()
     {
         // -----------------------------------------------------------------------
-        Debug.Log(attackName + " Disable Movement called.");
+        //Debug.Log(attackName + " Disable Movement called.");
         // -----------------------------------------------------------------------
         controller.lockMovement = true;
         controller.input.x = 0.0f;
