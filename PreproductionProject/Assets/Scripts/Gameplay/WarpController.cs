@@ -47,6 +47,9 @@ public class WarpController : MonoBehaviour
     private Transform sword;
 
     [SerializeField]
+    private Transform swordHand;
+
+    [SerializeField]
     private GameObject indicator;
 
     public GameObject ybot;
@@ -68,6 +71,11 @@ public class WarpController : MonoBehaviour
     private float abilityWaitTime;
     private Vector3 originalPos;
 
+    private Vector3 swordOrigPos;
+    private Vector3 swordOrigRot;
+    private Vector3 swordOrigScale;
+    private MeshRenderer swordMesh;
+
     private void Awake()
     {
         player = GetComponentInParent<NewPlayerScript>();
@@ -78,6 +86,8 @@ public class WarpController : MonoBehaviour
         mainCamera = Camera.main;
         abilityDuration = player.GetWarpEnemyDuration();
         indicator.SetActive(false);
+        swordOrigPos = sword.localPosition;
+        swordOrigRot = sword.localEulerAngles;
     }
 
     private void Update()
@@ -92,12 +102,13 @@ public class WarpController : MonoBehaviour
             if (Input.GetButtonDown("Warp"))
             {
                 player.AbilityUsed(NewPlayerScript.AbilityType.Warp);
-                if (lockOnManager.GetIsLockOn())
-                {
-                    WarpAttack(lockOnManager.GetClosestObject());
-                }
-                else
-                    FreeWarp();
+                //if (lockOnManager.GetIsLockOn())
+                //{
+                //    WarpAttack(lockOnManager.GetClosestObject());
+                //}
+                //else
+                //    FreeWarp();
+                animator.SetTrigger("Warp");
             }
         }
 
@@ -212,7 +223,12 @@ public class WarpController : MonoBehaviour
 
     public void Warp()
     {
-
+        if (lockOnManager.GetIsLockOn())
+        {
+            WarpAttack(lockOnManager.GetClosestObject());
+        }
+        else
+            FreeWarp();
     }
 
     private void Fresnel()

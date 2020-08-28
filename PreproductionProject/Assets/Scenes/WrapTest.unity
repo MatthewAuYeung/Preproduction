@@ -371,6 +371,12 @@ Camera:
     type: 3}
   m_PrefabInstance: {fileID: 1375514166}
   m_PrefabAsset: {fileID: 0}
+--- !u!4 &71270853 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 52574012973105396, guid: 26a1e40a5ecc2a1459d868188acbc39f,
+    type: 3}
+  m_PrefabInstance: {fileID: 1375514166}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &86084677
 GameObject:
   m_ObjectHideFlags: 0
@@ -2181,6 +2187,10 @@ PrefabInstance:
       propertyPath: Warp_glowMat
       value: 
       objectReference: {fileID: 2100000, guid: 523be1626a594c34aa7539bb74a589ba, type: 2}
+    - target: {fileID: 1615343467, guid: 26a1e40a5ecc2a1459d868188acbc39f, type: 3}
+      propertyPath: swordHand
+      value: 
+      objectReference: {fileID: 71270853}
     - target: {fileID: 8919418275780022991, guid: 26a1e40a5ecc2a1459d868188acbc39f,
         type: 3}
       propertyPath: m_IsActive
