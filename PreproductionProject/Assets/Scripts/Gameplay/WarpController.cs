@@ -253,6 +253,7 @@ public class WarpController : MonoBehaviour
         Destroy(clone.GetComponent<vThirdPersonInput>());
         Destroy(clone.GetComponent<BombThrower>());
         Destroy(clone.GetComponent<PlayerGettingHitAnim>());
+        Destroy(clone.GetComponent<Rigidbody>());
 
         SkinnedMeshRenderer[] skinMeshList = clone.GetComponentsInChildren<SkinnedMeshRenderer>();
         foreach (SkinnedMeshRenderer smr in skinMeshList)
