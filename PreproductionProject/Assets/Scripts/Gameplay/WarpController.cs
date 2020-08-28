@@ -56,6 +56,7 @@ public class WarpController : MonoBehaviour
 
     private NewPlayerScript player;
     private LockOnManager lockOnManager;
+    private AttackManager attackManager;
     private Animator animator;
     float currentTime;
     float warpCooldown;
@@ -79,15 +80,21 @@ public class WarpController : MonoBehaviour
     private void Awake()
     {
         player = GetComponentInParent<NewPlayerScript>();
-        warpCooldown = player.GetWarpCooldown();
+        if(player != null)
+        {
+            warpCooldown = player.GetWarpCooldown();
+            abilityDuration = player.GetWarpEnemyDuration();
+        }
         lockOnManager = GetComponent<LockOnManager>();
+        attackManager = GetComponent<AttackManager>();
         animator = GetComponent<Animator>();
         _rb = GetComponent<Rigidbody>();
         mainCamera = Camera.main;
-        abilityDuration = player.GetWarpEnemyDuration();
+        
         indicator.SetActive(false);
-        //swordOrigPos = sword.localPosition;
-        //swordOrigRot = sword.localEulerAngles;
+        swordOrigPos = sword.localPosition;
+        swordOrigRot = sword.localEulerAngles;
+
     }
 
     private void Update()
@@ -108,6 +115,7 @@ public class WarpController : MonoBehaviour
                 //}
                 //else
                 //    FreeWarp();
+                attackManager.ShowSword();
                 animator.SetTrigger("Warp");
             }
         }
@@ -305,6 +313,10 @@ public class WarpController : MonoBehaviour
             }
         }
         transform.DOMove(transform.position + warpDir.normalized * warpRange, warpEnemyDuration).OnComplete(() => EndWarp());
+
+        sword.parent = null;
+        sword.DOMove(transform.position + warpDir.normalized * warpRange, warpEnemyDuration / 1.2f);
+        sword.rotation = Quaternion.LookRotation(-warpDir);
         PlayParticles();
     }
 
@@ -339,6 +351,10 @@ public class WarpController : MonoBehaviour
 
     private void EndWarp(GameObject target = null)
     {
+        sword.parent = swordHand;
+        sword.localPosition = swordOrigPos;
+        sword.localEulerAngles = swordOrigRot;
+
         if(target != null)
         {
             EnemyScript enemy = target.GetComponent<EnemyScript>();
