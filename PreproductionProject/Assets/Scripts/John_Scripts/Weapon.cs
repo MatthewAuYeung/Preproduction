@@ -25,6 +25,7 @@ public class Weapon : MonoBehaviour
             {
                 enemy.KnockBack(5.0f, hit.point);
             }
+            playerScript.CamShake();
             playerScript.IncrementHitPoint();
         }
     }

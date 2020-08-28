@@ -191,7 +191,7 @@ public class NewPlayerScript : MonoBehaviour
         hitEffect.Play();
         bloodyscreen.DOFade(bloodyscreenalpha, 0.15f);
         StartCoroutine(DisableBloodyScreen());
-        camShake.Shake();
+        CamShake();
     }
 
     IEnumerator DisableBloodyScreen()
@@ -364,5 +364,10 @@ public class NewPlayerScript : MonoBehaviour
         yield return new WaitForSeconds(slowMoDurration);
         Time.timeScale = 1.0f;
         isSlowMo = false;
+    }
+
+    public void CamShake()
+    {
+        camShake.Shake();
     }
 }
