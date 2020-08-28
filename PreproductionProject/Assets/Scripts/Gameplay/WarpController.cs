@@ -56,6 +56,7 @@ public class WarpController : MonoBehaviour
 
     private NewPlayerScript player;
     private LockOnManager lockOnManager;
+    private AttackManager attackManager;
     private Animator animator;
     float currentTime;
     float warpCooldown;
@@ -81,6 +82,7 @@ public class WarpController : MonoBehaviour
         player = GetComponentInParent<NewPlayerScript>();
         warpCooldown = player.GetWarpCooldown();
         lockOnManager = GetComponent<LockOnManager>();
+        attackManager = GetComponent<AttackManager>();
         animator = GetComponent<Animator>();
         _rb = GetComponent<Rigidbody>();
         mainCamera = Camera.main;
@@ -88,6 +90,7 @@ public class WarpController : MonoBehaviour
         indicator.SetActive(false);
         swordOrigPos = sword.localPosition;
         swordOrigRot = sword.localEulerAngles;
+
     }
 
     private void Update()
@@ -108,6 +111,7 @@ public class WarpController : MonoBehaviour
                 //}
                 //else
                 //    FreeWarp();
+                attackManager.ShowSword();
                 animator.SetTrigger("Warp");
             }
         }
@@ -305,6 +309,10 @@ public class WarpController : MonoBehaviour
             }
         }
         transform.DOMove(transform.position + warpDir.normalized * warpRange, warpEnemyDuration).OnComplete(() => EndWarp());
+
+        sword.parent = null;
+        sword.DOMove(transform.position + warpDir.normalized * warpRange, warpEnemyDuration / 1.2f);
+        sword.DOLookAt(transform.position + warpDir.normalized * warpRange, .2f, AxisConstraint.None);
         PlayParticles();
     }
 
@@ -339,6 +347,10 @@ public class WarpController : MonoBehaviour
 
     private void EndWarp(GameObject target = null)
     {
+        sword.parent = swordHand;
+        sword.localPosition = swordOrigPos;
+        sword.localEulerAngles = swordOrigRot;
+
         if(target != null)
         {
             EnemyScript enemy = target.GetComponent<EnemyScript>();

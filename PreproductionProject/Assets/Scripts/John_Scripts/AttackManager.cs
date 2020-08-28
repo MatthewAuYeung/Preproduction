@@ -218,12 +218,8 @@ public class AttackManager : MonoBehaviour
 
         if (Input.GetButtonDown("Fire1") && delayAttack < Time.time && Time.timeScale != 0)
         {
-            delayAttack = Time.time + 0.8f;
-            waitTime = 0.0f;
 
-            swordTimer = Time.time + swordDisapearTime;
-            if (!showSword)
-                ShowSword();
+            ShowSword();
             Attack();
         }
 
@@ -231,14 +227,26 @@ public class AttackManager : MonoBehaviour
         if (swordTimer < Time.time && showSword)
         {
             // play particle
-            showSword = false;
+            HideSword();
+        }
+    }
+
+    public void ShowSword()
+    {
+        delayAttack = Time.time + 0.8f;
+        waitTime = 0.0f;
+
+        swordTimer = Time.time + swordDisapearTime;
+        if (!showSword)
+        {
+            showSword = true;
             swordParticle.Play();
         }
     }
 
-    private void ShowSword()
+    public void HideSword()
     {
-        showSword = true;
+        showSword = false;
         swordParticle.Play();
     }
 
