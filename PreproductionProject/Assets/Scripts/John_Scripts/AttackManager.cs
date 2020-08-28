@@ -280,9 +280,6 @@ public class AttackManager : MonoBehaviour
         atkDir.y = 0.0f;
         transform.rotation = Quaternion.LookRotation(atkDir);
 
-
-        string attackTrigger = "Attack" + (attackIndex + 1).ToString();
-
         animator.SetTrigger(attackTrigger);
 
         OnAttackStart?.Invoke(GetAttackDistance(attackIndex));
