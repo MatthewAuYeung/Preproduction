@@ -97,7 +97,7 @@ LightmapSettings:
     m_ShowResolutionOverlay: 1
     m_ExportTrainingData: 0
   m_LightingDataAsset: {fileID: 0}
-  m_UseShadowmask: 1
+  m_UseShadowmask: 0
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -10856,19 +10856,17 @@ MonoBehaviour:
 
     John Wu - Programmer
 
-
-    Special thanks to:
-
     Parham Ebadi - Producer
 
     Gonzalo Morales - Modeler
 
     Daniel Mireles - Modeler
 
+    Husain Chappalwala - Modeler
+
     Jakob Barg - Animator
 
     Abdelrahman El Masry - Animator
-
 
 
 
