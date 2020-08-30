@@ -868,6 +868,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1063612158532697739}
   - component: {fileID: 5368246566260471667}
+  - component: {fileID: 6739123066927726907}
   m_Layer: 0
   m_Name: cm
   m_TagString: Untagged
@@ -901,6 +902,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ac0b09e7857660247b1477e93731de29, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &6739123066927726907
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3203136630512672261}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 68bb026fafb42b14791938953eaace77, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_NoiseProfile: {fileID: 11400000, guid: 69ce8388f6785dd4c8c39915efece2f4, type: 2}
+  m_PivotOffset: {x: 0, y: 0, z: 0}
+  m_AmplitudeGain: 0
+  m_FrequencyGain: 1
+  mNoiseOffsets: {x: 0, y: 0, z: 0}
 --- !u!1 &4164015326601920968
 GameObject:
   m_ObjectHideFlags: 0
@@ -3756,7 +3774,8 @@ MonoBehaviour:
   whiteTrail: {fileID: 4764674821781306896}
   PG_glowMat: {fileID: 2100000, guid: 29d77a8096962b64ea1dfe7620819cf6, type: 2}
   Warp_glowMat: {fileID: 2100000, guid: 523be1626a594c34aa7539bb74a589ba, type: 2}
-  sword: {fileID: 0}
+  sword: {fileID: 5862538505970621886}
+  swordHand: {fileID: 52574012973105396}
   indicator: {fileID: 6249442503996781257}
   ybot: {fileID: 8874325352158619595}
 --- !u!114 &1038329704
@@ -3808,7 +3827,7 @@ MonoBehaviour:
   heavy_attack4: 3
   heavy_attack5: 3
   currentCombo: 0
-  currentSwordType: 0
+  currentSwordType: 1
   swordParticle: {fileID: 4107296007502130615}
 --- !u!114 &5232862844244932280
 MonoBehaviour:
@@ -4832,9 +4851,9 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 578152856988106434}
   m_PrefabAsset: {fileID: 0}
---- !u!4 &5583538003948508632 stripped
+--- !u!4 &52574012973105396 stripped
 Transform:
-  m_CorrespondingSourceObject: {fileID: -4216859302048453862, guid: a0d7ed7b7ac238d4c9f698cef653494b,
+  m_CorrespondingSourceObject: {fileID: 629594911914262070, guid: a0d7ed7b7ac238d4c9f698cef653494b,
     type: 3}
   m_PrefabInstance: {fileID: 578152856988106434}
   m_PrefabAsset: {fileID: 0}
@@ -4844,9 +4863,9 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 578152856988106434}
   m_PrefabAsset: {fileID: 0}
---- !u!4 &52574012973105396 stripped
+--- !u!4 &5583538003948508632 stripped
 Transform:
-  m_CorrespondingSourceObject: {fileID: 629594911914262070, guid: a0d7ed7b7ac238d4c9f698cef653494b,
+  m_CorrespondingSourceObject: {fileID: -4216859302048453862, guid: a0d7ed7b7ac238d4c9f698cef653494b,
     type: 3}
   m_PrefabInstance: {fileID: 578152856988106434}
   m_PrefabAsset: {fileID: 0}
@@ -4940,7 +4959,7 @@ PrefabInstance:
     - target: {fileID: 4753990986510699621, guid: bc974d3056c03cf4fb86d15be2501e0a,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8620672838639550070, guid: bc974d3056c03cf4fb86d15be2501e0a,
         type: 3}
@@ -5002,6 +5021,12 @@ PrefabInstance:
 --- !u!65 &3264009138151647864 stripped
 BoxCollider:
   m_CorrespondingSourceObject: {fileID: 843638731850254768, guid: bc974d3056c03cf4fb86d15be2501e0a,
+    type: 3}
+  m_PrefabInstance: {fileID: 2808315358314390472}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &5862538505970621886 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 8620672838639550070, guid: bc974d3056c03cf4fb86d15be2501e0a,
     type: 3}
   m_PrefabInstance: {fileID: 2808315358314390472}
   m_PrefabAsset: {fileID: 0}
@@ -6467,6 +6492,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: AG_RedSword
+      objectReference: {fileID: 0}
+    - target: {fileID: 8375458006204895605, guid: 1c749ead87080b14eadfb98ede8d85f8,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4783037718334382950, guid: 1c749ead87080b14eadfb98ede8d85f8,
         type: 3}

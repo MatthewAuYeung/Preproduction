@@ -47,6 +47,14 @@ public abstract class BaseEnemyScript : MonoBehaviour
     [SerializeField]
     protected float OARadius = 0.6f;
 
+    [SerializeField]
+    protected float stunFromPlayerDuration = 1.0f;
+
+    [SerializeField]
+    protected float resetHitcount = 3.0f;
+
+    protected bool stunFromPlayer = false;
+
     protected int currentIndex;
     protected bool reverse;
     protected Vector3 lastPos;
@@ -72,6 +80,8 @@ public abstract class BaseEnemyScript : MonoBehaviour
     private Transform damagePopupTransform;
     protected EnemyState currentState = EnemyState.NONE;
 
+    private float resetTimer;
+
     public enum EnemyState
     {
         Idle,
@@ -90,10 +100,11 @@ public abstract class BaseEnemyScript : MonoBehaviour
     public void TakeDamage(float damage)
     {
         hitcount++;
+        resetTimer = Time.time + resetHitcount;
         if(hitcount == 3)
         {
             hitcount = 0;
-
+            Stun();
         }
         SoundManagerScript.PlaySound("HurtHit");
         health -= damage;
@@ -157,5 +168,18 @@ public abstract class BaseEnemyScript : MonoBehaviour
     public virtual void StunFromBomb(float speedModifier, float stuntEffectDuration = 1.0f)
     {
         // Implemented in child class.
+    }
+
+    public virtual void Stun()
+    {
+        // Implemented in child class.
+    }
+
+    public void ResetHitCount()
+    {
+        if(resetTimer < Time.time)
+        {
+            hitcount = 0;
+        }
     }
 }

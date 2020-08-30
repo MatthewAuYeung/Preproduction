@@ -47,12 +47,16 @@ public class WarpController : MonoBehaviour
     private Transform sword;
 
     [SerializeField]
+    private Transform swordHand;
+
+    [SerializeField]
     private GameObject indicator;
 
     public GameObject ybot;
 
     private NewPlayerScript player;
     private LockOnManager lockOnManager;
+    private AttackManager attackManager;
     private Animator animator;
     float currentTime;
     float warpCooldown;
@@ -68,16 +72,29 @@ public class WarpController : MonoBehaviour
     private float abilityWaitTime;
     private Vector3 originalPos;
 
+    private Vector3 swordOrigPos;
+    private Vector3 swordOrigRot;
+    private Vector3 swordOrigScale;
+    private MeshRenderer swordMesh;
+
     private void Awake()
     {
         player = GetComponentInParent<NewPlayerScript>();
-        warpCooldown = player.GetWarpCooldown();
+        if(player != null)
+        {
+            warpCooldown = player.GetWarpCooldown();
+            abilityDuration = player.GetWarpEnemyDuration();
+        }
         lockOnManager = GetComponent<LockOnManager>();
+        attackManager = GetComponent<AttackManager>();
         animator = GetComponent<Animator>();
         _rb = GetComponent<Rigidbody>();
         mainCamera = Camera.main;
-        abilityDuration = player.GetWarpEnemyDuration();
+        
         indicator.SetActive(false);
+        swordOrigPos = sword.localPosition;
+        swordOrigRot = sword.localEulerAngles;
+
     }
 
     private void Update()
@@ -92,12 +109,14 @@ public class WarpController : MonoBehaviour
             if (Input.GetButtonDown("Warp"))
             {
                 player.AbilityUsed(NewPlayerScript.AbilityType.Warp);
-                if (lockOnManager.GetIsLockOn())
-                {
-                    WarpAttack(lockOnManager.GetClosestObject());
-                }
-                else
-                    FreeWarp();
+                //if (lockOnManager.GetIsLockOn())
+                //{
+                //    WarpAttack(lockOnManager.GetClosestObject());
+                //}
+                //else
+                //    FreeWarp();
+                attackManager.ShowSword();
+                animator.SetTrigger("Warp");
             }
         }
 
@@ -212,7 +231,12 @@ public class WarpController : MonoBehaviour
 
     public void Warp()
     {
-
+        if (lockOnManager.GetIsLockOn())
+        {
+            WarpAttack(lockOnManager.GetClosestObject());
+        }
+        else
+            FreeWarp();
     }
 
     private void Fresnel()
@@ -229,6 +253,7 @@ public class WarpController : MonoBehaviour
         Destroy(clone.GetComponent<vThirdPersonInput>());
         Destroy(clone.GetComponent<BombThrower>());
         Destroy(clone.GetComponent<PlayerGettingHitAnim>());
+        Destroy(clone.GetComponent<Rigidbody>());
 
         SkinnedMeshRenderer[] skinMeshList = clone.GetComponentsInChildren<SkinnedMeshRenderer>();
         foreach (SkinnedMeshRenderer smr in skinMeshList)
@@ -289,6 +314,10 @@ public class WarpController : MonoBehaviour
             }
         }
         transform.DOMove(transform.position + warpDir.normalized * warpRange, warpEnemyDuration).OnComplete(() => EndWarp());
+
+        sword.parent = null;
+        sword.DOMove(transform.position + warpDir.normalized * warpRange, warpEnemyDuration / 1.2f);
+        sword.rotation = Quaternion.LookRotation(-warpDir);
         PlayParticles();
     }
 
@@ -323,6 +352,10 @@ public class WarpController : MonoBehaviour
 
     private void EndWarp(GameObject target = null)
     {
+        sword.parent = swordHand;
+        sword.localPosition = swordOrigPos;
+        sword.localEulerAngles = swordOrigRot;
+
         if(target != null)
         {
             EnemyScript enemy = target.GetComponent<EnemyScript>();
