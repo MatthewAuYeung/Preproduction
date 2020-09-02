@@ -5,7 +5,11 @@ using UnityEngine;
 public class SoundManagerScript : MonoBehaviour
 {
     public static AudioClip swingSound1, swingSound2, swingSound3, swingSound4, swingSound5, runningSound, walkingSound, robotDeathSound, hurtHitSound, RobotInViewSound;
-    static AudioSource audioSrc;
+    public GameObject playerAudioGO;
+    public GameObject robotAudioGO;
+
+    public static AudioSource playerAudioSrc;
+    public static AudioSource robotAudioSrc;
 
     void Start()
     {
@@ -18,9 +22,11 @@ public class SoundManagerScript : MonoBehaviour
         walkingSound = Resources.Load<AudioClip>("Walking2");
         robotDeathSound = Resources.Load<AudioClip>("RobotDeath");
         hurtHitSound = Resources.Load<AudioClip>("HurtHit");
-        RobotInViewSound = Resources.Load<AudioClip>("RobotSig");
+        RobotInViewSound = Resources.Load<AudioClip>("RobotEnemySig");
 
-        audioSrc = GetComponent<AudioSource>();
+
+        playerAudioSrc = playerAudioGO.GetComponent<AudioSource>();
+        robotAudioSrc = robotAudioGO.GetComponent<AudioSource>();
     }
 
     void Update()
@@ -30,60 +36,77 @@ public class SoundManagerScript : MonoBehaviour
 
     public static void PlaySound(string clip)
     {
-        bool foundClip = true;
+        bool foundPlayerClip = false;
+        bool foundRobotClip = false;
         switch (clip)
         {
             case "Running":
-                audioSrc.clip = runningSound;
-                audioSrc.loop = true;
+                playerAudioSrc.clip = runningSound;
+                playerAudioSrc.loop = true;
+                foundPlayerClip = true;
                 break;
             case "Walking":
-                audioSrc.clip = walkingSound;
-                audioSrc.loop = true;
-                break;
-            case "RobotDeath":
-                audioSrc.clip = robotDeathSound;
-                audioSrc.loop = false;
+                playerAudioSrc.clip = walkingSound;
+                playerAudioSrc.loop = true;
+                foundPlayerClip = true;
                 break;
             case "HurtHit":
-                audioSrc.clip = hurtHitSound;
-                audioSrc.loop = false;
+                playerAudioSrc.clip = hurtHitSound;
+                playerAudioSrc.loop = false;
+                foundPlayerClip = true;
                 break;
             case "SwordSwing1":
-                audioSrc.clip = swingSound1;
-                audioSrc.loop = false;
+                playerAudioSrc.clip = swingSound1;
+                playerAudioSrc.loop = false;
+                foundPlayerClip = true;
                 break;
             case "SwordSwing2":
-                audioSrc.clip = swingSound2;
-                audioSrc.loop = false;
+                playerAudioSrc.clip = swingSound2;
+                playerAudioSrc.loop = false;
+                foundPlayerClip = true;
                 break;
             case "SwordSwing3":
-                audioSrc.clip = swingSound3;
-                audioSrc.loop = false;
+                playerAudioSrc.clip = swingSound3;
+                playerAudioSrc.loop = false;
+                foundPlayerClip = true;
                 break;
             case "SwordSwing4":
-                audioSrc.clip = swingSound4;
-                audioSrc.loop = false;
+                playerAudioSrc.clip = swingSound4;
+                playerAudioSrc.loop = false;
+                foundPlayerClip = true;
                 break;
             case "SwordSwing5":
-                audioSrc.clip = swingSound5;
-                audioSrc.loop = false;
+                playerAudioSrc.clip = swingSound5;
+                playerAudioSrc.loop = false;
+                foundPlayerClip = true;
                 break;
             case "RobotSig":
-                audioSrc.clip = RobotInViewSound;
-                audioSrc.loop = false;
+                robotAudioSrc.clip = RobotInViewSound;
+                robotAudioSrc.loop = false;
+                foundRobotClip = true;
+                break;
+            case "RobotDeath":
+                robotAudioSrc.clip = robotDeathSound;
+                robotAudioSrc.loop = false;
+                foundRobotClip = true;
                 break;
             default:
-                foundClip = false;
                 break;
 
         }
-        if (!audioSrc.isPlaying && foundClip)
-            audioSrc.Play();
+        if (!playerAudioSrc.isPlaying && foundPlayerClip)
+            playerAudioSrc.Play();
+        if (!robotAudioSrc.isPlaying && foundRobotClip)
+            robotAudioSrc.Play();
     }
 
     public static void EndPlay()
     {
-        audioSrc.Stop();
+        playerAudioSrc.Stop();
+    }
+
+    public static void EndPlayRobot()
+    {
+        robotAudioSrc.Stop();
     }
 }

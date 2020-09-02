@@ -9,6 +9,7 @@ public class EnemyScript : BaseEnemyScript
 {
     public event System.Action<EnemyScript> OnDeath;
     public bool isStun = false;
+    private bool isChasing = false;
     private Transform _target;
     private EnemyManager _manager;
     private WarpController _warpController;
@@ -55,6 +56,7 @@ public class EnemyScript : BaseEnemyScript
         defaultAttackDelay = attackDelay;
         meshRenderer = GetComponent<MeshRenderer>();
         originalMat = meshRenderer.material;
+        isChasing = false;
     }
 
     private void Start()
@@ -70,6 +72,7 @@ public class EnemyScript : BaseEnemyScript
 
     public override void StunFromBomb(float speedModifier, float stuntEffectDuration = 5.0f)
     {
+        sign.ShowStunnedSignifier();
         isStun = true;
         stunFromPlayer = false;
         stunDuration = Time.time + stuntEffectDuration;
@@ -80,6 +83,7 @@ public class EnemyScript : BaseEnemyScript
 
     public override void Stun()
     {
+        sign.ShowStunnedSignifier();
         isStun = true;
         stunFromPlayer = true;
         stunDuration = Time.time + stunFromPlayerDuration;
@@ -248,9 +252,12 @@ public class EnemyScript : BaseEnemyScript
     }
     private void Chase()
     {
-        //sign.ShowSignifier();
-        SoundManagerScript.PlaySound("RobotSig");
-
+        sign.ShowSignifier();
+        if (!isChasing)
+        {
+            isChasing = true;
+            SoundManagerScript.PlaySound("RobotSig");
+        }
         _agent.isStopped = false;
         if (animator != null)
         {
