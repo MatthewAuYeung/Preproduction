@@ -15,6 +15,7 @@ public class EnemyScript : BaseEnemyScript
     private SphereCollider _attackTrigger;
     private ParticleSystem _particleSystem;
     private GameObject _playerObj;
+    public Signifier sign;
 
     public Image healthBar;
     public Image attackBar;
@@ -49,6 +50,7 @@ public class EnemyScript : BaseEnemyScript
         _attackTrigger = GetComponent<SphereCollider>();
         _particleSystem = GetComponentInChildren<ParticleSystem>();
         _playerObj = _warpController.gameObject;
+        //_sign = GetComponentInChildren<Signifier>;
         defaultSpeed = _agent.speed;
         defaultAttackDelay = attackDelay;
         meshRenderer = GetComponent<MeshRenderer>();
@@ -234,6 +236,8 @@ public class EnemyScript : BaseEnemyScript
 
     private void Idle()
     {
+        //sign.ShowSignifier();
+
         if (InSearchRange() && InView())
             ChangeState(EnemyState.Chase);
         else
@@ -244,6 +248,9 @@ public class EnemyScript : BaseEnemyScript
     }
     private void Chase()
     {
+        //sign.ShowSignifier();
+        SoundManagerScript.PlaySound("RobotSig");
+
         _agent.isStopped = false;
         if (animator != null)
         {
@@ -269,6 +276,8 @@ public class EnemyScript : BaseEnemyScript
 
     private void Attack()
     {
+       //sign.ShowSignifier();
+
         //animator.SetBool("isAttacking", true);
         if (currentTime < Time.time)
         {
@@ -394,6 +403,7 @@ public class EnemyScript : BaseEnemyScript
         Vector3 targetDir = _target.position - transform.position;
 
         float angle = Vector3.Angle(transform.forward, targetDir);
+
 
         if (angle <= fov)
         {

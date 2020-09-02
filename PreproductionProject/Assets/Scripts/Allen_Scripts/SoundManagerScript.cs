@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class SoundManagerScript : MonoBehaviour
 {
-    public static AudioClip swingSound1, swingSound2, swingSound3, swingSound4, swingSound5, runningSound, walkingSound, robotDeathSound, hurtHitSound;
+    public static AudioClip swingSound1, swingSound2, swingSound3, swingSound4, swingSound5, runningSound, walkingSound, robotDeathSound, hurtHitSound, RobotInViewSound;
     static AudioSource audioSrc;
 
     void Start()
@@ -18,6 +18,7 @@ public class SoundManagerScript : MonoBehaviour
         walkingSound = Resources.Load<AudioClip>("Walking2");
         robotDeathSound = Resources.Load<AudioClip>("RobotDeath");
         hurtHitSound = Resources.Load<AudioClip>("HurtHit");
+        RobotInViewSound = Resources.Load<AudioClip>("RobotSig");
 
         audioSrc = GetComponent<AudioSource>();
     }
@@ -66,6 +67,10 @@ public class SoundManagerScript : MonoBehaviour
                 break;
             case "SwordSwing5":
                 audioSrc.clip = swingSound5;
+                audioSrc.loop = false;
+                break;
+            case "RobotSig":
+                audioSrc.clip = RobotInViewSound;
                 audioSrc.loop = false;
                 break;
             default:
