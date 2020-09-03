@@ -120,6 +120,12 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 23800000, guid: c435a001110f122429c33d4d82a5a86f, type: 2}
+--- !u!212 &264665969 stripped
+SpriteRenderer:
+  m_CorrespondingSourceObject: {fileID: 4032022118570976299, guid: 8314f24f78086f848a06455124c18d6d,
+    type: 3}
+  m_PrefabInstance: {fileID: 515265510}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &445574088
 GameObject:
   m_ObjectHideFlags: 0
@@ -254,6 +260,11 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 1.263
       objectReference: {fileID: 0}
+    - target: {fileID: 7058399269982697025, guid: 8314f24f78086f848a06455124c18d6d,
+        type: 3}
+      propertyPath: signifier
+      value: 
+      objectReference: {fileID: 264665969}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8314f24f78086f848a06455124c18d6d, type: 3}
 --- !u!1 &560280258 stripped
@@ -607,6 +618,11 @@ PrefabInstance:
         type: 3}
       propertyPath: InitialModule.size3D
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8380369742036888291, guid: e733e57aa3d0f094ca558eb6196910f8,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e733e57aa3d0f094ca558eb6196910f8, type: 3}
