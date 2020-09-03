@@ -142,18 +142,6 @@ public class AttackManager : MonoBehaviour
 
     void Update()
     {
-        //if (Input.GetKeyDown(KeyCode.Y))
-        //{
-        //    if (swordIndex < (int)SwordType.MAX_SWORDTYPE - 1)
-        //        swordIndex++;
-        //    else
-        //        swordIndex = 0;
-
-        //    currentSwordType = (SwordType)swordIndex;
-        //}
-
-        //CheckCurrentSword();
-
         if (Input.GetButtonDown("SwitchStance"))
         {
             if (currentCombo == comboSelection.lightStance)
