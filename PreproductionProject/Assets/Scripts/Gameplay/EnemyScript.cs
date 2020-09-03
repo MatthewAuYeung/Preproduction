@@ -9,12 +9,14 @@ public class EnemyScript : BaseEnemyScript
 {
     public event System.Action<EnemyScript> OnDeath;
     public bool isStun = false;
+    private bool isChasing = false;
     private Transform _target;
     private EnemyManager _manager;
     private WarpController _warpController;
     private SphereCollider _attackTrigger;
     private ParticleSystem _particleSystem;
     private GameObject _playerObj;
+    public Signifier sign;
 
     public Image healthBar;
     public Image attackBar;
@@ -49,10 +51,12 @@ public class EnemyScript : BaseEnemyScript
         _attackTrigger = GetComponent<SphereCollider>();
         _particleSystem = GetComponentInChildren<ParticleSystem>();
         _playerObj = _warpController.gameObject;
+        //_sign = GetComponentInChildren<Signifier>;
         defaultSpeed = _agent.speed;
         defaultAttackDelay = attackDelay;
         meshRenderer = GetComponent<MeshRenderer>();
         originalMat = meshRenderer.material;
+        isChasing = false;
     }
 
     private void Start()
@@ -68,6 +72,7 @@ public class EnemyScript : BaseEnemyScript
 
     public override void StunFromBomb(float speedModifier, float stuntEffectDuration = 5.0f)
     {
+        sign.ShowStunnedSignifier();
         isStun = true;
         stunFromPlayer = false;
         stunDuration = Time.time + stuntEffectDuration;
@@ -78,6 +83,7 @@ public class EnemyScript : BaseEnemyScript
 
     public override void Stun()
     {
+        sign.ShowStunnedSignifier();
         isStun = true;
         stunFromPlayer = true;
         stunDuration = Time.time + stunFromPlayerDuration;
@@ -234,6 +240,8 @@ public class EnemyScript : BaseEnemyScript
 
     private void Idle()
     {
+        //sign.ShowSignifier();
+
         if (InSearchRange() && InView())
             ChangeState(EnemyState.Chase);
         else
@@ -244,6 +252,12 @@ public class EnemyScript : BaseEnemyScript
     }
     private void Chase()
     {
+        sign.ShowSignifier();
+        if (!isChasing)
+        {
+            isChasing = true;
+            SoundManagerScript.PlaySound("RobotSig");
+        }
         _agent.isStopped = false;
         if (animator != null)
         {
@@ -269,6 +283,8 @@ public class EnemyScript : BaseEnemyScript
 
     private void Attack()
     {
+       //sign.ShowSignifier();
+
         //animator.SetBool("isAttacking", true);
         if (currentTime < Time.time)
         {
@@ -394,6 +410,7 @@ public class EnemyScript : BaseEnemyScript
         Vector3 targetDir = _target.position - transform.position;
 
         float angle = Vector3.Angle(transform.forward, targetDir);
+
 
         if (angle <= fov)
         {
