@@ -116,6 +116,12 @@ public class WarpController : MonoBehaviour
                 //else
                 //    FreeWarp();
                 attackManager.ShowSword();
+                if (lockOnManager.GetIsLockOn())
+                {
+                    transform.rotation = Quaternion.LookRotation(lockOnManager.GetClosestObject().transform.position - transform.position);
+                }
+                else
+                    transform.rotation = Quaternion.LookRotation(mainCamera.transform.forward);
                 animator.SetTrigger("Warp");
             }
         }
@@ -157,32 +163,6 @@ public class WarpController : MonoBehaviour
                     isSelected = true;
                     // Tell the LockOnManager that the player is using the ability
                     lockOnManager.SetIsSelected(isSelected);
-
-                    #region OldStuff
-                    //// Create a clone obj for the indicator
-                    //cloneObj = Instantiate(selectedObj);
-                    //// Delete everything beside the mesh
-
-                    //// Change the material to a transparent texture
-                    ////var meshRenderer = cloneObj.GetComponent<MeshRenderer>();
-                    ////meshRenderer.material = glowMat;
-                    //if (selectedObj.CompareTag("EnemyTag"))
-                    //{
-                    //    SkinnedMeshRenderer[] skinMeshList = cloneObj.GetComponentsInChildren<SkinnedMeshRenderer>();
-                    //    foreach (SkinnedMeshRenderer smr in skinMeshList)
-                    //    {
-                    //        smr.material = glowMat;
-                    //    }
-                    //}
-                    //else
-                    //{
-                    //    MeshRenderer meshRenderer = cloneObj.GetComponentInChildren<MeshRenderer>();
-                    //    meshRenderer.material = glowMat;
-                    //    Destroy(cloneObj.GetComponentInChildren<Rigidbody>());
-                    //}
-
-                    //cloneObj.SetActive(false);
-                    #endregion
 
                     lockOnManager.TurnoffLockOn();
                 }
@@ -236,7 +216,9 @@ public class WarpController : MonoBehaviour
             WarpAttack(lockOnManager.GetClosestObject());
         }
         else
+        {
             FreeWarp();
+        }
     }
 
     private void Fresnel()
@@ -254,6 +236,7 @@ public class WarpController : MonoBehaviour
         Destroy(clone.GetComponent<BombThrower>());
         Destroy(clone.GetComponent<PlayerGettingHitAnim>());
         Destroy(clone.GetComponent<Rigidbody>());
+        Destroy(clone.GetComponent<CapsuleCollider>());
 
         SkinnedMeshRenderer[] skinMeshList = clone.GetComponentsInChildren<SkinnedMeshRenderer>();
         foreach (SkinnedMeshRenderer smr in skinMeshList)
@@ -300,8 +283,7 @@ public class WarpController : MonoBehaviour
         Fresnel();
 
         ShowBody(false);
-        transform.rotation = Quaternion.LookRotation(warpDir);
-
+        //transform.rotation = Quaternion.LookRotation(warpDir);
 
         // Raycast from the player model to check if there is a not warpable object inside the warp range
         if (Physics.Raycast(transform.position + transform.up, warpDir.normalized, out hit, warpRange))
@@ -316,20 +298,20 @@ public class WarpController : MonoBehaviour
         transform.DOMove(transform.position + warpDir.normalized * warpRange, warpEnemyDuration).OnComplete(() => EndWarp());
 
         sword.parent = null;
-        sword.DOMove(transform.position + warpDir.normalized * warpRange, warpEnemyDuration / 1.2f);
+        sword.DOMove(sword.transform.position + warpDir.normalized * warpRange, warpEnemyDuration / 1.2f);
         sword.rotation = Quaternion.LookRotation(-warpDir);
         PlayParticles();
     }
 
     private void WarpAttack(GameObject target)
     {
-        transform.rotation = Quaternion.LookRotation(target.transform.position - transform.position);
+        //transform.rotation = Quaternion.LookRotation(target.transform.position - transform.position);
         ShowBody(false);
         //player.UseMana(manaUsed);
         if(target.CompareTag("EnemyTag"))
         {
             var enemy = target.GetComponent<EnemyScript>();
-            enemy.beingWarpAttacked = true;
+            //enemy.beingWarpAttacked = true;
             if(isDebuging)
                 _rb.isKinematic = true;
             WarpToNewPos(target.transform.position, target);

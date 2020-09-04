@@ -49,7 +49,6 @@ public class BombThrower : MonoBehaviour
 
         if (Input.GetButton("Bomb") && ready == false)
         {
-            //aimCam.Priority = 11;
             downTime = Time.time;
             if (!chargePrefab.GetComponentInChildren<ParticleSystem>().isPlaying)
                 chargePrefab.GetComponentInChildren<ParticleSystem>().Play();
@@ -64,24 +63,18 @@ public class BombThrower : MonoBehaviour
         }
         if (Input.GetButtonUp("Bomb"))
         {
-            //aimCam.Priority = 9;
             pressTime = 0.0f;
             animator.SetTrigger("ShootLaser");
-            //ThrowBomb(); 
             chargePrefab.GetComponentInChildren<ParticleSystem>().Stop();
-            
-
         }
     }
 
     public void ThrowBomb()
     {
         ready = false;
-        //_player.UseMana(manaUsed);
         _player.AbilityUsed(NewPlayerScript.AbilityType.Bomb);
         Vector3 throwDirection = Camera.main.transform.forward;
-        Vector3 spawnPosition = /*bombSpawnTranform.position*/ handPosition.position + (throwDirection * 1f);
-        //Vector3 spawnPosition = Camera.main.transform.position;
+        Vector3 spawnPosition = handPosition.position + (throwDirection * 1f);
         GameObject newBomb = Instantiate(bomb, spawnPosition, Quaternion.identity);
         GameObject bombParticle = Instantiate(bombParticlePrefab, spawnPosition, Quaternion.identity);
         newBomb.GetComponent<SlowingBomb>().particleAttractor = bombParticle.GetComponentInChildren<particleAttractorLinear>().target.gameObject;
@@ -93,12 +86,8 @@ public class BombThrower : MonoBehaviour
         }
         else
         {
-            
             newBomb.transform.DOMove(transform.position + throwDirection.normalized * 50.0f, emptylaserSpeed).OnComplete(() => EndThrow(newBomb));
         }
-        //Vector3 throwForce = throwDirection * throwPower;
-        //newBomb.GetComponent<Rigidbody>().AddForce(throwForce);
-        //waitTime = 0.0f;
         pressTime = 0.0f;
     }
 
