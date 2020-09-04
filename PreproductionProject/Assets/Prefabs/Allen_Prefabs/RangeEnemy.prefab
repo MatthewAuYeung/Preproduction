@@ -426,14 +426,18 @@ MonoBehaviour:
   attackDelay: 0
   fov: 60
   hitEffect: {fileID: 0}
+  explosionEffect: {fileID: 0}
   SlowBombEffectMat: {fileID: 0}
   knockbackDuration: 0
   isEventTriggered: 0
   wanderingpath: {fileID: 0}
   OARadius: 0.6
+  stunFromPlayerDuration: 1
+  resetHitcount: 3
   speed: 0
   beingWarpAttacked: 0
   damagePopupTransform: {fileID: 0}
+  state: 0
   target: {fileID: 0}
   aim: {fileID: 8368809629874851626}
   head: {fileID: 7239324523175757133}
@@ -445,11 +449,15 @@ MonoBehaviour:
   muzzlePos:
   - {fileID: 8368809630036157163}
   - {fileID: 8368809629008103896}
-  canSee: 0
   muzzleFlash: {fileID: 8368809630048528982}
   healthBar: {fileID: 2307792095631067132}
   loot: {fileID: 0}
+  LaserPrefab: {fileID: 0}
+  openedTime: 0
+  TimeNow: 0
+  openTime: 1.5
   randomMuzzel: 0
+  isStun: 0
 --- !u!195 &8368809629155522543
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -757,6 +765,46 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9016429693356497238, guid: b8abcbb0d375f9143878b5b011c58808,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 6305676332123807994, guid: b8abcbb0d375f9143878b5b011c58808,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 4012921472130902533, guid: b8abcbb0d375f9143878b5b011c58808,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 3708372133933174528, guid: b8abcbb0d375f9143878b5b011c58808,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 4255192087857218994, guid: b8abcbb0d375f9143878b5b011c58808,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 2910312866092483035, guid: b8abcbb0d375f9143878b5b011c58808,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1940734621834376591, guid: b8abcbb0d375f9143878b5b011c58808,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 387742419664879029, guid: b8abcbb0d375f9143878b5b011c58808,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b8abcbb0d375f9143878b5b011c58808, type: 3}
