@@ -4,13 +4,20 @@ using UnityEngine;
 
 public class SoundManagerScript : MonoBehaviour
 {
-    public static AudioClip swingSound1, swingSound2, swingSound3, swingSound4, swingSound5, runningSound, walkingSound, robotDeathSound, hurtHitSound, RobotInViewSound;
+    public static AudioClip swingSound1, swingSound2, swingSound3, swingSound4, swingSound5;
+    public static AudioClip runningSound, walkingSound;
+    public static AudioClip robotDeathSound, hurtHitSound, RobotInViewSound, RobotWalkSound;
+    public static AudioClip spiderWalkSound;
+
     public GameObject playerAudioGO;
     public GameObject robotAudioGO;
 
+
     public static AudioSource playerAudioSrc;
     public static AudioSource robotAudioSrc;
+    public static AudioSource spiderAudioSrc;
 
+    public AudioClip swingSound1Name, swingSound2Name, swingSound3Name, swingSound4Name, swingSound5Name;
     void Start()
     {
         swingSound1 = Resources.Load<AudioClip>("SwordSwing1");
