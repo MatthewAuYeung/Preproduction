@@ -2363,6 +2363,21 @@ PrefabInstance:
       propertyPath: tpsCam
       value: 
       objectReference: {fileID: 1639351467}
+    - target: {fileID: 4814959652165431626, guid: 26a1e40a5ecc2a1459d868188acbc39f,
+        type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 39359761241268675, guid: 26a1e40a5ecc2a1459d868188acbc39f,
+        type: 3}
+      propertyPath: test
+      value: 
+      objectReference: {fileID: 8300000, guid: a3df83eec0cb43c4cb1301ff81bba77d, type: 3}
+    - target: {fileID: 39359761241268675, guid: 26a1e40a5ecc2a1459d868188acbc39f,
+        type: 3}
+      propertyPath: audioName
+      value: 
+      objectReference: {fileID: 8300000, guid: a3df83eec0cb43c4cb1301ff81bba77d, type: 3}
     m_RemovedComponents:
     - {fileID: 6226596333955823180, guid: 26a1e40a5ecc2a1459d868188acbc39f, type: 3}
     - {fileID: 6226596333955823181, guid: 26a1e40a5ecc2a1459d868188acbc39f, type: 3}
