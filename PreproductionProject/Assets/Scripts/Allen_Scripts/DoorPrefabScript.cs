@@ -31,10 +31,13 @@ public class DoorPrefabScript : MonoBehaviour
 
     void Start()
     {
-        foreach (var enemy in enemyListHolder.GetComponentsInChildren<EnemyScript>())
+        if(enemyListHolder!= null)
         {
-            enemies.Add(enemy);
-            enemy.OnDeath += (x) => { enemies.Remove(x); };
+            foreach (var enemy in enemyListHolder.GetComponentsInChildren<EnemyScript>())
+            {
+                enemies.Add(enemy);
+                enemy.OnDeath += (x) => { enemies.Remove(x); };
+            }
         }
     }
 
