@@ -16,7 +16,8 @@ public class SlowingBomb : MonoBehaviour
         if (other.gameObject.CompareTag("PlatformTag"))
         {
             MovingPlatform platform = other.gameObject.GetComponentInParent<MovingPlatform>();
-            platform.speed *= 0.5f;
+            //platform.speed *= 0.5f;
+            platform.SlowFromBomb();
         }
         // instantiate explosion (include bomb slowing effect
         Instantiate(explosion, transform.position, Quaternion.identity);
@@ -30,7 +31,8 @@ public class SlowingBomb : MonoBehaviour
         if (collision.gameObject.CompareTag("PlatformTag"))
         {
             MovingPlatform platform = collision.gameObject.GetComponentInParent<MovingPlatform>();
-            platform.speed *= 0.5f;
+            //platform.speed *= 0.5f;
+            platform.SlowFromBomb();
         }
         // instantiate explosion (include bomb slowing effect
         Instantiate(explosion, transform.position, Quaternion.identity);

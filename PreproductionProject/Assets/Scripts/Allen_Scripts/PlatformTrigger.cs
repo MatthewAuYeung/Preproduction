@@ -7,6 +7,7 @@ public class PlatformTrigger : MonoBehaviour
     public MovingPlatform platform;
     private void OnTriggerEnter(Collider other)
     {
+        platform.automatic = true;
         platform.NextPlatform();
     }
 }
