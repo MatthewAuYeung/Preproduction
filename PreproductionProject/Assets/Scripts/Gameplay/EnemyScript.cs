@@ -241,7 +241,6 @@ public class EnemyScript : BaseEnemyScript
     private void Idle()
     {
         //sign.ShowSignifier();
-
         if (InSearchRange() && InView())
             ChangeState(EnemyState.Chase);
         else
@@ -249,6 +248,7 @@ public class EnemyScript : BaseEnemyScript
             StartWandering();
             ChangeState(EnemyState.Wandering);
         }
+        animator.SetBool("isWalking", false);
     }
     private void Chase()
     {
