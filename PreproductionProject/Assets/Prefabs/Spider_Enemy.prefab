@@ -4940,7 +4940,7 @@ Transform:
   - {fileID: 5825453507814268739}
   - {fileID: 2611949906388615412}
   - {fileID: 1325469608803576375}
-  - {fileID: 5508996593745723126}
+  - {fileID: 923569026935213909}
   - {fileID: 5704061467134596280}
   - {fileID: 3577523969821535970}
   m_Father: {fileID: 0}
@@ -10085,7 +10085,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 512cdfb07e840624faebbb9820f90e2d, type: 3}
---- !u!224 &5508996593745723126 stripped
+--- !u!224 &923569026935213909 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 4657511557717701313, guid: 512cdfb07e840624faebbb9820f90e2d,
     type: 3}
@@ -10098,6 +10098,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 5825453507846488637}
     m_Modifications:
+    - target: {fileID: 2205154780597391849, guid: ec0bf95e26038b64396fc67509a489cd,
+        type: 3}
+      propertyPath: m_Name
+      value: HealthBar
+      objectReference: {fileID: 0}
     - target: {fileID: 8448585220110722588, guid: ec0bf95e26038b64396fc67509a489cd,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -10203,11 +10208,6 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 0.5
       objectReference: {fileID: 0}
-    - target: {fileID: 2205154780597391849, guid: ec0bf95e26038b64396fc67509a489cd,
-        type: 3}
-      propertyPath: m_Name
-      value: HealthBar
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ec0bf95e26038b64396fc67509a489cd, type: 3}
 --- !u!224 &2611949906388615412 stripped
@@ -10235,6 +10235,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 5825453507846488637}
     m_Modifications:
+    - target: {fileID: 2205154780597391849, guid: ec0bf95e26038b64396fc67509a489cd,
+        type: 3}
+      propertyPath: m_Name
+      value: AttackBar
+      objectReference: {fileID: 0}
     - target: {fileID: 8448585220110722588, guid: ec0bf95e26038b64396fc67509a489cd,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -10354,11 +10359,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Color.b
       value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2205154780597391849, guid: ec0bf95e26038b64396fc67509a489cd,
-        type: 3}
-      propertyPath: m_Name
-      value: AttackBar
       objectReference: {fileID: 0}
     - target: {fileID: 7614619101681231534, guid: ec0bf95e26038b64396fc67509a489cd,
         type: 3}
