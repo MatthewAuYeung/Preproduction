@@ -5,6 +5,7 @@ using UnityEngine.UI;
 
 public class Signifier : MonoBehaviour
 {
+    public float DisplayTime = 3.0f;
     [SerializeField] private SpriteRenderer signifier;
     [SerializeField] private Sprite exclaimation;
     [SerializeField] private Sprite stunned;
@@ -16,9 +17,17 @@ public class Signifier : MonoBehaviour
 
     public void ShowSignifier()
     {
-        signifier.sprite = exclaimation;
-        signifier.enabled = true;
-        signifier.transform.localScale = exclaimationSize;
+        DisplayTime -= Time.deltaTime;
+        if (DisplayTime > 0)
+        {
+            signifier.sprite = exclaimation;
+            signifier.enabled = true;
+            signifier.transform.localScale = exclaimationSize;
+        }
+        else
+        {
+            signifier.enabled = false;
+        }
     }
 
     public void ShowStunnedSignifier()
