@@ -15,6 +15,7 @@ public class MainMenu : MonoBehaviour
         Cursor.visible = true;
         Cursor.lockState = CursorLockMode.None;
         Destroy(GameObject.Find("GameDependencies"));
+        Time.timeScale = 1.0f;
     }
 
     public void OnLevelButtonClick(int level)
