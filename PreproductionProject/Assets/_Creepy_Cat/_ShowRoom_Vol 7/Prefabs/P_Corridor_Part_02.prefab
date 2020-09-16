@@ -47,7 +47,7 @@ GameObject:
   - component: {fileID: 8736636783438626093}
   m_Layer: 0
   m_Name: Collision_02
-  m_TagString: Untagged
+  m_TagString: NotWarpable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -91,7 +91,7 @@ GameObject:
   - component: {fileID: 8736636783482848977}
   m_Layer: 0
   m_Name: Collision_01
-  m_TagString: Untagged
+  m_TagString: Floor
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -135,7 +135,7 @@ GameObject:
   - component: {fileID: 8736636783919974435}
   m_Layer: 0
   m_Name: Collision_03
-  m_TagString: Untagged
+  m_TagString: NotWarpable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -179,7 +179,7 @@ GameObject:
   - component: {fileID: 8736636784581663496}
   m_Layer: 0
   m_Name: Collision_04
-  m_TagString: Untagged
+  m_TagString: NotWarpable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
