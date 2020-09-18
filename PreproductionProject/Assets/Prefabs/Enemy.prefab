@@ -425,10 +425,10 @@ Transform:
   - {fileID: 2499425932316696570}
   - {fileID: 5825453507814268739}
   - {fileID: 2611949906388615412}
-  - {fileID: 6303552336486327367}
+  - {fileID: 6303552336486703743}
   - {fileID: 173160178661535776}
   - {fileID: 4325922007714781157}
-  - {fileID: 1598417344}
+  - {fileID: 1598417353}
   - {fileID: 433704648694876723}
   - {fileID: 284845402}
   - {fileID: 4248622649048613361}
@@ -553,8 +553,7 @@ MonoBehaviour:
   attackDelay: 2
   fov: 160
   hitEffect: {fileID: 4004281242495501795}
-  explosionEffect: {fileID: 1107882085014728933, guid: a155042b870eb2d4abd46666303d7e5d,
-    type: 3}
+  explosionEffect: {fileID: 19895034, guid: 7070fbe5d358dfd45b3de7d9fddfd386, type: 3}
   SlowBombEffectMat: {fileID: 2100000, guid: 6157d577e61520a43944d0379799410f, type: 2}
   knockbackDuration: 0.25
   isEventTriggered: 0
@@ -611,6 +610,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 78e15b2c6368fb7469600f762cfd9dd0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  DisplayTime: 3
   signifier: {fileID: 4032022118570976299}
   exclaimation: {fileID: 21300000, guid: 859c5e964b3b0784a95922c4d327ecda, type: 3}
   stunned: {fileID: 21300000, guid: f86eb95ab7f4a314fa62a90a1e135a46, type: 3}
@@ -5627,11 +5627,6 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 0.5
       objectReference: {fileID: 0}
-    - target: {fileID: 4657511557717701314, guid: 512cdfb07e840624faebbb9820f90e2d,
-        type: 3}
-      propertyPath: m_Mesh
-      value: 
-      objectReference: {fileID: 0}
     - target: {fileID: 4657511557717701312, guid: 512cdfb07e840624faebbb9820f90e2d,
         type: 3}
       propertyPath: m_textInfo.characterCount
@@ -5652,9 +5647,14 @@ PrefabInstance:
       propertyPath: m_textInfo.pageCount
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4657511557717701314, guid: 512cdfb07e840624faebbb9820f90e2d,
+        type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 512cdfb07e840624faebbb9820f90e2d, type: 3}
---- !u!224 &1598417344 stripped
+--- !u!224 &1598417353 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 4657511557717701313, guid: 512cdfb07e840624faebbb9820f90e2d,
     type: 3}
@@ -6109,7 +6109,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8af7fc23449fb134587debd98a00604a, type: 3}
---- !u!4 &6303552336486327367 stripped
+--- !u!4 &6303552336486703743 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 410886, guid: 8af7fc23449fb134587debd98a00604a,
     type: 3}
