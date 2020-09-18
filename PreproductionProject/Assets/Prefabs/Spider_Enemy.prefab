@@ -4941,7 +4941,7 @@ Transform:
   - {fileID: 5825453507814268739}
   - {fileID: 2611949906388615412}
   - {fileID: 1325469608803576375}
-  - {fileID: 923569026935213909}
+  - {fileID: 5508996593745723126}
   - {fileID: 5704061467134596280}
   - {fileID: 3577523969821535970}
   - {fileID: 5434582738724678260}
@@ -5082,7 +5082,7 @@ MonoBehaviour:
   healthBar: {fileID: 370972254627582947}
   attackBar: {fileID: 3710812449602205984}
   loot: {fileID: 0}
-  animator: {fileID: 0}
+  animator: {fileID: 2423752915968178626}
   leftArm: {fileID: 0}
   rightArm: {fileID: 0}
   isRobot: 0
@@ -9972,6 +9972,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: SpiderWalkTooManyFrames
       objectReference: {fileID: 0}
+    - target: {fileID: -6057140222963153312, guid: d95fe80e9287bf248a22b2d59ba0464a,
+        type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: e2d25ce2d6062cd4b8ce6f2950d20adb, type: 2}
     - target: {fileID: -4216859302048453862, guid: d95fe80e9287bf248a22b2d59ba0464a,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -10027,16 +10032,17 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: -6057140222963153312, guid: d95fe80e9287bf248a22b2d59ba0464a,
-        type: 3}
-      propertyPath: m_Controller
-      value: 
-      objectReference: {fileID: 9100000, guid: e2d25ce2d6062cd4b8ce6f2950d20adb, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d95fe80e9287bf248a22b2d59ba0464a, type: 3}
 --- !u!4 &5704061467134596280 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -4216859302048453862, guid: d95fe80e9287bf248a22b2d59ba0464a,
+    type: 3}
+  m_PrefabInstance: {fileID: 743746362638909346}
+  m_PrefabAsset: {fileID: 0}
+--- !u!95 &2423752915968178626 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: -6057140222963153312, guid: d95fe80e9287bf248a22b2d59ba0464a,
     type: 3}
   m_PrefabInstance: {fileID: 743746362638909346}
   m_PrefabAsset: {fileID: 0}
@@ -10184,7 +10190,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 512cdfb07e840624faebbb9820f90e2d, type: 3}
---- !u!224 &923569026935213909 stripped
+--- !u!224 &5508996593745723126 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 4657511557717701313, guid: 512cdfb07e840624faebbb9820f90e2d,
     type: 3}

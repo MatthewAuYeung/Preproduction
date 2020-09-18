@@ -288,7 +288,8 @@ public class EnemyScript : BaseEnemyScript
         //animator.SetBool("isAttacking", true);
         if (currentTime < Time.time)
         {
-            animator.SetTrigger("Attack");
+            //animator.SetTrigger("Attack");
+            animator.SetBool("isAttacking", true);
             _waitTime = 0.0f;
             currentTime = Time.time + attackDelay;
         }
