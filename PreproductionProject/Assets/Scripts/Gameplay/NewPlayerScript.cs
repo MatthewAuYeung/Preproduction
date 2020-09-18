@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using DG.Tweening;
+using UnityEngine.SceneManagement;
 
 public class NewPlayerScript : MonoBehaviour
 {
@@ -69,7 +70,7 @@ public class NewPlayerScript : MonoBehaviour
     private bool isSlowMo = false;
 
     private PlayerGettingHitAnim playerhurt;
-        
+
     public enum AbilityType
     {
         Warp,
@@ -112,8 +113,7 @@ public class NewPlayerScript : MonoBehaviour
     {
         if (health <= 0.0f)
         {
-            health = maxHealth;
-            //DebugRestart.Restart();
+            SceneManager.LoadScene(sceneBuildIndex: 3);
         }
 
         healthBar.UpdateBar(health, maxHealth);
@@ -137,7 +137,6 @@ public class NewPlayerScript : MonoBehaviour
             StartCoroutine(SlowMo());
         }
     }
-
 
     IEnumerator StopHitEffect()
     {
