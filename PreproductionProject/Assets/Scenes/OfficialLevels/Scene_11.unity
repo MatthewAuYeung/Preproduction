@@ -9490,7 +9490,8 @@ MonoBehaviour:
   speed: 40
   delay_time: 2
   automatic: 1
-  slowTimer: 5
+  slowTimer: 7
+  slowAmount: 0.2
 --- !u!1 &217231947 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 8179488178233436240, guid: ee914263b7fdef841923c907fa039e6b,
@@ -44097,7 +44098,8 @@ MonoBehaviour:
   speed: 20
   delay_time: 4
   automatic: 1
-  slowTimer: 5
+  slowTimer: 7
+  slowAmount: 0.2
 --- !u!1001 &996872298
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -46659,27 +46661,27 @@ PrefabInstance:
         type: 3}
       propertyPath: swingSound1Name
       value: 
-      objectReference: {fileID: 8300000, guid: 0afd18a60b32cd745b123781f2da7f5e, type: 3}
+      objectReference: {fileID: 8300000, guid: f4590bcdf962ac0429bc86afaeb927d4, type: 3}
     - target: {fileID: 39359761241268675, guid: 26a1e40a5ecc2a1459d868188acbc39f,
         type: 3}
       propertyPath: swingSound2Name
       value: 
-      objectReference: {fileID: 8300000, guid: 68f6872055fab8f438a61f9a2f1f926f, type: 3}
+      objectReference: {fileID: 8300000, guid: d29a0234bc28c40478559ee3469f7ac7, type: 3}
     - target: {fileID: 39359761241268675, guid: 26a1e40a5ecc2a1459d868188acbc39f,
         type: 3}
       propertyPath: swingSound3Name
       value: 
-      objectReference: {fileID: 8300000, guid: 9fa1112050fe02e498318728f752ae17, type: 3}
+      objectReference: {fileID: 8300000, guid: 3090bbd6b65c48c40959430f854e3df9, type: 3}
     - target: {fileID: 39359761241268675, guid: 26a1e40a5ecc2a1459d868188acbc39f,
         type: 3}
       propertyPath: swingSound4Name
       value: 
-      objectReference: {fileID: 8300000, guid: 0027fb8968d6f4f468b30cd6086e490a, type: 3}
+      objectReference: {fileID: 8300000, guid: 84489f3250f8c684e89ad22f8dc55b24, type: 3}
     - target: {fileID: 39359761241268675, guid: 26a1e40a5ecc2a1459d868188acbc39f,
         type: 3}
       propertyPath: swingSound5Name
       value: 
-      objectReference: {fileID: 8300000, guid: 5d11c016481097d4bb48357650389e16, type: 3}
+      objectReference: {fileID: 8300000, guid: 5b7dfa434ace3f441a17f8afcff03a55, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 26a1e40a5ecc2a1459d868188acbc39f, type: 3}
 --- !u!1001 &1006336594
@@ -106580,7 +106582,8 @@ MonoBehaviour:
   speed: 4
   delay_time: 3
   automatic: 0
-  slowTimer: 5
+  slowTimer: 7
+  slowAmount: 0.2
 --- !u!4 &8344575695584063899
 Transform:
   m_ObjectHideFlags: 0
