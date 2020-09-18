@@ -108,13 +108,10 @@ public class WarpController : MonoBehaviour
         {
             if (Input.GetButtonDown("Warp"))
             {
+                isWarping = true;
+
                 player.AbilityUsed(NewPlayerScript.AbilityType.Warp);
-                //if (lockOnManager.GetIsLockOn())
-                //{
-                //    WarpAttack(lockOnManager.GetClosestObject());
-                //}
-                //else
-                //    FreeWarp();
+
                 attackManager.ShowSword();
                 if (lockOnManager.GetIsLockOn())
                 {
@@ -275,7 +272,6 @@ public class WarpController : MonoBehaviour
 
     private void FreeWarp()
     {
-        isWarping = true;
         Vector3 warpDir = mainCamera.transform.forward;
         warpDir.y = 0.0f;
         RaycastHit hit;
