@@ -23,6 +23,10 @@ public class MovingPlatform : MonoBehaviour
     [SerializeField]
     private float slowTimer = 5.0f;
 
+    [SerializeField]
+    private float slowAmount = 0.5f;
+
+
     void Start()
     {
         transform.localScale = new Vector3(1.0f, 1.0f, 1.0f);
@@ -103,7 +107,7 @@ public class MovingPlatform : MonoBehaviour
     {
         if(!isSlowed)
         {
-            speed *= 0.5f;
+            speed *= slowAmount;
             isSlowed = true;
             timer = Time.time + slowTimer;
         }
