@@ -428,7 +428,7 @@ Transform:
   - {fileID: 6303552336486327367}
   - {fileID: 173160178661535776}
   - {fileID: 4325922007714781157}
-  - {fileID: 4657511556665301091}
+  - {fileID: 1598417344}
   - {fileID: 433704648694876723}
   - {fileID: 284845402}
   - {fileID: 4248622649048613361}
@@ -770,7 +770,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &2499425932316696570
 Transform:
   m_ObjectHideFlags: 0
@@ -5654,7 +5654,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 512cdfb07e840624faebbb9820f90e2d, type: 3}
---- !u!224 &4657511556665301091 stripped
+--- !u!224 &1598417344 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 4657511557717701313, guid: 512cdfb07e840624faebbb9820f90e2d,
     type: 3}
@@ -5798,26 +5798,6 @@ PrefabInstance:
       propertyPath: m_TagString
       value: EnemyTag
       objectReference: {fileID: 0}
-    - target: {fileID: -7179286588371662614, guid: b60d0cab085563f4089afb5a63220251,
-        type: 3}
-      propertyPath: m_LocalScale.z
-      value: 0.26321
-      objectReference: {fileID: 0}
-    - target: {fileID: -7179286588371662614, guid: b60d0cab085563f4089afb5a63220251,
-        type: 3}
-      propertyPath: m_LocalScale.x
-      value: 0.33766
-      objectReference: {fileID: 0}
-    - target: {fileID: -7179286588371662614, guid: b60d0cab085563f4089afb5a63220251,
-        type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -0.278
-      objectReference: {fileID: 0}
-    - target: {fileID: -6057140222963153312, guid: b60d0cab085563f4089afb5a63220251,
-        type: 3}
-      propertyPath: m_Controller
-      value: 
-      objectReference: {fileID: 9100000, guid: 39d0cfb7ebc61ea4c97c86f0e70f37b4, type: 2}
     - target: {fileID: -4216859302048453862, guid: b60d0cab085563f4089afb5a63220251,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -5873,6 +5853,26 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -6057140222963153312, guid: b60d0cab085563f4089afb5a63220251,
+        type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: 39d0cfb7ebc61ea4c97c86f0e70f37b4, type: 2}
+    - target: {fileID: -7179286588371662614, guid: b60d0cab085563f4089afb5a63220251,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.26321
+      objectReference: {fileID: 0}
+    - target: {fileID: -7179286588371662614, guid: b60d0cab085563f4089afb5a63220251,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.33766
+      objectReference: {fileID: 0}
+    - target: {fileID: -7179286588371662614, guid: b60d0cab085563f4089afb5a63220251,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.278
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b60d0cab085563f4089afb5a63220251, type: 3}
 --- !u!4 &8252777980566922711 stripped
@@ -5912,6 +5912,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 5825453507846488637}
     m_Modifications:
+    - target: {fileID: 2205154780597391849, guid: ec0bf95e26038b64396fc67509a489cd,
+        type: 3}
+      propertyPath: m_Name
+      value: HealthBar
+      objectReference: {fileID: 0}
     - target: {fileID: 8448585220110722588, guid: ec0bf95e26038b64396fc67509a489cd,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -6017,11 +6022,6 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 0.5
       objectReference: {fileID: 0}
-    - target: {fileID: 2205154780597391849, guid: ec0bf95e26038b64396fc67509a489cd,
-        type: 3}
-      propertyPath: m_Name
-      value: HealthBar
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ec0bf95e26038b64396fc67509a489cd, type: 3}
 --- !u!114 &370972254627582947 stripped
@@ -6055,6 +6055,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 5825453507846488637}
     m_Modifications:
+    - target: {fileID: 197494, guid: 8af7fc23449fb134587debd98a00604a, type: 3}
+      propertyPath: m_Name
+      value: Sparks Subtle
+      objectReference: {fileID: 0}
+    - target: {fileID: 197494, guid: 8af7fc23449fb134587debd98a00604a, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 410886, guid: 8af7fc23449fb134587debd98a00604a, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -6099,14 +6107,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 197494, guid: 8af7fc23449fb134587debd98a00604a, type: 3}
-      propertyPath: m_Name
-      value: Sparks Subtle
-      objectReference: {fileID: 0}
-    - target: {fileID: 197494, guid: 8af7fc23449fb134587debd98a00604a, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8af7fc23449fb134587debd98a00604a, type: 3}
 --- !u!4 &6303552336486327367 stripped
@@ -6122,6 +6122,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 5825453507846488637}
     m_Modifications:
+    - target: {fileID: 2205154780597391849, guid: ec0bf95e26038b64396fc67509a489cd,
+        type: 3}
+      propertyPath: m_Name
+      value: AttackBar
+      objectReference: {fileID: 0}
     - target: {fileID: 8448585220110722588, guid: ec0bf95e26038b64396fc67509a489cd,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -6241,11 +6246,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Color.b
       value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2205154780597391849, guid: ec0bf95e26038b64396fc67509a489cd,
-        type: 3}
-      propertyPath: m_Name
-      value: AttackBar
       objectReference: {fileID: 0}
     - target: {fileID: 7614619101681231534, guid: ec0bf95e26038b64396fc67509a489cd,
         type: 3}

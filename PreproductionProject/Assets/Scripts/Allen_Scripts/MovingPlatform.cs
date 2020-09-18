@@ -23,6 +23,10 @@ public class MovingPlatform : MonoBehaviour
     [SerializeField]
     private float slowTimer = 5.0f;
 
+    [SerializeField]
+    private float slowAmount = 0.5f;
+
+
     void Start()
     {
         transform.localScale = new Vector3(1.0f, 1.0f, 1.0f);
@@ -30,6 +34,7 @@ public class MovingPlatform : MonoBehaviour
         if (Waypoints.Length > 0)
         {
             current_target = Waypoints[0].position;
+            //FindObjectOfType<DebugText>()?.AddDebugText(gameObject.name + ": " + current_target.ToString());
         }
         tolerance = speed * Time.deltaTime;
         originalSpeed = speed;
@@ -43,7 +48,7 @@ public class MovingPlatform : MonoBehaviour
         }
         else
         {
-            UpdateTarget();
+            //UpdateTarget();
         }
     }
 
@@ -61,12 +66,19 @@ public class MovingPlatform : MonoBehaviour
 
     void MovePlatform()
     {
-        Vector3 heading = current_target - transform.position;
-        transform.position += (heading / heading.magnitude) * speed * Time.deltaTime;
-        if (heading.magnitude < tolerance)
+        //Vector3 heading = current_target - transform.position;
+        //transform.position += (heading / heading.magnitude) * speed * Time.deltaTime;
+        //if (heading.magnitude < tolerance)
+        //{
+        //    transform.position = current_target;
+        //    delay_start = Time.time;
+        //}
+
+        transform.position = Vector3.MoveTowards(transform.position, current_target, speed * Time.deltaTime);
+        if(transform.position == current_target)
         {
-            transform.position = current_target;
-            delay_start = Time.time;
+            Invoke("NextPlatform", delay_time);
+
         }
     }
 
@@ -95,7 +107,7 @@ public class MovingPlatform : MonoBehaviour
     {
         if(!isSlowed)
         {
-            speed *= 0.5f;
+            speed *= slowAmount;
             isSlowed = true;
             timer = Time.time + slowTimer;
         }
