@@ -8,12 +8,17 @@ public class SoundManagerScript : MonoBehaviour
     public static AudioClip runningSound, walkingSound;
     public static AudioClip robotDeathSound, hurtHitSound, RobotInViewSound, RobotWalkSound;
     public static AudioClip spiderWalkSound;
+    public static AudioClip laserChargingSound, laserShotSound;
+    public static AudioClip warpingSound;
 
     public GameObject playerAudioGO;
+    public GameObject playerAbAudioGO;
     public GameObject robotAudioGO;
+    public GameObject spiderAudioGO;
 
 
     public static AudioSource playerAudioSrc;
+    public static AudioSource playerAbAudioSrc;
     public static AudioSource robotAudioSrc;
     public static AudioSource spiderAudioSrc;
 
@@ -30,13 +35,19 @@ public class SoundManagerScript : MonoBehaviour
         robotDeathSound = Resources.Load<AudioClip>("RobotDeath");
         hurtHitSound = Resources.Load<AudioClip>("HurtHit");
         RobotInViewSound = Resources.Load<AudioClip>("RobotEnemySig");
+        laserChargingSound = Resources.Load<AudioClip>("ChargingUp");
+        laserShotSound = Resources.Load<AudioClip>("LaserShot");
+        warpingSound = Resources.Load<AudioClip>("Warp");
 
 
         playerAudioSrc = playerAudioGO.GetComponent<AudioSource>();
+        playerAbAudioSrc = playerAbAudioGO.GetComponent<AudioSource>();
         robotAudioSrc = robotAudioGO.GetComponent<AudioSource>();
-    }
+        spiderAudioSrc = spiderAudioGO.GetComponent<AudioSource>();
 
-    void Update()
+}
+
+void Update()
     {
 
     }
@@ -45,8 +56,24 @@ public class SoundManagerScript : MonoBehaviour
     {
         bool foundPlayerClip = false;
         bool foundRobotClip = false;
+        bool foundPlayerAbClip = false;
         switch (clip)
         {
+            case "ChargingUp":
+                playerAbAudioSrc.clip = laserChargingSound;
+                playerAbAudioSrc.loop = false;
+                foundPlayerAbClip = true;
+                break;
+            case "LaserShot":
+                playerAbAudioSrc.clip = laserShotSound;
+                playerAbAudioSrc.loop = false;
+                foundPlayerAbClip = true;
+                break;
+            case "Warp":
+                playerAbAudioSrc.clip = warpingSound;
+                playerAbAudioSrc.loop = false;
+                foundPlayerAbClip = true;
+                break;
             case "Running":
                 playerAudioSrc.clip = runningSound;
                 playerAudioSrc.loop = true;
@@ -105,6 +132,8 @@ public class SoundManagerScript : MonoBehaviour
             playerAudioSrc.Play();
         if (!robotAudioSrc.isPlaying && foundRobotClip)
             robotAudioSrc.Play();
+        if (!playerAbAudioSrc.isPlaying && foundPlayerAbClip)
+            playerAbAudioSrc.Play();
     }
 
     public static void EndPlay()
