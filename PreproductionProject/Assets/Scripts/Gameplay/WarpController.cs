@@ -108,6 +108,7 @@ public class WarpController : MonoBehaviour
         {
             if (Input.GetButtonDown("Warp"))
             {
+
                 isWarping = true;
 
                 player.AbilityUsed(NewPlayerScript.AbilityType.Warp);
@@ -120,6 +121,7 @@ public class WarpController : MonoBehaviour
                 else
                     transform.rotation = Quaternion.LookRotation(mainCamera.transform.forward);
                 animator.SetTrigger("Warp");
+                SoundManagerScript.PlaySound("Warp");
             }
         }
 

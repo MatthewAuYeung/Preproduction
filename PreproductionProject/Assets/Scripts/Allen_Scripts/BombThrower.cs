@@ -49,6 +49,7 @@ public class BombThrower : MonoBehaviour
 
         if (Input.GetButton("Bomb") && ready == false)
         {
+            SoundManagerScript.PlaySound("ChargingUp");
             downTime = Time.time;
             if (!chargePrefab.GetComponentInChildren<ParticleSystem>().isPlaying)
                 chargePrefab.GetComponentInChildren<ParticleSystem>().Play();
@@ -63,6 +64,7 @@ public class BombThrower : MonoBehaviour
         }
         if (Input.GetButtonUp("Bomb"))
         {
+            SoundManagerScript.PlaySound("LaserShot");
             pressTime = 0.0f;
             animator.SetTrigger("ShootLaser");
             chargePrefab.GetComponentInChildren<ParticleSystem>().Stop();
